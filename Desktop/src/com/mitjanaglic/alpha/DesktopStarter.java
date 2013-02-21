@@ -10,7 +10,7 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
  * To change this template use File | Settings | File Templates.
  */
 public class DesktopStarter {
-    public static void main (String[] args) {
-        new LwjglApplication(new Game(), "Game", 480, 320, false);
+    public static void main(String[] args) {
+        new LwjglApplication(new Game(), "Alpha", 1280, 720, false);
     }
 }
