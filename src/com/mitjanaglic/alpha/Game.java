@@ -7,10 +7,8 @@ import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector3;
-
-import static com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.math.Vector2;
+import com.mitjanaglic.alpha.entities.Player;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,28 +19,29 @@ import static com.badlogic.gdx.Input.Keys;
  */
 public class Game implements ApplicationListener {
 
-    private Texture playerTexture;
+
     private Music backgroundMusic;
-    OrthographicCamera camera;
-    SpriteBatch batch;
-    Rectangle player;
+    private OrthographicCamera camera;
+    private SpriteBatch batch;
+    private Player player;
+    private Integer resX = 1280;
+    private Integer resY = 720;
+    private Texture playerTexture;
 
     @Override
     public void create() {
+        camera = new OrthographicCamera();
+        camera.setToOrtho(false, 1280, 720);
         playerTexture = new Texture("data\\png\\player.png");
+        player = new Player(playerTexture,
+                new Vector2(resX / 2 - playerTexture.getWidth() / 2, resY / 6 - playerTexture.getHeight() / 2),
+                camera);
         backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("data\\music\\Magellan  - Orbyss.mp3"));
         backgroundMusic.setLooping(true);
         backgroundMusic.play();
 
-        camera = new OrthographicCamera();
-        camera.setToOrtho(false, 1280, 720);
-        batch = new SpriteBatch();
 
-        player = new Rectangle();
-        player.x = 1280 / 2 - 48 / 2;
-        player.y = 400;
-        player.width = 48;
-        player.height = 48;
+        batch = new SpriteBatch();
     }
 
     @Override
@@ -58,28 +57,10 @@ public class Game implements ApplicationListener {
 
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
-        batch.draw(playerTexture, player.x, player.y);
+        batch.draw(player.getTexture(), player.getPosition().x, player.getPosition().y);
         batch.end();
 
-        Vector3 touchPos;
-        if (Gdx.input.isTouched()) {
-            touchPos = new Vector3();
-            touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
-            camera.unproject(touchPos);
-            player.x = touchPos.x - 48 / 2;
-            player.y = touchPos.y - 48 / 2;
-        }
-
-        if (Gdx.input.isKeyPressed(Keys.A)) player.x -= 400 * Gdx.graphics.getDeltaTime();
-        if (Gdx.input.isKeyPressed(Keys.D)) player.x += 400 * Gdx.graphics.getDeltaTime();
-        if (Gdx.input.isKeyPressed(Keys.W)) player.y += 400 * Gdx.graphics.getDeltaTime();
-        if (Gdx.input.isKeyPressed(Keys.S)) player.y -= 400 * Gdx.graphics.getDeltaTime();
-
-        if (player.x < 0) player.x = 0;
-        if (player.x > 1280 - 48) player.x = 1280 - 48;
-
-        if (player.y < 0) player.y = 0;
-        if (player.y > 720 - 48) player.y = 720 - 48;
+        Update();
     }
 
     @Override
@@ -90,6 +71,10 @@ public class Game implements ApplicationListener {
     @Override
     public void resume() {
         //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    private void Update() {
+        player.Update();
     }
 
     @Override
