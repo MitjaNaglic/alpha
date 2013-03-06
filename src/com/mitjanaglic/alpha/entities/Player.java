@@ -1,7 +1,5 @@
 package com.mitjanaglic.alpha.entities;
 
-import com.badlogic.gdx.graphics.Camera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
@@ -13,7 +11,6 @@ import com.badlogic.gdx.math.Vector2;
  * To change this template use File | Settings | File Templates.
  */
 public class Player extends Entity {
-    private Camera camera;
     private Vector2 acceleration = new Vector2();
     private Vector2 velocity = new Vector2();
     private State state = State.IDLE;
@@ -21,16 +18,10 @@ public class Player extends Entity {
     static final float SPEED = 2f;
     private Rectangle bounds = new Rectangle();
 
-    public Player(Texture texture, Vector2 pos, Camera camera) {
-        super(texture, pos);
-        this.camera = camera;
+    public Player(Vector2 pos) {
+        super(pos);
         bounds.height = SIZE;
         bounds.width = SIZE;
-    }
-
-    @Override
-    public void Draw() {
-        //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override

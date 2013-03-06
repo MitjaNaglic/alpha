@@ -13,6 +13,6 @@ import com.badlogic.gdx.backends.android.AndroidApplication;
 public class MainActivity extends AndroidApplication {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initialize(new Game(), false);
+        initialize(new Alpha(), false);
     }
 }
