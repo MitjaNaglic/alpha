@@ -2,6 +2,7 @@ package com.mitjanaglic.alpha;
 
 import android.os.Bundle;
 import com.badlogic.gdx.backends.android.AndroidApplication;
+import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,6 +14,8 @@ import com.badlogic.gdx.backends.android.AndroidApplication;
 public class MainActivity extends AndroidApplication {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initialize(new Alpha(), false);
+        AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
+        config.useGL20 = true;
+        initialize(new Alpha(), config);
     }
 }

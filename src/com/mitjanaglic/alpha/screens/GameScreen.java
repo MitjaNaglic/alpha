@@ -64,6 +64,7 @@ public class GameScreen implements Screen, InputProcessor {
     @Override
     public void dispose() {
         space.dispose();
+        renderer.dispose();
     }
 
     /*-------------------------------------INPUT PROCESSOR --------------------------*/

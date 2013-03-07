@@ -60,30 +60,4 @@ public class Player extends Entity {
     public void setState(State state) {
         this.state = state;
     }
-
-//    private void Move() {
-////        //touch, mouse
-////        Vector3 touchPos;
-////        if (Gdx.input.isTouched()) {
-////            touchPos = new Vector3();
-////            touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
-////            camera.unproject(touchPos);
-////            player.x = touchPos.x - player.getWidth() / 2;
-////            player.y = touchPos.y - player.getHeight() / 2;
-////        }
-////
-////
-////        //keyboard
-////        if (Gdx.input.isKeyPressed(Input.Keys.A)) player.x -= 400 * Gdx.graphics.getDeltaTime();
-////        if (Gdx.input.isKeyPressed(Input.Keys.D)) player.x += 400 * Gdx.graphics.getDeltaTime();
-////        if (Gdx.input.isKeyPressed(Input.Keys.W)) player.y += 400 * Gdx.graphics.getDeltaTime();
-////        if (Gdx.input.isKeyPressed(Input.Keys.S)) player.y -= 400 * Gdx.graphics.getDeltaTime();
-////
-////        if (player.x < 0) player.x = 0;
-////        if (player.x > 1280 - player.getWidth()) player.x = 1280 - player.getWidth();
-////
-////        if (player.y < 0) player.y = 0;
-////        if (player.y > 720 - player.getHeight()) player.y = 720 - player.getHeight();
-//
-//    }
 }
