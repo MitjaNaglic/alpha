@@ -16,6 +16,7 @@ public class Player extends Entity {
     private State state = State.IDLE;
     private float size = 1f;
     private float speed = 400f;
+    private float forwardInertia = 200f;
     private Rectangle bounds = new Rectangle();
 
     public Player(Vector2 pos) {
@@ -26,7 +27,8 @@ public class Player extends Entity {
 
     @Override
     public void update(float delta) {
-        getPosition().add(velocity.cpy().mul(delta)); //velocity.tmp().mul(delta)
+        velocity.y += getForwardInertia();
+        getPosition().add(velocity.cpy().mul(delta));
     }
 
     public Vector2 getVelocity() {
@@ -59,5 +61,13 @@ public class Player extends Entity {
 
     public void setState(State state) {
         this.state = state;
+    }
+
+    public float getForwardInertia() {
+        return forwardInertia;
+    }
+
+    public void setForwardInertia(float forwardInertia) {
+        this.forwardInertia = forwardInertia;
     }
 }

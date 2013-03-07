@@ -1,5 +1,6 @@
 package com.mitjanaglic.alpha.worlds;
 
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.entities.Player;
@@ -13,9 +14,13 @@ import com.mitjanaglic.alpha.entities.Player;
  */
 public class Space implements Disposable {
     private Player player;
+    private Rectangle bounds;
 
     public Space() {
         CreateTestSpace();
+        bounds = new Rectangle();
+        getBounds().height = 500000;
+        getBounds().width = 1280;
     }
 
     private void CreateTestSpace() {
@@ -28,5 +33,9 @@ public class Space implements Disposable {
 
     @Override
     public void dispose() {
+    }
+
+    public Rectangle getBounds() {
+        return bounds;
     }
 }

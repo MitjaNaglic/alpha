@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Alpha-Html5-libs">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/Alpha-Html5/libs" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/Alpha-Html5/libs" recursive="false" />
+  </library>
+</component>

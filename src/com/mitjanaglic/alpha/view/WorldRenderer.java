@@ -3,7 +3,10 @@ package com.mitjanaglic.alpha.view;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.worlds.Space;
 
@@ -26,22 +29,47 @@ public class WorldRenderer implements Disposable {
     private SpriteBatch batch = new SpriteBatch();
     private Texture playerTexture;
     private Texture backgroundTexture;
+    private TextureRegion background;
+    private BitmapFont font;
+    private Vector2 cameraPosition;
+    private Vector2 cameraVelocity;
 
 
     public WorldRenderer(Space space) {
         this.space = space;
+        font = new BitmapFont();
         loadTextures();
+        cameraPosition = new Vector2(CAMERA_WIDTH / 2f, CAMERA_HEIGHT / 2f);
+        cameraVelocity = new Vector2();
+        cameraVelocity.y = space.getPlayer().getForwardInertia();
 
     }
 
-    public void render() {
+    public void render(float delta) {
+        moveCameraWithPlayer(delta);
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
-        batch.draw(backgroundTexture, 0, 0);
+        renderBackground();
+        debugInfo();
         batch.draw(playerTexture,
                 space.getPlayer().getPosition().x * ppuX,
                 space.getPlayer().getPosition().y * ppuY);
         batch.end();
+    }
+
+    private void moveCameraWithPlayer(float delta) {
+        cameraPosition.add(cameraVelocity.cpy().mul(delta));
+        camera.position.set(cameraPosition.x * ppuX, cameraPosition.y * ppuY, 0);
+        camera.update();
+    }
+
+    private void renderBackground() {
+        batch.draw(background, 0, 0);
+    }
+
+    private void debugInfo() {
+        font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(), cameraPosition.x * ppuX - CAMERA_WIDTH / 2,
+                cameraPosition.y * ppuY + CAMERA_HEIGHT / 2);
 
     }
 
@@ -49,6 +77,7 @@ public class WorldRenderer implements Disposable {
         playerTexture = new Texture(Gdx.files.internal("data\\png\\playerPwr2.png"));
         backgroundTexture = new Texture(Gdx.files.internal("data\\png\\Background\\starBackground.png"));
         backgroundTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
+        background = new TextureRegion(backgroundTexture, (int) space.getBounds().getWidth(), (int) space.getBounds().getHeight());
     }
 
     public void setSize(int w, int h) {
@@ -57,7 +86,7 @@ public class WorldRenderer implements Disposable {
         ppuX = (float) width / CAMERA_WIDTH;
         ppuY = (float) height / CAMERA_HEIGHT;
         camera = new OrthographicCamera(CAMERA_WIDTH, CAMERA_HEIGHT);
-        camera.position.set(CAMERA_WIDTH / 2f, CAMERA_HEIGHT / 2f, 0);
+        camera.position.set(cameraPosition.x, cameraPosition.y, 0);
         camera.update();
     }
 
@@ -65,6 +94,7 @@ public class WorldRenderer implements Disposable {
     public void dispose() {
         playerTexture.dispose();
         backgroundTexture.dispose();
+        font.dispose();
         batch.dispose();
     }
 }

@@ -1,6 +1,7 @@
 package com.mitjanaglic.alpha;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
+import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,6 +12,12 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
  */
 public class DesktopStarter {
     public static void main(String[] args) {
-        new LwjglApplication(new Alpha(), "Alpha", 1280, 720, true);
+        LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+        config.useGL20 = true;
+        config.vSyncEnabled = false;
+        config.title = "Alpha";
+        config.width = 1280;
+        config.height = 720;
+        new LwjglApplication(new Alpha(), config);
     }
 }

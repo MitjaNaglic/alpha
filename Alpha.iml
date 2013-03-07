@@ -8,6 +8,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="Alpha-libs" level="project" />
+    <orderEntry type="library" name="gwt-user" level="project" />
   </component>
 </module>
 
