@@ -16,16 +16,11 @@ public abstract class Entity {
         IDLE, DYING
     }
 
-
-    public Entity() {
-
-    }
-
     public Entity(Vector2 position) {
         this.setPosition(position);
     }
 
-    public abstract void Update();
+    public abstract void update(float delta);
 
     public Vector2 getPosition() {
         return position;
