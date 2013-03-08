@@ -1,4 +1,4 @@
-package com.mitjanaglic.alpha.entities;
+package com.mitjanaglic.alpha.models.entities;
 
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
@@ -21,14 +21,21 @@ public class Player extends Entity {
 
     public Player(Vector2 pos) {
         super(pos);
-        bounds.height = getSize();
-        bounds.width = getSize();
+        getBounds().height = getSize();
+        getBounds().width = getSize();
+        updatePosition();
     }
 
     @Override
     public void update(float delta) {
         velocity.y += getForwardInertia();
         getPosition().add(velocity.cpy().mul(delta));
+        updatePosition();
+    }
+
+    private void updatePosition() {
+        bounds.setX(getPosition().x);
+        bounds.setY(getPosition().y);
     }
 
     public Vector2 getVelocity() {
@@ -73,5 +80,9 @@ public class Player extends Entity {
 
     public float getSize() {
         return size;
+    }
+
+    public Rectangle getBounds() {
+        return bounds;
     }
 }

@@ -5,7 +5,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
-import com.mitjanaglic.alpha.controllers.WorldController;
+import com.mitjanaglic.alpha.controllers.PlayerController;
 import com.mitjanaglic.alpha.view.WorldRenderer;
 import com.mitjanaglic.alpha.worlds.Space;
 
@@ -19,13 +19,13 @@ import com.mitjanaglic.alpha.worlds.Space;
 public class GameScreen implements Screen, InputProcessor {
     private Space space;
     private WorldRenderer renderer;
-    private WorldController controller;
+    private PlayerController controller;
     private int height, width;
 
     public GameScreen() {
         space = new Space();
         renderer = new WorldRenderer(space);
-        controller = new WorldController(space);
+        controller = new PlayerController(space);
     }
 
     @Override
@@ -128,18 +128,10 @@ public class GameScreen implements Screen, InputProcessor {
 
     @Override
     public boolean touchUp(int x, int y, int pointer, int button) {
-        if (x < width / 2) {
-            controller.leftReleased();
-        }
-        if (x > width / 2) {
-            controller.rightReleased();
-        }
-        if (y > height / 2) {
-            controller.downReleased();
-        }
-        if (y < height / 2) {
-            controller.downReleased();
-        }
+        controller.leftReleased();
+        controller.rightReleased();
+        controller.downReleased();
+        controller.upReleased();
         return true;
     }
 

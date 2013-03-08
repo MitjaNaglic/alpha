@@ -1,9 +1,9 @@
 package com.mitjanaglic.alpha.worlds;
 
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
-import com.mitjanaglic.alpha.entities.Player;
+import com.mitjanaglic.alpha.models.entities.Player;
+import com.mitjanaglic.alpha.models.Level;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,17 +14,22 @@ import com.mitjanaglic.alpha.entities.Player;
  */
 public class Space implements Disposable {
     private Player player;
-    private Rectangle bounds;
+    private Level level;
 
     public Space() {
         CreateTestSpace();
-        bounds = new Rectangle();
-        getBounds().height = 500000;
-        getBounds().width = 1280;
+    }
+
+    public void getDrawableBackground() {
+    }
+
+    public void getDrawableEntities() {
+
     }
 
     private void CreateTestSpace() {
         player = new Player(new Vector2(400, 200));
+        level = new Level();
     }
 
     public Player getPlayer() {
@@ -35,7 +40,7 @@ public class Space implements Disposable {
     public void dispose() {
     }
 
-    public Rectangle getBounds() {
-        return bounds;
+    public Level getLevel() {
+        return level;
     }
 }

@@ -1,7 +1,7 @@
 package com.mitjanaglic.alpha.controllers;
 
-import com.mitjanaglic.alpha.entities.Entity;
-import com.mitjanaglic.alpha.entities.Player;
+import com.mitjanaglic.alpha.models.entities.Entity;
+import com.mitjanaglic.alpha.models.entities.Player;
 import com.mitjanaglic.alpha.worlds.Space;
 
 import java.util.HashMap;
@@ -14,7 +14,7 @@ import java.util.Map;
  * Time: 19:51
  * To change this template use File | Settings | File Templates.
  */
-public class WorldController {
+public class PlayerController {
     private Space space;
     private Player player;
 
@@ -34,7 +34,7 @@ public class WorldController {
 
     ;
 
-    public WorldController(Space space) {
+    public PlayerController(Space space) {
         this.space = space;
         player = space.getPlayer();
     }
@@ -87,7 +87,31 @@ public class WorldController {
      */
     public void update(float delta) {
         processInput();
+        checkLevelBoundCollision(delta);
         player.update(delta);
+    }
+
+    private void checkLevelBoundCollision(float delta) {
+        if (player.getVelocity().x < 0) {
+            if (player.getPosition().x <= 0) {
+                player.getVelocity().x = 0;
+            }
+        }
+        if (player.getVelocity().x > 0) {
+            if (player.getPosition().x + player.getBounds().getWidth() >= space.getLevel().getWidth()) {
+                player.getVelocity().x = 0;
+            }
+        }
+        if (player.getVelocity().y < 0) {
+            if (player.getPosition().y <= 0) {
+                player.getVelocity().y = 0;
+            }
+        }
+        if (player.getVelocity().y > 0) {
+            if (player.getPosition().y >= space.getLevel().getHeight()) {
+                player.getVelocity().y = 0;
+            }
+        }
     }
 
     private void processInput() {

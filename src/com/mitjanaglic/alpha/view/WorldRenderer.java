@@ -95,8 +95,8 @@ public class WorldRenderer implements Disposable {
     }
 
     private void debugInfo() {
-        font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(), cameraPosition.x * ppuX - CAMERA_WIDTH / 2,
-                cameraPosition.y * ppuY + CAMERA_HEIGHT / 2);
+        font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(), cameraPosition.x * ppuX - width / 2,
+                cameraPosition.y * ppuY + height / 2);
 
     }
 
@@ -107,7 +107,7 @@ public class WorldRenderer implements Disposable {
         playerRightTexture = textureAtlas.findRegion("playerRight");
         backgroundTexture = new Texture(Gdx.files.internal("data\\png\\Background\\starBackground.png"));  //TODO background texture atlas
         backgroundTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-        background = new TextureRegion(backgroundTexture, (int) space.getBounds().getWidth(), (int) space.getBounds().getHeight());
+        background = new TextureRegion(backgroundTexture, space.getLevel().getWidth(), space.getLevel().getHeight());
     }
 
     public void setSize(int w, int h) {
