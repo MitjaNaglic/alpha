@@ -22,7 +22,7 @@ public class WorldController {
         LEFT, RIGHT, UP, DOWN, FIRE
     }
 
-    static Map<Keys, Boolean> keys = new HashMap<Keys, Boolean>();
+    private static Map<Keys, Boolean> keys = new HashMap<Keys, Boolean>();
 
     static {
         keys.put(Keys.LEFT, false);

@@ -14,15 +14,15 @@ public class Player extends Entity {
     private Vector2 acceleration = new Vector2();
     private Vector2 velocity = new Vector2();
     private State state = State.IDLE;
-    private float size = 1f;
+    private float size = 128f;
     private float speed = 400f;
     private float forwardInertia = 200f;
     private Rectangle bounds = new Rectangle();
 
     public Player(Vector2 pos) {
         super(pos);
-        bounds.height = size;
-        bounds.width = size;
+        bounds.height = getSize();
+        bounds.width = getSize();
     }
 
     @Override
@@ -69,5 +69,9 @@ public class Player extends Entity {
 
     public void setForwardInertia(float forwardInertia) {
         this.forwardInertia = forwardInertia;
+    }
+
+    public float getSize() {
+        return size;
     }
 }

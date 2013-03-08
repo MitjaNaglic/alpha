@@ -20,6 +20,7 @@ public class GameScreen implements Screen, InputProcessor {
     private Space space;
     private WorldRenderer renderer;
     private WorldController controller;
+    private int height, width;
 
     public GameScreen() {
         space = new Space();
@@ -38,6 +39,8 @@ public class GameScreen implements Screen, InputProcessor {
     @Override
     public void resize(int x, int y) {
         renderer.setSize(x, y);
+        width = x;
+        height = y;
     }
 
     @Override
@@ -65,6 +68,7 @@ public class GameScreen implements Screen, InputProcessor {
     public void dispose() {
         space.dispose();
         renderer.dispose();
+        Gdx.input.setInputProcessor(null);
     }
 
     /*-------------------------------------INPUT PROCESSOR --------------------------*/
@@ -106,18 +110,55 @@ public class GameScreen implements Screen, InputProcessor {
     }
 
     @Override
-    public boolean touchDown(int i, int i2, int i3, int i4) {
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    public boolean touchDown(int x, int y, int pointer, int button) {
+        if (x < width / 2) {
+            controller.leftPressed();
+        }
+        if (x > width / 2) {
+            controller.rightPressed();
+        }
+        if (y > height / 2) {
+            controller.downPressed();
+        }
+        if (y < height / 2) {
+            controller.upPressed();
+        }
+        return true;
     }
 
     @Override
-    public boolean touchUp(int i, int i2, int i3, int i4) {
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    public boolean touchUp(int x, int y, int pointer, int button) {
+        if (x < width / 2) {
+            controller.leftReleased();
+        }
+        if (x > width / 2) {
+            controller.rightReleased();
+        }
+        if (y > height / 2) {
+            controller.downReleased();
+        }
+        if (y < height / 2) {
+            controller.downReleased();
+        }
+        return true;
     }
 
+
     @Override
-    public boolean touchDragged(int i, int i2, int i3) {
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    public boolean touchDragged(int x, int y, int pointer) {
+        if (x < width / 2) {
+            controller.leftPressed();
+        }
+        if (x > width / 2) {
+            controller.rightPressed();
+        }
+        if (y > height / 2) {
+            controller.downPressed();
+        }
+        if (y < height / 2) {
+            controller.upPressed();
+        }
+        return true;
     }
 
     @Override

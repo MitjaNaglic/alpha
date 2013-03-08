@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
@@ -27,12 +28,13 @@ public class WorldRenderer implements Disposable {
     private float ppuX; // pixels per unit on the X axis
     private float ppuY; // pixels per unit on the Y axis
     private SpriteBatch batch = new SpriteBatch();
-    private Texture playerTexture;
+    private TextureRegion playerTexture;
     private Texture backgroundTexture;
     private TextureRegion background;
     private BitmapFont font;
     private Vector2 cameraPosition;
     private Vector2 cameraVelocity;
+    private TextureAtlas textureAtlas;
 
 
     public WorldRenderer(Space space) {
@@ -53,7 +55,10 @@ public class WorldRenderer implements Disposable {
         debugInfo();
         batch.draw(playerTexture,
                 space.getPlayer().getPosition().x * ppuX,
-                space.getPlayer().getPosition().y * ppuY);
+                space.getPlayer().getPosition().y * ppuY,
+                space.getPlayer().getSize() * ppuX,
+                space.getPlayer().getSize() * ppuY
+        );
         batch.end();
     }
 
@@ -74,8 +79,9 @@ public class WorldRenderer implements Disposable {
     }
 
     private void loadTextures() {
-        playerTexture = new Texture(Gdx.files.internal("data\\png\\playerPwr2.png"));
-        backgroundTexture = new Texture(Gdx.files.internal("data\\png\\Background\\starBackground.png"));
+        textureAtlas = new TextureAtlas(Gdx.files.internal("data\\png\\textures\\textures.pack"));
+        playerTexture = textureAtlas.findRegion("playerPwr2");
+        backgroundTexture = new Texture(Gdx.files.internal("data\\png\\Background\\starBackground.png"));  //TODO background texture atlas
         backgroundTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         background = new TextureRegion(backgroundTexture, (int) space.getBounds().getWidth(), (int) space.getBounds().getHeight());
     }
@@ -85,15 +91,15 @@ public class WorldRenderer implements Disposable {
         this.height = h;
         ppuX = (float) width / CAMERA_WIDTH;
         ppuY = (float) height / CAMERA_HEIGHT;
-        camera = new OrthographicCamera(CAMERA_WIDTH, CAMERA_HEIGHT);
+        camera = new OrthographicCamera(CAMERA_WIDTH * ppuX, CAMERA_HEIGHT * ppuY);
         camera.position.set(cameraPosition.x, cameraPosition.y, 0);
         camera.update();
     }
 
     @Override
     public void dispose() {
-        playerTexture.dispose();
-        backgroundTexture.dispose();
+        textureAtlas.dispose();
+        //backgroundTexture.dispose();
         font.dispose();
         batch.dispose();
     }
