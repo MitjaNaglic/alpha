@@ -29,6 +29,8 @@ public class WorldRenderer implements Disposable {
     private float ppuY; // pixels per unit on the Y axis
     private SpriteBatch batch = new SpriteBatch();
     private TextureRegion playerTexture;
+    private TextureRegion playerRightTexture;
+    private TextureRegion playerLeftTexture;
     private Texture backgroundTexture;
     private TextureRegion background;
     private BitmapFont font;
@@ -53,12 +55,7 @@ public class WorldRenderer implements Disposable {
         batch.begin();
         renderBackground();
         debugInfo();
-        batch.draw(playerTexture,
-                space.getPlayer().getPosition().x * ppuX,
-                space.getPlayer().getPosition().y * ppuY,
-                space.getPlayer().getSize() * ppuX,
-                space.getPlayer().getSize() * ppuY
-        );
+        renderPlayer();
         batch.end();
     }
 
@@ -66,6 +63,31 @@ public class WorldRenderer implements Disposable {
         cameraPosition.add(cameraVelocity.cpy().mul(delta));
         camera.position.set(cameraPosition.x * ppuX, cameraPosition.y * ppuY, 0);
         camera.update();
+    }
+
+    private void renderPlayer() {
+        TextureRegion currentPlayerTexture;
+        switch (space.getPlayer().getState()) {
+            case IDLE:
+                currentPlayerTexture = playerTexture;
+                break;
+            case MOVING_LEFT:
+                currentPlayerTexture = playerLeftTexture;
+                break;
+            case MOVING_RIGHT:
+                currentPlayerTexture = playerRightTexture;
+                break;
+            default:
+                currentPlayerTexture = playerTexture;
+        }
+
+        batch.draw(currentPlayerTexture,
+                space.getPlayer().getPosition().x * ppuX,
+                space.getPlayer().getPosition().y * ppuY,
+                space.getPlayer().getSize() * ppuX,
+                space.getPlayer().getSize() * ppuY
+        );
+
     }
 
     private void renderBackground() {
@@ -81,6 +103,8 @@ public class WorldRenderer implements Disposable {
     private void loadTextures() {
         textureAtlas = new TextureAtlas(Gdx.files.internal("data\\png\\textures\\textures.pack"));
         playerTexture = textureAtlas.findRegion("playerPwr2");
+        playerLeftTexture = textureAtlas.findRegion("playerLeft");
+        playerRightTexture = textureAtlas.findRegion("playerRight");
         backgroundTexture = new Texture(Gdx.files.internal("data\\png\\Background\\starBackground.png"));  //TODO background texture atlas
         backgroundTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         background = new TextureRegion(backgroundTexture, (int) space.getBounds().getWidth(), (int) space.getBounds().getHeight());
@@ -99,7 +123,7 @@ public class WorldRenderer implements Disposable {
     @Override
     public void dispose() {
         textureAtlas.dispose();
-        //backgroundTexture.dispose();
+        backgroundTexture.dispose();
         font.dispose();
         batch.dispose();
     }

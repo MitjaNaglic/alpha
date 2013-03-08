@@ -93,10 +93,12 @@ public class WorldController {
     private void processInput() {
         if (keys.get(Keys.LEFT)) {
             player.getVelocity().x = -player.getSpeed();
+            player.setState(Entity.State.MOVING_LEFT);
 
         }
         if (keys.get(Keys.RIGHT)) {
             player.getVelocity().x = player.getSpeed();
+            player.setState(Entity.State.MOVING_RIGHT);
 
         }
         if (keys.get(Keys.UP)) {
@@ -119,7 +121,6 @@ public class WorldController {
         }
         if ((keys.get(Keys.UP) && keys.get(Keys.DOWN)) ||
                 (!keys.get(Keys.UP) && !(keys.get(Keys.DOWN)))) {
-            player.setState(Entity.State.IDLE);
             // acceleration is 0 on the x
             player.getAcceleration().y = 0;
             // horizontal speed is 0

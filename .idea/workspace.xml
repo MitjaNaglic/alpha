@@ -10,16 +10,10 @@
     <bookmark url="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Player.java" line="28" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="background semi works">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/Utility_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/util_libs.xml" />
-      <change type="DELETED" beforePath="G:\development\Alpha\.idea\libraries\Alpha_Html5_libs.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Player.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Player.java" />
+    <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Entity.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Entity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/WorldController.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/WorldController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/res/values/strings.xml" afterPath="$PROJECT_DIR$/Android/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Alpha.iws" />
@@ -29,14 +23,14 @@
     <file path="/MainActivity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362672791185" ignored="false" />
     <file path="/fragment.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362754636350" ignored="false" />
     <file path="/DesktopStarter.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362693611671" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362754584002" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362756860427" ignored="false" />
     <file path="/Player.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362693848917" ignored="false" />
-    <file path="/Entity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362614192391" ignored="false" />
+    <file path="/Entity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362757168788" ignored="false" />
     <file path="/Space.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362687607226" ignored="false" />
     <file path="/GameScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362750503165" ignored="false" />
     <file path="/Alpha.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362669003626" ignored="false" />
-    <file path="/WorldRenderer.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362756842387" ignored="false" />
-    <file path="/WorldController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362748945735" ignored="false" />
+    <file path="/WorldRenderer.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362757986882" ignored="false" />
+    <file path="/WorldController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362757853366" ignored="false" />
     <file path="/Alpha.gwt.xml" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362678395153" ignored="false" />
     <file path="/AlphaGwt.gwt.xml" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362678652728" ignored="false" />
     <file path="/AlphaGwt.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362677482118" ignored="false" />
@@ -114,7 +108,7 @@
       <file leaf-file-name="GameScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="46" selection-start="4027" selection-end="4027" vertical-scroll-proportion="0.0">
+            <state line="150" column="9" selection-start="4032" selection-end="4032" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -123,7 +117,7 @@
       <file leaf-file-name="WorldRenderer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="138" selection-start="2988" selection-end="2988" vertical-scroll-proportion="0.6500888">
+            <state line="101" column="53" selection-start="3404" selection-end="3404" vertical-scroll-proportion="0.6944444">
               <folding />
             </state>
           </provider>
@@ -132,7 +126,16 @@
       <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="28" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0">
+            <state line="15" column="22" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Entity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Entity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="60" selection-start="370" selection-end="370" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -141,7 +144,7 @@
       <file leaf-file-name="WorldController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/WorldController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="4" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0">
+            <state line="122" column="65" selection-start="3058" selection-end="3058" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -173,7 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Alpha-Html5/AlphaGwt.gwt.xml" />
         <option value="$PROJECT_DIR$/Alpha-Html5/src/com/alpha-Html5/client/Alpha-Html5.java" />
         <option value="$PROJECT_DIR$/Alpha-Html5/src/com/alpha-Html5/Alpha-Html5.gwt.xml" />
         <option value="$PROJECT_DIR$/Alpha.gwt.xml" />
@@ -182,12 +184,13 @@
         <option value="$PROJECT_DIR$/AlphaWeb/src/com/mitjanaglic/alpha/client/alpha.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/mitjanaglic/alpha/DesktopStarter.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/WorldController.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java" />
         <option value="$PROJECT_DIR$/Android/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/Utility/src/TextureSetup.java" />
         <option value="$PROJECT_DIR$/Util/src/Main.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Player.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Entity.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/WorldController.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java" />
       </list>
     </option>
@@ -740,12 +743,16 @@
       <created>1362696328855</created>
       <updated>1362696328855</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="texture atlas">
+      <created>1362756872909</created>
+      <updated>1362756872909</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="334" y="-8" width="1594" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2109375" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -765,7 +772,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30744126" sideWeight="0.6703786" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30744126" sideWeight="0.6703786" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32962137" sideWeight="0.4843342" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -813,7 +820,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="background semi works" />
+    <option name="LAST_COMMIT_MESSAGE" value="texture atlas" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -832,6 +839,7 @@
     <MESSAGE value="we have movement" />
     <MESSAGE value="android ver running" />
     <MESSAGE value="background semi works" />
+    <MESSAGE value="texture atlas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -841,13 +849,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="49" selection-start="2428" selection-end="2428" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="56" selection-start="868" selection-end="868" vertical-scroll-proportion="0.0">
@@ -911,30 +912,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/WorldController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="4" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Util/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="17" selection-start="72" selection-end="76" vertical-scroll-proportion="0.059027776">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="28" selection-start="471" selection-end="471" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="46" selection-start="4027" selection-end="4027" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -946,9 +926,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="22" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="150" column="9" selection-start="4032" selection-end="4032" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="60" selection-start="370" selection-end="370" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/WorldController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="65" selection-start="3058" selection-end="3058" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="138" selection-start="2988" selection-end="2988" vertical-scroll-proportion="0.6500888">
+        <state line="101" column="53" selection-start="3404" selection-end="3404" vertical-scroll-proportion="0.6944444">
           <folding />
         </state>
       </provider>
