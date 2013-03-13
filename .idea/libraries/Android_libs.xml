@@ -4,10 +4,7 @@
       <root url="file://$PROJECT_DIR$/Android/libs" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="file://$PROJECT_DIR$/Android/libs" />
-    </SOURCES>
+    <SOURCES />
     <jarDirectory url="file://$PROJECT_DIR$/Android/libs" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/Android/libs" recursive="false" type="SOURCES" />
   </library>
 </component>

@@ -1,12 +1,11 @@
 <component name="libraryTable">
   <library name="Desktop-libs">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/Desktop/libs" />
+      <root url="jar://$PROJECT_DIR$/Desktop/libs/gdx-backend-lwjgl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Desktop/libs/gdx-backend-lwjgl-natives.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Desktop/libs/gdx-natives.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$PROJECT_DIR$/Desktop/libs/gdx-backend-lwjgl-sources.jar!/" />
-    </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/Desktop/libs" recursive="false" />
+    <SOURCES />
   </library>
 </component>
