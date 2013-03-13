@@ -33,6 +33,7 @@ public class GameScreen implements Screen, InputProcessor {
         Gdx.gl.glClearColor(0.369f, 0.247f, 0.42f, 1);
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
         controller.update(delta);
+        space.update(delta);
         renderer.render(delta);
     }
 
@@ -111,17 +112,20 @@ public class GameScreen implements Screen, InputProcessor {
 
     @Override
     public boolean touchDown(int x, int y, int pointer, int button) {
-        if (x < width / 2) {
+        if (x < width / 2 && !(y < height / 4 && x < width / 4)) {
             controller.leftPressed();
         }
-        if (x > width / 2) {
+        if (x > width / 2 && !(y < height / 4 && x < width / 4)) {
             controller.rightPressed();
         }
-        if (y > height / 2) {
+        if (y > height / 2 && !(y < height / 4 && x < width / 4)) {
             controller.downPressed();
         }
-        if (y < height / 2) {
+        if (y < height / 2 && !(y < height / 4 && x < width / 4)) {
             controller.upPressed();
+        }
+        if (y < height / 4 && x < width / 4) {
+            controller.firePressed();
         }
         return true;
     }
@@ -132,22 +136,23 @@ public class GameScreen implements Screen, InputProcessor {
         controller.rightReleased();
         controller.downReleased();
         controller.upReleased();
+        controller.fireReleased();
         return true;
     }
 
 
     @Override
     public boolean touchDragged(int x, int y, int pointer) {
-        if (x < width / 2) {
+        if (x < width / 2 && !(y < height / 4 && x < width / 4)) {
             controller.leftPressed();
         }
-        if (x > width / 2) {
+        if (x > width / 2 && !(y < height / 4 && x < width / 4)) {
             controller.rightPressed();
         }
-        if (y > height / 2) {
+        if (y > height / 2 && !(y < height / 4 && x < width / 4)) {
             controller.downPressed();
         }
-        if (y < height / 2) {
+        if (y < height / 2 && !(y < height / 4 && x < width / 4)) {
             controller.upPressed();
         }
         return true;

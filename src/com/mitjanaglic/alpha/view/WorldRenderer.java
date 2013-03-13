@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Disposable;
+import com.mitjanaglic.alpha.models.entities.Bullet;
 import com.mitjanaglic.alpha.worlds.Space;
 
 /**
@@ -34,6 +35,7 @@ public class WorldRenderer implements Disposable {
     private TextureRegion background;
     private BitmapFont font;
     private TextureAtlas textureAtlas;
+    private TextureRegion bulletTexture;
 
 
     public WorldRenderer(Space space) {
@@ -51,6 +53,7 @@ public class WorldRenderer implements Disposable {
         renderBackground();
         debugInfo();
         renderPlayer();
+        renderBullets();
         batch.end();
     }
 
@@ -85,6 +88,19 @@ public class WorldRenderer implements Disposable {
 
     }
 
+    private void renderBullets() {
+        if (space.getBullets().size() > 0) {
+            for (Bullet bullet : space.getBullets()) {
+                batch.draw(bulletTexture,
+                        bullet.getPosition().x * ppuX,
+                        bullet.getPosition().y * ppuY,
+                        bullet.getWidth() * ppuX,
+                        bullet.getHeight() * ppuY
+                );
+            }
+        }
+    }
+
     private void renderBackground() {
         batch.draw(background, 0, 0);
     }
@@ -100,6 +116,7 @@ public class WorldRenderer implements Disposable {
         playerTexture = textureAtlas.findRegion("playerPwr2");
         playerLeftTexture = textureAtlas.findRegion("playerLeft");
         playerRightTexture = textureAtlas.findRegion("playerRight");
+        bulletTexture = textureAtlas.findRegion("laserRed");
         backgroundTexture = new Texture(Gdx.files.internal("data\\png\\Background\\starBackground.png"));  //TODO background texture atlas
         backgroundTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         background = new TextureRegion(backgroundTexture, space.getLevel().getWidth(), space.getLevel().getHeight());

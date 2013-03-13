@@ -11,12 +11,20 @@ import com.badlogic.gdx.math.Vector2;
  * To change this template use File | Settings | File Templates.
  */
 public class Player extends Entity {
+
+    public enum State {
+        IDLE, DYING, MOVING_LEFT, MOVING_RIGHT
+    }
+
     private Vector2 acceleration = new Vector2();
     private Vector2 velocity = new Vector2();
     private State state = State.IDLE;
     private float size = 128f;
     private float speed = 400f;
     private float forwardInertia = 200f;
+    private float timeBetweenShots = 0.06f;
+    private float shootCooldown = 0;
+
     private Rectangle bounds = new Rectangle();
 
     public Player(Vector2 pos) {
@@ -26,11 +34,24 @@ public class Player extends Entity {
         updatePosition();
     }
 
+    public Bullet shoot() {
+        if (shootCooldown <= 0) {
+            shootCooldown = timeBetweenShots;
+            Vector2 gunPos = new Vector2(getPosition().cpy());
+            gunPos.x += size / 2;
+            gunPos.y += size - size / 5;
+            return new Bullet(gunPos);
+        } else return null;
+    }
+
     @Override
     public void update(float delta) {
         velocity.y += getForwardInertia();
         getPosition().add(velocity.cpy().mul(delta));
         updatePosition();
+        if (shootCooldown > 0) {
+            shootCooldown -= delta;
+        }
     }
 
     private void updatePosition() {

@@ -1,6 +1,6 @@
 package com.mitjanaglic.alpha.controllers;
 
-import com.mitjanaglic.alpha.models.entities.Entity;
+import com.mitjanaglic.alpha.models.entities.Bullet;
 import com.mitjanaglic.alpha.models.entities.Player;
 import com.mitjanaglic.alpha.worlds.Space;
 
@@ -115,14 +115,15 @@ public class PlayerController {
     }
 
     private void processInput() {
+
         if (keys.get(Keys.LEFT)) {
             player.getVelocity().x = -player.getSpeed();
-            player.setState(Entity.State.MOVING_LEFT);
+            player.setState(Player.State.MOVING_LEFT);
 
         }
         if (keys.get(Keys.RIGHT)) {
             player.getVelocity().x = player.getSpeed();
-            player.setState(Entity.State.MOVING_RIGHT);
+            player.setState(Player.State.MOVING_RIGHT);
 
         }
         if (keys.get(Keys.UP)) {
@@ -133,11 +134,17 @@ public class PlayerController {
             player.getVelocity().y = -player.getSpeed();
 
         }
+        if (keys.get(Keys.FIRE)) {
+            Bullet bullet = player.shoot();
+            if (bullet != null) {
+                space.getBullets().add(bullet);
+            }
+        }
 
         // need to check if both or none direction are pressed, then Bob is idle
         if ((keys.get(Keys.LEFT) && keys.get(Keys.RIGHT)) ||
                 (!keys.get(Keys.LEFT) && !(keys.get(Keys.RIGHT)))) {
-            player.setState(Entity.State.IDLE);
+            player.setState(Player.State.IDLE);
             // acceleration is 0 on the x
             player.getAcceleration().x = 0;
             // horizontal speed is 0
@@ -150,6 +157,7 @@ public class PlayerController {
             // horizontal speed is 0
             player.getVelocity().y = 0;
         }
+
 
     }
 

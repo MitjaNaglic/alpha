@@ -7,21 +7,17 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java" line="28" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java" line="46" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="">
-      <change type="DELETED" beforePath="G:\development\Alpha\Alpha.gwt.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/libs/gdx-backend-android-sources.jar" afterPath="$PROJECT_DIR$/Android/libs/gdx-backend-android-sources.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/libs/gdx-backend-android.jar" afterPath="$PROJECT_DIR$/Android/libs/gdx-backend-android.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/libs/gdx-backend-lwjgl.jar" afterPath="$PROJECT_DIR$/Desktop/libs/gdx-backend-lwjgl.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/libs/gdx-natives.jar" afterPath="$PROJECT_DIR$/Desktop/libs/gdx-natives.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/gdx.jar" afterPath="$PROJECT_DIR$/libs/gdx.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Alpha_libs.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Alpha_libs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Android.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Android.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Android_libs.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Android_libs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Desktop_libs.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Desktop_libs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Bullet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Entity.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Entity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/PlayerController.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/PlayerController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Alpha.iws" />
@@ -30,14 +26,14 @@
     <file path="/AndroidManifest.xml" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362670557644" ignored="false" />
     <file path="/MainActivity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362672791185" ignored="false" />
     <file path="/fragment.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363198221761" ignored="false" />
-    <file path="/DesktopStarter.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362693611671" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363189342252" ignored="false" />
-    <file path="/Player.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363191156486" ignored="false" />
-    <file path="/Entity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362757168788" ignored="false" />
-    <file path="/Space.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363188959938" ignored="false" />
-    <file path="/GameScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363186853776" ignored="false" />
+    <file path="/DesktopStarter.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363212270900" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363198585645" ignored="false" />
+    <file path="/Player.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363213251399" ignored="false" />
+    <file path="/Entity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363201864250" ignored="false" />
+    <file path="/Space.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363212121738" ignored="false" />
+    <file path="/GameScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363212548258" ignored="false" />
     <file path="/Alpha.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362669003626" ignored="false" />
-    <file path="/WorldRenderer.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363191425346" ignored="false" />
+    <file path="/WorldRenderer.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363213574739" ignored="false" />
     <file path="/WorldController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362757853366" ignored="false" />
     <file path="/Alpha.gwt.xml" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362678395153" ignored="false" />
     <file path="/AlphaGwt.gwt.xml" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362678652728" ignored="false" />
@@ -46,8 +42,9 @@
     <file path="/strings.xml" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362750855385" ignored="false" />
     <file path="/Main.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362754024966" ignored="false" />
     <file path="/Level.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363188906617" ignored="false" />
-    <file path="/PlayerController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363189286708" ignored="false" />
+    <file path="/PlayerController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363206209433" ignored="false" />
     <file path="$PROJECT_DIR$/libs/gdx.jar!/com/badlogic/gdx/graphics/Camera.class" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363193515650" ignored="false" />
+    <file path="/Bullet.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363213475880" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +115,7 @@
       <file leaf-file-name="GameScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="71" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.0">
+            <state line="154" column="56" selection-start="4435" selection-end="4435" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -127,7 +124,7 @@
       <file leaf-file-name="WorldRenderer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="86" selection-start="1695" selection-end="1695" vertical-scroll-proportion="0.3472222">
+            <state line="96" column="43" selection-start="3249" selection-end="3249" vertical-scroll-proportion="0.5034722">
               <folding />
             </state>
           </provider>
@@ -136,7 +133,7 @@
       <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="49" selection-start="949" selection-end="949" vertical-scroll-proportion="0.0">
+            <state line="20" column="30" selection-start="532" selection-end="558" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -145,7 +142,16 @@
       <file leaf-file-name="Entity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="25" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0">
+            <state line="8" column="29" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Bullet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Bullet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="22" selection-start="357" selection-end="357" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -154,7 +160,7 @@
       <file leaf-file-name="PlayerController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/PlayerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="42" selection-start="2518" selection-end="2518" vertical-scroll-proportion="0.0">
+            <state line="140" column="13" selection-start="3639" selection-end="3639" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -163,8 +169,11 @@
       <file leaf-file-name="Space.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="17" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="47" column="38" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#670#678#0" expanded="true" />
+                <element signature="e#1184#1192#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -195,22 +204,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Desktop/src/com/mitjanaglic/alpha/DesktopStarter.java" />
-        <option value="$PROJECT_DIR$/Android/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/Utility/src/TextureSetup.java" />
         <option value="$PROJECT_DIR$/Util/src/Main.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Entity.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/WorldController.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Player.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/Player.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/PlayerController.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/Level.java" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Entity.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/mitjanaglic/alpha/DesktopStarter.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/PlayerController.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Bullet.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
       </list>
     </option>
   </component>
@@ -264,6 +273,148 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alpha" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -588,7 +739,11 @@
       <created>1363189362673</created>
       <updated>1363189362673</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary=".">
+      <created>1363198588698</created>
+      <updated>1363198588698</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -661,7 +816,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="camera collision works" />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -674,7 +829,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="." />
     <MESSAGE value="screwing around" />
     <MESSAGE value="worldrenderer, space, gamescreen" />
     <MESSAGE value="we have movement" />
@@ -684,6 +838,7 @@
     <MESSAGE value="player animation" />
     <MESSAGE value="collision semiworks" />
     <MESSAGE value="camera collision works" />
+    <MESSAGE value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -693,48 +848,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/Level.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="19" selection-start="587" selection-end="587" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/Alpha.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="46" selection-start="773" selection-end="773" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/PlayerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="42" selection-start="2518" selection-end="2518" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="25" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="17" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="49" selection-start="949" selection-end="949" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Android/project.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -764,23 +877,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="71" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Android/src/com/mitjanaglic/alpha/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="13" selection-start="359" selection-end="359" vertical-scroll-proportion="0.32409012">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/mitjanaglic/alpha/DesktopStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="33" selection-start="662" selection-end="662" vertical-scroll-proportion="0.58198196">
           <folding />
         </state>
       </provider>
@@ -792,9 +891,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="19" selection-start="587" selection-end="587" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="38" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#670#678#0" expanded="true" />
+            <element signature="e#1184#1192#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/mitjanaglic/alpha/DesktopStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="35" selection-start="537" selection-end="537" vertical-scroll-proportion="0.45945945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="154" column="56" selection-start="4435" selection-end="4435" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/PlayerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="13" selection-start="3639" selection-end="3639" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="29" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="30" selection-start="532" selection-end="558" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="22" selection-start="357" selection-end="357" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="86" selection-start="1695" selection-end="1695" vertical-scroll-proportion="0.3472222">
+        <state line="96" column="43" selection-start="3249" selection-end="3249" vertical-scroll-proportion="0.5034722">
           <folding />
         </state>
       </provider>

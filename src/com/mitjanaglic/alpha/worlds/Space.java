@@ -2,8 +2,11 @@ package com.mitjanaglic.alpha.worlds;
 
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
-import com.mitjanaglic.alpha.models.entities.Player;
 import com.mitjanaglic.alpha.models.Level;
+import com.mitjanaglic.alpha.models.entities.Bullet;
+import com.mitjanaglic.alpha.models.entities.Player;
+
+import java.util.LinkedList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,6 +20,7 @@ public class Space implements Disposable {
     private Level level;
     private Vector2 cameraPosition;
     private Vector2 cameraVelocity;
+    private LinkedList<Bullet> bullets = new LinkedList<Bullet>();
 
     public Space() {
         CreateTestSpace();
@@ -30,6 +34,20 @@ public class Space implements Disposable {
 
     public void getDrawableEntities() {
 
+    }
+
+    public void update(float delta) {
+        //nov linked list ki bo vseboval samo live bullete
+        LinkedList<Bullet> liveBullets = new LinkedList<Bullet>();
+        for (Bullet bullet : bullets) {
+            //ce je bullet oznacen za despawn, se ga ne doda v nov list
+            if (!bullet.isDespawning()) {
+                liveBullets.add(bullet);
+                bullet.update(delta);
+            }
+        }
+        //nov list overwrita star list
+        bullets = liveBullets;
     }
 
     private void CreateTestSpace() {
@@ -63,5 +81,13 @@ public class Space implements Disposable {
 
     public void setCameraVelocity(Vector2 cameraVelocity) {
         this.cameraVelocity = cameraVelocity;
+    }
+
+    public LinkedList<Bullet> getBullets() {
+        return bullets;
+    }
+
+    public void setBullets(LinkedList<Bullet> bullets) {
+        this.bullets = bullets;
     }
 }

@@ -12,10 +12,6 @@ import com.badlogic.gdx.math.Vector2;
 public abstract class Entity {
     private Vector2 position;
 
-    public enum State {
-        IDLE, DYING, MOVING_LEFT, MOVING_RIGHT
-    }
-
     public Entity(Vector2 position) {
         this.setPosition(position);
     }
