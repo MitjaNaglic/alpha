@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.worlds.Space;
 
@@ -34,8 +33,6 @@ public class WorldRenderer implements Disposable {
     private Texture backgroundTexture;
     private TextureRegion background;
     private BitmapFont font;
-    private Vector2 cameraPosition;
-    private Vector2 cameraVelocity;
     private TextureAtlas textureAtlas;
 
 
@@ -43,9 +40,7 @@ public class WorldRenderer implements Disposable {
         this.space = space;
         font = new BitmapFont();
         loadTextures();
-        cameraPosition = new Vector2(CAMERA_WIDTH / 2f, CAMERA_HEIGHT / 2f);
-        cameraVelocity = new Vector2();
-        cameraVelocity.y = space.getPlayer().getForwardInertia();
+
 
     }
 
@@ -60,8 +55,8 @@ public class WorldRenderer implements Disposable {
     }
 
     private void moveCameraWithPlayer(float delta) {
-        cameraPosition.add(cameraVelocity.cpy().mul(delta));
-        camera.position.set(cameraPosition.x * ppuX, cameraPosition.y * ppuY, 0);
+        space.getCameraPosition().add(space.getCameraVelocity().cpy().mul(delta));
+        camera.position.set(space.getCameraPosition().x * ppuX, space.getCameraPosition().y * ppuY, 0);
         camera.update();
     }
 
@@ -95,8 +90,8 @@ public class WorldRenderer implements Disposable {
     }
 
     private void debugInfo() {
-        font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(), cameraPosition.x * ppuX - width / 2,
-                cameraPosition.y * ppuY + height / 2);
+        font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(), space.getCameraPosition().x * ppuX - width / 2,
+                space.getCameraPosition().y * ppuY + height / 2);
 
     }
 
@@ -113,10 +108,10 @@ public class WorldRenderer implements Disposable {
     public void setSize(int w, int h) {
         this.width = w;
         this.height = h;
-        ppuX = (float) width / CAMERA_WIDTH;
-        ppuY = (float) height / CAMERA_HEIGHT;
-        camera = new OrthographicCamera(CAMERA_WIDTH * ppuX, CAMERA_HEIGHT * ppuY);
-        camera.position.set(cameraPosition.x, cameraPosition.y, 0);
+        ppuX = (float) width / space.getLevel().getCameraWidth();
+        ppuY = (float) height / space.getLevel().getCameraHeight();
+        camera = new OrthographicCamera(space.getLevel().getCameraWidth() * ppuX, space.getLevel().getCameraHeight() * ppuY);
+        camera.position.set(space.getCameraPosition().x, space.getCameraPosition().y, 0);
         camera.update();
     }
 

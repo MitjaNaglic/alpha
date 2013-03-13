@@ -15,9 +15,14 @@ import com.mitjanaglic.alpha.models.Level;
 public class Space implements Disposable {
     private Player player;
     private Level level;
+    private Vector2 cameraPosition;
+    private Vector2 cameraVelocity;
 
     public Space() {
         CreateTestSpace();
+        setCameraPosition(new Vector2(level.getCameraWidth() / 2f, level.getCameraHeight() / 2f));
+        setCameraVelocity(new Vector2());
+        getCameraVelocity().y = player.getForwardInertia();
     }
 
     public void getDrawableBackground() {
@@ -42,5 +47,21 @@ public class Space implements Disposable {
 
     public Level getLevel() {
         return level;
+    }
+
+    public Vector2 getCameraPosition() {
+        return cameraPosition;
+    }
+
+    public void setCameraPosition(Vector2 cameraPosition) {
+        this.cameraPosition = cameraPosition;
+    }
+
+    public Vector2 getCameraVelocity() {
+        return cameraVelocity;
+    }
+
+    public void setCameraVelocity(Vector2 cameraVelocity) {
+        this.cameraVelocity = cameraVelocity;
     }
 }

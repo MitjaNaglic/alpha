@@ -10,9 +10,19 @@ package com.mitjanaglic.alpha.models;
 public class Level {
     private int width;
     private int height;
+    private float cameraWidth = 1280f;
+    private float cameraHeight = 720f;
 
     public Level() {
         loadTestLevel();
+    }
+
+    public float getCameraWidth() {
+        return cameraWidth;
+    }
+
+    public float getCameraHeight() {
+        return cameraHeight;
     }
 
     public void loadTestLevel() {

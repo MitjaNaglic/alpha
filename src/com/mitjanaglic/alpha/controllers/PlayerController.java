@@ -103,12 +103,12 @@ public class PlayerController {
             }
         }
         if (player.getVelocity().y < 0) {
-            if (player.getPosition().y <= 0) {
+            if (player.getPosition().y <= space.getCameraPosition().y - space.getLevel().getCameraHeight() / 2) {
                 player.getVelocity().y = 0;
             }
         }
         if (player.getVelocity().y > 0) {
-            if (player.getPosition().y >= space.getLevel().getHeight()) {
+            if (player.getPosition().y + player.getBounds().getHeight() >= space.getCameraPosition().y + space.getLevel().getCameraHeight() / 2) {
                 player.getVelocity().y = 0;
             }
         }
