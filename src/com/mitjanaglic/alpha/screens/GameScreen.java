@@ -115,10 +115,10 @@ public class GameScreen implements Screen, InputProcessor {
         if (x < width / 2 && !(y < height / 4 && x < width / 4)) {
             controller.leftPressed();
         }
-        if (x > width / 2 && !(y < height / 4 && x < width / 4)) {
+        if (x > width / 2) {
             controller.rightPressed();
         }
-        if (y > height / 2 && !(y < height / 4 && x < width / 4)) {
+        if (y > height / 2) {
             controller.downPressed();
         }
         if (y < height / 2 && !(y < height / 4 && x < width / 4)) {
@@ -146,10 +146,10 @@ public class GameScreen implements Screen, InputProcessor {
         if (x < width / 2 && !(y < height / 4 && x < width / 4)) {
             controller.leftPressed();
         }
-        if (x > width / 2 && !(y < height / 4 && x < width / 4)) {
+        if (x > width / 2) {
             controller.rightPressed();
         }
-        if (y > height / 2 && !(y < height / 4 && x < width / 4)) {
+        if (y > height / 2) {
             controller.downPressed();
         }
         if (y < height / 2 && !(y < height / 4 && x < width / 4)) {

@@ -11,6 +11,9 @@ import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.models.entities.Bullet;
 import com.mitjanaglic.alpha.worlds.Space;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created with IntelliJ IDEA.
  * User: mito
@@ -28,14 +31,11 @@ public class WorldRenderer implements Disposable {
     private float ppuX; // pixels per unit on the X axis
     private float ppuY; // pixels per unit on the Y axis
     private SpriteBatch batch = new SpriteBatch();
-    private TextureRegion playerTexture;
-    private TextureRegion playerRightTexture;
-    private TextureRegion playerLeftTexture;
+    private Map<String, TextureRegion> textureMap;
     private Texture backgroundTexture;
     private TextureRegion background;
     private BitmapFont font;
     private TextureAtlas textureAtlas;
-    private TextureRegion bulletTexture;
 
 
     public WorldRenderer(Space space) {
@@ -67,16 +67,16 @@ public class WorldRenderer implements Disposable {
         TextureRegion currentPlayerTexture;
         switch (space.getPlayer().getState()) {
             case IDLE:
-                currentPlayerTexture = playerTexture;
+                currentPlayerTexture = textureMap.get("playerPwr2");
                 break;
             case MOVING_LEFT:
-                currentPlayerTexture = playerLeftTexture;
+                currentPlayerTexture = textureMap.get("playerLeft");
                 break;
             case MOVING_RIGHT:
-                currentPlayerTexture = playerRightTexture;
+                currentPlayerTexture = textureMap.get("playerRight");
                 break;
             default:
-                currentPlayerTexture = playerTexture;
+                currentPlayerTexture = textureMap.get("playerPwr2");
         }
 
         batch.draw(currentPlayerTexture,
@@ -91,7 +91,7 @@ public class WorldRenderer implements Disposable {
     private void renderBullets() {
         if (space.getBullets().size() > 0) {
             for (Bullet bullet : space.getBullets()) {
-                batch.draw(bulletTexture,
+                batch.draw(textureMap.get("laserRed"),
                         bullet.getPosition().x * ppuX,
                         bullet.getPosition().y * ppuY,
                         bullet.getWidth() * ppuX,
@@ -113,10 +113,11 @@ public class WorldRenderer implements Disposable {
 
     private void loadTextures() {
         textureAtlas = new TextureAtlas(Gdx.files.internal("data\\png\\textures\\textures.pack"));
-        playerTexture = textureAtlas.findRegion("playerPwr2");
-        playerLeftTexture = textureAtlas.findRegion("playerLeft");
-        playerRightTexture = textureAtlas.findRegion("playerRight");
-        bulletTexture = textureAtlas.findRegion("laserRed");
+        textureMap = new HashMap<String, TextureRegion>();
+        textureMap.put("playerPwr2", textureAtlas.findRegion("playerPwr2"));
+        textureMap.put("playerLeft", textureAtlas.findRegion("playerLeft"));
+        textureMap.put("playerRight", textureAtlas.findRegion("playerRight"));
+        textureMap.put("laserRed", textureAtlas.findRegion("laserRed"));
         backgroundTexture = new Texture(Gdx.files.internal("data\\png\\Background\\starBackground.png"));  //TODO background texture atlas
         backgroundTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         background = new TextureRegion(backgroundTexture, space.getLevel().getWidth(), space.getLevel().getHeight());

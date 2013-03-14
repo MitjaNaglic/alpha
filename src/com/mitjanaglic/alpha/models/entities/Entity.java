@@ -11,9 +11,11 @@ import com.badlogic.gdx.math.Vector2;
  */
 public abstract class Entity {
     private Vector2 position;
+    private Vector2 velocity;
 
     public Entity(Vector2 position) {
         this.setPosition(position);
+        setVelocity(new Vector2());
     }
 
     public abstract void update(float delta);
@@ -24,5 +26,13 @@ public abstract class Entity {
 
     public void setPosition(Vector2 position) {
         this.position = position;
+    }
+
+    public Vector2 getVelocity() {
+        return velocity;
+    }
+
+    public void setVelocity(Vector2 velocity) {
+        this.velocity = velocity;
     }
 }

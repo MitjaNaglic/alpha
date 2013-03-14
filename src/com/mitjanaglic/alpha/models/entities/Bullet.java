@@ -14,21 +14,20 @@ public class Bullet extends Entity {
     private float speed = 800;
     private float width = 9f;
     private float height = 33f;
-    private Vector2 velocity;
+
     private float rangeRemaning = range;
     private boolean despawning = false;
 
     public Bullet(Vector2 position) {
         super(position);
-        velocity = new Vector2();
-        velocity.y = speed;
+        getVelocity().y = speed;
     }
 
 
     @Override
     public void update(float delta) {
-        getPosition().add(velocity.cpy().mul(delta));
-        rangeRemaning -= velocity.cpy().mul(delta).y;  //decrement rangeremaning
+        getPosition().add(getVelocity().cpy().mul(delta));
+        rangeRemaning -= getVelocity().cpy().mul(delta).y;  //decrement rangeremaning
         if (rangeRemaning <= 0) despawning = true;
     }
 

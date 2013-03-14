@@ -145,15 +145,13 @@ public class PlayerController {
         if ((keys.get(Keys.LEFT) && keys.get(Keys.RIGHT)) ||
                 (!keys.get(Keys.LEFT) && !(keys.get(Keys.RIGHT)))) {
             player.setState(Player.State.IDLE);
-            // acceleration is 0 on the x
-            player.getAcceleration().x = 0;
+
             // horizontal speed is 0
             player.getVelocity().x = 0;
         }
         if ((keys.get(Keys.UP) && keys.get(Keys.DOWN)) ||
                 (!keys.get(Keys.UP) && !(keys.get(Keys.DOWN)))) {
-            // acceleration is 0 on the x
-            player.getAcceleration().y = 0;
+
             // horizontal speed is 0
             player.getVelocity().y = 0;
         }
