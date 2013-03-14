@@ -12,6 +12,8 @@ import com.badlogic.gdx.math.Vector2;
 public class EnemyDisc extends Entity {
     public EnemyDisc(Vector2 position) {
         super(position);
+        setHeight(91);
+        setWidth(91);
     }
 
     @Override

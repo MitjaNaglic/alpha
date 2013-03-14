@@ -12,8 +12,7 @@ import com.badlogic.gdx.math.Vector2;
 public class Bullet extends Entity {
     private float range = 1000;
     private float speed = 800;
-    private float width = 9f;
-    private float height = 33f;
+
 
     private float rangeRemaning = range;
     private boolean despawning = false;
@@ -21,6 +20,8 @@ public class Bullet extends Entity {
     public Bullet(Vector2 position) {
         super(position);
         getVelocity().y = speed;
+        setWidth(9f);
+        setHeight(33f);
     }
 
 
@@ -33,14 +34,5 @@ public class Bullet extends Entity {
 
     public boolean isDespawning() {
         return despawning;
-    }
-
-
-    public float getWidth() {
-        return width;
-    }
-
-    public float getHeight() {
-        return height;
     }
 }

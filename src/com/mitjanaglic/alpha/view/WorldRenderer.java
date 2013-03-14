@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.models.entities.Bullet;
+import com.mitjanaglic.alpha.models.entities.Entity;
 import com.mitjanaglic.alpha.worlds.Space;
 
 import java.util.HashMap;
@@ -53,6 +54,7 @@ public class WorldRenderer implements Disposable {
         renderBackground();
         debugInfo();
         renderPlayer();
+        renderEnemies();
         renderBullets();
         batch.end();
     }
@@ -61,6 +63,17 @@ public class WorldRenderer implements Disposable {
         space.getCameraPosition().add(space.getCameraVelocity().cpy().mul(delta));
         camera.position.set(space.getCameraPosition().x * ppuX, space.getCameraPosition().y * ppuY, 0);
         camera.update();
+    }
+
+    private void renderEnemies() {
+        for (Entity enemy : space.getEnemies()) {
+            batch.draw(textureMap.get("enemyUFO"),
+                    enemy.getPosition().x,
+                    enemy.getPosition().y,
+                    enemy.getWidth(),
+                    enemy.getHeight()
+            );
+        }
     }
 
     private void renderPlayer() {
@@ -82,8 +95,8 @@ public class WorldRenderer implements Disposable {
         batch.draw(currentPlayerTexture,
                 space.getPlayer().getPosition().x * ppuX,
                 space.getPlayer().getPosition().y * ppuY,
-                space.getPlayer().getSize() * ppuX,
-                space.getPlayer().getSize() * ppuY
+                space.getPlayer().getWidth() * ppuX,
+                space.getPlayer().getHeight() * ppuY
         );
 
     }
@@ -118,6 +131,7 @@ public class WorldRenderer implements Disposable {
         textureMap.put("playerLeft", textureAtlas.findRegion("playerLeft"));
         textureMap.put("playerRight", textureAtlas.findRegion("playerRight"));
         textureMap.put("laserRed", textureAtlas.findRegion("laserRed"));
+        textureMap.put("enemyUFO", textureAtlas.findRegion("enemyUFO"));
         backgroundTexture = new Texture(Gdx.files.internal("data\\png\\Background\\starBackground.png"));  //TODO background texture atlas
         backgroundTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         background = new TextureRegion(backgroundTexture, space.getLevel().getWidth(), space.getLevel().getHeight());

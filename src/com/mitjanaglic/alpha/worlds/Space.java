@@ -4,6 +4,8 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.models.Level;
 import com.mitjanaglic.alpha.models.entities.Bullet;
+import com.mitjanaglic.alpha.models.entities.EnemyDisc;
+import com.mitjanaglic.alpha.models.entities.Entity;
 import com.mitjanaglic.alpha.models.entities.Player;
 
 import java.util.LinkedList;
@@ -21,12 +23,14 @@ public class Space implements Disposable {
     private Vector2 cameraPosition;
     private Vector2 cameraVelocity;
     private LinkedList<Bullet> bullets = new LinkedList<Bullet>();
+    private LinkedList<Entity> enemies = new LinkedList<Entity>();
 
     public Space() {
         CreateTestSpace();
         setCameraPosition(new Vector2(level.getCameraWidth() / 2f, level.getCameraHeight() / 2f));
         setCameraVelocity(new Vector2());
         getCameraVelocity().y = player.getForwardInertia();
+        getEnemies().add(new EnemyDisc(getCameraPosition().cpy()));
     }
 
     public void getDrawableBackground() {
@@ -89,5 +93,13 @@ public class Space implements Disposable {
 
     public void setBullets(LinkedList<Bullet> bullets) {
         this.bullets = bullets;
+    }
+
+    public LinkedList<Entity> getEnemies() {
+        return enemies;
+    }
+
+    public void setEnemies(LinkedList<Entity> enemies) {
+        this.enemies = enemies;
     }
 }

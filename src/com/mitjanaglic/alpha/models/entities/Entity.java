@@ -12,6 +12,8 @@ import com.badlogic.gdx.math.Vector2;
 public abstract class Entity {
     private Vector2 position;
     private Vector2 velocity;
+    private float width = 91f;
+    private float height = 91f;
 
     public Entity(Vector2 position) {
         this.setPosition(position);
@@ -34,5 +36,21 @@ public abstract class Entity {
 
     public void setVelocity(Vector2 velocity) {
         this.velocity = velocity;
+    }
+
+    public float getWidth() {
+        return width;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+
+    protected void setWidth(float width) {
+        this.width = width;
+    }
+
+    protected void setHeight(float height) {
+        this.height = height;
     }
 }
