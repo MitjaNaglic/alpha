@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.models.entities.Bullet;
-import com.mitjanaglic.alpha.models.entities.Entity;
+import com.mitjanaglic.alpha.models.entities.EnemyDisc;
 import com.mitjanaglic.alpha.worlds.Space;
 
 import java.util.HashMap;
@@ -53,9 +53,9 @@ public class WorldRenderer implements Disposable {
         batch.begin();
         renderBackground();
         debugInfo();
-        renderPlayer();
         renderEnemies();
         renderBullets();
+        renderPlayer();
         batch.end();
     }
 
@@ -66,12 +66,17 @@ public class WorldRenderer implements Disposable {
     }
 
     private void renderEnemies() {
-        for (Entity enemy : space.getEnemies()) {
+        for (EnemyDisc enemy : space.getEnemies()) {
             batch.draw(textureMap.get("enemyUFO"),
-                    enemy.getPosition().x,
-                    enemy.getPosition().y,
-                    enemy.getWidth(),
-                    enemy.getHeight()
+                    enemy.getPosition().x * ppuX,
+                    enemy.getPosition().y * ppuY,
+                    (enemy.getWidth() * ppuX) / 2,
+                    (enemy.getHeight() * ppuY) / 2,
+                    enemy.getWidth() * ppuX,
+                    enemy.getHeight() * ppuY,
+                    1.0f,
+                    1.0f,
+                    enemy.getRotationAngle()
             );
         }
     }

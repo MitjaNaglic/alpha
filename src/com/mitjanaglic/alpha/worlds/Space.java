@@ -23,7 +23,7 @@ public class Space implements Disposable {
     private Vector2 cameraPosition;
     private Vector2 cameraVelocity;
     private LinkedList<Bullet> bullets = new LinkedList<Bullet>();
-    private LinkedList<Entity> enemies = new LinkedList<Entity>();
+    private LinkedList<EnemyDisc> enemies = new LinkedList<EnemyDisc>();
 
     public Space() {
         CreateTestSpace();
@@ -52,6 +52,10 @@ public class Space implements Disposable {
         }
         //nov list overwrita star list
         bullets = liveBullets;
+
+        for (Entity enemy : enemies) {
+            enemy.update(delta);
+        }
     }
 
     private void CreateTestSpace() {
@@ -95,11 +99,11 @@ public class Space implements Disposable {
         this.bullets = bullets;
     }
 
-    public LinkedList<Entity> getEnemies() {
+    public LinkedList<EnemyDisc> getEnemies() {
         return enemies;
     }
 
-    public void setEnemies(LinkedList<Entity> enemies) {
+    public void setEnemies(LinkedList<EnemyDisc> enemies) {
         this.enemies = enemies;
     }
 }
