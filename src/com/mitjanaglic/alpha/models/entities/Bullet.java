@@ -22,6 +22,7 @@ public class Bullet extends Entity {
         getVelocity().y = speed;
         setWidth(9f);
         setHeight(33f);
+        updateBounds();
     }
 
 

@@ -1,6 +1,5 @@
 package com.mitjanaglic.alpha.models.entities;
 
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 /**
@@ -21,16 +20,14 @@ public class Player extends Entity {
     private float forwardInertia = 200f;
     private float timeBetweenShots = 0.06f;
     private float shootCooldown = 0;
+    private int lives = 10;
 
-    private Rectangle bounds = new Rectangle();
 
     public Player(Vector2 pos) {
         super(pos);
         setHeight(128);
         setWidth(128);
-        getBounds().height = getHeight();
-        getBounds().width = getWidth();
-        updatePosition();
+        updateBounds();
     }
 
     public Bullet shoot() {
@@ -47,15 +44,23 @@ public class Player extends Entity {
     public void update(float delta) {
         getVelocity().y += getForwardInertia();
         getPosition().add(getVelocity().cpy().mul(delta));
-        updatePosition();
+        updateBounds();
         if (shootCooldown > 0) {
             shootCooldown -= delta;
         }
+        if (immunityCooldown > 0) {
+            immunityCooldown -= delta;
+        }
     }
 
-    private void updatePosition() {
-        bounds.setX(getPosition().x);
-        bounds.setY(getPosition().y);
+    private float immunityTime = 1;
+    private float immunityCooldown = 0;
+
+    public void hit() {
+        if (immunityCooldown <= 0) {
+            immunityCooldown = immunityTime;
+            lives--;
+        }
     }
 
     public float getSpeed() {
@@ -82,7 +87,7 @@ public class Player extends Entity {
         this.forwardInertia = forwardInertia;
     }
 
-    public Rectangle getBounds() {
-        return bounds;
+    public int getLives() {
+        return lives;
     }
 }

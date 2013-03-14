@@ -54,11 +54,12 @@ public class WorldRenderer implements Disposable {
     }
 
     public void render(float delta) {
+        moveCameraWithPlayer(delta);
         // update camera
         camera.update();
         //camera.apply(Gdx.gl10);
 
-        moveCameraWithPlayer(delta);
+
         // set viewport
         Gdx.gl.glViewport((int) viewport.x, (int) viewport.y,
                 (int) viewport.width, (int) viewport.height);
@@ -75,6 +76,7 @@ public class WorldRenderer implements Disposable {
 
         uiBatch.begin();
         debugInfo();
+        renderLives();
         uiBatch.end();
     }
 
@@ -141,6 +143,15 @@ public class WorldRenderer implements Disposable {
         batch.draw(background, 0, 0);
     }
 
+    private void renderLives() {
+        for (int i = 0; i < space.getPlayer().getLives(); i++) {
+            uiBatch.draw(textureMap.get("life"),
+                    viewport.x + 20 + i * 40,
+                    viewport.y + 30
+            );
+        }
+    }
+
     private void debugInfo() {
         font.draw(uiBatch, "FPS: " + Gdx.graphics.getFramesPerSecond(), viewport.x,
                 viewport.y + viewport.height);
@@ -155,6 +166,7 @@ public class WorldRenderer implements Disposable {
         textureMap.put("playerRight", textureAtlas.findRegion("playerRight"));
         textureMap.put("laserRed", textureAtlas.findRegion("laserRed"));
         textureMap.put("enemyUFO", textureAtlas.findRegion("enemyUFO"));
+        textureMap.put("life", textureAtlas.findRegion("life"));
         backgroundTexture = new Texture(Gdx.files.internal("data\\png\\Background\\starBackground.png"));  //TODO background texture atlas
         backgroundTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         background = new TextureRegion(backgroundTexture, space.getLevel().getWidth(), space.getLevel().getHeight());

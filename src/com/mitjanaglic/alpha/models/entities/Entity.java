@@ -1,5 +1,6 @@
 package com.mitjanaglic.alpha.models.entities;
 
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 /**
@@ -12,15 +13,24 @@ import com.badlogic.gdx.math.Vector2;
 public abstract class Entity {
     private Vector2 position;
     private Vector2 velocity;
-    private float width = 91f;
-    private float height = 91f;
+    private float width;
+    private float height;
+    private Rectangle bounds;
 
     public Entity(Vector2 position) {
         this.setPosition(position);
         setVelocity(new Vector2());
+        bounds = new Rectangle();
     }
 
     public abstract void update(float delta);
+
+    protected void updateBounds() {
+        getBounds().setX(getPosition().x);
+        getBounds().setY(getPosition().y);
+        getBounds().setWidth(getWidth());
+        getBounds().setHeight(getHeight());
+    }
 
     public Vector2 getPosition() {
         return position;
@@ -52,5 +62,9 @@ public abstract class Entity {
 
     protected void setHeight(float height) {
         this.height = height;
+    }
+
+    public Rectangle getBounds() {
+        return bounds;
     }
 }

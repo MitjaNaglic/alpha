@@ -18,6 +18,7 @@ public class EnemyDisc extends Entity {
         super(position);
         setHeight(91);
         setWidth(91);
+        updateBounds();
         getVelocity().y = forwardInertia;
     }
 
@@ -25,6 +26,7 @@ public class EnemyDisc extends Entity {
     public void update(float delta) {
         getPosition().add(getVelocity().cpy().mul(delta));
         rotate(delta);
+        updateBounds();
     }
 
     private void rotate(float delta) {

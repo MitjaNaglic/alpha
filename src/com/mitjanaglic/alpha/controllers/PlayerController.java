@@ -1,6 +1,7 @@
 package com.mitjanaglic.alpha.controllers;
 
 import com.mitjanaglic.alpha.models.entities.Bullet;
+import com.mitjanaglic.alpha.models.entities.EnemyDisc;
 import com.mitjanaglic.alpha.models.entities.Player;
 import com.mitjanaglic.alpha.worlds.Space;
 
@@ -88,7 +89,16 @@ public class PlayerController {
     public void update(float delta) {
         processInput();
         checkLevelBoundCollision(delta);
+        entityCollisions();
         player.update(delta);
+    }
+
+    private void entityCollisions() {
+        for (EnemyDisc enemy : space.getEnemies()) {
+            if (player.getBounds().overlaps(enemy.getBounds())) {
+                player.hit();
+            }
+        }
     }
 
     private void checkLevelBoundCollision(float delta) {
