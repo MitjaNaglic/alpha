@@ -1,12 +1,15 @@
 package com.mitjanaglic.alpha.view;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.models.entities.Bullet;
 import com.mitjanaglic.alpha.models.entities.EnemyDisc;
@@ -25,12 +28,10 @@ import java.util.Map;
 public class WorldRenderer implements Disposable {
     private Space space;
     private OrthographicCamera camera;
-    private static final float CAMERA_WIDTH = 1280f;
-    private static final float CAMERA_HEIGHT = 720f;
-    private int width;
-    private int height;
-    private float ppuX; // pixels per unit on the X axis
-    private float ppuY; // pixels per unit on the Y axis
+    private float VIRTUAL_WIDTH;
+    private float VIRTUAL_HEIGHT;
+    private float ASPECT_RATIO;
+    private Rectangle viewport;
     private SpriteBatch batch = new SpriteBatch();
     private Map<String, TextureRegion> textureMap;
     private Texture backgroundTexture;
@@ -41,6 +42,10 @@ public class WorldRenderer implements Disposable {
 
     public WorldRenderer(Space space) {
         this.space = space;
+        VIRTUAL_WIDTH = 1280;
+        VIRTUAL_HEIGHT = 720;
+        ASPECT_RATIO = VIRTUAL_WIDTH / VIRTUAL_HEIGHT;
+        camera = new OrthographicCamera(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
         font = new BitmapFont();
         loadTextures();
 
@@ -48,7 +53,17 @@ public class WorldRenderer implements Disposable {
     }
 
     public void render(float delta) {
+        // update camera
+        camera.update();
+        //camera.apply(Gdx.gl10);
+
         moveCameraWithPlayer(delta);
+        // set viewport
+        Gdx.gl.glViewport((int) viewport.x, (int) viewport.y,
+                (int) viewport.width, (int) viewport.height);
+        Gdx.gl.glClearColor(0.369f, 0.247f, 0.42f, 1);
+        Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         renderBackground();
@@ -61,19 +76,18 @@ public class WorldRenderer implements Disposable {
 
     private void moveCameraWithPlayer(float delta) {
         space.getCameraPosition().add(space.getCameraVelocity().cpy().mul(delta));
-        camera.position.set(space.getCameraPosition().x * ppuX, space.getCameraPosition().y * ppuY, 0);
-        camera.update();
+        camera.position.set(space.getCameraPosition().x, space.getCameraPosition().y, 0);
     }
 
     private void renderEnemies() {
         for (EnemyDisc enemy : space.getEnemies()) {
             batch.draw(textureMap.get("enemyUFO"),
-                    enemy.getPosition().x * ppuX,
-                    enemy.getPosition().y * ppuY,
-                    (enemy.getWidth() * ppuX) / 2,
-                    (enemy.getHeight() * ppuY) / 2,
-                    enemy.getWidth() * ppuX,
-                    enemy.getHeight() * ppuY,
+                    enemy.getPosition().x,
+                    enemy.getPosition().y,
+                    enemy.getWidth() / 2,
+                    enemy.getHeight() / 2,
+                    enemy.getWidth(),
+                    enemy.getHeight(),
                     1.0f,
                     1.0f,
                     enemy.getRotationAngle()
@@ -98,10 +112,10 @@ public class WorldRenderer implements Disposable {
         }
 
         batch.draw(currentPlayerTexture,
-                space.getPlayer().getPosition().x * ppuX,
-                space.getPlayer().getPosition().y * ppuY,
-                space.getPlayer().getWidth() * ppuX,
-                space.getPlayer().getHeight() * ppuY
+                space.getPlayer().getPosition().x,
+                space.getPlayer().getPosition().y,
+                space.getPlayer().getWidth(),
+                space.getPlayer().getHeight()
         );
 
     }
@@ -110,10 +124,10 @@ public class WorldRenderer implements Disposable {
         if (space.getBullets().size() > 0) {
             for (Bullet bullet : space.getBullets()) {
                 batch.draw(textureMap.get("laserRed"),
-                        bullet.getPosition().x * ppuX,
-                        bullet.getPosition().y * ppuY,
-                        bullet.getWidth() * ppuX,
-                        bullet.getHeight() * ppuY
+                        bullet.getPosition().x,
+                        bullet.getPosition().y,
+                        bullet.getWidth(),
+                        bullet.getHeight()
                 );
             }
         }
@@ -124,8 +138,8 @@ public class WorldRenderer implements Disposable {
     }
 
     private void debugInfo() {
-        font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(), space.getCameraPosition().x * ppuX - width / 2,
-                space.getCameraPosition().y * ppuY + height / 2);
+        font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(), space.getCameraPosition().x - viewport.width / 2,
+                space.getCameraPosition().y + viewport.height / 2);
 
     }
 
@@ -142,14 +156,24 @@ public class WorldRenderer implements Disposable {
         background = new TextureRegion(backgroundTexture, space.getLevel().getWidth(), space.getLevel().getHeight());
     }
 
-    public void setSize(int w, int h) {
-        this.width = w;
-        this.height = h;
-        ppuX = (float) width / space.getLevel().getCameraWidth();
-        ppuY = (float) height / space.getLevel().getCameraHeight();
-        camera = new OrthographicCamera(space.getLevel().getCameraWidth() * ppuX, space.getLevel().getCameraHeight() * ppuY);
-        camera.position.set(space.getCameraPosition().x, space.getCameraPosition().y, 0);
-        camera.update();
+    public void setSize(int width, int height) {
+        float aspectRatio = (float) width / (float) height;
+        float scale;
+        Vector2 crop = new Vector2(0f, 0f);
+        if (aspectRatio > ASPECT_RATIO) {
+            scale = (float) height / VIRTUAL_HEIGHT;
+            crop.x = (width - VIRTUAL_WIDTH * scale) / 2f;
+        } else if (aspectRatio < ASPECT_RATIO) {
+            scale = (float) width / VIRTUAL_WIDTH;
+            crop.y = (height - VIRTUAL_HEIGHT * scale) / 2f;
+        } else {
+            scale = (float) width / VIRTUAL_WIDTH;
+        }
+
+        float w = VIRTUAL_WIDTH * scale;
+        float h = VIRTUAL_HEIGHT * scale;
+        viewport = new Rectangle(crop.x, crop.y, w, h);
+
     }
 
     @Override

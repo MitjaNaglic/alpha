@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.GL10;
 import com.mitjanaglic.alpha.controllers.PlayerController;
 import com.mitjanaglic.alpha.view.WorldRenderer;
 import com.mitjanaglic.alpha.worlds.Space;
@@ -30,8 +29,6 @@ public class GameScreen implements Screen, InputProcessor {
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(0.369f, 0.247f, 0.42f, 1);
-        Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
         controller.update(delta);
         space.update(delta);
         renderer.render(delta);

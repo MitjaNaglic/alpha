@@ -10,7 +10,7 @@ package com.mitjanaglic.alpha.models;
 public class Level {
     private int width;
     private int height;
-    private float cameraWidth = 1280f;
+    private float cameraWidth = 1280f;  //TODO to se uporabla samo za touch evente, neb smel bit tuki
     private float cameraHeight = 720f;
 
     public Level() {
@@ -26,7 +26,7 @@ public class Level {
     }
 
     public void loadTestLevel() {
-        width = 1270;
+        width = 1280;
         height = 500000;
     }
 
