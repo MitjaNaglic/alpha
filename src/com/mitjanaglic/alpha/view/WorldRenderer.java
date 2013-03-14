@@ -33,6 +33,7 @@ public class WorldRenderer implements Disposable {
     private float ASPECT_RATIO;
     private Rectangle viewport;
     private SpriteBatch batch = new SpriteBatch();
+    private SpriteBatch uiBatch = new SpriteBatch();
     private Map<String, TextureRegion> textureMap;
     private Texture backgroundTexture;
     private TextureRegion background;
@@ -67,11 +68,14 @@ public class WorldRenderer implements Disposable {
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         renderBackground();
-        debugInfo();
         renderEnemies();
         renderBullets();
         renderPlayer();
         batch.end();
+
+        uiBatch.begin();
+        debugInfo();
+        uiBatch.end();
     }
 
     private void moveCameraWithPlayer(float delta) {
@@ -138,8 +142,8 @@ public class WorldRenderer implements Disposable {
     }
 
     private void debugInfo() {
-        font.draw(batch, "FPS: " + Gdx.graphics.getFramesPerSecond(), space.getCameraPosition().x - viewport.width / 2,
-                space.getCameraPosition().y + viewport.height / 2);
+        font.draw(uiBatch, "FPS: " + Gdx.graphics.getFramesPerSecond(), viewport.x,
+                viewport.y + viewport.height);
 
     }
 
@@ -182,5 +186,6 @@ public class WorldRenderer implements Disposable {
         backgroundTexture.dispose();
         font.dispose();
         batch.dispose();
+        uiBatch.dispose();
     }
 }
