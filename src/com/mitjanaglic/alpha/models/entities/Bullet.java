@@ -10,18 +10,17 @@ import com.badlogic.gdx.math.Vector2;
  * To change this template use File | Settings | File Templates.
  */
 public class Bullet extends Entity {
-    private float range = 150;
+    private float range = 450;
     private float speed = 700;
     private float damage;
     private float angle;
     private Entity owner;
-
-
-    private Vector2 rangeRemaning = new Vector2(0, 0);
+    private Vector2 shotOrigin;
     private boolean despawning = false;
 
     public Bullet(Entity owner, Vector2 position, float damage, float angle) {
         super(position);
+        shotOrigin = new Vector2(position.cpy());
         getVelocity().y = speed;
         this.angle = angle;
         getVelocity().rotate(angle);
@@ -35,12 +34,9 @@ public class Bullet extends Entity {
 
     @Override
     public void update(float delta) {
-        getPosition().add(getVelocity().cpy().mul(delta));//TODO fix bullet range, angle
-        rangeRemaning.add(getVelocity().cpy().mul(delta));  //decrement rangeremaning
-        updateBounds();
-        if (rangeRemaning.x >= range || rangeRemaning.y >= range) {
+        getPosition().add(getVelocity().cpy().mul(delta));
+        if (getPosition().cpy().dst(shotOrigin) >= range) {
             despawning = true;
-            System.out.println("bullet despawning");
         }
     }
 

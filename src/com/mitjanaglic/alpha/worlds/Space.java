@@ -85,7 +85,6 @@ public class Space implements Disposable {
         }
         //nov list overwrita star list
         setEnemyBullets(liveBullets);
-        System.out.println(enemyBullets.size());
     }
 
     private void CreateTestSpace() {
