@@ -21,6 +21,7 @@ public class Player extends Entity {
     private float timeBetweenShots = 0.06f;
     private float shootCooldown = 0;
     private int lives = 10;
+    private float gunDamage = 10;
 
 
     public Player(Vector2 pos) {
@@ -36,7 +37,7 @@ public class Player extends Entity {
             Vector2 gunPos = new Vector2(getPosition().cpy());
             gunPos.x += getWidth() / 2;
             gunPos.y += getHeight() - getHeight() / 5;
-            return new Bullet(gunPos);
+            return new Bullet(gunPos, gunDamage);
         } else return null;
     }
 
@@ -53,7 +54,7 @@ public class Player extends Entity {
         }
     }
 
-    private float immunityTime = 1;
+    private float immunityTime = 1.1f;
     private float immunityCooldown = 0;
 
     public void hit() {

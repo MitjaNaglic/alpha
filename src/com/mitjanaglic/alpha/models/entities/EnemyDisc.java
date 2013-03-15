@@ -10,9 +10,23 @@ import com.badlogic.gdx.math.Vector2;
  * To change this template use File | Settings | File Templates.
  */
 public class EnemyDisc extends Entity {
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public enum State {
+        IDLE, DYING
+    }
+
     private float forwardInertia = 200f;
     private float rotationAngle = 0;
     private float rotationVelocity = 250;
+    private float health = 100;
+    private State state = State.IDLE;
 
     public EnemyDisc(Vector2 position) {
         super(position);
@@ -29,6 +43,13 @@ public class EnemyDisc extends Entity {
         updateBounds();
     }
 
+    public void hit(float damage) {
+        health -= damage;
+        if (health <= 0) {
+            setState(State.DYING);
+        }
+    }
+
     private void rotate(float delta) {
         if (getRotationAngle() <= 360) {
             rotationAngle = getRotationAngle() + rotationVelocity * delta;
@@ -39,5 +60,9 @@ public class EnemyDisc extends Entity {
 
     public float getRotationAngle() {
         return rotationAngle;
+    }
+
+    public float getHealth() {
+        return health;
     }
 }

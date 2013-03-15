@@ -5,7 +5,6 @@ import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.models.Level;
 import com.mitjanaglic.alpha.models.entities.Bullet;
 import com.mitjanaglic.alpha.models.entities.EnemyDisc;
-import com.mitjanaglic.alpha.models.entities.Entity;
 import com.mitjanaglic.alpha.models.entities.Player;
 
 import java.util.LinkedList;
@@ -41,10 +40,29 @@ public class Space implements Disposable {
     }
 
     public void update(float delta) {
+        updateBullets(delta);
+        updateEnemies(delta);
+    }
+
+    private void updateEnemies(float delta) {
+        //nov linked list ki bo vseboval samo live enemies
+        LinkedList<EnemyDisc> liveEnemyDisc = new LinkedList<EnemyDisc>();
+        for (EnemyDisc enemyDisc : enemies) {
+            //ce je enemy oznacen za despawn, se ga NE doda v nov list
+            if (enemyDisc.getState() != EnemyDisc.State.DYING) {
+                liveEnemyDisc.add(enemyDisc);
+                enemyDisc.update(delta);
+            }
+        }
+        //nov list overwrita star list
+        enemies = liveEnemyDisc;
+    }
+
+    private void updateBullets(float delta) {
         //nov linked list ki bo vseboval samo live bullete
         LinkedList<Bullet> liveBullets = new LinkedList<Bullet>();
         for (Bullet bullet : bullets) {
-            //ce je bullet oznacen za despawn, se ga ne doda v nov list
+            //ce je bullet oznacen za despawn, se ga NE doda v nov list
             if (!bullet.isDespawning()) {
                 liveBullets.add(bullet);
                 bullet.update(delta);
@@ -52,10 +70,6 @@ public class Space implements Disposable {
         }
         //nov list overwrita star list
         bullets = liveBullets;
-
-        for (Entity enemy : enemies) {
-            enemy.update(delta);
-        }
     }
 
     private void CreateTestSpace() {
