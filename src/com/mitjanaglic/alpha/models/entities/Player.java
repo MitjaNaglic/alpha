@@ -1,6 +1,7 @@
 package com.mitjanaglic.alpha.models.entities;
 
 import com.badlogic.gdx.math.Vector2;
+import com.mitjanaglic.alpha.models.Gun;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,10 +19,8 @@ public class Player extends Entity {
     private State state = State.IDLE;
     private float speed = 400f;
     private float forwardInertia = 200f;
-    private float timeBetweenShots = 0.06f;
-    private float shootCooldown = 0;
     private int lives = 10;
-    private float gunDamage = 10;
+    private Gun gun;
 
 
     public Player(Vector2 pos) {
@@ -29,29 +28,23 @@ public class Player extends Entity {
         setHeight(128);
         setWidth(128);
         updateBounds();
+        gun = new Gun(this);
     }
 
-    public Bullet shoot() {
-        if (shootCooldown <= 0) {
-            shootCooldown = timeBetweenShots;
-            Vector2 gunPos = new Vector2(getPosition().cpy());
-            gunPos.x += getWidth() / 2;
-            gunPos.y += getHeight() - getHeight() / 5;
-            return new Bullet(gunPos, gunDamage);
-        } else return null;
-    }
 
     @Override
     public void update(float delta) {
         getVelocity().y += getForwardInertia();
         getPosition().add(getVelocity().cpy().mul(delta));
         updateBounds();
-        if (shootCooldown > 0) {
-            shootCooldown -= delta;
-        }
+        gun.update(delta);
         if (immunityCooldown > 0) {
             immunityCooldown -= delta;
         }
+    }
+
+    public Bullet shoot() {
+        return gun.shoot(0);
     }
 
     private float immunityTime = 1.1f;

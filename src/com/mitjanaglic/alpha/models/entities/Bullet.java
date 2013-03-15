@@ -10,17 +10,22 @@ import com.badlogic.gdx.math.Vector2;
  * To change this template use File | Settings | File Templates.
  */
 public class Bullet extends Entity {
-    private float range = 1000;
-    private float speed = 800;
+    private float range = 150;
+    private float speed = 700;
     private float damage;
+    private float angle;
+    private Entity owner;
 
 
-    private float rangeRemaning = range;
+    private Vector2 rangeRemaning = new Vector2(0, 0);
     private boolean despawning = false;
 
-    public Bullet(Vector2 position, float damage) {
+    public Bullet(Entity owner, Vector2 position, float damage, float angle) {
         super(position);
         getVelocity().y = speed;
+        this.angle = angle;
+        getVelocity().rotate(angle);
+        this.owner = owner;
         this.damage = damage;
         setWidth(9f);
         setHeight(33f);
@@ -30,10 +35,13 @@ public class Bullet extends Entity {
 
     @Override
     public void update(float delta) {
-        getPosition().add(getVelocity().cpy().mul(delta));
-        rangeRemaning -= getVelocity().cpy().mul(delta).y;  //decrement rangeremaning
+        getPosition().add(getVelocity().cpy().mul(delta));//TODO fix bullet range, angle
+        rangeRemaning.add(getVelocity().cpy().mul(delta));  //decrement rangeremaning
         updateBounds();
-        if (rangeRemaning <= 0) despawning = true;
+        if (rangeRemaning.x >= range || rangeRemaning.y >= range) {
+            despawning = true;
+            System.out.println("bullet despawning");
+        }
     }
 
     public void hit() {
@@ -46,5 +54,13 @@ public class Bullet extends Entity {
 
     public float getDamage() {
         return damage;
+    }
+
+    public float getAngle() {
+        return angle;
+    }
+
+    public Entity getOwner() {
+        return owner;
     }
 }

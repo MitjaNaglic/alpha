@@ -16,6 +16,7 @@ import com.mitjanaglic.alpha.models.entities.EnemyDisc;
 import com.mitjanaglic.alpha.worlds.Space;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 /**
@@ -70,7 +71,8 @@ public class WorldRenderer implements Disposable {
         batch.begin();
         renderBackground();
         renderEnemies();
-        renderBullets();
+        renderBullets(space.getBullets());
+        renderBullets(space.getEnemyBullets());
         renderPlayer();
         batch.end();
 
@@ -126,17 +128,21 @@ public class WorldRenderer implements Disposable {
 
     }
 
-    private void renderBullets() {
-        if (space.getBullets().size() > 0) {
-            for (Bullet bullet : space.getBullets()) {
-                batch.draw(textureMap.get("laserRed"),
-                        bullet.getPosition().x,
-                        bullet.getPosition().y,
-                        bullet.getWidth(),
-                        bullet.getHeight()
-                );
-            }
+    private void renderBullets(LinkedList<Bullet> bullets) {
+        for (Bullet bullet : bullets) {
+            batch.draw(textureMap.get("laserRed"),
+                    bullet.getPosition().x,
+                    bullet.getPosition().y,
+                    bullet.getWidth() / 2,
+                    bullet.getHeight() / 2,
+                    bullet.getWidth(),
+                    bullet.getHeight(),
+                    1.0f,
+                    1.0f,
+                    bullet.getAngle()
+            );
         }
+
     }
 
     private void renderBackground() {

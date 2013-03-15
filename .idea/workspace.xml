@@ -6,16 +6,19 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java" line="43" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java" line="35" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/SpaceController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/EnemyController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/Gun.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Bullet.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Bullet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/EnemyDisc.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/EnemyDisc.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/SpaceController.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/SpaceController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Alpha.iws" />
@@ -23,15 +26,15 @@
     <file path="/Game.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362580631746" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362670557644" ignored="false" />
     <file path="/MainActivity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362672791185" ignored="false" />
-    <file path="/fragment.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363198221761" ignored="false" />
+    <file path="/fragment.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363376696165" ignored="false" />
     <file path="/DesktopStarter.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363212270900" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363297804493" ignored="false" />
-    <file path="/Player.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363359537087" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363360310847" ignored="false" />
+    <file path="/Player.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363371989352" ignored="false" />
     <file path="/Entity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363295888703" ignored="false" />
-    <file path="/Space.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363360232486" ignored="false" />
-    <file path="/GameScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363359710807" ignored="false" />
+    <file path="/Space.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363377047392" ignored="false" />
+    <file path="/GameScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363374059546" ignored="false" />
     <file path="/Alpha.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362669003626" ignored="false" />
-    <file path="/WorldRenderer.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363297544947" ignored="false" />
+    <file path="/WorldRenderer.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363375066414" ignored="false" />
     <file path="/WorldController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362757853366" ignored="false" />
     <file path="/Alpha.gwt.xml" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362678395153" ignored="false" />
     <file path="/AlphaGwt.gwt.xml" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362678652728" ignored="false" />
@@ -42,9 +45,11 @@
     <file path="/Level.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363289521887" ignored="false" />
     <file path="/PlayerController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363296351269" ignored="false" />
     <file path="$PROJECT_DIR$/libs/gdx.jar!/com/badlogic/gdx/graphics/Camera.class" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363193515650" ignored="false" />
-    <file path="/Bullet.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363359775190" ignored="false" />
-    <file path="/EnemyDisc.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363358571102" ignored="false" />
-    <file path="/SpaceController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363359626079" ignored="false" />
+    <file path="/Bullet.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363379164462" ignored="false" />
+    <file path="/EnemyDisc.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363377419221" ignored="false" />
+    <file path="/SpaceController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363375397761" ignored="false" />
+    <file path="/Gun.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363374349537" ignored="false" />
+    <file path="/EnemyController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363374938753" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,16 +111,16 @@
       <file leaf-file-name="GameScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="29" selection-start="1890" selection-end="1890" vertical-scroll-proportion="0.0">
+            <state line="76" column="29" selection-start="2120" selection-end="2120" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Bullet.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Bullet.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="23" selection-start="885" selection-end="885" vertical-scroll-proportion="0.0">
+            <state line="37" column="88" selection-start="987" selection-end="987" vertical-scroll-proportion="0.66306305">
               <folding />
             </state>
           </provider>
@@ -124,7 +129,16 @@
       <file leaf-file-name="WorldRenderer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="60" selection-start="4545" selection-end="4545" vertical-scroll-proportion="0.0">
+            <state line="72" column="24" selection-start="2315" selection-end="2315" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="25" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -132,20 +146,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java">
+      <file leaf-file-name="Gun.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/Gun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="30" selection-start="605" selection-end="605" vertical-scroll-proportion="0.061261263">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Entity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Entity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="33" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="29" column="37" selection-start="898" selection-end="898" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,7 +160,38 @@
       <file leaf-file-name="EnemyDisc.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/EnemyDisc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="34" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.0">
+            <state line="50" column="70" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnemyController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/EnemyController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="35" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpaceController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/SpaceController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="37" selection-start="597" selection-end="597" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Space.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="87" column="39" selection-start="3040" selection-end="3040" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -162,38 +200,7 @@
       <file leaf-file-name="PlayerController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/PlayerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="29" selection-start="2275" selection-end="2275" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpaceController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/SpaceController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="33" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Space.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="29" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#1504#1515#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Level.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/Level.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="101" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
+            <state line="148" column="35" selection-start="3826" selection-end="3891" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -216,8 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Entity.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/WorldController.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/entities/Player.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/Player.java" />
         <option value="$PROJECT_DIR$/.idea/modules.xml" />
@@ -225,13 +230,15 @@
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/Level.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Entity.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/PlayerController.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/EnemyDisc.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/SpaceController.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Bullet.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/Gun.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/EnemyController.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/SpaceController.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/EnemyDisc.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Bullet.java" />
       </list>
     </option>
   </component>
@@ -269,8 +276,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -819,7 +826,11 @@
       <created>1363297809549</created>
       <updated>1363297809549</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="bullet collisions, dying enemies">
+      <created>1363360317063</created>
+      <updated>1363360317063</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -892,7 +903,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="lives implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="bullet collisions, dying enemies" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -922,6 +933,7 @@
     <MESSAGE value="aspect ratio se ohranjuje" />
     <MESSAGE value="uiBatch" />
     <MESSAGE value="lives implemented" />
+    <MESSAGE value="bullet collisions, dying enemies" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -931,30 +943,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="61" selection-end="61" vertical-scroll-proportion="0.059027776" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/Alpha.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="46" selection-start="773" selection-end="773" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Desktop/src/com/mitjanaglic/alpha/DesktopStarter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="35" selection-start="537" selection-end="537" vertical-scroll-proportion="0.2989449">
-          <folding />
-        </state>
+        <state line="16" column="35" selection-start="537" selection-end="537" vertical-scroll-proportion="0.2989449" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Android/src/com/mitjanaglic/alpha/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="359" selection-end="359" vertical-scroll-proportion="0.21922626">
-          <folding />
-        </state>
+        <state line="13" column="13" selection-start="359" selection-end="359" vertical-scroll-proportion="0.21922626" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/Level.java">
@@ -1003,15 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="60" selection-start="4545" selection-end="4545" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="33" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0">
@@ -1019,16 +1006,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/PlayerController.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/view/WorldRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="29" selection-start="2275" selection-end="2275" vertical-scroll-proportion="0.0">
+        <state line="72" column="24" selection-start="2315" selection-end="2315" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/SpaceController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="33" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0">
+        <state line="22" column="37" selection-start="597" selection-end="597" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/PlayerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="148" column="35" selection-start="3826" selection-end="3891" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/Gun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="37" selection-start="898" selection-end="898" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1037,37 +1038,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/screens/GameScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="29" selection-start="1890" selection-end="1890" vertical-scroll-proportion="0.0">
+        <state line="76" column="29" selection-start="2120" selection-end="2120" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Bullet.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/controllers/EnemyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="23" selection-start="885" selection-end="885" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/EnemyDisc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="34" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="29" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.0">
+        <state line="24" column="35" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#1504#1515#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="30" selection-start="605" selection-end="605" vertical-scroll-proportion="0.061261263">
+        <state line="47" column="25" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/worlds/Space.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="39" selection-start="3040" selection-end="3040" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/EnemyDisc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="70" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/models/entities/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="88" selection-start="987" selection-end="987" vertical-scroll-proportion="0.66306305">
           <folding />
         </state>
       </provider>

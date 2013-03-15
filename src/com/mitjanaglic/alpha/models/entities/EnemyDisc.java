@@ -1,6 +1,7 @@
 package com.mitjanaglic.alpha.models.entities;
 
 import com.badlogic.gdx.math.Vector2;
+import com.mitjanaglic.alpha.models.Gun;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,12 +28,16 @@ public class EnemyDisc extends Entity {
     private float rotationVelocity = 250;
     private float health = 100;
     private State state = State.IDLE;
+    private Player player;
+    private Gun gun;
 
-    public EnemyDisc(Vector2 position) {
+    public EnemyDisc(Vector2 position, Player player) {
         super(position);
+        this.player = player;
         setHeight(91);
         setWidth(91);
         updateBounds();
+        gun = new Gun(this);
         getVelocity().y = forwardInertia;
     }
 
@@ -41,6 +46,12 @@ public class EnemyDisc extends Entity {
         getPosition().add(getVelocity().cpy().mul(delta));
         rotate(delta);
         updateBounds();
+        gun.update(delta);
+    }
+
+    public Bullet shoot() {
+
+        return gun.shoot(player.getPosition().cpy().sub(getPosition()).angle());
     }
 
     public void hit(float damage) {

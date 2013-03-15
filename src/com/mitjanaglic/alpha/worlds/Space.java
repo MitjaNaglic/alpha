@@ -21,6 +21,7 @@ public class Space implements Disposable {
     private Level level;
     private Vector2 cameraPosition;
     private Vector2 cameraVelocity;
+    private LinkedList<Bullet> enemyBullets = new LinkedList<Bullet>();
     private LinkedList<Bullet> bullets = new LinkedList<Bullet>();
     private LinkedList<EnemyDisc> enemies = new LinkedList<EnemyDisc>();
 
@@ -29,7 +30,7 @@ public class Space implements Disposable {
         setCameraPosition(new Vector2(level.getCameraWidth() / 2f, level.getCameraHeight() / 2f));
         setCameraVelocity(new Vector2());
         getCameraVelocity().y = player.getForwardInertia();
-        getEnemies().add(new EnemyDisc(getCameraPosition().cpy()));
+        getEnemies().add(new EnemyDisc(getCameraPosition().cpy(), player));
     }
 
     public void getDrawableBackground() {
@@ -41,17 +42,17 @@ public class Space implements Disposable {
 
     public void update(float delta) {
         updateBullets(delta);
-        updateEnemies(delta);
+        updateEnemyBullets(delta);
+        removeDeadEnemies(delta);
     }
 
-    private void updateEnemies(float delta) {
+    private void removeDeadEnemies(float delta) {
         //nov linked list ki bo vseboval samo live enemies
         LinkedList<EnemyDisc> liveEnemyDisc = new LinkedList<EnemyDisc>();
         for (EnemyDisc enemyDisc : enemies) {
             //ce je enemy oznacen za despawn, se ga NE doda v nov list
             if (enemyDisc.getState() != EnemyDisc.State.DYING) {
                 liveEnemyDisc.add(enemyDisc);
-                enemyDisc.update(delta);
             }
         }
         //nov list overwrita star list
@@ -70,6 +71,21 @@ public class Space implements Disposable {
         }
         //nov list overwrita star list
         bullets = liveBullets;
+    }
+
+    private void updateEnemyBullets(float delta) {
+        //nov linked list ki bo vseboval samo live bullete
+        LinkedList<Bullet> liveBullets = new LinkedList<Bullet>();
+        for (Bullet bullet : getEnemyBullets()) {
+            //ce je bullet oznacen za despawn, se ga NE doda v nov list
+            if (!bullet.isDespawning()) {
+                liveBullets.add(bullet);
+                bullet.update(delta);
+            }
+        }
+        //nov list overwrita star list
+        setEnemyBullets(liveBullets);
+        System.out.println(enemyBullets.size());
     }
 
     private void CreateTestSpace() {
@@ -119,5 +135,13 @@ public class Space implements Disposable {
 
     public void setEnemies(LinkedList<EnemyDisc> enemies) {
         this.enemies = enemies;
+    }
+
+    public LinkedList<Bullet> getEnemyBullets() {
+        return enemyBullets;
+    }
+
+    public void setEnemyBullets(LinkedList<Bullet> enemyBullets) {
+        this.enemyBullets = enemyBullets;
     }
 }

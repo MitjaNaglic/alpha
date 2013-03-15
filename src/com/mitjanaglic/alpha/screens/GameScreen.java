@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
+import com.mitjanaglic.alpha.controllers.EnemyController;
 import com.mitjanaglic.alpha.controllers.PlayerController;
 import com.mitjanaglic.alpha.controllers.SpaceController;
 import com.mitjanaglic.alpha.view.WorldRenderer;
@@ -21,6 +22,7 @@ public class GameScreen implements Screen, InputProcessor {
     private WorldRenderer renderer;
     private PlayerController controller;
     private SpaceController spaceController;
+    private EnemyController enemyController;
     private int height, width;
 
     public GameScreen() {
@@ -28,12 +30,14 @@ public class GameScreen implements Screen, InputProcessor {
         renderer = new WorldRenderer(space);
         controller = new PlayerController(space);
         spaceController = new SpaceController(space);
+        enemyController = new EnemyController(space);
     }
 
     @Override
     public void render(float delta) {
         controller.update(delta);
         spaceController.update(delta);
+        enemyController.update(delta);
         space.update(delta);
         renderer.render(delta);
     }
@@ -70,6 +74,7 @@ public class GameScreen implements Screen, InputProcessor {
     public void dispose() {
         controller = null;
         spaceController = null;
+        enemyController = null;
         space.dispose();
         renderer.dispose();
         Gdx.input.setInputProcessor(null);

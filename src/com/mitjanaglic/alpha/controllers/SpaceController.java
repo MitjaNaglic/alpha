@@ -20,6 +20,7 @@ public class SpaceController {
 
     public void update(float delta) {
         checkPlayerBulletCollisions();
+        checkEnemyBulletCollisions();
     }
 
     private void checkPlayerBulletCollisions() {
@@ -29,6 +30,14 @@ public class SpaceController {
                     enemy.hit(bullet.getDamage());
                     bullet.hit();
                 }
+            }
+        }
+    }
+
+    private void checkEnemyBulletCollisions() {
+        for (Bullet bullet : space.getEnemyBullets()) {
+            if (space.getPlayer().getBounds().overlaps(bullet.getBounds())) {
+                space.getPlayer().hit();
             }
         }
     }
