@@ -38,6 +38,7 @@ public class SpaceController {
         for (Bullet bullet : space.getEnemyBullets()) {
             if (space.getPlayer().getBounds().overlaps(bullet.getBounds())) {
                 space.getPlayer().hit();
+                bullet.hit();
             }
         }
     }

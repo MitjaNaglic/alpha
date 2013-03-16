@@ -13,8 +13,14 @@ import com.badlogic.gdx.math.Vector2;
 public abstract class Entity {
     private Vector2 position;
     private Vector2 velocity;
+    /**
+     * width, height texture, should be changed somehow
+     */
     private float width;
     private float height;
+    /**
+     * hitbox
+     */
     private Rectangle bounds;
 
     public Entity(Vector2 position) {
@@ -25,11 +31,23 @@ public abstract class Entity {
 
     public abstract void update(float delta);
 
-    protected void updateBounds() {
+    /**
+     * Updata hitbox vsak frame, sprejme velikost boxa
+     */
+    protected void updateBounds(float width, float height) {
         getBounds().setX(getPosition().x);
         getBounds().setY(getPosition().y);
-        getBounds().setWidth(getWidth());
-        getBounds().setHeight(getHeight());
+        getBounds().setWidth(width);
+        getBounds().setHeight(height);
+    }
+
+    /**
+     * @return sredina hitboxa
+     */
+    public Vector2 getCenter() {
+        float x = getBounds().x + getBounds().getWidth() / 2;
+        float y = getBounds().y + getBounds().getHeight() / 2;
+        return new Vector2(x, y);
     }
 
     public Vector2 getPosition() {

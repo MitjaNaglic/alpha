@@ -22,12 +22,11 @@ public class Player extends Entity {
     private int lives = 10;
     private Gun gun;
 
-
     public Player(Vector2 pos) {
         super(pos);
-        setHeight(128);
-        setWidth(128);
-        updateBounds();
+        setHeight(75);
+        setWidth(99);
+        updateBounds(getWidth(), getHeight());
         gun = new Gun(this, getWidth() / 2, getHeight() / 2 + getHeight() / 5);
     }
 
@@ -36,7 +35,7 @@ public class Player extends Entity {
     public void update(float delta) {
         getVelocity().y += getForwardInertia();
         getPosition().add(getVelocity().cpy().mul(delta));
-        updateBounds();
+        updateBounds(getWidth(), getHeight());
         gun.update(delta);
         if (immunityCooldown > 0) {
             immunityCooldown -= delta;
@@ -55,10 +54,6 @@ public class Player extends Entity {
             immunityCooldown = immunityTime;
             lives--;
         }
-    }
-
-    public Vector2 getCenter() {
-        return new Vector2(getBounds().getX() + getBounds().getWidth() / 2, getBounds().y + getBounds().getHeight() / 2);
     }
 
     public float getSpeed() {

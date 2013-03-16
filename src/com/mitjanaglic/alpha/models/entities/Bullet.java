@@ -20,7 +20,6 @@ public class Bullet extends Entity {
 
     public Bullet(Entity owner, Vector2 position, float damage, float angle) {
         super(position);
-        shotOrigin = new Vector2(position.cpy());
         getVelocity().y = speed;
         this.angle = angle;
         getVelocity().rotate(angle);
@@ -28,14 +27,15 @@ public class Bullet extends Entity {
         this.damage = damage;
         setWidth(9f);
         setHeight(33f);
-        updateBounds();
+        updateBounds(9, 9);
+        shotOrigin = new Vector2(getPosition());
     }
 
 
     @Override
     public void update(float delta) {
         getPosition().add(getVelocity().cpy().mul(delta));
-        updateBounds();
+        updateBounds(9, 9);
         if (getPosition().cpy().dst(shotOrigin) >= range) {
             despawning = true;
         }

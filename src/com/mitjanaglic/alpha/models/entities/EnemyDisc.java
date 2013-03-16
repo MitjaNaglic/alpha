@@ -36,7 +36,7 @@ public class EnemyDisc extends Entity {
         this.player = player;
         setHeight(91);
         setWidth(91);
-        updateBounds();
+        updateBounds(getWidth(), getHeight());
         gun = new Gun(this, getWidth() / 2, getHeight() / 2 - getHeight() / 5);
         getVelocity().y = forwardInertia;
     }
@@ -45,13 +45,13 @@ public class EnemyDisc extends Entity {
     public void update(float delta) {
         getPosition().add(getVelocity().cpy().mul(delta));
         rotate(delta);
-        updateBounds();
+        updateBounds(getWidth(), getHeight());
         gun.update(delta);
     }
 
     public Bullet shoot() {
 
-        return gun.shoot(player.getCenter().sub(getPosition()).angle() - 90); //smer playerja
+        return gun.shoot(player.getCenter().sub(this.getCenter()).angle() - 90); //smer playerja
     }
 
     public void hit(float damage) {

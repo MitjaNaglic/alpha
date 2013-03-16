@@ -8,11 +8,13 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.models.entities.Bullet;
 import com.mitjanaglic.alpha.models.entities.EnemyDisc;
+import com.mitjanaglic.alpha.models.entities.Entity;
 import com.mitjanaglic.alpha.worlds.Space;
 
 import java.util.HashMap;
@@ -40,6 +42,8 @@ public class WorldRenderer implements Disposable {
     private TextureRegion background;
     private BitmapFont font;
     private TextureAtlas textureAtlas;
+    private boolean drawHitboxes = false;
+    private ShapeRenderer shapeRenderer;
 
 
     public WorldRenderer(Space space) {
@@ -50,6 +54,7 @@ public class WorldRenderer implements Disposable {
         camera = new OrthographicCamera(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
         font = new BitmapFont();
         loadTextures();
+        shapeRenderer = new ShapeRenderer();
 
 
     }
@@ -68,6 +73,7 @@ public class WorldRenderer implements Disposable {
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
         batch.setProjectionMatrix(camera.combined);
+        shapeRenderer.setProjectionMatrix(camera.combined);
         batch.begin();
         renderBackground();
         renderEnemies();
@@ -76,10 +82,49 @@ public class WorldRenderer implements Disposable {
         renderPlayer();
         batch.end();
 
+
         uiBatch.begin();
         debugInfo();
         renderLives();
         uiBatch.end();
+
+        if (drawHitboxes) {
+            drawCollisionBoxes();
+        }
+
+
+    }
+
+    private void drawCollisionBoxes() {
+
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+        shapeRenderer.rect(space.getPlayer().getBounds().getX(),
+                space.getPlayer().getBounds().getY(),
+                space.getPlayer().getBounds().getWidth(),
+                space.getPlayer().getBounds().getHeight());
+        for (Entity enemy : space.getEnemies()) {
+            shapeRenderer.rect(enemy.getBounds().getX(),
+                    enemy.getBounds().getY(),
+                    enemy.getBounds().getWidth(),
+                    enemy.getBounds().getHeight()
+            );
+        }
+        for (Entity bullet : space.getBullets()) {
+            shapeRenderer.rect(bullet.getBounds().getX(),
+                    bullet.getBounds().getY(),
+                    bullet.getBounds().getWidth(),
+                    bullet.getBounds().getHeight()
+            );
+        }
+        for (Entity enemyBullet : space.getEnemyBullets()) {
+            shapeRenderer.rect(enemyBullet.getBounds().getX(),
+                    enemyBullet.getBounds().getY(),
+                    enemyBullet.getBounds().getWidth(),
+                    enemyBullet.getBounds().getHeight()
+            );
+        }
+
+        shapeRenderer.end();
     }
 
     private void moveCameraWithPlayer(float delta) {
@@ -107,7 +152,7 @@ public class WorldRenderer implements Disposable {
         TextureRegion currentPlayerTexture;
         switch (space.getPlayer().getState()) {
             case IDLE:
-                currentPlayerTexture = textureMap.get("playerPwr2");
+                currentPlayerTexture = textureMap.get("player");
                 break;
             case MOVING_LEFT:
                 currentPlayerTexture = textureMap.get("playerLeft");
@@ -125,12 +170,17 @@ public class WorldRenderer implements Disposable {
                 space.getPlayer().getWidth(),
                 space.getPlayer().getHeight()
         );
-
     }
 
     private void renderBullets(LinkedList<Bullet> bullets) {
+        TextureRegion texture;
         for (Bullet bullet : bullets) {
-            batch.draw(textureMap.get("laserRed"),
+            if (bullet.getOwner() == space.getPlayer()) {   //player bullets are green
+                texture = textureMap.get("laserGreen");
+            } else {
+                texture = textureMap.get("laserRed");
+            }
+            batch.draw(texture,
                     bullet.getPosition().x,
                     bullet.getPosition().y,
                     bullet.getWidth() / 2,
@@ -167,10 +217,11 @@ public class WorldRenderer implements Disposable {
     private void loadTextures() {
         textureAtlas = new TextureAtlas(Gdx.files.internal("data\\png\\textures\\textures.pack"));
         textureMap = new HashMap<String, TextureRegion>();
-        textureMap.put("playerPwr2", textureAtlas.findRegion("playerPwr2"));
+        textureMap.put("player", textureAtlas.findRegion("player"));
         textureMap.put("playerLeft", textureAtlas.findRegion("playerLeft"));
         textureMap.put("playerRight", textureAtlas.findRegion("playerRight"));
         textureMap.put("laserRed", textureAtlas.findRegion("laserRed"));
+        textureMap.put("laserGreen", textureAtlas.findRegion("laserGreen"));
         textureMap.put("enemyUFO", textureAtlas.findRegion("enemyUFO"));
         textureMap.put("life", textureAtlas.findRegion("life"));
         backgroundTexture = new Texture(Gdx.files.internal("data\\png\\Background\\starBackground.png"));  //TODO background texture atlas
@@ -204,6 +255,7 @@ public class WorldRenderer implements Disposable {
         backgroundTexture.dispose();
         font.dispose();
         batch.dispose();
+        shapeRenderer.dispose();
         uiBatch.dispose();
     }
 }
