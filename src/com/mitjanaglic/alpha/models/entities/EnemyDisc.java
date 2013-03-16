@@ -51,7 +51,7 @@ public class EnemyDisc extends Entity {
 
     public Bullet shoot() {
 
-        return gun.shoot(player.getPosition().cpy().sub(getPosition()).angle());
+        return gun.shoot(player.getPosition().cpy().sub(getPosition()).angle() - 90); //smer playerja
     }
 
     public void hit(float damage) {

@@ -35,6 +35,7 @@ public class Bullet extends Entity {
     @Override
     public void update(float delta) {
         getPosition().add(getVelocity().cpy().mul(delta));
+        updateBounds();
         if (getPosition().cpy().dst(shotOrigin) >= range) {
             despawning = true;
         }
