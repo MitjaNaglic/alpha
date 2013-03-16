@@ -28,7 +28,7 @@ public class Player extends Entity {
         setHeight(128);
         setWidth(128);
         updateBounds();
-        gun = new Gun(this);
+        gun = new Gun(this, getWidth() / 2, getHeight() / 2 + getHeight() / 5);
     }
 
 
@@ -55,6 +55,10 @@ public class Player extends Entity {
             immunityCooldown = immunityTime;
             lives--;
         }
+    }
+
+    public Vector2 getCenter() {
+        return new Vector2(getBounds().getX() + getBounds().getWidth() / 2, getBounds().y + getBounds().getHeight() / 2);
     }
 
     public float getSpeed() {

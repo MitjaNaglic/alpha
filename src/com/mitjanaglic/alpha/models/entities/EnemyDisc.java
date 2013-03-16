@@ -37,7 +37,7 @@ public class EnemyDisc extends Entity {
         setHeight(91);
         setWidth(91);
         updateBounds();
-        gun = new Gun(this);
+        gun = new Gun(this, getWidth() / 2, getHeight() / 2 - getHeight() / 5);
         getVelocity().y = forwardInertia;
     }
 
@@ -51,7 +51,7 @@ public class EnemyDisc extends Entity {
 
     public Bullet shoot() {
 
-        return gun.shoot(player.getPosition().cpy().sub(getPosition()).angle() - 90); //smer playerja
+        return gun.shoot(player.getCenter().sub(getPosition()).angle() - 90); //smer playerja
     }
 
     public void hit(float damage) {

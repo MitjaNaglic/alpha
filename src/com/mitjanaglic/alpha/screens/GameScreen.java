@@ -24,6 +24,7 @@ public class GameScreen implements Screen, InputProcessor {
     private SpaceController spaceController;
     private EnemyController enemyController;
     private int height, width;
+    private boolean isAccelometerAvailable;
 
     public GameScreen() {
         space = new Space();
@@ -31,10 +32,12 @@ public class GameScreen implements Screen, InputProcessor {
         controller = new PlayerController(space);
         spaceController = new SpaceController(space);
         enemyController = new EnemyController(space);
+        isAccelometerAvailable = Gdx.input.isPeripheralAvailable(Input.Peripheral.Accelerometer);
     }
 
     @Override
     public void render(float delta) {
+        if (isAccelometerAvailable) checkTilt();
         controller.update(delta);
         spaceController.update(delta);
         enemyController.update(delta);
@@ -81,6 +84,29 @@ public class GameScreen implements Screen, InputProcessor {
     }
 
     /*-------------------------------------INPUT PROCESSOR --------------------------*/
+    public void checkTilt() {
+        // points to the right (when in portrait orientation)
+        if (Gdx.input.getAccelerometerX() > 1) {
+            controller.downPressed();
+        } else if (Gdx.input.getAccelerometerX() < -1) {
+            controller.upPressed();
+        } else {
+            controller.upReleased();
+            controller.downReleased();
+        }
+        // points upwards (when in portrait orientation)
+        if (Gdx.input.getAccelerometerY() > 1) {
+            controller.rightPressed();
+        } else if (Gdx.input.getAccelerometerY() < -1) {
+            controller.leftPressed();
+        } else {
+            controller.leftReleased();
+            controller.rightReleased();
+        }
+        //Gdx.input.getAccelerometerZ(); // points to the front of the display (coming out of the screen)
+
+    }
+
     @Override
     public boolean keyDown(int keycode) {
         if (keycode == Input.Keys.A)

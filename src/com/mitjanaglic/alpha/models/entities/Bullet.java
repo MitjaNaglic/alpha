@@ -10,8 +10,8 @@ import com.badlogic.gdx.math.Vector2;
  * To change this template use File | Settings | File Templates.
  */
 public class Bullet extends Entity {
-    private float range = 450;
-    private float speed = 700;
+    private float range = 1000;
+    private float speed = 1500;
     private float damage;
     private float angle;
     private Entity owner;
