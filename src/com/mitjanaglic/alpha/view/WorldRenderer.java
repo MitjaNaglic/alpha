@@ -1,7 +1,7 @@
 package com.mitjanaglic.alpha.view;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -70,7 +70,7 @@ public class WorldRenderer implements Disposable {
         Gdx.gl.glViewport((int) viewport.x, (int) viewport.y,
                 (int) viewport.width, (int) viewport.height);
         Gdx.gl.glClearColor(0.369f, 0.247f, 0.42f, 1);
-        Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.setProjectionMatrix(camera.combined);
         shapeRenderer.setProjectionMatrix(camera.combined);
@@ -161,7 +161,7 @@ public class WorldRenderer implements Disposable {
                 currentPlayerTexture = textureMap.get("playerRight");
                 break;
             default:
-                currentPlayerTexture = textureMap.get("playerPwr2");
+                currentPlayerTexture = textureMap.get("player");
         }
 
         batch.draw(currentPlayerTexture,
