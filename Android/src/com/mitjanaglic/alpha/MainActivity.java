@@ -3,6 +3,7 @@ package com.mitjanaglic.alpha;
 import android.os.Bundle;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
+import com.mitjanaglic.alpha.game.Alpha;
 
 /**
  * Created with IntelliJ IDEA.

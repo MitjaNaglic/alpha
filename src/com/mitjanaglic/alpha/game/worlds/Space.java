@@ -1,11 +1,11 @@
-package com.mitjanaglic.alpha.worlds;
+package com.mitjanaglic.alpha.game.worlds;
 
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
-import com.mitjanaglic.alpha.models.Level;
-import com.mitjanaglic.alpha.models.entities.Bullet;
-import com.mitjanaglic.alpha.models.entities.EnemyDisc;
-import com.mitjanaglic.alpha.models.entities.Player;
+import com.mitjanaglic.alpha.game.models.Level;
+import com.mitjanaglic.alpha.game.models.entities.Bullet;
+import com.mitjanaglic.alpha.game.models.entities.EnemyDisc;
+import com.mitjanaglic.alpha.game.models.entities.Player;
 
 import java.util.LinkedList;
 

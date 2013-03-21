@@ -1,14 +1,14 @@
-package com.mitjanaglic.alpha.screens;
+package com.mitjanaglic.alpha.game.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
-import com.mitjanaglic.alpha.controllers.EnemyController;
-import com.mitjanaglic.alpha.controllers.PlayerController;
-import com.mitjanaglic.alpha.controllers.SpaceController;
-import com.mitjanaglic.alpha.view.WorldRenderer;
-import com.mitjanaglic.alpha.worlds.Space;
+import com.mitjanaglic.alpha.game.controllers.EnemyController;
+import com.mitjanaglic.alpha.game.controllers.PlayerController;
+import com.mitjanaglic.alpha.game.controllers.SpaceController;
+import com.mitjanaglic.alpha.game.view.WorldRenderer;
+import com.mitjanaglic.alpha.game.worlds.Space;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,4 +1,4 @@
-package com.mitjanaglic.alpha.models.entities;
+package com.mitjanaglic.alpha.game.models.entities;
 
 import com.badlogic.gdx.math.Vector2;
 

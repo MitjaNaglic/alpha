@@ -1,7 +1,7 @@
-package com.mitjanaglic.alpha.models.entities;
+package com.mitjanaglic.alpha.game.models.entities;
 
 import com.badlogic.gdx.math.Vector2;
-import com.mitjanaglic.alpha.models.Gun;
+import com.mitjanaglic.alpha.game.models.Gun;
 
 /**
  * Created with IntelliJ IDEA.

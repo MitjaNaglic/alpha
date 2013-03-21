@@ -1,4 +1,4 @@
-package com.mitjanaglic.alpha.models;
+package com.mitjanaglic.alpha.game.models;
 
 /**
  * Created with IntelliJ IDEA.

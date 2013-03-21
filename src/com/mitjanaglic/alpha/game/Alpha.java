@@ -1,9 +1,9 @@
-package com.mitjanaglic.alpha;
+package com.mitjanaglic.alpha.game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
-import com.mitjanaglic.alpha.screens.GameScreen;
+import com.mitjanaglic.alpha.game.screens.GameScreen;
 
 /**
  * Created with IntelliJ IDEA.

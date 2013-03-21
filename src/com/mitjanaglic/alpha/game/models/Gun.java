@@ -1,8 +1,8 @@
-package com.mitjanaglic.alpha.models;
+package com.mitjanaglic.alpha.game.models;
 
 import com.badlogic.gdx.math.Vector2;
-import com.mitjanaglic.alpha.models.entities.Bullet;
-import com.mitjanaglic.alpha.models.entities.Entity;
+import com.mitjanaglic.alpha.game.models.entities.Bullet;
+import com.mitjanaglic.alpha.game.models.entities.Entity;
 
 /**
  * Created with IntelliJ IDEA.

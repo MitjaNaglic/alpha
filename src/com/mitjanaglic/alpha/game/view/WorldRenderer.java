@@ -1,4 +1,4 @@
-package com.mitjanaglic.alpha.view;
+package com.mitjanaglic.alpha.game.view;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -12,10 +12,10 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
-import com.mitjanaglic.alpha.models.entities.Bullet;
-import com.mitjanaglic.alpha.models.entities.EnemyDisc;
-import com.mitjanaglic.alpha.models.entities.Entity;
-import com.mitjanaglic.alpha.worlds.Space;
+import com.mitjanaglic.alpha.game.models.entities.Bullet;
+import com.mitjanaglic.alpha.game.models.entities.EnemyDisc;
+import com.mitjanaglic.alpha.game.models.entities.Entity;
+import com.mitjanaglic.alpha.game.worlds.Space;
 
 import java.util.HashMap;
 import java.util.LinkedList;

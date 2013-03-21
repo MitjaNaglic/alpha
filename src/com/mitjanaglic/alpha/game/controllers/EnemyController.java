@@ -1,8 +1,8 @@
-package com.mitjanaglic.alpha.controllers;
+package com.mitjanaglic.alpha.game.controllers;
 
-import com.mitjanaglic.alpha.models.entities.Bullet;
-import com.mitjanaglic.alpha.models.entities.EnemyDisc;
-import com.mitjanaglic.alpha.worlds.Space;
+import com.mitjanaglic.alpha.game.models.entities.Bullet;
+import com.mitjanaglic.alpha.game.models.entities.EnemyDisc;
+import com.mitjanaglic.alpha.game.worlds.Space;
 
 /**
  * Created with IntelliJ IDEA.
