@@ -18,6 +18,8 @@ public class HitMark extends Entity {
         setWidth(56);
         setHeight(54);
         updateBounds(getWidth(), getHeight());
+        getPosition().x -= getWidth() / 2;
+        getPosition().y -= getHeight() / 2;
     }
 
     @Override
