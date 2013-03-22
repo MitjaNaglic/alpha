@@ -2,6 +2,7 @@ package com.mitjanaglic.alpha.game.controllers;
 
 import com.mitjanaglic.alpha.game.models.entities.Bullet;
 import com.mitjanaglic.alpha.game.models.entities.EnemyDisc;
+import com.mitjanaglic.alpha.game.models.entities.HitMark;
 import com.mitjanaglic.alpha.game.worlds.Space;
 
 /**
@@ -27,7 +28,7 @@ public class SpaceController {
         for (EnemyDisc enemy : space.getEnemies()) {
             for (Bullet bullet : space.getBullets()) {
                 if (enemy.getBounds().overlaps(bullet.getBounds())) {
-                    enemy.hit(bullet.getDamage());
+                    enemy.hit(bullet.getDamage(), new HitMark(bullet.getPosition().cpy()));
                     bullet.hit();
                 }
             }
@@ -37,7 +38,7 @@ public class SpaceController {
     private void checkEnemyBulletCollisions() {
         for (Bullet bullet : space.getEnemyBullets()) {
             if (space.getPlayer().getBounds().overlaps(bullet.getBounds())) {
-                space.getPlayer().hit();
+                space.getPlayer().hit(new HitMark(bullet.getPosition().cpy()));
                 bullet.hit();
             }
         }

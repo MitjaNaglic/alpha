@@ -10,8 +10,7 @@ import com.mitjanaglic.alpha.game.models.Gun;
  * Time: 14:57
  * To change this template use File | Settings | File Templates.
  */
-public class Player extends Entity {
-
+public class Player extends Ship {
     public enum State {
         IDLE, DYING, MOVING_LEFT, MOVING_RIGHT
     }
@@ -40,6 +39,7 @@ public class Player extends Entity {
         if (immunityCooldown > 0) {
             immunityCooldown -= delta;
         }
+        super.update(delta);
     }
 
     public Bullet shoot() {
@@ -49,7 +49,8 @@ public class Player extends Entity {
     private float immunityTime = 1.1f;
     private float immunityCooldown = 0;
 
-    public void hit() {
+    public void hit(HitMark hitMark) {
+        super.hit(hitMark);
         if (immunityCooldown <= 0) {
             immunityCooldown = immunityTime;
             lives--;

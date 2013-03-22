@@ -15,6 +15,7 @@ import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.game.models.entities.Bullet;
 import com.mitjanaglic.alpha.game.models.entities.EnemyDisc;
 import com.mitjanaglic.alpha.game.models.entities.Entity;
+import com.mitjanaglic.alpha.game.models.entities.Ship;
 import com.mitjanaglic.alpha.game.worlds.Space;
 
 import java.util.HashMap;
@@ -145,6 +146,7 @@ public class WorldRenderer implements Disposable {
                     1.0f,
                     enemy.getRotationAngle()
             );
+            renderHitMark(enemy);
         }
     }
 
@@ -170,6 +172,24 @@ public class WorldRenderer implements Disposable {
                 space.getPlayer().getWidth(),
                 space.getPlayer().getHeight()
         );
+
+        renderHitMark(space.getPlayer());
+    }
+
+    private void renderHitMark(Ship owner) {
+        TextureRegion texture;
+        if (owner.getHitMark() != null) {
+            if (owner == space.getPlayer()) {
+                texture = textureMap.get("laserRedShot");
+            } else {
+                texture = textureMap.get("laserGreenShot");
+            }
+            batch.draw(texture,
+                    owner.getHitMark().getPosition().x,
+                    owner.getHitMark().getPosition().y,
+                    owner.getHitMark().getWidth(),
+                    owner.getHitMark().getHeight());
+        }
     }
 
     private void renderBullets(LinkedList<Bullet> bullets) {
@@ -224,6 +244,8 @@ public class WorldRenderer implements Disposable {
         textureMap.put("laserGreen", textureAtlas.findRegion("laserGreen"));
         textureMap.put("enemyUFO", textureAtlas.findRegion("enemyUFO"));
         textureMap.put("life", textureAtlas.findRegion("life"));
+        textureMap.put("laserGreenShot", textureAtlas.findRegion("laserGreenShot"));
+        textureMap.put("laserRedShot", textureAtlas.findRegion("laserRedShot"));
         backgroundTexture = new Texture(Gdx.files.internal("data\\png\\Background\\starBackground.png"));  //TODO background texture atlas
         backgroundTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         background = new TextureRegion(backgroundTexture, space.getLevel().getWidth(), space.getLevel().getHeight());

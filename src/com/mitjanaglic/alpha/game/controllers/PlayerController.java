@@ -96,7 +96,7 @@ public class PlayerController {
     private void entityCollisions() {
         for (EnemyDisc enemy : space.getEnemies()) {
             if (player.getBounds().overlaps(enemy.getBounds())) {
-                player.hit();
+                player.hit(null);
             }
         }
     }

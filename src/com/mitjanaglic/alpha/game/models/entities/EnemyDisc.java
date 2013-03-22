@@ -10,7 +10,7 @@ import com.mitjanaglic.alpha.game.models.Gun;
  * Time: 15:11
  * To change this template use File | Settings | File Templates.
  */
-public class EnemyDisc extends Entity {
+public class EnemyDisc extends Ship {
     public State getState() {
         return state;
     }
@@ -47,6 +47,7 @@ public class EnemyDisc extends Entity {
         rotate(delta);
         updateBounds(getWidth(), getHeight());
         gun.update(delta);
+        super.update(delta);
     }
 
     public Bullet shoot() {
@@ -54,7 +55,8 @@ public class EnemyDisc extends Entity {
         return gun.shoot(player.getCenter().sub(this.getCenter()).angle() - 90); //smer playerja
     }
 
-    public void hit(float damage) {
+    public void hit(float damage, HitMark hitMark) {
+        super.hit(hitMark);
         health -= damage;
         if (health <= 0) {
             setState(State.DYING);
