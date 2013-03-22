@@ -17,7 +17,6 @@ public class Player extends Ship {
 
     private State state = State.IDLE;
     private float speed = 400f;
-    private float forwardInertia = 200f;
     private int lives = 10;
     private Gun gun;
 
@@ -71,14 +70,6 @@ public class Player extends Ship {
 
     public void setState(State state) {
         this.state = state;
-    }
-
-    public float getForwardInertia() {
-        return forwardInertia;
-    }
-
-    public void setForwardInertia(float forwardInertia) {
-        this.forwardInertia = forwardInertia;
     }
 
     public int getLives() {

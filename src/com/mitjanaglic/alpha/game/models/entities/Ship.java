@@ -12,9 +12,11 @@ import com.badlogic.gdx.math.Vector2;
 public abstract class Ship extends Entity {
 
     private HitMark hitMark;
+    protected float forwardInertia = 200f;
 
     public Ship(Vector2 position) {
         super(position);
+        getVelocity().y += forwardInertia;
     }
 
     /**
@@ -37,6 +39,14 @@ public abstract class Ship extends Entity {
 
     public HitMark getHitMark() {
         return hitMark;
+    }
+
+    public float getForwardInertia() {
+        return forwardInertia;
+    }
+
+    protected void setForwardInertia(float forwardInertia) {
+        this.forwardInertia = forwardInertia;
     }
 
 }

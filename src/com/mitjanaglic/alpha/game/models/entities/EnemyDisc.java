@@ -23,7 +23,6 @@ public class EnemyDisc extends Ship {
         IDLE, DYING
     }
 
-    private float forwardInertia = 200f;
     private float rotationAngle = 0;
     private float rotationVelocity = 250;
     private float health = 100;
@@ -38,7 +37,6 @@ public class EnemyDisc extends Ship {
         setWidth(91);
         updateBounds(getWidth(), getHeight());
         gun = new Gun(this, getWidth() / 2, getHeight() / 2 - getHeight() / 5);
-        getVelocity().y = forwardInertia;
     }
 
     @Override

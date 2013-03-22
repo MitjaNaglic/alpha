@@ -18,7 +18,7 @@ public class HitMark extends Entity {
         setWidth(56);
         setHeight(54);
         updateBounds(getWidth(), getHeight());
-        getPosition().x -= getWidth() / 2;
+        getPosition().x -= getWidth() / 2;       //centering
         getPosition().y -= getHeight() / 2;
     }
 
