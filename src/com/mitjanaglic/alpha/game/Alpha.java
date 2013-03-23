@@ -2,7 +2,12 @@ package com.mitjanaglic.alpha.game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.mitjanaglic.alpha.game.screens.GameScreen;
 import com.mitjanaglic.alpha.game.screens.MenuScreen;
 import com.mitjanaglic.alpha.game.screens.PauseScreen;
@@ -21,9 +26,13 @@ public class Alpha extends Game {
     private GameScreen gameScreen;
     private MenuScreen mainMenu;
     private PauseScreen pauseScreen;
+    private AssetManager assetManager;
 
     @Override
     public void create() {
+        assetManager = new AssetManager();
+        enqueueAssets();
+        assetManager.finishLoading();
         mainMenu = new MenuScreen(this);
         gameScreen = new GameScreen(this);
         pauseScreen = new PauseScreen(this);
@@ -32,9 +41,13 @@ public class Alpha extends Game {
         backgroundMusic.setLooping(true);
         backgroundMusic.setVolume(0.5f);
         backgroundMusic.play();
-
     }
 
+    private void enqueueAssets() {
+        getAssetManager().load("data/png/textures/textures.pack", TextureAtlas.class);
+        getAssetManager().setLoader(TiledMap.class, new TmxMapLoader(new InternalFileHandleResolver()));
+        getAssetManager().load("data/levels/Level1/Level1.tmx", TiledMap.class);
+    }
 
     public void setToGameScreen() {
         if (gameScreen == null) gameScreen = new GameScreen(this);
@@ -56,7 +69,12 @@ public class Alpha extends Game {
         if (gameScreen != null) gameScreen.dispose();
         pauseScreen.dispose();
         mainMenu.dispose();
+        getAssetManager().dispose();
 
         backgroundMusic.dispose();
+    }
+
+    public AssetManager getAssetManager() {
+        return assetManager;
     }
 }

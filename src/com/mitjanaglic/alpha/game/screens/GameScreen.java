@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.assets.AssetManager;
 import com.mitjanaglic.alpha.game.Alpha;
 import com.mitjanaglic.alpha.game.controllers.EnemyController;
 import com.mitjanaglic.alpha.game.controllers.PlayerController;
@@ -27,11 +28,13 @@ public class GameScreen implements Screen, InputProcessor {
     private EnemyController enemyController;
     private int height, width;
     private boolean isAccelometerAvailable;
+    private AssetManager assetManager;
 
     public GameScreen(Alpha alpha) {
         this.alpha = alpha;
+        assetManager = alpha.getAssetManager();
         space = new Space();
-        renderer = new WorldRenderer(space);
+        renderer = new WorldRenderer(assetManager, space);
         controller = new PlayerController(space);
         spaceController = new SpaceController(space);
         enemyController = new EnemyController(space);

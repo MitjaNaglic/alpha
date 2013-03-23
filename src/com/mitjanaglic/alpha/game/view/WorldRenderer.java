@@ -1,14 +1,16 @@
 package com.mitjanaglic.alpha.game.view;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
@@ -39,24 +41,27 @@ public class WorldRenderer implements Disposable {
     private SpriteBatch batch = new SpriteBatch();
     private SpriteBatch uiBatch = new SpriteBatch();
     private Map<String, TextureRegion> textureMap;
-    private Texture backgroundTexture;
-    private TextureRegion background;
     private BitmapFont font;
     private TextureAtlas textureAtlas;
     private boolean drawHitboxes = false;
     private ShapeRenderer shapeRenderer;
+    private TiledMap levelMap;
+    private OrthogonalTiledMapRenderer mapRenderer;
+    private AssetManager assetManager;
 
 
-    public WorldRenderer(Space space) {
+    public WorldRenderer(AssetManager assetManager, Space space) {
         this.space = space;
+        this.assetManager = assetManager;
         VIRTUAL_WIDTH = 1280;
         VIRTUAL_HEIGHT = 720;
         ASPECT_RATIO = VIRTUAL_WIDTH / VIRTUAL_HEIGHT;
         camera = new OrthographicCamera(VIRTUAL_WIDTH, VIRTUAL_HEIGHT);
         font = new BitmapFont();
-        loadTextures();
         shapeRenderer = new ShapeRenderer();
 
+
+        initTextures();
 
     }
 
@@ -75,8 +80,9 @@ public class WorldRenderer implements Disposable {
 
         batch.setProjectionMatrix(camera.combined);
         shapeRenderer.setProjectionMatrix(camera.combined);
-        batch.begin();
         renderBackground();
+        batch.begin();
+
         renderEnemies();
         renderBullets(space.getBullets());
         renderBullets(space.getEnemyBullets());
@@ -216,7 +222,8 @@ public class WorldRenderer implements Disposable {
     }
 
     private void renderBackground() {
-        batch.draw(background, 0, 0);
+        mapRenderer.setView(camera);
+        mapRenderer.render();
     }
 
     private void renderLives() {
@@ -234,8 +241,11 @@ public class WorldRenderer implements Disposable {
 
     }
 
-    private void loadTextures() {
-        textureAtlas = new TextureAtlas(Gdx.files.internal("data\\png\\textures\\textures.pack"));
+    private void initTextures() {
+        textureAtlas = assetManager.get("data/png/textures/textures.pack", TextureAtlas.class);
+        levelMap = assetManager.get("data/levels/Level1/Level1.tmx", TiledMap.class);
+        mapRenderer = new OrthogonalTiledMapRenderer(levelMap, 1);
+
         textureMap = new HashMap<String, TextureRegion>();
         textureMap.put("player", textureAtlas.findRegion("player"));
         textureMap.put("playerLeft", textureAtlas.findRegion("playerLeft"));
@@ -246,9 +256,6 @@ public class WorldRenderer implements Disposable {
         textureMap.put("life", textureAtlas.findRegion("life"));
         textureMap.put("laserGreenShot", textureAtlas.findRegion("laserGreenShot"));
         textureMap.put("laserRedShot", textureAtlas.findRegion("laserRedShot"));
-        backgroundTexture = new Texture(Gdx.files.internal("data\\png\\Background\\starBackground.png"));  //TODO background texture atlas
-        backgroundTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-        background = new TextureRegion(backgroundTexture, space.getLevel().getWidth(), space.getLevel().getHeight());
     }
 
     public void setSize(int width, int height) {
@@ -273,8 +280,7 @@ public class WorldRenderer implements Disposable {
 
     @Override
     public void dispose() {
-        textureAtlas.dispose();
-        backgroundTexture.dispose();
+        mapRenderer.dispose();
         font.dispose();
         batch.dispose();
         shapeRenderer.dispose();

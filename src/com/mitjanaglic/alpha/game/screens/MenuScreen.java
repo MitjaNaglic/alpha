@@ -50,7 +50,7 @@ public class MenuScreen implements Screen {
         textButtonStyle.up = new TextureRegionDrawable(upRegion);
         textButtonStyle.down = new TextureRegionDrawable(downRegion);
         textButtonStyle.font = font;
-        textButtonStyle.fontColor = new Color(0, 0, 0, 1);
+        textButtonStyle.fontColor = new Color(0f, 0f, 0f, 1);
 
 
         TextButton button1 = new TextButton("New Game", textButtonStyle);
