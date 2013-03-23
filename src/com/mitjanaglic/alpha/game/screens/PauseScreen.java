@@ -18,22 +18,22 @@ import com.mitjanaglic.alpha.game.Alpha;
 /**
  * Created with IntelliJ IDEA.
  * User: mito
- * Date: 22.3.2013
- * Time: 14:50
+ * Date: 23.3.2013
+ * Time: 14:36
  * To change this template use File | Settings | File Templates.
  */
-public class MenuScreen implements Screen {
+public class PauseScreen implements Screen {
     private Stage stage;
     private TextureAtlas textureAtlas;
     private BitmapFont font;
     private Alpha alpha;
 
-    public MenuScreen(Alpha alpha) {
+    public PauseScreen(Alpha alpha) {
         this.alpha = alpha;
         stage = new Stage();
+        font = new BitmapFont();
         loadData();
         createLayout();
-
     }
 
     private void createLayout() {
@@ -53,7 +53,7 @@ public class MenuScreen implements Screen {
         textButtonStyle.fontColor = new Color(0, 0, 0, 1);
 
 
-        TextButton button1 = new TextButton("New Game", textButtonStyle);
+        TextButton button1 = new TextButton("Resume", textButtonStyle);
         button1.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent changeEvent, Actor actor) {
@@ -63,15 +63,11 @@ public class MenuScreen implements Screen {
         table.row().padBottom(20);
         table.add(button1);
 
-        TextButton button2 = new TextButton("Options", textButtonStyle);
-        table.row().padBottom(20);
-        table.add(button2);
-
-        TextButton button3 = new TextButton("Exit", textButtonStyle);
+        TextButton button3 = new TextButton("Exit to main menu", textButtonStyle);
         button3.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent changeEvent, Actor actor) {
-                Gdx.app.exit();
+                alpha.setToMainMenuScreen();
             }
         });
         table.row().padBottom(20);
@@ -82,8 +78,6 @@ public class MenuScreen implements Screen {
         textureAtlas = new TextureAtlas(Gdx.files.internal("data\\png\\textures\\textures.pack"));
     }
 
-
-    //-------------------------------------------SCREEN-----------------------------
     @Override
     public void render(float v) {
         Gdx.gl.glClearColor(0.369f, 0.247f, 0.42f, 1);
@@ -121,9 +115,8 @@ public class MenuScreen implements Screen {
 
     @Override
     public void dispose() {
-        Gdx.input.setInputProcessor(null);
         stage.dispose();
         textureAtlas.dispose();
-        font.dispose();
+        Gdx.input.setInputProcessor(null);
     }
 }

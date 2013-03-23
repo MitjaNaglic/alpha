@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
+import com.mitjanaglic.alpha.game.Alpha;
 import com.mitjanaglic.alpha.game.controllers.EnemyController;
 import com.mitjanaglic.alpha.game.controllers.PlayerController;
 import com.mitjanaglic.alpha.game.controllers.SpaceController;
@@ -18,6 +19,7 @@ import com.mitjanaglic.alpha.game.worlds.Space;
  * To change this template use File | Settings | File Templates.
  */
 public class GameScreen implements Screen, InputProcessor {
+    private Alpha alpha;
     private Space space;
     private WorldRenderer renderer;
     private PlayerController controller;
@@ -26,7 +28,8 @@ public class GameScreen implements Screen, InputProcessor {
     private int height, width;
     private boolean isAccelometerAvailable;
 
-    public GameScreen() {
+    public GameScreen(Alpha alpha) {
+        this.alpha = alpha;
         space = new Space();
         renderer = new WorldRenderer(space);
         controller = new PlayerController(space);
@@ -65,7 +68,7 @@ public class GameScreen implements Screen, InputProcessor {
 
     @Override
     public void pause() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        alpha.setToPauseScreen();
     }
 
     @Override
@@ -119,6 +122,9 @@ public class GameScreen implements Screen, InputProcessor {
             controller.downPressed();
         if (keycode == Input.Keys.SPACE)
             controller.firePressed();
+
+        if (keycode == Input.Keys.ESCAPE)
+            this.pause();
 
         return true;
     }
