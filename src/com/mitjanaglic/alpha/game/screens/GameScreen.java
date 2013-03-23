@@ -58,6 +58,7 @@ public class GameScreen implements Screen, InputProcessor {
     @Override
     public void show() {
         Gdx.input.setInputProcessor(this);
+        Gdx.input.setCatchBackKey(true);
 
     }
 
@@ -123,8 +124,9 @@ public class GameScreen implements Screen, InputProcessor {
         if (keycode == Input.Keys.SPACE)
             controller.firePressed();
 
-        if (keycode == Input.Keys.ESCAPE)
+        if (keycode == Input.Keys.ESCAPE || keycode == Input.Keys.BACK)
             this.pause();
+
 
         return true;
     }
