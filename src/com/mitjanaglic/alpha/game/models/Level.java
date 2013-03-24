@@ -1,5 +1,7 @@
 package com.mitjanaglic.alpha.game.models;
 
+import com.badlogic.gdx.maps.tiled.TiledMap;
+
 /**
  * Created with IntelliJ IDEA.
  * User: mito
@@ -12,9 +14,11 @@ public class Level {
     private int height;
     private float cameraWidth = 1280f;  //TODO to se uporabla samo za touch evente, neb smel bit tuki
     private float cameraHeight = 720f;
+    private TiledMap map;
 
-    public Level() {
-        loadTestLevel();
+    public Level(TiledMap map) {
+        this.map = map;
+        loadLevel();
     }
 
     public float getCameraWidth() {
@@ -25,9 +29,14 @@ public class Level {
         return cameraHeight;
     }
 
-    public void loadTestLevel() {
-        width = 1280;
-        height = 500000;
+    public void loadLevel() {
+        int width = Integer.parseInt(String.valueOf(map.getProperties().get("width")));
+        int tilewidth = Integer.parseInt(String.valueOf(map.getProperties().get("tilewidth")));
+        this.width = width * tilewidth;
+
+        int height = Integer.parseInt(String.valueOf(map.getProperties().get("height")));
+        int tileheight = Integer.parseInt(String.valueOf(map.getProperties().get("tileheight")));
+        this.height = height * tileheight;
     }
 
     public int getWidth() {

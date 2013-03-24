@@ -1,5 +1,7 @@
 package com.mitjanaglic.alpha.game.models.worlds;
 
+import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.game.models.Level;
@@ -21,11 +23,14 @@ public class Space implements Disposable {
     private Level level;
     private Vector2 cameraPosition;
     private Vector2 cameraVelocity;
+    private AssetManager assetManager;
     private LinkedList<Bullet> enemyBullets = new LinkedList<Bullet>();
     private LinkedList<Bullet> bullets = new LinkedList<Bullet>();
     private LinkedList<Disc> enemies = new LinkedList<Disc>();
+    private TiledMap currentMap;
 
-    public Space() {
+    public Space(AssetManager assetManager) {
+        this.assetManager = assetManager;
         CreateTestSpace();
         setCameraPosition(new Vector2(level.getCameraWidth() / 2f, level.getCameraHeight() / 2f));
         setCameraVelocity(new Vector2());
@@ -33,20 +38,13 @@ public class Space implements Disposable {
         getEnemies().add(new Disc(getCameraPosition().cpy(), player));
     }
 
-    public void getDrawableBackground() {
-    }
-
-    public void getDrawableEntities() {
-
-    }
-
     public void update(float delta) {
         updateBullets(delta);
         updateEnemyBullets(delta);
-        removeDeadEnemies(delta);
+        removeDeadEnemies();
     }
 
-    private void removeDeadEnemies(float delta) {
+    private void removeDeadEnemies() {
         //nov linked list ki bo vseboval samo live enemies
         LinkedList<Disc> liveDisc = new LinkedList<Disc>();
         for (Disc disc : enemies) {
@@ -89,7 +87,8 @@ public class Space implements Disposable {
 
     private void CreateTestSpace() {
         player = new Player(new Vector2(400, 200));
-        level = new Level();
+        currentMap = assetManager.get("data/levels/Level1/Level1.tmx", TiledMap.class);
+        level = new Level(getCurrentMap());
     }
 
     public Player getPlayer() {
@@ -124,16 +123,8 @@ public class Space implements Disposable {
         return bullets;
     }
 
-    public void setBullets(LinkedList<Bullet> bullets) {
-        this.bullets = bullets;
-    }
-
     public LinkedList<Disc> getEnemies() {
         return enemies;
-    }
-
-    public void setEnemies(LinkedList<Disc> enemies) {
-        this.enemies = enemies;
     }
 
     public LinkedList<Bullet> getEnemyBullets() {
@@ -142,5 +133,9 @@ public class Space implements Disposable {
 
     public void setEnemyBullets(LinkedList<Bullet> enemyBullets) {
         this.enemyBullets = enemyBullets;
+    }
+
+    public TiledMap getCurrentMap() {
+        return currentMap;
     }
 }

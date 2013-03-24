@@ -33,7 +33,7 @@ public class GameScreen implements Screen, InputProcessor {
     public GameScreen(Alpha alpha) {
         this.alpha = alpha;
         assetManager = alpha.getAssetManager();
-        space = new Space();
+        space = new Space(assetManager);
         renderer = new WorldRenderer(assetManager, space);
         controller = new PlayerController(space);
         spaceController = new SpaceController(space);

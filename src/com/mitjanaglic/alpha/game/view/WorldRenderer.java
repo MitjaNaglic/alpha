@@ -135,7 +135,7 @@ public class WorldRenderer implements Disposable {
     }
 
     private void moveCameraWithPlayer(float delta) {
-        space.getCameraPosition().add(space.getCameraVelocity().cpy().mul(delta));
+        space.getCameraPosition().add(space.getCameraVelocity().cpy().scl(delta));
         camera.position.set(space.getCameraPosition().x, space.getCameraPosition().y, 0);
     }
 
@@ -243,7 +243,7 @@ public class WorldRenderer implements Disposable {
 
     private void initTextures() {
         textureAtlas = assetManager.get("data/png/textures/textures.pack", TextureAtlas.class);
-        levelMap = assetManager.get("data/levels/Level1/Level1.tmx", TiledMap.class);
+        levelMap = space.getCurrentMap();
         mapRenderer = new OrthogonalTiledMapRenderer(levelMap, 1);
 
         textureMap = new HashMap<String, TextureRegion>();
