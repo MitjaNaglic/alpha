@@ -33,7 +33,6 @@ public class PlayerController {
         keys.put(Keys.FIRE, false);
     }
 
-    ;
 
     public PlayerController(Space space) {
         this.space = space;
