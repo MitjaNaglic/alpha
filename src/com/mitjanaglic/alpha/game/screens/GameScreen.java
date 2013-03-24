@@ -10,7 +10,7 @@ import com.mitjanaglic.alpha.game.controllers.EnemyController;
 import com.mitjanaglic.alpha.game.controllers.PlayerController;
 import com.mitjanaglic.alpha.game.controllers.SpaceController;
 import com.mitjanaglic.alpha.game.view.WorldRenderer;
-import com.mitjanaglic.alpha.game.worlds.Space;
+import com.mitjanaglic.alpha.game.models.worlds.Space;
 
 /**
  * Created with IntelliJ IDEA.

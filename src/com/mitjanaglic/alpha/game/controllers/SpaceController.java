@@ -1,9 +1,9 @@
 package com.mitjanaglic.alpha.game.controllers;
 
 import com.mitjanaglic.alpha.game.models.entities.Bullet;
-import com.mitjanaglic.alpha.game.models.entities.EnemyDisc;
+import com.mitjanaglic.alpha.game.models.entities.Disc;
 import com.mitjanaglic.alpha.game.models.entities.HitMark;
-import com.mitjanaglic.alpha.game.worlds.Space;
+import com.mitjanaglic.alpha.game.models.worlds.Space;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,7 +25,7 @@ public class SpaceController {
     }
 
     private void checkPlayerBulletCollisions() {
-        for (EnemyDisc enemy : space.getEnemies()) {
+        for (Disc enemy : space.getEnemies()) {
             for (Bullet bullet : space.getBullets()) {
                 if (enemy.getBounds().overlaps(bullet.getBounds())) {
                     enemy.hit(bullet.getDamage(), new HitMark(bullet.getPosition().cpy()));

@@ -10,7 +10,7 @@ import com.mitjanaglic.alpha.game.models.Gun;
  * Time: 15:11
  * To change this template use File | Settings | File Templates.
  */
-public class EnemyDisc extends Ship {
+public class Disc extends Ship {
     public State getState() {
         return state;
     }
@@ -30,7 +30,7 @@ public class EnemyDisc extends Ship {
     private Player player;
     private Gun gun;
 
-    public EnemyDisc(Vector2 position, Player player) {
+    public Disc(Vector2 position, Player player) {
         super(position);
         this.player = player;
         setHeight(91);

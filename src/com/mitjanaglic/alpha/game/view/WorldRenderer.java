@@ -15,10 +15,10 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.game.models.entities.Bullet;
-import com.mitjanaglic.alpha.game.models.entities.EnemyDisc;
+import com.mitjanaglic.alpha.game.models.entities.Disc;
 import com.mitjanaglic.alpha.game.models.entities.Entity;
 import com.mitjanaglic.alpha.game.models.entities.Ship;
-import com.mitjanaglic.alpha.game.worlds.Space;
+import com.mitjanaglic.alpha.game.models.worlds.Space;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -140,8 +140,8 @@ public class WorldRenderer implements Disposable {
     }
 
     private void renderEnemies() {
-        for (EnemyDisc enemy : space.getEnemies()) {
-            batch.draw(textureMap.get("enemyUFO"),
+        for (Disc enemy : space.getEnemies()) {
+            batch.draw(textureMap.get("Disc"),
                     enemy.getPosition().x,
                     enemy.getPosition().y,
                     enemy.getWidth() / 2,
@@ -252,7 +252,7 @@ public class WorldRenderer implements Disposable {
         textureMap.put("playerRight", textureAtlas.findRegion("playerRight"));
         textureMap.put("laserRed", textureAtlas.findRegion("laserRed"));
         textureMap.put("laserGreen", textureAtlas.findRegion("laserGreen"));
-        textureMap.put("enemyUFO", textureAtlas.findRegion("enemyUFO"));
+        textureMap.put("Disc", textureAtlas.findRegion("Disc"));
         textureMap.put("life", textureAtlas.findRegion("life"));
         textureMap.put("laserGreenShot", textureAtlas.findRegion("laserGreenShot"));
         textureMap.put("laserRedShot", textureAtlas.findRegion("laserRedShot"));

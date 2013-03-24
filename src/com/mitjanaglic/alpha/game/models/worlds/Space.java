@@ -1,10 +1,10 @@
-package com.mitjanaglic.alpha.game.worlds;
+package com.mitjanaglic.alpha.game.models.worlds;
 
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.game.models.Level;
 import com.mitjanaglic.alpha.game.models.entities.Bullet;
-import com.mitjanaglic.alpha.game.models.entities.EnemyDisc;
+import com.mitjanaglic.alpha.game.models.entities.Disc;
 import com.mitjanaglic.alpha.game.models.entities.Player;
 
 import java.util.LinkedList;
@@ -23,14 +23,14 @@ public class Space implements Disposable {
     private Vector2 cameraVelocity;
     private LinkedList<Bullet> enemyBullets = new LinkedList<Bullet>();
     private LinkedList<Bullet> bullets = new LinkedList<Bullet>();
-    private LinkedList<EnemyDisc> enemies = new LinkedList<EnemyDisc>();
+    private LinkedList<Disc> enemies = new LinkedList<Disc>();
 
     public Space() {
         CreateTestSpace();
         setCameraPosition(new Vector2(level.getCameraWidth() / 2f, level.getCameraHeight() / 2f));
         setCameraVelocity(new Vector2());
         getCameraVelocity().y = player.getForwardInertia();
-        getEnemies().add(new EnemyDisc(getCameraPosition().cpy(), player));
+        getEnemies().add(new Disc(getCameraPosition().cpy(), player));
     }
 
     public void getDrawableBackground() {
@@ -48,15 +48,15 @@ public class Space implements Disposable {
 
     private void removeDeadEnemies(float delta) {
         //nov linked list ki bo vseboval samo live enemies
-        LinkedList<EnemyDisc> liveEnemyDisc = new LinkedList<EnemyDisc>();
-        for (EnemyDisc enemyDisc : enemies) {
+        LinkedList<Disc> liveDisc = new LinkedList<Disc>();
+        for (Disc disc : enemies) {
             //ce je enemy oznacen za despawn, se ga NE doda v nov list
-            if (enemyDisc.getState() != EnemyDisc.State.DYING) {
-                liveEnemyDisc.add(enemyDisc);
+            if (disc.getState() != Disc.State.DYING) {
+                liveDisc.add(disc);
             }
         }
         //nov list overwrita star list
-        enemies = liveEnemyDisc;
+        enemies = liveDisc;
     }
 
     private void updateBullets(float delta) {
@@ -128,11 +128,11 @@ public class Space implements Disposable {
         this.bullets = bullets;
     }
 
-    public LinkedList<EnemyDisc> getEnemies() {
+    public LinkedList<Disc> getEnemies() {
         return enemies;
     }
 
-    public void setEnemies(LinkedList<EnemyDisc> enemies) {
+    public void setEnemies(LinkedList<Disc> enemies) {
         this.enemies = enemies;
     }
 

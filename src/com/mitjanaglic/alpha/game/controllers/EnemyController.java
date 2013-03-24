@@ -1,8 +1,8 @@
 package com.mitjanaglic.alpha.game.controllers;
 
 import com.mitjanaglic.alpha.game.models.entities.Bullet;
-import com.mitjanaglic.alpha.game.models.entities.EnemyDisc;
-import com.mitjanaglic.alpha.game.worlds.Space;
+import com.mitjanaglic.alpha.game.models.entities.Disc;
+import com.mitjanaglic.alpha.game.models.worlds.Space;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,7 +19,7 @@ public class EnemyController {
     }
 
     public void update(float delta) {
-        for (EnemyDisc enemy : space.getEnemies()) {
+        for (Disc enemy : space.getEnemies()) {
             enemy.update(delta);
             Bullet bullet = enemy.shoot();
             if (bullet != null) {

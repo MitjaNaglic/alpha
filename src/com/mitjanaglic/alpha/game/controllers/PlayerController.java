@@ -1,9 +1,9 @@
 package com.mitjanaglic.alpha.game.controllers;
 
 import com.mitjanaglic.alpha.game.models.entities.Bullet;
-import com.mitjanaglic.alpha.game.models.entities.EnemyDisc;
+import com.mitjanaglic.alpha.game.models.entities.Disc;
 import com.mitjanaglic.alpha.game.models.entities.Player;
-import com.mitjanaglic.alpha.game.worlds.Space;
+import com.mitjanaglic.alpha.game.models.worlds.Space;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -94,7 +94,7 @@ public class PlayerController {
     }
 
     private void entityCollisions() {
-        for (EnemyDisc enemy : space.getEnemies()) {
+        for (Disc enemy : space.getEnemies()) {
             if (player.getBounds().overlaps(enemy.getBounds())) {
                 player.hit(null);
             }
