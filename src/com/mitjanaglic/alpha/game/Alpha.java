@@ -46,7 +46,9 @@ public class Alpha extends Game {
     private void enqueueAssets() {
         getAssetManager().load("data/png/textures/textures.pack", TextureAtlas.class);
         getAssetManager().setLoader(TiledMap.class, new TmxMapLoader(new InternalFileHandleResolver()));
-        getAssetManager().load("data/levels/Level1/Level1.tmx", TiledMap.class);
+        TmxMapLoader.Parameters parameters = new TmxMapLoader.Parameters();
+        parameters.generateMipMaps = true;
+        getAssetManager().load("data/levels/Level1/Level1.tmx", TiledMap.class, parameters);
     }
 
     public void setToGameScreen() {

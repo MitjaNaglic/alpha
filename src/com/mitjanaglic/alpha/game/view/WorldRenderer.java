@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -20,9 +21,7 @@ import com.mitjanaglic.alpha.game.models.entities.Entity;
 import com.mitjanaglic.alpha.game.models.entities.Ship;
 import com.mitjanaglic.alpha.game.models.worlds.Space;
 
-import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -40,7 +39,6 @@ public class WorldRenderer implements Disposable {
     private Rectangle viewport;
     private SpriteBatch batch = new SpriteBatch();
     private SpriteBatch uiBatch = new SpriteBatch();
-    private Map<String, TextureRegion> textureMap;
     private BitmapFont font;
     private TextureAtlas textureAtlas;
     private boolean drawHitboxes = false;
@@ -77,6 +75,7 @@ public class WorldRenderer implements Disposable {
                 (int) viewport.width, (int) viewport.height);
         Gdx.gl.glClearColor(0.369f, 0.247f, 0.42f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
 
         batch.setProjectionMatrix(camera.combined);
         shapeRenderer.setProjectionMatrix(camera.combined);
@@ -141,7 +140,7 @@ public class WorldRenderer implements Disposable {
 
     private void renderEnemies() {
         for (Disc enemy : space.getEnemies()) {
-            batch.draw(textureMap.get("Disc"),
+            batch.draw(textureAtlas.findRegion("Disc"),
                     enemy.getPosition().x,
                     enemy.getPosition().y,
                     enemy.getWidth() / 2,
@@ -160,16 +159,16 @@ public class WorldRenderer implements Disposable {
         TextureRegion currentPlayerTexture;
         switch (space.getPlayer().getState()) {
             case IDLE:
-                currentPlayerTexture = textureMap.get("player");
+                currentPlayerTexture = textureAtlas.findRegion("player");
                 break;
             case MOVING_LEFT:
-                currentPlayerTexture = textureMap.get("playerLeft");
+                currentPlayerTexture = textureAtlas.findRegion("playerLeft");
                 break;
             case MOVING_RIGHT:
-                currentPlayerTexture = textureMap.get("playerRight");
+                currentPlayerTexture = textureAtlas.findRegion("playerRight");
                 break;
             default:
-                currentPlayerTexture = textureMap.get("player");
+                currentPlayerTexture = textureAtlas.findRegion("player");
         }
 
         batch.draw(currentPlayerTexture,
@@ -186,9 +185,9 @@ public class WorldRenderer implements Disposable {
         TextureRegion texture;
         if (owner.getHitMark() != null) {
             if (owner == space.getPlayer()) {
-                texture = textureMap.get("laserRedShot");
+                texture = textureAtlas.findRegion("laserRedShot");
             } else {
-                texture = textureMap.get("laserGreenShot");
+                texture = textureAtlas.findRegion("laserGreenShot");
             }
             batch.draw(texture,
                     owner.getHitMark().getPosition().x,
@@ -202,9 +201,9 @@ public class WorldRenderer implements Disposable {
         TextureRegion texture;
         for (Bullet bullet : bullets) {
             if (bullet.getOwner() == space.getPlayer()) {   //player bullets are green
-                texture = textureMap.get("laserGreen");
+                texture = textureAtlas.findRegion("laserGreen");
             } else {
-                texture = textureMap.get("laserRed");
+                texture = textureAtlas.findRegion("laserRed");
             }
             batch.draw(texture,
                     bullet.getPosition().x,
@@ -228,7 +227,7 @@ public class WorldRenderer implements Disposable {
 
     private void renderLives() {
         for (int i = 0; i < space.getPlayer().getLives(); i++) {
-            uiBatch.draw(textureMap.get("life"),
+            uiBatch.draw(textureAtlas.findRegion("life"),
                     viewport.x + 20 + i * 40,
                     viewport.y + 30
             );
@@ -244,18 +243,8 @@ public class WorldRenderer implements Disposable {
     private void initTextures() {
         textureAtlas = assetManager.get("data/png/textures/textures.pack", TextureAtlas.class);
         levelMap = space.getCurrentMap();
+        levelMap.getTileSets().getTile(1).getTextureRegion().getTexture().setFilter(Texture.TextureFilter.MipMapLinearNearest, Texture.TextureFilter.Nearest);
         mapRenderer = new OrthogonalTiledMapRenderer(levelMap, 1);
-
-        textureMap = new HashMap<String, TextureRegion>();
-        textureMap.put("player", textureAtlas.findRegion("player"));
-        textureMap.put("playerLeft", textureAtlas.findRegion("playerLeft"));
-        textureMap.put("playerRight", textureAtlas.findRegion("playerRight"));
-        textureMap.put("laserRed", textureAtlas.findRegion("laserRed"));
-        textureMap.put("laserGreen", textureAtlas.findRegion("laserGreen"));
-        textureMap.put("Disc", textureAtlas.findRegion("Disc"));
-        textureMap.put("life", textureAtlas.findRegion("life"));
-        textureMap.put("laserGreenShot", textureAtlas.findRegion("laserGreenShot"));
-        textureMap.put("laserRedShot", textureAtlas.findRegion("laserRedShot"));
     }
 
     public void setSize(int width, int height) {
