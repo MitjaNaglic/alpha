@@ -228,15 +228,15 @@ public class WorldRenderer implements Disposable {
     private void renderLives() {
         for (int i = 0; i < space.getPlayer().getLives(); i++) {
             uiBatch.draw(textureAtlas.findRegion("life"),
-                    viewport.x + 20 + i * 40,
-                    viewport.y + 30
+                    20 + i * 40,
+                    30
             );
         }
     }
 
     private void debugInfo() {
-        font.draw(uiBatch, "FPS: " + Gdx.graphics.getFramesPerSecond(), viewport.x,
-                viewport.y + viewport.height);
+        font.draw(uiBatch, "FPS: " + Gdx.graphics.getFramesPerSecond(), 0,
+                VIRTUAL_HEIGHT);
 
     }
 
