@@ -7,8 +7,8 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
 import com.mitjanaglic.alpha.game.Alpha;
 import com.mitjanaglic.alpha.game.controllers.EnemyController;
-import com.mitjanaglic.alpha.game.controllers.PlayerController;
 import com.mitjanaglic.alpha.game.controllers.SpaceController;
+import com.mitjanaglic.alpha.game.models.entities.components.InputComponent;
 import com.mitjanaglic.alpha.game.view.WorldRenderer;
 import com.mitjanaglic.alpha.game.models.worlds.Space;
 
@@ -23,19 +23,19 @@ public class GameScreen implements Screen, InputProcessor {
     private Alpha alpha;
     private Space space;
     private WorldRenderer renderer;
-    private PlayerController controller;
     private SpaceController spaceController;
     private EnemyController enemyController;
     private int height, width;
     private boolean isAccelometerAvailable;
     private AssetManager assetManager;
+    private InputComponent inputComponent;
 
     public GameScreen(Alpha alpha) {
         this.alpha = alpha;
         assetManager = alpha.getAssetManager();
         space = new Space(assetManager);
+        inputComponent=(InputComponent)space.getPlayer().getComponents().get("input");
         renderer = new WorldRenderer(assetManager, space);
-        controller = new PlayerController(space);
         spaceController = new SpaceController(space);
         enemyController = new EnemyController(space);
         isAccelometerAvailable = Gdx.input.isPeripheralAvailable(Input.Peripheral.Accelerometer);
@@ -44,7 +44,6 @@ public class GameScreen implements Screen, InputProcessor {
     @Override
     public void render(float delta) {
         if (isAccelometerAvailable) checkTilt();
-        controller.update(delta);
         spaceController.update(delta);
         enemyController.update(delta);
         space.update(delta);
@@ -82,7 +81,6 @@ public class GameScreen implements Screen, InputProcessor {
 
     @Override
     public void dispose() {
-        controller = null;
         spaceController = null;
         enemyController = null;
         space.dispose();
@@ -91,24 +89,25 @@ public class GameScreen implements Screen, InputProcessor {
     }
 
     /*-------------------------------------INPUT PROCESSOR --------------------------*/
+
     public void checkTilt() {
         // points to the right (when in portrait orientation)
         if (Gdx.input.getAccelerometerX() > 1) {
-            controller.downPressed();
+            inputComponent.downPressed();
         } else if (Gdx.input.getAccelerometerX() < -1) {
-            controller.upPressed();
+            inputComponent.upPressed();
         } else {
-            controller.upReleased();
-            controller.downReleased();
+            inputComponent.upReleased();
+            inputComponent.downReleased();
         }
         // points upwards (when in portrait orientation)
         if (Gdx.input.getAccelerometerY() > 1) {
-            controller.rightPressed();
+            inputComponent.rightPressed();
         } else if (Gdx.input.getAccelerometerY() < -1) {
-            controller.leftPressed();
+            inputComponent.leftPressed();
         } else {
-            controller.leftReleased();
-            controller.rightReleased();
+            inputComponent.leftReleased();
+            inputComponent.rightReleased();
         }
         //Gdx.input.getAccelerometerZ(); // points to the front of the display (coming out of the screen)
 
@@ -117,15 +116,15 @@ public class GameScreen implements Screen, InputProcessor {
     @Override
     public boolean keyDown(int keycode) {
         if (keycode == Input.Keys.A)
-            controller.leftPressed();
+            inputComponent.leftPressed();
         if (keycode == Input.Keys.D)
-            controller.rightPressed();
+            inputComponent.rightPressed();
         if (keycode == Input.Keys.W)
-            controller.upPressed();
+            inputComponent.upPressed();
         if (keycode == Input.Keys.S)
-            controller.downPressed();
+            inputComponent.downPressed();
         if (keycode == Input.Keys.SPACE)
-            controller.firePressed();
+            inputComponent.firePressed();
 
         if (keycode == Input.Keys.ESCAPE || keycode == Input.Keys.BACK)
             this.pause();
@@ -137,15 +136,15 @@ public class GameScreen implements Screen, InputProcessor {
     @Override
     public boolean keyUp(int keycode) {
         if (keycode == Input.Keys.A)
-            controller.leftReleased();
+            inputComponent.leftReleased();
         if (keycode == Input.Keys.D)
-            controller.rightReleased();
+            inputComponent.rightReleased();
         if (keycode == Input.Keys.W)
-            controller.upReleased();
+            inputComponent.upReleased();
         if (keycode == Input.Keys.S)
-            controller.downReleased();
+            inputComponent.downReleased();
         if (keycode == Input.Keys.SPACE)
-            controller.fireReleased();
+            inputComponent.fireReleased();
 
         return true;
     }
@@ -158,30 +157,30 @@ public class GameScreen implements Screen, InputProcessor {
     @Override
     public boolean touchDown(int x, int y, int pointer, int button) {
         if (x < width / 2 && !(y < height / 4 && x < width / 4)) {
-            controller.leftPressed();
+            inputComponent.leftPressed();
         }
         if (x > width / 2) {
-            controller.rightPressed();
+            inputComponent.rightPressed();
         }
         if (y > height / 2) {
-            controller.downPressed();
+            inputComponent.downPressed();
         }
         if (y < height / 2 && !(y < height / 4 && x < width / 4)) {
-            controller.upPressed();
+            inputComponent.upPressed();
         }
         if (y < height / 4 && x < width / 4) {
-            controller.firePressed();
+            inputComponent.firePressed();
         }
         return true;
     }
 
     @Override
     public boolean touchUp(int x, int y, int pointer, int button) {
-        controller.leftReleased();
-        controller.rightReleased();
-        controller.downReleased();
-        controller.upReleased();
-        controller.fireReleased();
+        inputComponent.leftReleased();
+        inputComponent.rightReleased();
+        inputComponent.downReleased();
+        inputComponent.upReleased();
+        inputComponent.fireReleased();
         return true;
     }
 
@@ -189,16 +188,16 @@ public class GameScreen implements Screen, InputProcessor {
     @Override
     public boolean touchDragged(int x, int y, int pointer) {
         if (x < width / 2 && !(y < height / 4 && x < width / 4)) {
-            controller.leftPressed();
+            inputComponent.leftPressed();
         }
         if (x > width / 2) {
-            controller.rightPressed();
+            inputComponent.rightPressed();
         }
         if (y > height / 2) {
-            controller.downPressed();
+            inputComponent.downPressed();
         }
         if (y < height / 2 && !(y < height / 4 && x < width / 4)) {
-            controller.upPressed();
+            inputComponent.upPressed();
         }
         return true;
     }

@@ -1,6 +1,11 @@
 package com.mitjanaglic.alpha.game.models.entities;
 
 import com.badlogic.gdx.math.Vector2;
+import com.mitjanaglic.alpha.game.models.entities.components.HitboxComponent;
+import com.mitjanaglic.alpha.game.models.entities.components.IComponent;
+import com.mitjanaglic.alpha.game.models.entities.components.PositionComponent;
+
+import java.util.HashMap;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,12 +19,19 @@ public class HitMark extends Entity {
     private boolean showing = true;
 
     public HitMark(Vector2 position) {
-        super(position);
+        components=new HashMap<String, IComponent>();
+
+        PositionComponent positionComponent=new PositionComponent(position, null);
+        components.put("position", positionComponent);
+
         setWidth(56);
         setHeight(54);
-        updateBounds(getWidth(), getHeight());
-        getPosition().x -= getWidth() / 2;       //centering
-        getPosition().y -= getHeight() / 2;
+
+        HitboxComponent hitboxComponent=new HitboxComponent(positionComponent, getWidth(), getHeight());
+        components.put("hitbox", hitboxComponent);
+
+        positionComponent.getPosition().x -= getWidth() / 2;       //centering
+        positionComponent.getPosition().y -= getHeight() / 2;
     }
 
     @Override

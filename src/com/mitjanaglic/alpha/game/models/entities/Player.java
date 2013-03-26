@@ -1,7 +1,12 @@
 package com.mitjanaglic.alpha.game.models.entities;
 
 import com.badlogic.gdx.math.Vector2;
-import com.mitjanaglic.alpha.game.models.Gun;
+import com.mitjanaglic.alpha.game.models.entities.components.*;
+import com.mitjanaglic.alpha.game.models.entities.components.velocity.SpeedComponent;
+import com.mitjanaglic.alpha.game.models.entities.components.velocity.VelocityComponent;
+import com.mitjanaglic.alpha.game.models.worlds.Space;
+
+import java.util.HashMap;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,38 +16,47 @@ import com.mitjanaglic.alpha.game.models.Gun;
  * To change this template use File | Settings | File Templates.
  */
 public class Player extends Ship {
-    public enum State {
-        IDLE, DYING, MOVING_LEFT, MOVING_RIGHT
-    }
-
-    private State state = State.IDLE;
     private float speed = 400f;
     private int lives = 10;
-    private Gun gun;
+    public Player(Space space, Vector2 pos) {
+        components=new HashMap<String, IComponent>();
 
-    public Player(Vector2 pos) {
-        super(pos);
+        StateComponent stateComponent=new StateComponent();
+        components.put("state", stateComponent);
+
+        VelocityComponent velocityComponent=new VelocityComponent(0,0);
+        components.put("velocity",velocityComponent);
+
+        SpeedComponent speedComponent=new SpeedComponent(speed);
+        components.put("speed",speedComponent);
+
+        PositionComponent positionComponent=new PositionComponent(pos, velocityComponent.getVelocity());
+        components.put("position", positionComponent);
+
         setHeight(75);
         setWidth(99);
-        updateBounds(getWidth(), getHeight());
-        gun = new Gun(this, getWidth() / 2, getHeight() / 2 + getHeight() / 5);
+
+        HitboxComponent hitboxComponent=new HitboxComponent(positionComponent, getWidth(), getHeight());
+        components.put("hitbox", hitboxComponent);
+
+        GunComponent gunComponent=new GunComponent(this, getWidth() / 2, getHeight() / 2 + getHeight() / 5);
+        components.put("gun", gunComponent);
+
+        InputComponent inputComponent=new InputComponent(this, space);
+        components.put("input", inputComponent);
     }
 
 
     @Override
     public void update(float delta) {
-        getVelocity().y += getForwardInertia();
-        getPosition().add(getVelocity().cpy().mul(delta));
-        updateBounds(getWidth(), getHeight());
-        gun.update(delta);
+        for (IComponent component:components.values()){
+            component.update(delta);
+        }
+
         if (immunityCooldown > 0) {
             immunityCooldown -= delta;
         }
         super.update(delta);
-    }
-
-    public Bullet shoot() {
-        return gun.shoot(0);
     }
 
     private float immunityTime = 1.1f;
@@ -54,22 +68,6 @@ public class Player extends Ship {
             immunityCooldown = immunityTime;
             lives--;
         }
-    }
-
-    public float getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(float speed) {
-        this.speed = speed;
-    }
-
-    public State getState() {
-        return state;
-    }
-
-    public void setState(State state) {
-        this.state = state;
     }
 
     public int getLives() {

@@ -8,6 +8,7 @@ import com.mitjanaglic.alpha.game.models.Level;
 import com.mitjanaglic.alpha.game.models.entities.Bullet;
 import com.mitjanaglic.alpha.game.models.entities.Disc;
 import com.mitjanaglic.alpha.game.models.entities.Player;
+import com.mitjanaglic.alpha.game.models.entities.components.velocity.VelocityComponent;
 
 import java.util.LinkedList;
 
@@ -34,11 +35,13 @@ public class Space implements Disposable {
         CreateTestSpace();
         setCameraPosition(new Vector2(level.getCameraWidth() / 2f, level.getCameraHeight() / 2f));
         setCameraVelocity(new Vector2());
-        getCameraVelocity().y = player.getForwardInertia();
+        VelocityComponent velocityComponent= (VelocityComponent) player.getComponents().get("velocity");
+        getCameraVelocity().y = velocityComponent.getScrollVelocity();
         getEnemies().add(new Disc(getCameraPosition().cpy(), player));
     }
 
     public void update(float delta) {
+        player.update(delta);
         updateBullets(delta);
         updateEnemyBullets(delta);
         removeDeadEnemies();
@@ -86,7 +89,7 @@ public class Space implements Disposable {
     }
 
     private void CreateTestSpace() {
-        player = new Player(new Vector2(400, 200));
+        player = new Player(this, new Vector2(400, 200));
         currentMap = assetManager.get("data/levels/Level1/Level1.tmx", TiledMap.class);
         level = new Level(getCurrentMap());
     }

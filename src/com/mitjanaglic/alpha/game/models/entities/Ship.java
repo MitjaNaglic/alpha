@@ -1,7 +1,5 @@
 package com.mitjanaglic.alpha.game.models.entities;
 
-import com.badlogic.gdx.math.Vector2;
-
 /**
  * Created with IntelliJ IDEA.
  * User: mito
@@ -10,14 +8,7 @@ import com.badlogic.gdx.math.Vector2;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Ship extends Entity {
-
     private HitMark hitMark;
-    protected float forwardInertia = 200f;
-
-    public Ship(Vector2 position) {
-        super(position);
-        getVelocity().y += forwardInertia;
-    }
 
     /**
      * ne pozabt klicat update iz child classov
@@ -40,13 +31,4 @@ public abstract class Ship extends Entity {
     public HitMark getHitMark() {
         return hitMark;
     }
-
-    public float getForwardInertia() {
-        return forwardInertia;
-    }
-
-    protected void setForwardInertia(float forwardInertia) {
-        this.forwardInertia = forwardInertia;
-    }
-
 }

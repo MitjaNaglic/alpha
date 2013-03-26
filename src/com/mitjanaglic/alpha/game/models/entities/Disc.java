@@ -1,7 +1,13 @@
 package com.mitjanaglic.alpha.game.models.entities;
 
 import com.badlogic.gdx.math.Vector2;
-import com.mitjanaglic.alpha.game.models.Gun;
+import com.mitjanaglic.alpha.game.models.entities.components.GunComponent;
+import com.mitjanaglic.alpha.game.models.entities.components.HitboxComponent;
+import com.mitjanaglic.alpha.game.models.entities.components.IComponent;
+import com.mitjanaglic.alpha.game.models.entities.components.PositionComponent;
+import com.mitjanaglic.alpha.game.models.entities.components.velocity.VelocityComponent;
+
+import java.util.HashMap;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,29 +34,37 @@ public class Disc extends Ship {
     private float health = 100;
     private State state = State.IDLE;
     private Player player;
-    private Gun gun;
+    private HitboxComponent hitboxComponent;
 
     public Disc(Vector2 position, Player player) {
-        super(position);
         this.player = player;
+
+        components=new HashMap<String, IComponent>();
+
+        VelocityComponent velocityComponent=new VelocityComponent(0,0);
+        components.put("velocity",velocityComponent);
+
+        PositionComponent positionComponent=new PositionComponent(position, velocityComponent.getVelocity());
+        components.put("position", positionComponent);
+
         setHeight(91);
         setWidth(91);
-        updateBounds(getWidth(), getHeight());
-        gun = new Gun(this, getWidth() / 2, getHeight() / 2 - getHeight() / 5);
+
+        hitboxComponent=new HitboxComponent(positionComponent, getWidth(), getHeight());
+        components.put("hitbox", hitboxComponent);
+
+        GunComponent gunComponent=new GunComponent(this, getWidth() / 2, getHeight() / 2 - getHeight() / 5);
+        components.put("gun", gunComponent);
     }
 
     @Override
     public void update(float delta) {
-        getPosition().add(getVelocity().cpy().mul(delta));
+        for (IComponent component:components.values()){
+            component.update(delta);
+        }
+
+        //getPosition().add(getVelocity().cpy().mul(delta));
         rotate(delta);
-        updateBounds(getWidth(), getHeight());
-        gun.update(delta);
-        super.update(delta);
-    }
-
-    public Bullet shoot() {
-
-        return gun.shoot(player.getCenter().sub(this.getCenter()).angle() - 90); //smer playerja
     }
 
     public void hit(float damage, HitMark hitMark) {

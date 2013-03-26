@@ -1,8 +1,9 @@
-package com.mitjanaglic.alpha.game.controllers;
+package com.mitjanaglic.alpha.game.models.entities.components;
 
 import com.mitjanaglic.alpha.game.models.entities.Bullet;
-import com.mitjanaglic.alpha.game.models.entities.Disc;
-import com.mitjanaglic.alpha.game.models.entities.Player;
+import com.mitjanaglic.alpha.game.models.entities.Entity;
+import com.mitjanaglic.alpha.game.models.entities.components.velocity.SpeedComponent;
+import com.mitjanaglic.alpha.game.models.entities.components.velocity.VelocityComponent;
 import com.mitjanaglic.alpha.game.models.worlds.Space;
 
 import java.util.HashMap;
@@ -11,14 +12,17 @@ import java.util.Map;
 /**
  * Created with IntelliJ IDEA.
  * User: mito
- * Date: 6.3.2013
- * Time: 19:51
- * To change this template use File | Settings | File Templates.
+ * Date: 25.3.2013
+ * Time: 21:03
+ * Mitja Naglič  mitja.n1@gmail.com
  */
-public class PlayerController {
+public class InputComponent implements IComponent {
     private Space space;
-    private Player player;
-
+    private Entity entity;
+    private VelocityComponent velocityComponent;
+    private GunComponent gunComponent;
+    private SpeedComponent speedComponent;
+    private StateComponent stateComponent;
     public enum Keys {
         LEFT, RIGHT, UP, DOWN, FIRE
     }
@@ -34,9 +38,13 @@ public class PlayerController {
     }
 
 
-    public PlayerController(Space space) {
+    public InputComponent(Entity entity, Space space) {
         this.space = space;
-        player = space.getPlayer();
+        this.entity=entity;
+        velocityComponent= (VelocityComponent) entity.getComponents().get("velocity");
+        gunComponent= (GunComponent) entity.getComponents().get("gun");
+        speedComponent= (SpeedComponent) entity.getComponents().get("speed");
+        stateComponent= (StateComponent) entity.getComponents().get("state");
     }
 
     //pressed
@@ -87,85 +95,51 @@ public class PlayerController {
      */
     public void update(float delta) {
         processInput();
-        checkLevelBoundCollision(delta);
-        entityCollisions();
-        player.update(delta);
-    }
 
-    private void entityCollisions() {
-        for (Disc enemy : space.getEnemies()) {
-            if (player.getBounds().overlaps(enemy.getBounds())) {
-                player.hit(null);
-            }
-        }
-    }
-
-    private void checkLevelBoundCollision(float delta) {
-        if (player.getVelocity().x < 0) {
-            if (player.getPosition().x <= 0) {
-                player.getVelocity().x = 0;
-            }
-        }
-        if (player.getVelocity().x > 0) {
-            if (player.getPosition().x + player.getBounds().getWidth() >= space.getLevel().getWidth()) {
-                player.getVelocity().x = 0;
-            }
-        }
-        if (player.getVelocity().y < 0) {
-            if (player.getPosition().y <= space.getCameraPosition().y - space.getLevel().getCameraHeight() / 2) {
-                player.getVelocity().y = 0;
-            }
-        }
-        if (player.getVelocity().y > 0) {
-            if (player.getPosition().y + player.getBounds().getHeight() >= space.getCameraPosition().y + space.getLevel().getCameraHeight() / 2) {
-                player.getVelocity().y = 0;
-            }
-        }
     }
 
     private void processInput() {
 
         if (keys.get(Keys.LEFT)) {
-            player.getVelocity().x = -player.getSpeed();
-            player.setState(Player.State.MOVING_LEFT);
+            velocityComponent.getVelocity().x = -speedComponent.getSpeed();
+            stateComponent.setState(StateComponent.State.MOVING_LEFT);
 
         }
         if (keys.get(Keys.RIGHT)) {
-            player.getVelocity().x = player.getSpeed();
-            player.setState(Player.State.MOVING_RIGHT);
+            velocityComponent.getVelocity().x = speedComponent.getSpeed();
+            stateComponent.setState(StateComponent.State.MOVING_RIGHT);
 
         }
         if (keys.get(Keys.UP)) {
-            player.getVelocity().y = player.getSpeed();
+            velocityComponent.getVelocity().y = speedComponent.getSpeed();
 
         }
         if (keys.get(Keys.DOWN)) {
-            player.getVelocity().y = -player.getSpeed();
+            velocityComponent.getVelocity().y = -speedComponent.getSpeed();
 
         }
         if (keys.get(Keys.FIRE)) {
-            Bullet bullet = player.shoot();
+            Bullet bullet = gunComponent.shoot(0);
             if (bullet != null) {
                 space.getBullets().add(bullet);
             }
         }
 
-        // need to check if both or none direction are pressed, then Bob is idle
+        // need to check if both or none direction are pressed, then is idle
         if ((keys.get(Keys.LEFT) && keys.get(Keys.RIGHT)) ||
                 (!keys.get(Keys.LEFT) && !(keys.get(Keys.RIGHT)))) {
-            player.setState(Player.State.IDLE);
+            stateComponent.setState(StateComponent.State.IDLE);
 
             // horizontal speed is 0
-            player.getVelocity().x = 0;
+            velocityComponent.getVelocity().x = 0;
         }
         if ((keys.get(Keys.UP) && keys.get(Keys.DOWN)) ||
                 (!keys.get(Keys.UP) && !(keys.get(Keys.DOWN)))) {
 
             // horizontal speed is 0
-            player.getVelocity().y = 0;
+            velocityComponent.getVelocity().y = 0;
         }
 
 
     }
-
 }

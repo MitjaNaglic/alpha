@@ -18,7 +18,9 @@ import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.game.models.entities.Bullet;
 import com.mitjanaglic.alpha.game.models.entities.Disc;
 import com.mitjanaglic.alpha.game.models.entities.Entity;
-import com.mitjanaglic.alpha.game.models.entities.Ship;
+import com.mitjanaglic.alpha.game.models.entities.components.HitboxComponent;
+import com.mitjanaglic.alpha.game.models.entities.components.PositionComponent;
+import com.mitjanaglic.alpha.game.models.entities.components.StateComponent;
 import com.mitjanaglic.alpha.game.models.worlds.Space;
 
 import java.util.LinkedList;
@@ -41,7 +43,7 @@ public class WorldRenderer implements Disposable {
     private SpriteBatch uiBatch = new SpriteBatch();
     private BitmapFont font;
     private TextureAtlas textureAtlas;
-    private boolean drawHitboxes = false;
+    private boolean drawHitboxes = true;
     private ShapeRenderer shapeRenderer;
     private TiledMap levelMap;
     private OrthogonalTiledMapRenderer mapRenderer;
@@ -104,29 +106,37 @@ public class WorldRenderer implements Disposable {
     private void drawCollisionBoxes() {
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        shapeRenderer.rect(space.getPlayer().getBounds().getX(),
-                space.getPlayer().getBounds().getY(),
-                space.getPlayer().getBounds().getWidth(),
-                space.getPlayer().getBounds().getHeight());
+        HitboxComponent hitboxComponent=(HitboxComponent)space.getPlayer().getComponents().get("hitbox");
+        Rectangle hitbox=hitboxComponent.getHitbox();
+        shapeRenderer.rect(hitbox.getX(),
+                hitbox.getY(),
+                hitbox.getWidth(),
+                hitbox.getHeight());
         for (Entity enemy : space.getEnemies()) {
-            shapeRenderer.rect(enemy.getBounds().getX(),
-                    enemy.getBounds().getY(),
-                    enemy.getBounds().getWidth(),
-                    enemy.getBounds().getHeight()
+            hitboxComponent= (HitboxComponent) enemy.getComponents().get("hitbox");
+            hitbox=hitboxComponent.getHitbox();
+            shapeRenderer.rect(hitbox.getX(),
+                    hitbox.getY(),
+                    hitbox.getWidth(),
+                    hitbox.getHeight()
             );
         }
         for (Entity bullet : space.getBullets()) {
-            shapeRenderer.rect(bullet.getBounds().getX(),
-                    bullet.getBounds().getY(),
-                    bullet.getBounds().getWidth(),
-                    bullet.getBounds().getHeight()
+            hitboxComponent= (HitboxComponent) bullet.getComponents().get("hitbox");
+            hitbox=hitboxComponent.getHitbox();
+            shapeRenderer.rect(hitbox.getX(),
+                    hitbox.getY(),
+                    hitbox.getWidth(),
+                    hitbox.getHeight()
             );
         }
         for (Entity enemyBullet : space.getEnemyBullets()) {
-            shapeRenderer.rect(enemyBullet.getBounds().getX(),
-                    enemyBullet.getBounds().getY(),
-                    enemyBullet.getBounds().getWidth(),
-                    enemyBullet.getBounds().getHeight()
+            hitboxComponent= (HitboxComponent) enemyBullet.getComponents().get("hitbox");
+            hitbox=hitboxComponent.getHitbox();
+            shapeRenderer.rect(hitbox.getX(),
+                    hitbox.getY(),
+                    hitbox.getWidth(),
+                    hitbox.getHeight()
             );
         }
 
@@ -140,24 +150,27 @@ public class WorldRenderer implements Disposable {
 
     private void renderEnemies() {
         for (Disc enemy : space.getEnemies()) {
+            PositionComponent positionComponent= (PositionComponent) enemy.getComponents().get("position");
+            HitboxComponent hitboxComponent=(HitboxComponent)enemy.getComponents().get("hitbox"); //TODO drawable component, zdej se uporabla hitbox za width/height
             batch.draw(textureAtlas.findRegion("Disc"),
-                    enemy.getPosition().x,
-                    enemy.getPosition().y,
-                    enemy.getWidth() / 2,
-                    enemy.getHeight() / 2,
-                    enemy.getWidth(),
-                    enemy.getHeight(),
+                    positionComponent.getPosition().x,
+                    positionComponent.getPosition().y,
+                    hitboxComponent.getWidth() / 2,
+                    hitboxComponent.getHeight() / 2,
+                    hitboxComponent.getWidth(),
+                    hitboxComponent.getHeight(),
                     1.0f,
                     1.0f,
                     enemy.getRotationAngle()
             );
-            renderHitMark(enemy);
+            //renderHitMark(enemy);
         }
     }
 
     private void renderPlayer() {
         TextureRegion currentPlayerTexture;
-        switch (space.getPlayer().getState()) {
+        StateComponent stateComponent= (StateComponent) space.getPlayer().getComponents().get("state");
+        switch (stateComponent.getState()) {
             case IDLE:
                 currentPlayerTexture = textureAtlas.findRegion("player");
                 break;
@@ -170,32 +183,33 @@ public class WorldRenderer implements Disposable {
             default:
                 currentPlayerTexture = textureAtlas.findRegion("player");
         }
-
+        PositionComponent positionComponent= (PositionComponent) space.getPlayer().getComponents().get("position");
+        HitboxComponent hitboxComponent=(HitboxComponent)space.getPlayer().getComponents().get("hitbox");
         batch.draw(currentPlayerTexture,
-                space.getPlayer().getPosition().x,
-                space.getPlayer().getPosition().y,
-                space.getPlayer().getWidth(),
-                space.getPlayer().getHeight()
+                positionComponent.getPosition().x,
+                positionComponent.getPosition().y,
+                hitboxComponent.getWidth(),
+                hitboxComponent.getHeight()
         );
 
-        renderHitMark(space.getPlayer());
+//        renderHitMark(space.getPlayer());
     }
 
-    private void renderHitMark(Ship owner) {
-        TextureRegion texture;
-        if (owner.getHitMark() != null) {
-            if (owner == space.getPlayer()) {
-                texture = textureAtlas.findRegion("laserRedShot");
-            } else {
-                texture = textureAtlas.findRegion("laserGreenShot");
-            }
-            batch.draw(texture,
-                    owner.getHitMark().getPosition().x,
-                    owner.getHitMark().getPosition().y,
-                    owner.getHitMark().getWidth(),
-                    owner.getHitMark().getHeight());
-        }
-    }
+//    private void renderHitMark(Ship owner) {
+//        TextureRegion texture;
+//        if (owner.getHitMark() != null) {
+//            if (owner == space.getPlayer()) {
+//                texture = textureAtlas.findRegion("laserRedShot");
+//            } else {
+//                texture = textureAtlas.findRegion("laserGreenShot");
+//            }
+//            batch.draw(texture,
+//                    owner.getHitMark().getPosition().x,
+//                    owner.getHitMark().getPosition().y,
+//                    owner.getHitMark().getWidth(),
+//                    owner.getHitMark().getHeight());
+//        }
+//    }
 
     private void renderBullets(LinkedList<Bullet> bullets) {
         TextureRegion texture;
@@ -205,13 +219,15 @@ public class WorldRenderer implements Disposable {
             } else {
                 texture = textureAtlas.findRegion("laserRed");
             }
+            PositionComponent positionComponent= (PositionComponent) bullet.getComponents().get("position");
+            HitboxComponent hitboxComponent=(HitboxComponent)bullet.getComponents().get("hitbox");
             batch.draw(texture,
-                    bullet.getPosition().x,
-                    bullet.getPosition().y,
-                    bullet.getWidth() / 2,
-                    bullet.getHeight() / 2,
-                    bullet.getWidth(),
-                    bullet.getHeight(),
+                    positionComponent.getPosition().x,
+                    positionComponent.getPosition().y,
+                    hitboxComponent.getWidth() / 2,
+                    hitboxComponent.getHeight() / 2,
+                    hitboxComponent.getWidth(),
+                    hitboxComponent.getHeight(),
                     1.0f,
                     1.0f,
                     bullet.getAngle()

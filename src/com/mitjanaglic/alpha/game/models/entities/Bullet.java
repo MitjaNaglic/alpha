@@ -1,6 +1,12 @@
 package com.mitjanaglic.alpha.game.models.entities;
 
 import com.badlogic.gdx.math.Vector2;
+import com.mitjanaglic.alpha.game.models.entities.components.HitboxComponent;
+import com.mitjanaglic.alpha.game.models.entities.components.IComponent;
+import com.mitjanaglic.alpha.game.models.entities.components.PositionComponent;
+import com.mitjanaglic.alpha.game.models.entities.components.velocity.VelocityComponent;
+
+import java.util.HashMap;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,26 +23,40 @@ public class Bullet extends Entity {
     private Entity owner;
     private Vector2 shotOrigin;
     private boolean despawning = false;
+    PositionComponent positionComponent;
 
     public Bullet(Entity owner, Vector2 position, float damage, float angle) {
-        super(position);
-        getVelocity().y = speed;
-        this.angle = angle;
-        getVelocity().rotate(angle);
-        this.owner = owner;
-        this.damage = damage;
+
+        components=new HashMap<String, IComponent>();
+
+        VelocityComponent velocityComponent=new VelocityComponent(0,speed);
+        components.put("velocity",velocityComponent);
+
+        positionComponent=new PositionComponent(position, velocityComponent.getVelocity());
+        components.put("position", positionComponent);
+
         setWidth(9f);
         setHeight(33f);
-        updateBounds(9, 9);
-        shotOrigin = new Vector2(getPosition());
+
+        HitboxComponent hitboxComponent=new HitboxComponent(positionComponent, 9, 9);
+        components.put("hitbox", hitboxComponent);
+
+
+        this.angle = angle;
+        velocityComponent.getVelocity().rotate(angle);
+        this.owner = owner;
+        this.damage = damage;
+
+
+        shotOrigin = new Vector2(positionComponent.getPosition());
     }
 
 
     @Override
     public void update(float delta) {
-        getPosition().add(getVelocity().cpy().mul(delta));
-        updateBounds(9, 9);
-        if (getPosition().cpy().dst(shotOrigin) >= range) {
+
+
+        if (positionComponent.getPosition().cpy().dst(shotOrigin) >= range) {
             despawning = true;
         }
     }
