@@ -1,15 +1,35 @@
-package com.mitjanaglic.alpha.game.view;
-
-import com.badlogic.gdx.utils.Disposable;
-
-/**
- * Created with IntelliJ IDEA.
- * User: mito
- * Date: 6.3.2013
- * Time: 18:13
- * To change this template use File | Settings | File Templates.
- */
-public class WorldRenderer implements Disposable {
+//package com.mitjanaglic.alpha.game.view;
+//
+//import com.artemis.ComponentMapper;
+//import com.artemis.managers.TagManager;
+//import com.badlogic.gdx.Gdx;
+//import com.badlogic.gdx.assets.AssetManager;
+//import com.badlogic.gdx.graphics.GL20;
+//import com.badlogic.gdx.graphics.OrthographicCamera;
+//import com.badlogic.gdx.graphics.Texture;
+//import com.badlogic.gdx.graphics.g2d.BitmapFont;
+//import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+//import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+//import com.badlogic.gdx.graphics.g2d.TextureRegion;
+//import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+//import com.badlogic.gdx.maps.tiled.TiledMap;
+//import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+//import com.badlogic.gdx.math.Vector2;
+//import com.badlogic.gdx.utils.Disposable;
+//import com.mitjanaglic.alpha.game.components.CameraComponent;
+//import com.mitjanaglic.alpha.game.models.entities.Bullet;
+//import com.mitjanaglic.alpha.game.models.entities.Disc;
+//
+//import java.util.LinkedList;
+//
+///**
+//* Created with IntelliJ IDEA.
+//* User: mito
+//* Date: 6.3.2013
+//* Time: 18:13
+//* To change this template use File | Settings | File Templates.
+//*/
+//public class WorldRenderer implements Disposable {
 //    private OrthographicCamera camera;
 //    private float VIRTUAL_WIDTH;
 //    private float VIRTUAL_HEIGHT;
@@ -263,13 +283,13 @@ public class WorldRenderer implements Disposable {
 //        viewport = new Rectangle(crop.x, crop.y, w, h);
 //
 //    }
-
-    @Override
-    public void dispose() {
-//        mapRenderer.dispose();
-//        font.dispose();
-//        batch.dispose();
-//        shapeRenderer.dispose();
-//        uiBatch.dispose();
-    }
-}
+//
+//    @Override
+//    public void dispose() {
+////        mapRenderer.dispose();
+////        font.dispose();
+////        batch.dispose();
+////        shapeRenderer.dispose();
+////        uiBatch.dispose();
+//    }
+//}

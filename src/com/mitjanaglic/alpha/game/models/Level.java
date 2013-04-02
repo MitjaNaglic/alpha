@@ -22,7 +22,7 @@ public class Level {
         loadLevel();
     }
 
-    public void loadLevel() {
+    private void loadLevel() {
         this.map = assetManager.get("data/levels/Level1/Level1.tmx", TiledMap.class);
 
         int width = Integer.parseInt(String.valueOf(map.getProperties().get("width")));
@@ -36,6 +36,10 @@ public class Level {
 
     public int getLevelWidth() {
         return levelWidth;
+    }
+
+    public TiledMap getMap() {
+        return map;
     }
 
     public int getLevelHeight() {

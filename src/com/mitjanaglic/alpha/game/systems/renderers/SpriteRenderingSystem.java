@@ -1,4 +1,4 @@
-package com.mitjanaglic.alpha.game.systems;
+package com.mitjanaglic.alpha.game.systems.renderers;
 
 import com.artemis.Aspect;
 import com.artemis.ComponentMapper;
@@ -6,14 +6,14 @@ import com.artemis.Entity;
 import com.artemis.EntitySystem;
 import com.artemis.annotations.Mapper;
 import com.artemis.utils.ImmutableBag;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.game.components.CameraComponent;
+import com.mitjanaglic.alpha.game.components.HitboxComponent;
 import com.mitjanaglic.alpha.game.components.PositionComponent;
 import com.mitjanaglic.alpha.game.components.RenderableComponent;
 
@@ -29,6 +29,8 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
     private ComponentMapper<RenderableComponent> renderableM;
     @Mapper
     private ComponentMapper<PositionComponent> positionM;
+    @Mapper
+    private ComponentMapper<HitboxComponent> hitboxM;
     private RenderableComponent renderableComponent;
     private SpriteBatch batch;
     private CameraComponent cameraComponent;
@@ -36,6 +38,8 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
     private PositionComponent positionComponent;
     private TextureAtlas textureAtlas;
     private OrthographicCamera camera;
+    private ShapeRenderer shapeRenderer;
+    private boolean debugRendering = true;
 
     public SpriteRenderingSystem(AssetManager assetManager, CameraComponent cameraComponent) {
         super(Aspect.getAspectForAll(RenderableComponent.class));
@@ -48,33 +52,31 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
     protected void initialize() {
         textureAtlas = assetManager.get("data/png/textures/textures.pack", TextureAtlas.class);
         batch = new SpriteBatch();
+        shapeRenderer = new ShapeRenderer();
     }
 
     @Override
     protected void begin() {
         batch.setProjectionMatrix(camera.combined);
+        shapeRenderer.setProjectionMatrix(camera.combined);
+
         batch.begin();
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
     }
 
     @Override
     protected void end() {
         batch.end();
+        shapeRenderer.end();
     }
 
     @Override
     protected void processEntities(ImmutableBag<Entity> entityImmutableBag) {
-        camera.update();
-        //camera.apply(Gdx.gl10);
-
-
-        // set viewport
-        Gdx.gl.glViewport((int) cameraComponent.getViewport().x, (int) cameraComponent.getViewport().y,
-                (int) cameraComponent.getViewport().width, (int) cameraComponent.getViewport().height);
-        Gdx.gl.glClearColor(0.369f, 0.247f, 0.42f, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
         for (int i = 0; i < entityImmutableBag.size(); i++) {
             process(entityImmutableBag.get(i));
+            if (debugRendering) {
+                renderHitboxes(entityImmutableBag.get(i));
+            }
         }
     }
 
@@ -95,6 +97,14 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
         );
     }
 
+    private void renderHitboxes(Entity entity) {
+        HitboxComponent hitboxComponent = hitboxM.get(entity);
+        shapeRenderer.rect(hitboxComponent.getHitbox().getX(),
+                hitboxComponent.getHitbox().getY(),
+                hitboxComponent.getHitbox().getWidth(),
+                hitboxComponent.getHitbox().getHeight());
+    }
+
     @Override
     protected boolean checkProcessing() {
         return true;
@@ -103,5 +113,6 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
     @Override
     public void dispose() {
         batch.dispose();
+        shapeRenderer.dispose();
     }
 }

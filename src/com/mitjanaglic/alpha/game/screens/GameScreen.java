@@ -13,6 +13,9 @@ import com.mitjanaglic.alpha.game.Alpha;
 import com.mitjanaglic.alpha.game.components.*;
 import com.mitjanaglic.alpha.game.models.Level;
 import com.mitjanaglic.alpha.game.systems.*;
+import com.mitjanaglic.alpha.game.systems.renderers.BackgroundRenderingSystem;
+import com.mitjanaglic.alpha.game.systems.renderers.SpriteRenderingSystem;
+import com.mitjanaglic.alpha.game.systems.renderers.UiRenderingSystem;
 
 /**
  * Created with IntelliJ IDEA.
@@ -29,6 +32,8 @@ public class GameScreen implements Screen, InputProcessor {
     private InputComponent inputComponent;
     private Level level;
     private SpriteRenderingSystem spriteRenderingSystem;
+    private BackgroundRenderingSystem backgroundRenderingSystem;
+    private UiRenderingSystem uiRenderingSystem;
 
     private World world;
 
@@ -51,7 +56,9 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new CameraSystem(cameraComponent));
         world.setSystem(new InputSystem());
         world.setSystem(new MovementSystem());
-        spriteRenderingSystem = world.setSystem(new SpriteRenderingSystem(assetManager, camera.getComponent(CameraComponent.class)), true);
+        spriteRenderingSystem = world.setSystem(new SpriteRenderingSystem(assetManager, cameraComponent), true);
+        backgroundRenderingSystem = world.setSystem(new BackgroundRenderingSystem(cameraComponent, level), true);
+        uiRenderingSystem = world.setSystem(new UiRenderingSystem(assetManager, cameraComponent), true);
         world.setSystem(new HitboxSystem());
         world.setSystem(new GunSystem());
 
@@ -65,8 +72,10 @@ public class GameScreen implements Screen, InputProcessor {
         inputComponent = new InputComponent();
         player.addComponent(inputComponent);
         player.addComponent(new GunComponent(0, 0));
+        player.addComponent(new LivesComponent(10));
         player.addComponent(new RenderableComponent("player", 1, 1, 0));
         world.addEntity(player);
+        world.getManager(TagManager.class).register("player", player);
 
 
         world.initialize();
@@ -79,7 +88,9 @@ public class GameScreen implements Screen, InputProcessor {
         if (isAccelometerAvailable) checkTilt();
         world.setDelta(delta);
         world.process();
+        backgroundRenderingSystem.process();
         spriteRenderingSystem.process();
+        uiRenderingSystem.process();
     }
 
     @Override
@@ -114,6 +125,8 @@ public class GameScreen implements Screen, InputProcessor {
     @Override
     public void dispose() {
         world.getSystem(SpriteRenderingSystem.class).dispose();
+        backgroundRenderingSystem.dispose();
+        uiRenderingSystem.dispose();
         Gdx.input.setInputProcessor(null);
     }
 
