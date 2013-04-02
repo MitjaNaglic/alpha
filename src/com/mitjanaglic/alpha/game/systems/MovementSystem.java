@@ -6,6 +6,7 @@ import com.artemis.Entity;
 import com.artemis.annotations.Mapper;
 import com.artemis.systems.EntityProcessingSystem;
 import com.mitjanaglic.alpha.game.components.PositionComponent;
+import com.mitjanaglic.alpha.game.components.SpeedComponent;
 import com.mitjanaglic.alpha.game.components.VelocityComponent;
 
 /**
@@ -20,15 +21,20 @@ public class MovementSystem extends EntityProcessingSystem {
     private ComponentMapper<PositionComponent> positionM;
     @Mapper
     private ComponentMapper<VelocityComponent> velocityM;
+    @Mapper
+    private ComponentMapper<SpeedComponent> speedM;
 
     public MovementSystem() {
-        super(Aspect.getAspectForAll(PositionComponent.class, VelocityComponent.class));
+        super(Aspect.getAspectForAll(PositionComponent.class, VelocityComponent.class, SpeedComponent.class));
     }
 
     @Override
     protected void process(Entity entity) {
         PositionComponent positionComponent = positionM.get(entity);
         VelocityComponent velocityComponent = velocityM.get(entity);
+        SpeedComponent speedComponent = speedM.get(entity);
+
+        velocityComponent.getVelocity().y += speedComponent.getForwardInertia();
 
         positionComponent.getPosition().add(velocityComponent.getVelocity().cpy().scl(world.getDelta()));
     }

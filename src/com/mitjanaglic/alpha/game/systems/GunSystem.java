@@ -6,7 +6,9 @@ import com.artemis.Entity;
 import com.artemis.annotations.Mapper;
 import com.artemis.managers.GroupManager;
 import com.artemis.systems.EntityProcessingSystem;
-import com.mitjanaglic.alpha.game.components.*;
+import com.mitjanaglic.alpha.game.components.GunComponent;
+import com.mitjanaglic.alpha.game.components.PositionComponent;
+import com.mitjanaglic.alpha.game.utils.EntityFactory;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,7 +26,7 @@ public class GunSystem extends EntityProcessingSystem {
     private PositionComponent positionComponent;
 
     public GunSystem() {
-        super(Aspect.getAspectForAll(PositionComponent.class));
+        super(Aspect.getAspectForAll(PositionComponent.class, GunComponent.class));
     }
 
     @Override
@@ -33,19 +35,25 @@ public class GunSystem extends EntityProcessingSystem {
         gunComponent = gunM.get(entity);
 
         updatePosition();
+        updateCooldown();
         if (gunComponent.shootRequested()) {
-            //TODO if cooled down
-            shoot();
+            if (gunComponent.getShootCooldown() <= 0) {
+                gunComponent.setShootCooldown(gunComponent.getTimeBetweenShots());
+                shoot();
+                gunComponent.setShootRequest(false);
+            }
+        }
+    }
+
+    private void updateCooldown() {
+        if (gunComponent.getShootCooldown() > 0) {
+            gunComponent.setShootCooldown(gunComponent.getShootCooldown() - world.getDelta());
         }
     }
 
     private void shoot() {
-        Entity bullet = world.createEntity();
-        bullet.addComponent(new PositionComponent(gunComponent.getPositionX(), gunComponent.getPositionY()));
-        bullet.addComponent(new VelocityComponent(0, 1500));
-        bullet.addComponent(new StateComponent(StateComponent.State.MOVING));
-        bullet.addComponent(new HitboxComponent(gunComponent.getPositionX(), gunComponent.getPositionY(), 9, 9));
-        bullet.addComponent(new RenderableComponent("laserRed", 1, 1, 0));
+        Entity bullet = EntityFactory.createBullet(world, gunComponent);
+        world.addEntity(bullet);
         world.getManager(GroupManager.class).add(bullet, "bullets");
     }
 

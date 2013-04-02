@@ -10,14 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/BackgroundRenderingSystem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/LivesComponent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/BulletComponent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/BulletSystem.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/view/WorldRenderer.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/view/WorldRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/GunComponent.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/GunComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/GunSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/GunSystem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/SpeedComponent.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/SpeedComponent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="G:\development\Alpha\src\com\mitjanaglic\alpha\game\systems\SpriteRenderingSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/SpriteRenderingSystem.java" />
     </list>
     <ignored path="Alpha.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +27,11 @@
     <file path="/MainActivity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362672791185" ignored="false" />
     <file path="/fragment.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363376696165" ignored="false" />
     <file path="/DesktopStarter.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364221069437" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364862244058" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364907931077" ignored="false" />
     <file path="/Player.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364257135690" ignored="false" />
     <file path="/Entity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364234628812" ignored="false" />
     <file path="/Space.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364258077559" ignored="false" />
-    <file path="/GameScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364906997220" ignored="false" />
+    <file path="/GameScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364922857451" ignored="false" />
     <file path="/Alpha.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364172997016" ignored="false" />
     <file path="/WorldRenderer.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364734609378" ignored="false" />
     <file path="/WorldController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362757853366" ignored="false" />
@@ -68,23 +69,25 @@
     <file path="/MatchCameraVelocityComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364232656485" ignored="false" />
     <file path="/Disc.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364235212960" ignored="false" />
     <file path="/File Header.txt.ft" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364239416931" ignored="false" />
-    <file path="/GunComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364608530171" ignored="false" />
+    <file path="/GunComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364914905658" ignored="false" />
     <file path="/InputComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364602136807" ignored="false" />
-    <file path="/SpeedComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364604127415" ignored="false" />
+    <file path="/SpeedComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364913133256" ignored="false" />
     <file path="/StateComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364610564872" ignored="false" />
-    <file path="/MovementSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364431757037" ignored="false" />
+    <file path="/MovementSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364913566963" ignored="false" />
     <file path="/HitboxSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364601680169" ignored="false" />
     <file path="/InputSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364608801720" ignored="false" />
-    <file path="/GunSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364734808023" ignored="false" />
+    <file path="/GunSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364921375213" ignored="false" />
     <file path="/RenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364653403491" ignored="false" />
     <file path="/RenderableComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364821184061" ignored="false" />
     <file path="/CameraComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364736127979" ignored="false" />
     <file path="/CameraSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364860963259" ignored="false" />
     <file path="/SpriteRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364907908481" ignored="false" />
-    <file path="/EntityFactory.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364863585939" ignored="false" />
+    <file path="/EntityFactory.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364922351667" ignored="false" />
     <file path="/BackgroundRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364905496431" ignored="false" />
     <file path="/UiRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364907352372" ignored="false" />
     <file path="/LivesComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364906465438" ignored="false" />
+    <file path="/BulletComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364922964221" ignored="false" />
+    <file path="/BulletSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364922427043" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,28 +146,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SpaceController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/controllers/SpaceController.java">
+      <file leaf-file-name="EntityFactory.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="6" selection-start="397" selection-end="4121" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpriteRenderingSystem.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/SpriteRenderingSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="39" selection-start="1596" selection-end="1596" vertical-scroll-proportion="-1.4795737">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UiRenderingSystem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="12" selection-start="1859" selection-end="1859" vertical-scroll-proportion="0.0">
+            <state line="41" column="11" selection-start="1985" selection-end="1985" vertical-scroll-proportion="0.70547944">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,55 +160,10 @@
       <file leaf-file-name="GameScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="118" selection-start="2867" selection-end="2932" vertical-scroll-proportion="0.0">
+            <state line="95" column="64" selection-start="3566" selection-end="3566" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InputSystem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="0" selection-start="1347" selection-end="1347" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InputComponent.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/InputComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="5" selection-start="1578" selection-end="1578" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RenderableComponent.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/RenderableComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="33" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorldRenderer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/view/WorldRenderer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="66" selection-start="3829" selection-end="3829" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CameraSystem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CameraSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="53" selection-start="551" selection-end="612" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -251,22 +191,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/CameraComponent.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/RenderableComponent.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/worlds/Space.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/GunSystem.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/controllers/SpaceController.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CameraSystem.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/SpriteRenderingSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/InputComponent.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/BackgroundRenderingSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/LivesComponent.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/view/WorldRenderer.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/SpriteRenderingSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/SpeedComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/entities/Bullet.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/GunSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/BulletSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/BulletComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/GunComponent.java" />
       </list>
     </option>
   </component>
@@ -385,6 +325,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1154,7 +1120,11 @@
       <created>1364862270566</created>
       <updated>1364862270566</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="renderers">
+      <created>1364907938089</created>
+      <updated>1364907938089</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1184,15 +1154,16 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2109375" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.47127938" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3986637" sideWeight="0.44778067" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3986637" sideWeight="0.4373368" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3207127" sideWeight="0.35117492" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3207127" sideWeight="0.40992168" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628062" sideWeight="0.2826371" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628062" sideWeight="0.26174936" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.49738905" order="6" side_tool="false" content_ui="tabs" />
@@ -1200,13 +1171,12 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2154047" sideWeight="0.6792873" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3207127" sideWeight="0.6442559" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21605743" sideWeight="0.6792873" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3207127" sideWeight="0.5855091" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="434" y="92" width="1394" height="856" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.47389033" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997773" sideWeight="0.49477807" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1248,7 +1218,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="entity system overhaul half done" />
+    <option name="LAST_COMMIT_MESSAGE" value="renderers" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1261,7 +1231,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="texturemap refractor" />
     <MESSAGE value="width, height refractor" />
     <MESSAGE value="disc rotation" />
     <MESSAGE value="aspect ratio se ohranjuje" />
@@ -1286,6 +1255,7 @@
     <MESSAGE value="ui scaling fix" />
     <MESSAGE value="." />
     <MESSAGE value="entity system overhaul half done" />
+    <MESSAGE value="renderers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1295,115 +1265,127 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/Alpha.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/view/WorldRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="973" selection-end="973" vertical-scroll-proportion="0.19472617">
+        <state line="110" column="66" selection-start="3829" selection-end="3829" vertical-scroll-proportion="-3.632224">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/Desktop/libs/gdx-backend-lwjgl.jar!/com/badlogic/gdx/backends/lwjgl/LwjglApplication.class">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/CameraComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="14" column="13" selection-start="345" selection-end="345" vertical-scroll-proportion="0.124333926">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/gdx.jar!/com/badlogic/gdx/Game.class">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="16" selection-start="477" selection-end="477" vertical-scroll-proportion="0.5277778" />
+        <state line="36" column="78" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.7962329">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/entities/components/InputComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/VelocityComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="54" selection-start="2339" selection-end="2339" vertical-scroll-proportion="0.45373666" />
+        <state line="12" column="13" selection-start="252" selection-end="252" vertical-scroll-proportion="0.32020548">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/InputComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/SpeedComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="5" selection-start="1578" selection-end="1578" vertical-scroll-proportion="0.0">
+        <state line="20" column="23" selection-start="474" selection-end="474" vertical-scroll-proportion="0.55308217">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1347" selection-end="1347" vertical-scroll-proportion="0.0">
+        <state line="55" column="64" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.32876712">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/PositionComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="252" selection-end="252" vertical-scroll-proportion="0.33274022">
+        <state line="12" column="13" selection-start="252" selection-end="252" vertical-scroll-proportion="0.32020548">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CameraSystem.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/entities/components/GunComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="53" selection-start="551" selection-end="612" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="30" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.6985816">
+        <state line="31" column="27" selection-start="989" selection-end="989" vertical-scroll-proportion="0.40753424">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/BackgroundRenderingSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="35" selection-start="1404" selection-end="1404" vertical-scroll-proportion="0.39786857">
+        <state line="19" column="13" selection-start="616" selection-end="616" vertical-scroll-proportion="-0.047945205">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/LivesComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/entities/Bullet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="27" selection-start="371" selection-end="371" vertical-scroll-proportion="0.5133215">
+        <state line="45" column="105" selection-start="1565" selection-end="1565" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/RenderableComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/GunSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="33" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="37" column="25" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="118" selection-start="2867" selection-end="2932" vertical-scroll-proportion="0.0">
+        <state line="95" column="64" selection-start="3566" selection-end="3566" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/BulletSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="12" selection-start="1859" selection-end="1859" vertical-scroll-proportion="0.0">
+        <state line="24" column="53" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/view/WorldRenderer.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/BulletComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="66" selection-start="3829" selection-end="3829" vertical-scroll-proportion="0.0">
+        <state line="19" column="40" selection-start="537" selection-end="537" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/GunComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="28" selection-start="274" selection-end="275" vertical-scroll-proportion="0.26198632">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/SpriteRenderingSystem.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="39" selection-start="1596" selection-end="1596" vertical-scroll-proportion="-1.4795737">
-          <folding />
+        <state line="41" column="11" selection-start="1985" selection-end="1985" vertical-scroll-proportion="0.70547944">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

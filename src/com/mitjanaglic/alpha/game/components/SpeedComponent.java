@@ -11,9 +11,11 @@ import com.artemis.Component;
  */
 public class SpeedComponent extends Component {
     private float speed;
+    private float forwardInertia;
 
-    public SpeedComponent(float speed) {
+    public SpeedComponent(float speed, float forwardInertia) {
         this.speed = speed;
+        this.forwardInertia = forwardInertia;
     }
 
     public float getSpeed() {
@@ -22,5 +24,13 @@ public class SpeedComponent extends Component {
 
     public void setSpeed(float speed) {
         this.speed = speed;
+    }
+
+    public float getForwardInertia() {
+        return forwardInertia;
+    }
+
+    public void setForwardInertia(float forwardInertia) {
+        this.forwardInertia = forwardInertia;
     }
 }

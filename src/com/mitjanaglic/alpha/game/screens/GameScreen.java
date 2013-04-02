@@ -16,6 +16,7 @@ import com.mitjanaglic.alpha.game.systems.*;
 import com.mitjanaglic.alpha.game.systems.renderers.BackgroundRenderingSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.SpriteRenderingSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.UiRenderingSystem;
+import com.mitjanaglic.alpha.game.utils.EntityFactory;
 
 /**
  * Created with IntelliJ IDEA.
@@ -30,6 +31,7 @@ public class GameScreen implements Screen, InputProcessor {
     private boolean isAccelometerAvailable;
     private AssetManager assetManager;
     private InputComponent inputComponent;
+    private CameraComponent cameraComponent;
     private Level level;
     private SpriteRenderingSystem spriteRenderingSystem;
     private BackgroundRenderingSystem backgroundRenderingSystem;
@@ -47,12 +49,30 @@ public class GameScreen implements Screen, InputProcessor {
         world.setManager(new TagManager());
         level = new Level(assetManager);
 
+        initCamera();
+        setSystems();
+        initPlayer();
+        world.initialize();
+
+
+    }
+
+    private void initCamera() {
         Entity camera = world.createEntity();
-        CameraComponent cameraComponent = new CameraComponent(level.getLevelWidth() / 2, 0);
+        cameraComponent = new CameraComponent(level.getLevelWidth() / 2, 400);
         camera.addComponent(cameraComponent);
         world.addEntity(camera);
         world.getManager(TagManager.class).register("camera", camera);
+    }
 
+    private void initPlayer() {
+        Entity player = EntityFactory.createPlayer(world, level.getLevelWidth() / 2, 400);
+        world.addEntity(player);
+        world.getManager(TagManager.class).register("player", player);
+        inputComponent = player.getComponent(InputComponent.class);
+    }
+
+    private void setSystems() {
         world.setSystem(new CameraSystem(cameraComponent));
         world.setSystem(new InputSystem());
         world.setSystem(new MovementSystem());
@@ -61,26 +81,7 @@ public class GameScreen implements Screen, InputProcessor {
         uiRenderingSystem = world.setSystem(new UiRenderingSystem(assetManager, cameraComponent), true);
         world.setSystem(new HitboxSystem());
         world.setSystem(new GunSystem());
-
-        Entity player = world.createEntity();
-        player.addComponent(new StateComponent(StateComponent.State.IDLE));
-        player.addComponent(new PositionComponent(level.getLevelWidth() / 2, 200));
-        player.addComponent(new VelocityComponent(0, camera.getComponent(CameraComponent.class).getCameraScrollSpeed()));
-        player.addComponent(new SpeedComponent(100));
-        player.addComponent(new HitboxComponent(player.getComponent(PositionComponent.class).getPosition().x,   //TODO cleanup
-                player.getComponent(PositionComponent.class).getPosition().y, 100, 100));
-        inputComponent = new InputComponent();
-        player.addComponent(inputComponent);
-        player.addComponent(new GunComponent(0, 0));
-        player.addComponent(new LivesComponent(10));
-        player.addComponent(new RenderableComponent("player", 1, 1, 0));
-        world.addEntity(player);
-        world.getManager(TagManager.class).register("player", player);
-
-
-        world.initialize();
-
-
+        world.setSystem(new BulletSystem());
     }
 
     @Override
@@ -91,6 +92,8 @@ public class GameScreen implements Screen, InputProcessor {
         backgroundRenderingSystem.process();
         spriteRenderingSystem.process();
         uiRenderingSystem.process();
+
+        System.out.println(world.getEntityManager().getActiveEntityCount());
     }
 
     @Override
