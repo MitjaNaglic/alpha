@@ -1,6 +1,7 @@
 package com.mitjanaglic.alpha.game.components;
 
 import com.artemis.Component;
+import com.badlogic.gdx.math.Vector2;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,13 +16,25 @@ public class GunComponent extends Component {
     private float gunDamage = 10;
     private float timeBetweenShots = 0.1f;
     private float shootCooldown = 0;
-    private float positionX;
-    private float positionY;
+    private Vector2 gunPosition;
+    private float offsetX;
+    private float offsetY;
     private boolean shootRequest = false;
 
-    public GunComponent(float positionX, float positionY) {
-        this.positionX = positionX;
-        this.positionY = positionY;
+    public GunComponent(Vector2 gunPosition, float offsetX, float offsetY) {
+        this.gunPosition = gunPosition;
+        this.offsetX = offsetX;
+        this.offsetY = offsetY;
+
+        gunPosition.add(offsetX, offsetY);
+    }
+
+    public void setGunPosition(Vector2 gunPosition) {
+        this.gunPosition = gunPosition;
+    }
+
+    public Vector2 getGunPosition() {
+        return gunPosition;
     }
 
     public float getRange() {
@@ -64,8 +77,8 @@ public class GunComponent extends Component {
         return gunDamage;
     }
 
-    public float getPositionX() {
-        return positionX;
+    public float getOffsetX() {
+        return offsetX;
     }
 
     public boolean shootRequested() {
@@ -76,15 +89,15 @@ public class GunComponent extends Component {
         this.shootRequest = shootRequest;
     }
 
-    public void setPositionX(float positionX) {
-        this.positionX = positionX;
+    public void setOffsetX(float offsetX) {
+        this.offsetX = offsetX;
     }
 
-    public float getPositionY() {
-        return positionY;
+    public float getOffsetY() {
+        return offsetY;
     }
 
-    public void setPositionY(float positionY) {
-        this.positionY = positionY;
+    public void setOffsetY(float offsetY) {
+        this.offsetY = offsetY;
     }
 }

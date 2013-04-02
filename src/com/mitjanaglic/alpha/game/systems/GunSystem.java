@@ -58,7 +58,6 @@ public class GunSystem extends EntityProcessingSystem {
     }
 
     private void updatePosition() {
-        gunComponent.setPositionX(positionComponent.getPosition().x);
-        gunComponent.setPositionY(positionComponent.getPosition().y);
+        gunComponent.setGunPosition(positionComponent.getPosition().cpy().add(gunComponent.getOffsetX(), gunComponent.getOffsetY()));
     }
 }

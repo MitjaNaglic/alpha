@@ -21,9 +21,12 @@ public class EntityFactory {
         e.addComponent(new VelocityComponent(0, 0));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
         e.addComponent(new SpeedComponent(400, forwardInertia));
-        e.addComponent(new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 100, 100));
+        HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 99, 75);
+        e.addComponent(hitboxComponent);
         e.addComponent(new InputComponent());
-        e.addComponent(new GunComponent(0, 0));
+        e.addComponent(new GunComponent(positionComponent.getPosition(),
+                hitboxComponent.getHitbox().getWidth() / 2,
+                hitboxComponent.getHitbox().getHeight()));
         e.addComponent(new LivesComponent(10));
         e.addComponent(new RenderableComponent("player", 1, 1, 0));
         return e;
@@ -31,7 +34,7 @@ public class EntityFactory {
 
     public static Entity createBullet(World world, GunComponent gunComponent) {
         Entity bullet = world.createEntity();
-        bullet.addComponent(new PositionComponent(gunComponent.getPositionX(), gunComponent.getPositionY()));
+        bullet.addComponent(new PositionComponent(gunComponent.getGunPosition()));
         bullet.addComponent(new VelocityComponent(0, gunComponent.getBulletSpeed()));
         bullet.addComponent(new SpeedComponent(gunComponent.getBulletSpeed(), 0));
         bullet.addComponent(new StateComponent(StateComponent.State.MOVING));
@@ -40,7 +43,7 @@ public class EntityFactory {
                 gunComponent.getBulletSpeed(),
                 gunComponent.getGunDamage()
         ));
-        bullet.addComponent(new HitboxComponent(gunComponent.getPositionX(), gunComponent.getPositionY(), 9, 9));
+        bullet.addComponent(new HitboxComponent(gunComponent.getOffsetX(), gunComponent.getOffsetY(), 9, 9));
         bullet.addComponent(new RenderableComponent("laserRed", 1, 1, 0));
         return bullet;
     }
