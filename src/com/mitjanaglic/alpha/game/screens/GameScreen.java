@@ -75,6 +75,8 @@ public class GameScreen implements Screen, InputProcessor {
     private void setSystems() {
         world.setSystem(new CameraSystem(cameraComponent));
         world.setSystem(new InputSystem());
+        world.setSystem(new PlayerAnimationSystem());
+        world.setSystem(new LevelBoundsSystem(cameraComponent));
         world.setSystem(new MovementSystem());
         spriteRenderingSystem = world.setSystem(new SpriteRenderingSystem(assetManager, cameraComponent), true);
         backgroundRenderingSystem = world.setSystem(new BackgroundRenderingSystem(cameraComponent, level), true);
@@ -82,7 +84,6 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new HitboxSystem());
         world.setSystem(new GunSystem());
         world.setSystem(new BulletSystem());
-        world.setSystem(new PlayerAnimationSystem());
     }
 
     @Override
