@@ -16,6 +16,7 @@ public class EntityFactory {
     public static Entity createPlayer(World world, float x, float y) {
         Entity e = world.createEntity();
         PositionComponent positionComponent = new PositionComponent(x, y);
+        e.addComponent(new PlayerShipComponent());
         e.addComponent(new StateComponent(StateComponent.State.IDLE));
         e.addComponent(positionComponent);
         e.addComponent(new VelocityComponent(0, 0));

@@ -82,6 +82,7 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new HitboxSystem());
         world.setSystem(new GunSystem());
         world.setSystem(new BulletSystem());
+        world.setSystem(new PlayerAnimationSystem());
     }
 
     @Override

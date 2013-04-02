@@ -7,6 +7,7 @@ import com.artemis.annotations.Mapper;
 import com.artemis.systems.EntityProcessingSystem;
 import com.mitjanaglic.alpha.game.components.PositionComponent;
 import com.mitjanaglic.alpha.game.components.SpeedComponent;
+import com.mitjanaglic.alpha.game.components.StateComponent;
 import com.mitjanaglic.alpha.game.components.VelocityComponent;
 
 /**
@@ -23,6 +24,8 @@ public class MovementSystem extends EntityProcessingSystem {
     private ComponentMapper<VelocityComponent> velocityM;
     @Mapper
     private ComponentMapper<SpeedComponent> speedM;
+    @Mapper
+    private ComponentMapper<StateComponent> stateM;
 
     public MovementSystem() {
         super(Aspect.getAspectForAll(PositionComponent.class, VelocityComponent.class, SpeedComponent.class));
@@ -33,10 +36,15 @@ public class MovementSystem extends EntityProcessingSystem {
         PositionComponent positionComponent = positionM.get(entity);
         VelocityComponent velocityComponent = velocityM.get(entity);
         SpeedComponent speedComponent = speedM.get(entity);
+        StateComponent stateComponent = stateM.get(entity);
 
         velocityComponent.getVelocity().y += speedComponent.getForwardInertia();
-
         positionComponent.getPosition().add(velocityComponent.getVelocity().cpy().scl(world.getDelta()));
+
+        //sets state depending upon moving direction
+        if (velocityComponent.getVelocity().x < 0) stateComponent.setState(StateComponent.State.MOVING_LEFT);
+        else if (velocityComponent.getVelocity().x > 0) stateComponent.setState(StateComponent.State.MOVING_RIGHT);
+        else stateComponent.setState(StateComponent.State.IDLE);
     }
 
 }
