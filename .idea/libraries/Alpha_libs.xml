@@ -5,6 +5,7 @@
     </CLASSES>
     <JAVADOC>
       <root url="http://libgdx.badlogicgames.com/nightlies/docs/api/" />
+      <root url="http://gamadu.com/artemis/javadoc/" />
     </JAVADOC>
     <SOURCES />
     <jarDirectory url="file://$PROJECT_DIR$/libs" recursive="false" />

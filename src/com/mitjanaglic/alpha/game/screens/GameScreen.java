@@ -1,16 +1,18 @@
 package com.mitjanaglic.alpha.game.screens;
 
+import com.artemis.Entity;
+import com.artemis.World;
+import com.artemis.managers.GroupManager;
+import com.artemis.managers.TagManager;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
 import com.mitjanaglic.alpha.game.Alpha;
-import com.mitjanaglic.alpha.game.controllers.EnemyController;
-import com.mitjanaglic.alpha.game.controllers.SpaceController;
-import com.mitjanaglic.alpha.game.models.entities.components.InputComponent;
-import com.mitjanaglic.alpha.game.view.WorldRenderer;
-import com.mitjanaglic.alpha.game.models.worlds.Space;
+import com.mitjanaglic.alpha.game.components.*;
+import com.mitjanaglic.alpha.game.models.Level;
+import com.mitjanaglic.alpha.game.systems.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,40 +23,70 @@ import com.mitjanaglic.alpha.game.models.worlds.Space;
  */
 public class GameScreen implements Screen, InputProcessor {
     private Alpha alpha;
-    private Space space;
-    private WorldRenderer renderer;
-    private SpaceController spaceController;
-    private EnemyController enemyController;
     private int height, width;
     private boolean isAccelometerAvailable;
     private AssetManager assetManager;
     private InputComponent inputComponent;
+    private Level level;
+    private SpriteRenderingSystem spriteRenderingSystem;
+
+    private World world;
 
     public GameScreen(Alpha alpha) {
         this.alpha = alpha;
         assetManager = alpha.getAssetManager();
-        space = new Space(assetManager);
-        inputComponent=(InputComponent)space.getPlayer().getComponents().get("input");
-        renderer = new WorldRenderer(assetManager, space);
-        spaceController = new SpaceController(space);
-        enemyController = new EnemyController(space);
         isAccelometerAvailable = Gdx.input.isPeripheralAvailable(Input.Peripheral.Accelerometer);
+
+        world = new World();
+        world.setManager(new GroupManager());
+        world.setManager(new TagManager());
+        level = new Level(assetManager);
+
+        Entity camera = world.createEntity();
+        CameraComponent cameraComponent = new CameraComponent(level.getLevelWidth() / 2, 0);
+        camera.addComponent(cameraComponent);
+        world.addEntity(camera);
+        world.getManager(TagManager.class).register("camera", camera);
+
+        world.setSystem(new CameraSystem(cameraComponent));
+        world.setSystem(new InputSystem());
+        world.setSystem(new MovementSystem());
+        spriteRenderingSystem = world.setSystem(new SpriteRenderingSystem(assetManager, camera.getComponent(CameraComponent.class)), true);
+        world.setSystem(new HitboxSystem());
+        world.setSystem(new GunSystem());
+
+        Entity player = world.createEntity();
+        player.addComponent(new StateComponent(StateComponent.State.IDLE));
+        player.addComponent(new PositionComponent(level.getLevelWidth() / 2, 200));
+        player.addComponent(new VelocityComponent(0, camera.getComponent(CameraComponent.class).getCameraScrollSpeed()));
+        player.addComponent(new SpeedComponent(100));
+        player.addComponent(new HitboxComponent(player.getComponent(PositionComponent.class).getPosition().x,   //TODO cleanup
+                player.getComponent(PositionComponent.class).getPosition().y, 100, 100));
+        inputComponent = new InputComponent();
+        player.addComponent(inputComponent);
+        player.addComponent(new GunComponent(0, 0));
+        player.addComponent(new RenderableComponent("player", 1, 1, 0));
+        world.addEntity(player);
+
+
+        world.initialize();
+
+
     }
 
     @Override
     public void render(float delta) {
         if (isAccelometerAvailable) checkTilt();
-        spaceController.update(delta);
-        enemyController.update(delta);
-        space.update(delta);
-        renderer.render(delta);
+        world.setDelta(delta);
+        world.process();
+        spriteRenderingSystem.process();
     }
 
     @Override
     public void resize(int x, int y) {
-        renderer.setSize(x, y);
         width = x;
         height = y;
+        world.getSystem(CameraSystem.class).setSize(width, height);
     }
 
     @Override
@@ -81,10 +113,7 @@ public class GameScreen implements Screen, InputProcessor {
 
     @Override
     public void dispose() {
-        spaceController = null;
-        enemyController = null;
-        space.dispose();
-        renderer.dispose();
+        world.getSystem(SpriteRenderingSystem.class).dispose();
         Gdx.input.setInputProcessor(null);
     }
 

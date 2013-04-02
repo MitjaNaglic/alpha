@@ -33,9 +33,9 @@ public class Space implements Disposable {
     public Space(AssetManager assetManager) {
         this.assetManager = assetManager;
         CreateTestSpace();
-        setCameraPosition(new Vector2(level.getCameraWidth() / 2f, level.getCameraHeight() / 2f));
+//        setCameraPosition(new Vector2(level.getCameraWidth() / 2f, level.getCameraHeight() / 2f));
         setCameraVelocity(new Vector2());
-        VelocityComponent velocityComponent= (VelocityComponent) player.getComponents().get("velocity");
+        VelocityComponent velocityComponent = (VelocityComponent) player.getComponents().get("velocity");
         getCameraVelocity().y = velocityComponent.getScrollVelocity();
         getEnemies().add(new Disc(getCameraPosition().cpy(), player));
     }
@@ -91,7 +91,7 @@ public class Space implements Disposable {
     private void CreateTestSpace() {
         player = new Player(this, new Vector2(400, 200));
         currentMap = assetManager.get("data/levels/Level1/Level1.tmx", TiledMap.class);
-        level = new Level(getCurrentMap());
+//        level = new Level(getCurrentMap());
     }
 
     public Player getPlayer() {
