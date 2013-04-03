@@ -26,6 +26,10 @@ public class MovementSystem extends EntityProcessingSystem {
     private ComponentMapper<SpeedComponent> speedM;
     @Mapper
     private ComponentMapper<StateComponent> stateM;
+    private PositionComponent positionComponent;
+    private VelocityComponent velocityComponent;
+    private SpeedComponent speedComponent;
+    private StateComponent stateComponent;
 
     public MovementSystem() {
         super(Aspect.getAspectForAll(PositionComponent.class, VelocityComponent.class, SpeedComponent.class));
@@ -33,14 +37,24 @@ public class MovementSystem extends EntityProcessingSystem {
 
     @Override
     protected void process(Entity entity) {
-        PositionComponent positionComponent = positionM.get(entity);
-        VelocityComponent velocityComponent = velocityM.get(entity);
-        SpeedComponent speedComponent = speedM.get(entity);
-        StateComponent stateComponent = stateM.get(entity);
+        positionComponent = positionM.get(entity);
+        velocityComponent = velocityM.get(entity);
+        speedComponent = speedM.get(entity);
+        stateComponent = stateM.get(entity);
 
-        velocityComponent.getVelocity().y += speedComponent.getForwardInertia();
+        calculateForwardMomentum();
         positionComponent.getPosition().add(velocityComponent.getVelocity().cpy().scl(world.getDelta()));
+        setState();
 
+    }
+
+    private void calculateForwardMomentum() {
+        if (Math.abs(velocityComponent.getVelocity().y) - Math.abs(speedComponent.getForwardInertia()) < 0) {
+            velocityComponent.getVelocity().y += speedComponent.getForwardInertia();
+        }
+    }
+
+    private void setState() {
         //sets state depending upon moving direction
         if (velocityComponent.getVelocity().x < 0) stateComponent.setState(StateComponent.State.MOVING_LEFT);
         else if (velocityComponent.getVelocity().x > 0) stateComponent.setState(StateComponent.State.MOVING_RIGHT);

@@ -33,6 +33,23 @@ public class EntityFactory {
         return e;
     }
 
+    public static Entity createDisc(World world, float x, float y) {
+        Entity e = world.createEntity();
+        PositionComponent positionComponent = new PositionComponent(x, y);
+        e.addComponent(positionComponent);
+        e.addComponent(new StateComponent(StateComponent.State.IDLE));
+        e.addComponent(new VelocityComponent(0, 0));
+        float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
+        e.addComponent(new SpeedComponent(0, forwardInertia));
+        HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 91, 91);
+        e.addComponent(hitboxComponent);
+        e.addComponent(new GunComponent(positionComponent.getPosition(),
+                hitboxComponent.getHitbox().getWidth() / 2,
+                hitboxComponent.getHitbox().getHeight() / 2));
+        e.addComponent(new RenderableComponent("Disc", 1, 1, 0));
+        return e;
+    }
+
     public static Entity createBullet(World world, GunComponent gunComponent) {
         Entity bullet = world.createEntity();
         bullet.addComponent(new PositionComponent(gunComponent.getGunPosition()));

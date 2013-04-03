@@ -52,9 +52,15 @@ public class GameScreen implements Screen, InputProcessor {
         initCamera();
         setSystems();
         initPlayer();
+        initEnemy();
         world.initialize();
 
 
+    }
+
+    private void initEnemy() {
+        Entity enemy = EntityFactory.createDisc(world, level.getLevelWidth() / 3, 400);
+        world.addEntity(enemy);
     }
 
     private void initCamera() {
