@@ -100,8 +100,6 @@ public class GameScreen implements Screen, InputProcessor {
         backgroundRenderingSystem.process();
         spriteRenderingSystem.process();
         uiRenderingSystem.process();
-
-        System.out.println(world.getEntityManager().getActiveEntityCount());
     }
 
     @Override

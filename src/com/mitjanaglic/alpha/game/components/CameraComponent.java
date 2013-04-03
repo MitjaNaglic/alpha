@@ -17,7 +17,7 @@ public class CameraComponent extends Component {
     private Vector2 cameraVelocity;
     private float cameraWidth = 1280f;  //TODO vezat na real vrednosti
     private float cameraHeight = 720f;
-    private final float cameraScrollSpeed = 200;
+    private final float cameraScrollSpeed = 400;
 
     private OrthographicCamera camera;
     private float VIRTUAL_WIDTH;

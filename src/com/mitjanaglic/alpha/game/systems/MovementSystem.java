@@ -49,6 +49,7 @@ public class MovementSystem extends EntityProcessingSystem {
     }
 
     private void calculateForwardMomentum() {
+        //prever y komponento velocity vectorja, če je dodana forwardInertia...zna povzročat probleme če je speed večji kot inertia?
         if (Math.abs(velocityComponent.getVelocity().y) - Math.abs(speedComponent.getForwardInertia()) < 0) {
             velocityComponent.getVelocity().y += speedComponent.getForwardInertia();
         }
