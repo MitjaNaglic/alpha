@@ -4,6 +4,8 @@ import com.artemis.Entity;
 import com.artemis.World;
 import com.artemis.managers.TagManager;
 import com.mitjanaglic.alpha.game.components.*;
+import com.mitjanaglic.alpha.game.components.ids.DiscComponent;
+import com.mitjanaglic.alpha.game.components.ids.PlayerShipComponent;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,7 +24,7 @@ public class EntityFactory {
         e.addComponent(new VelocityComponent(0, 0));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
         e.addComponent(new SpeedComponent(500, forwardInertia));
-        HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 99, 75);
+        HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 91, 75);
         e.addComponent(hitboxComponent);
         e.addComponent(new InputComponent());
         e.addComponent(new GunComponent(positionComponent.getPosition(),
@@ -37,6 +39,7 @@ public class EntityFactory {
         Entity e = world.createEntity();
         PositionComponent positionComponent = new PositionComponent(x, y);
         e.addComponent(positionComponent);
+        e.addComponent(new DiscComponent(250));
         e.addComponent(new StateComponent(StateComponent.State.IDLE));
         e.addComponent(new VelocityComponent(0, 0));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();

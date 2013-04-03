@@ -87,13 +87,13 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
         batch.draw(atlasRegion,
                 positionComponent.getPosition().x,
                 positionComponent.getPosition().y,
-                0,
-                0,
+                atlasRegion.getRegionWidth() / 2,
+                atlasRegion.getRegionHeight() / 2,
                 atlasRegion.getRegionWidth(),
                 atlasRegion.getRegionHeight(),
                 renderableComponent.getScaleX(),
                 renderableComponent.getScaleY(),
-                renderableComponent.getRotation()
+                renderableComponent.getRotationAngle()
         );
     }
 

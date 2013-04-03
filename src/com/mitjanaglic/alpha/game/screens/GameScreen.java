@@ -13,6 +13,7 @@ import com.mitjanaglic.alpha.game.Alpha;
 import com.mitjanaglic.alpha.game.components.*;
 import com.mitjanaglic.alpha.game.models.Level;
 import com.mitjanaglic.alpha.game.systems.*;
+import com.mitjanaglic.alpha.game.systems.animations.DiscAnimationSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.BackgroundRenderingSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.SpriteRenderingSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.UiRenderingSystem;
@@ -90,6 +91,7 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new HitboxSystem());
         world.setSystem(new GunSystem());
         world.setSystem(new BulletSystem());
+        world.setSystem(new DiscAnimationSystem());
     }
 
     @Override

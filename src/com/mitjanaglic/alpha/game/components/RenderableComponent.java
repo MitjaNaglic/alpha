@@ -13,13 +13,13 @@ public class RenderableComponent extends Component {
     private String spriteTextureName;
     private float scaleX;
     private float scaleY;
-    private float rotation;
+    private float rotationAngle;
 
-    public RenderableComponent(String textureName, float scaleX, float scaleY, float rotation) {
+    public RenderableComponent(String textureName, float scaleX, float scaleY, float rotationAngle) {
         this.spriteTextureName = textureName;
         this.scaleX = scaleX;
         this.scaleY = scaleY;
-        this.rotation = rotation;
+        this.rotationAngle = rotationAngle;
     }
 
     public String getSpriteTextureName() {
@@ -46,11 +46,11 @@ public class RenderableComponent extends Component {
         this.scaleY = scaleY;
     }
 
-    public float getRotation() {
-        return rotation;
+    public float getRotationAngle() {
+        return rotationAngle;
     }
 
-    public void setRotation(float rotation) {
-        this.rotation = rotation;
+    public void setRotationAngle(float rotationAngle) {
+        this.rotationAngle = rotationAngle;
     }
 }

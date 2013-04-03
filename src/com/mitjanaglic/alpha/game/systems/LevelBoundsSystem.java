@@ -6,6 +6,7 @@ import com.artemis.Entity;
 import com.artemis.annotations.Mapper;
 import com.artemis.systems.EntityProcessingSystem;
 import com.mitjanaglic.alpha.game.components.*;
+import com.mitjanaglic.alpha.game.components.ids.PlayerShipComponent;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,4 +1,4 @@
-package com.mitjanaglic.alpha.game.components;
+package com.mitjanaglic.alpha.game.components.ids;
 
 import com.artemis.Component;
 

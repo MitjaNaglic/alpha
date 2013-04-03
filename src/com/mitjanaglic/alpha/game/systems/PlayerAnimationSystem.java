@@ -6,7 +6,7 @@ import com.artemis.Entity;
 import com.artemis.annotations.Mapper;
 import com.artemis.systems.EntityProcessingSystem;
 import com.mitjanaglic.alpha.game.components.HitboxComponent;
-import com.mitjanaglic.alpha.game.components.PlayerShipComponent;
+import com.mitjanaglic.alpha.game.components.ids.PlayerShipComponent;
 import com.mitjanaglic.alpha.game.components.RenderableComponent;
 import com.mitjanaglic.alpha.game.components.StateComponent;
 
