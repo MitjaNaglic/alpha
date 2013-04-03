@@ -21,7 +21,7 @@ public class EntityFactory {
         e.addComponent(positionComponent);
         e.addComponent(new VelocityComponent(0, 0));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
-        e.addComponent(new SpeedComponent(400, forwardInertia));
+        e.addComponent(new SpeedComponent(500, forwardInertia));
         HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 99, 75);
         e.addComponent(hitboxComponent);
         e.addComponent(new InputComponent());
