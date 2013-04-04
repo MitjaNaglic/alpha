@@ -29,6 +29,7 @@ public class EntityFactory {
         e.addComponent(hitboxComponent);
         e.addComponent(new InputComponent());
         e.addComponent(new GunComponent(positionComponent.getPosition(),
+                "laserGreen",
                 hitboxComponent.getHitbox().getWidth() / 2,
                 hitboxComponent.getHitbox().getHeight()));
         e.addComponent(new LivesComponent(10));
@@ -48,6 +49,7 @@ public class EntityFactory {
         HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 91, 91);
         e.addComponent(hitboxComponent);
         e.addComponent(new GunComponent(positionComponent.getPosition(),
+                "laserRed",
                 hitboxComponent.getHitbox().getWidth() / 2,
                 hitboxComponent.getHitbox().getHeight() / 2));
         e.addComponent(new RenderableComponent("Disc", 1, 1, 0));
@@ -69,7 +71,7 @@ public class EntityFactory {
                 gunComponent.getGunDamage()
         ));
         bullet.addComponent(new HitboxComponent(gunComponent.getOffsetX(), gunComponent.getOffsetY(), 9, 9));
-        bullet.addComponent(new RenderableComponent("laserRed", 1, 1, gunComponent.getAimAngle()));
+        bullet.addComponent(new RenderableComponent(gunComponent.getBulletTextureName(), 1, 1, gunComponent.getAimAngle()));
         return bullet;
     }
 }
