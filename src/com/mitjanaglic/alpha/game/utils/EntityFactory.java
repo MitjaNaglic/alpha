@@ -4,6 +4,7 @@ import com.artemis.Entity;
 import com.artemis.World;
 import com.artemis.managers.TagManager;
 import com.mitjanaglic.alpha.game.components.*;
+import com.mitjanaglic.alpha.game.components.ai.DiscAiComponent;
 import com.mitjanaglic.alpha.game.components.ids.DiscComponent;
 import com.mitjanaglic.alpha.game.components.ids.PlayerShipComponent;
 
@@ -50,13 +51,16 @@ public class EntityFactory {
                 hitboxComponent.getHitbox().getWidth() / 2,
                 hitboxComponent.getHitbox().getHeight() / 2));
         e.addComponent(new RenderableComponent("Disc", 1, 1, 0));
+        e.addComponent(new DiscAiComponent());
         return e;
     }
 
     public static Entity createBullet(World world, GunComponent gunComponent) {
         Entity bullet = world.createEntity();
         bullet.addComponent(new PositionComponent(gunComponent.getGunPosition()));
-        bullet.addComponent(new VelocityComponent(0, gunComponent.getBulletSpeed()));
+        VelocityComponent velocityComponent = new VelocityComponent(0, gunComponent.getBulletSpeed());
+        velocityComponent.getVelocity().rotate(gunComponent.getAimAngle());
+        bullet.addComponent(velocityComponent);
         bullet.addComponent(new SpeedComponent(gunComponent.getBulletSpeed(), 0));
         bullet.addComponent(new StateComponent(StateComponent.State.MOVING));
         bullet.addComponent(new BulletComponent(bullet.getComponent(PositionComponent.class).getPosition(),
@@ -65,7 +69,7 @@ public class EntityFactory {
                 gunComponent.getGunDamage()
         ));
         bullet.addComponent(new HitboxComponent(gunComponent.getOffsetX(), gunComponent.getOffsetY(), 9, 9));
-        bullet.addComponent(new RenderableComponent("laserRed", 1, 1, 0));
+        bullet.addComponent(new RenderableComponent("laserRed", 1, 1, gunComponent.getAimAngle()));
         return bullet;
     }
 }

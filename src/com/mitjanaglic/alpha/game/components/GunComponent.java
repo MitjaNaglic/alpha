@@ -20,6 +20,7 @@ public class GunComponent extends Component {
     private float offsetX;
     private float offsetY;
     private boolean shootRequest = false;
+    private float aimAngle = 0;
 
     public GunComponent(Vector2 gunPosition, float offsetX, float offsetY) {
         this.gunPosition = gunPosition;
@@ -27,6 +28,14 @@ public class GunComponent extends Component {
         this.offsetY = offsetY;
 
         gunPosition.add(offsetX, offsetY);
+    }
+
+    public float getAimAngle() {
+        return aimAngle;
+    }
+
+    public void setAimAngle(float aimAngle) {
+        this.aimAngle = aimAngle;
     }
 
     public void setGunPosition(Vector2 gunPosition) {
