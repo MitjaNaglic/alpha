@@ -1,4 +1,4 @@
-package com.mitjanaglic.alpha.game.systems;
+package com.mitjanaglic.alpha.game.systems.ai;
 
 import com.artemis.Aspect;
 import com.artemis.ComponentMapper;

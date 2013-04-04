@@ -13,6 +13,8 @@ import com.mitjanaglic.alpha.game.Alpha;
 import com.mitjanaglic.alpha.game.components.*;
 import com.mitjanaglic.alpha.game.models.Level;
 import com.mitjanaglic.alpha.game.systems.*;
+import com.mitjanaglic.alpha.game.systems.ai.DiscAiSystem;
+import com.mitjanaglic.alpha.game.systems.ai.ScarabAiSystem;
 import com.mitjanaglic.alpha.game.systems.animations.DiscAnimationSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.BackgroundRenderingSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.SpriteRenderingSystem;
@@ -60,8 +62,8 @@ public class GameScreen implements Screen, InputProcessor {
     }
 
     private void initEnemy() {
-        Entity enemy = EntityFactory.createDisc(world, level.getLevelWidth() / 3, 400);
-        world.addEntity(enemy);
+        EntityFactory.createDisc(world, level.getLevelWidth() / 3, 400);
+        EntityFactory.createScarab(world, level.getLevelWidth() / 6, 400);
     }
 
     private void initCamera() {
@@ -73,10 +75,8 @@ public class GameScreen implements Screen, InputProcessor {
     }
 
     private void initPlayer() {
-        Entity player = EntityFactory.createPlayer(world, level.getLevelWidth() / 2, 400);
-        world.addEntity(player);
-        world.getManager(TagManager.class).register("player", player);
-        inputComponent = player.getComponent(InputComponent.class);
+        EntityFactory.createPlayer(world, level.getLevelWidth() / 2, 400);
+        inputComponent = world.getManager(TagManager.class).getEntity("player").getComponent(InputComponent.class);
     }
 
     private void setSystems() {
@@ -93,6 +93,7 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new BulletSystem());
         world.setSystem(new DiscAnimationSystem());
         world.setSystem(new DiscAiSystem());
+        world.setSystem(new ScarabAiSystem());
     }
 
     @Override

@@ -4,7 +4,6 @@ import com.artemis.Aspect;
 import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.artemis.annotations.Mapper;
-import com.artemis.managers.GroupManager;
 import com.artemis.systems.EntityProcessingSystem;
 import com.mitjanaglic.alpha.game.components.GunComponent;
 import com.mitjanaglic.alpha.game.components.PositionComponent;
@@ -52,9 +51,7 @@ public class GunSystem extends EntityProcessingSystem {
     }
 
     private void shoot() {
-        Entity bullet = EntityFactory.createBullet(world, gunComponent);
-        world.addEntity(bullet);
-        world.getManager(GroupManager.class).add(bullet, "bullets");
+        EntityFactory.createBullet(world, gunComponent);
     }
 
     private void updatePosition() {
