@@ -33,7 +33,8 @@ public class EntityFactory {
         e.addComponent(new GunComponent(positionComponent.getPosition(),
                 "laserGreen",
                 hitboxComponent.getHitbox().getWidth() / 2,
-                hitboxComponent.getHitbox().getHeight()));
+                hitboxComponent.getHitbox().getHeight(),
+                0));
         e.addComponent(new LivesComponent(10));
         e.addComponent(new RenderableComponent("player", 1, 1, 0));
         world.addEntity(e);
@@ -54,7 +55,9 @@ public class EntityFactory {
         e.addComponent(new GunComponent(positionComponent.getPosition(),
                 "laserRed",
                 hitboxComponent.getHitbox().getWidth() / 2,
-                hitboxComponent.getHitbox().getHeight() / 2));
+                hitboxComponent.getHitbox().getHeight() / 2,
+                0
+        ));
         e.addComponent(new RenderableComponent("Disc", 1, 1, 0));
         e.addComponent(new DiscAiComponent());
         world.addEntity(e);
@@ -71,14 +74,18 @@ public class EntityFactory {
         e.addComponent(new SpeedComponent(0, forwardInertia));
         HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 98, 50);
         e.addComponent(hitboxComponent);
-        e.addComponent(new GunComponent(positionComponent.getPosition(),
+        WeaponsArrayComponent weaponsArrayComponent = new WeaponsArrayComponent();
+        weaponsArrayComponent.getWeaponsArray().add(new GunComponent(positionComponent.getPosition(),
                 "laserRed",
                 hitboxComponent.getHitbox().getWidth() / 4,
-                0));
-        e.addComponent(new GunComponent(positionComponent.getPosition(),
+                0,
+                180));
+        weaponsArrayComponent.getWeaponsArray().add(new GunComponent(positionComponent.getPosition(),
                 "laserRed",
-                hitboxComponent.getHitbox().getWidth() / 2,
-                0));
+                hitboxComponent.getHitbox().getWidth() / 1.50f,
+                0,
+                180));
+        e.addComponent(weaponsArrayComponent);
         e.addComponent(new RenderableComponent("Scarab", 1, 1, 0));
         e.addComponent(new ScarabAiComponent());
         world.addEntity(e);

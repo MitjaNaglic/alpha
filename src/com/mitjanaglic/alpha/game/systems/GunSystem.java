@@ -7,6 +7,7 @@ import com.artemis.annotations.Mapper;
 import com.artemis.systems.EntityProcessingSystem;
 import com.mitjanaglic.alpha.game.components.GunComponent;
 import com.mitjanaglic.alpha.game.components.PositionComponent;
+import com.mitjanaglic.alpha.game.components.WeaponsArrayComponent;
 import com.mitjanaglic.alpha.game.utils.EntityFactory;
 
 /**
@@ -23,16 +24,30 @@ public class GunSystem extends EntityProcessingSystem {
     @Mapper
     private ComponentMapper<PositionComponent> positionM;
     private PositionComponent positionComponent;
+    @Mapper
+    private ComponentMapper<WeaponsArrayComponent> weaponsArrayM;
+    private WeaponsArrayComponent weaponsArrayComponent;
 
     public GunSystem() {
-        super(Aspect.getAspectForAll(PositionComponent.class, GunComponent.class));
+        super(Aspect.getAspectForAll(PositionComponent.class).one(GunComponent.class, WeaponsArrayComponent.class));
     }
 
     @Override
     protected void process(Entity entity) {
         positionComponent = positionM.get(entity);
-        gunComponent = gunM.get(entity);
+        if (gunM.has(entity)) {
+            gunComponent = gunM.get(entity);
+            processGun();
+        } else {
+            weaponsArrayComponent = weaponsArrayM.get(entity);
+            for (GunComponent gc : weaponsArrayComponent.getWeaponsArray()) {
+                gunComponent = gc;
+                processGun();
+            }
+        }
+    }
 
+    private void processGun() {
         updatePosition();
         updateCooldown();
         if (gunComponent.shootRequested()) {

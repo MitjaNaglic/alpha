@@ -6,6 +6,7 @@ import com.artemis.Entity;
 import com.artemis.annotations.Mapper;
 import com.artemis.systems.EntityProcessingSystem;
 import com.mitjanaglic.alpha.game.components.GunComponent;
+import com.mitjanaglic.alpha.game.components.WeaponsArrayComponent;
 import com.mitjanaglic.alpha.game.components.ai.ScarabAiComponent;
 
 /**
@@ -18,15 +19,21 @@ import com.mitjanaglic.alpha.game.components.ai.ScarabAiComponent;
 public class ScarabAiSystem extends EntityProcessingSystem {
     @Mapper
     private ComponentMapper<GunComponent> gunM;
+    private GunComponent gunComponent;
+    @Mapper
+    private ComponentMapper<WeaponsArrayComponent> weaponsArrayM;
+    private WeaponsArrayComponent weaponsArrayComponent;
 
     public ScarabAiSystem() {
-        super(Aspect.getAspectForAll(ScarabAiComponent.class, GunComponent.class));
+        super(Aspect.getAspectForAll(ScarabAiComponent.class, WeaponsArrayComponent.class));
     }
 
     @Override
     protected void process(Entity entity) {
-        GunComponent gunComponent = gunM.get(entity);
-        gunComponent.setAimAngle(180);
-        gunComponent.setShootRequest(true);
+        weaponsArrayComponent = weaponsArrayM.get(entity);
+        for (GunComponent gc : weaponsArrayComponent.getWeaponsArray()) {
+            gunComponent = gc;
+            gunComponent.setShootRequest(true);
+        }
     }
 }
