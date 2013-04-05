@@ -39,6 +39,7 @@ public class GameScreen implements Screen, InputProcessor {
     private SpriteRenderingSystem spriteRenderingSystem;
     private BackgroundRenderingSystem backgroundRenderingSystem;
     private UiRenderingSystem uiRenderingSystem;
+    private CollisionSystem collisionSystem;
 
     private World world;
 
@@ -94,6 +95,7 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new DiscAnimationSystem());
         world.setSystem(new DiscAiSystem());
         world.setSystem(new ScarabAiSystem());
+        collisionSystem = world.setSystem(new CollisionSystem(), true);
     }
 
     @Override
@@ -101,6 +103,8 @@ public class GameScreen implements Screen, InputProcessor {
         if (isAccelometerAvailable) checkTilt();
         world.setDelta(delta);
         world.process();
+        collisionSystem.process();
+
         backgroundRenderingSystem.process();
         spriteRenderingSystem.process();
         uiRenderingSystem.process();

@@ -23,16 +23,22 @@ public class GunComponent extends Component {
     private float defaultAimAngle;
     private float aimAngle = 0;
     private String bulletTextureName;
+    private String ownerId;
 
-    public GunComponent(Vector2 gunPosition, String bulletTextureName, float offsetX, float offsetY, float defaultAimAngle) {
+    public GunComponent(Vector2 gunPosition, String bulletTextureName, float offsetX, float offsetY, float defaultAimAngle, String ownerId) {
         this.gunPosition = gunPosition;
         this.bulletTextureName = bulletTextureName;
         this.offsetX = offsetX;
         this.offsetY = offsetY;
         this.defaultAimAngle = defaultAimAngle;
         aimAngle = defaultAimAngle;
+        this.ownerId = ownerId;
 
         gunPosition.add(offsetX, offsetY);
+    }
+
+    public String getOwnerId() {
+        return ownerId;
     }
 
     public String getBulletTextureName() {

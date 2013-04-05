@@ -9,6 +9,7 @@ import com.mitjanaglic.alpha.game.components.ai.DiscAiComponent;
 import com.mitjanaglic.alpha.game.components.ai.ScarabAiComponent;
 import com.mitjanaglic.alpha.game.components.ids.DiscComponent;
 import com.mitjanaglic.alpha.game.components.ids.PlayerShipComponent;
+import com.mitjanaglic.alpha.game.constants.ids;
 
 /**
  * Created with IntelliJ IDEA.
@@ -34,11 +35,12 @@ public class EntityFactory {
                 "laserGreen",
                 hitboxComponent.getHitbox().getWidth() / 2,
                 hitboxComponent.getHitbox().getHeight(),
-                0));
+                0,
+                ids.PLAYER));
         e.addComponent(new LivesComponent(10));
         e.addComponent(new RenderableComponent("player", 1, 1, 0));
         world.addEntity(e);
-        world.getManager(TagManager.class).register("player", e);
+        world.getManager(TagManager.class).register(ids.PLAYER, e);
     }
 
     public static void createDisc(World world, float x, float y) {
@@ -56,12 +58,13 @@ public class EntityFactory {
                 "laserRed",
                 hitboxComponent.getHitbox().getWidth() / 2,
                 hitboxComponent.getHitbox().getHeight() / 2,
-                0
+                0,
+                ids.DISC
         ));
         e.addComponent(new RenderableComponent("Disc", 1, 1, 0));
         e.addComponent(new DiscAiComponent());
         world.addEntity(e);
-        world.getManager(GroupManager.class).add(e, "disc");
+        world.getManager(GroupManager.class).add(e, ids.ENEMY);
     }
 
     public static void createScarab(World world, float x, float y) {
@@ -79,17 +82,19 @@ public class EntityFactory {
                 "laserRed",
                 hitboxComponent.getHitbox().getWidth() / 4,
                 0,
-                180));
+                180,
+                ids.SCARAB));
         weaponsArrayComponent.getWeaponsArray().add(new GunComponent(positionComponent.getPosition(),
                 "laserRed",
                 hitboxComponent.getHitbox().getWidth() / 1.50f,
                 0,
-                180));
+                180,
+                ids.SCARAB));
         e.addComponent(weaponsArrayComponent);
         e.addComponent(new RenderableComponent("Scarab", 1, 1, 0));
         e.addComponent(new ScarabAiComponent());
         world.addEntity(e);
-        world.getManager(GroupManager.class).add(e, "scarab");
+        world.getManager(GroupManager.class).add(e, ids.ENEMY);
     }
 
     public static void createBullet(World world, GunComponent gunComponent) {
@@ -108,6 +113,10 @@ public class EntityFactory {
         bullet.addComponent(new HitboxComponent(gunComponent.getOffsetX(), gunComponent.getOffsetY(), 9, 9));
         bullet.addComponent(new RenderableComponent(gunComponent.getBulletTextureName(), 1, 1, gunComponent.getAimAngle()));
         world.addEntity(bullet);
-        world.getManager(GroupManager.class).add(bullet, "bullets");
+        //ugotovi se taprav id na podlagi guncomponent ownerja
+        String id;
+        if (gunComponent.getOwnerId() == ids.PLAYER) id = ids.PLAYER_BULLETS;
+        else id = ids.ENEMY_BULLETS;
+        world.getManager(GroupManager.class).add(bullet, id);
     }
 }

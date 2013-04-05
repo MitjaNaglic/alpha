@@ -1,0 +1,18 @@
+package com.mitjanaglic.alpha.game.constants;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: mito
+ * Date: 4.4.2013
+ * Time: 16:58
+ * Mitja Naglič  mitja.n1@gmail.com
+ */
+public class ids {
+    public static final String PLAYER = "player";
+    public static final String ENEMY = "enemy";
+    public static final String DISC = "discr";
+    public static final String SCARAB = "scarab";
+    public static final String PLAYER_BULLETS = "playerBullets";
+    public static final String ENEMY_BULLETS = "enemyBullets";
+
+}
