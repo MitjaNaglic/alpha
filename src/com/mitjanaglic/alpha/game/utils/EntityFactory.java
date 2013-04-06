@@ -101,6 +101,32 @@ public class EntityFactory {
         world.getManager(GroupManager.class).add(e, ids.ENEMY);
     }
 
+    public static void createBigMeteor(World world, float x, float y) {
+        Entity e = world.createEntity();
+        e.addComponent(new PositionComponent(x, y));
+        e.addComponent(new VelocityComponent(0, 0));
+        float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
+        e.addComponent(new SpeedComponent(0, forwardInertia));
+        e.addComponent(new StateComponent(StateComponent.State.IDLE));
+        e.addComponent(new HitboxComponent(x, y, 136, 111));
+        e.addComponent(new RenderableComponent("meteorBig", 1, 1, 0));
+        world.addEntity(e);
+        world.getManager(GroupManager.class).add(e, ids.ENEMY);
+    }
+
+    public static void createSmallMeteor(World world, float x, float y) {
+        Entity e = world.createEntity();
+        e.addComponent(new PositionComponent(x, y));
+        e.addComponent(new VelocityComponent(0, 0));
+        float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
+        e.addComponent(new SpeedComponent(0, forwardInertia));
+        e.addComponent(new StateComponent(StateComponent.State.IDLE));
+        e.addComponent(new HitboxComponent(x, y, 44, 42));
+        e.addComponent(new RenderableComponent("meteorSmall", 1, 1, 0));
+        world.addEntity(e);
+        world.getManager(GroupManager.class).add(e, ids.ENEMY);
+    }
+
     public static void createBullet(World world, GunComponent gunComponent) {
         Entity bullet = world.createEntity();
         bullet.addComponent(new PositionComponent(gunComponent.getGunPosition()));

@@ -39,7 +39,7 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
     private TextureAtlas textureAtlas;
     private OrthographicCamera camera;
     private ShapeRenderer shapeRenderer;
-    private boolean debugRendering = false;
+    private boolean debugRendering = true;
 
     public SpriteRenderingSystem(AssetManager assetManager, CameraComponent cameraComponent) {
         super(Aspect.getAspectForAll(RenderableComponent.class));

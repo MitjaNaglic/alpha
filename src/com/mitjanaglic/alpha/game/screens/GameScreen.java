@@ -57,9 +57,15 @@ public class GameScreen implements Screen, InputProcessor {
         setSystems();
         initPlayer();
         initEnemy();
+        initMeteors();
         world.initialize();
 
 
+    }
+
+    private void initMeteors() {
+        EntityFactory.createBigMeteor(world, level.getLevelWidth() / 4, 600);
+        EntityFactory.createSmallMeteor(world, level.getLevelWidth() - 200, 600);
     }
 
     private void initEnemy() {
