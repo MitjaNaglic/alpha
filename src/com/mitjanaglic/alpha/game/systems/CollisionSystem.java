@@ -8,6 +8,7 @@ import com.artemis.annotations.Mapper;
 import com.artemis.managers.GroupManager;
 import com.artemis.managers.TagManager;
 import com.artemis.utils.ImmutableBag;
+import com.mitjanaglic.alpha.game.components.BulletComponent;
 import com.mitjanaglic.alpha.game.components.HitboxComponent;
 import com.mitjanaglic.alpha.game.constants.ids;
 
@@ -21,6 +22,8 @@ import com.mitjanaglic.alpha.game.constants.ids;
 public class CollisionSystem extends EntitySystem {
     @Mapper
     private ComponentMapper<HitboxComponent> hitboxM;
+    @Mapper
+    private ComponentMapper<BulletComponent> bulletM;
 
     public CollisionSystem() {
         super(Aspect.getAspectForAll(HitboxComponent.class));
@@ -63,7 +66,7 @@ public class CollisionSystem extends EntitySystem {
                     HitboxComponent enemyHitbox = hitboxM.get(enemies.get(j));
 
                     if (playerBulletHitbox.getHitbox().overlaps(enemyHitbox.getHitbox())) {
-                        System.out.println("playerBullet hit");
+                        handleBulletCollision(playerBullets.get(i));
                     }
                 }
             }
@@ -77,10 +80,15 @@ public class CollisionSystem extends EntitySystem {
                 HitboxComponent enemyBulletHitbox = hitboxM.get(enemyBullets.get(i));
 
                 if (enemyBulletHitbox.getHitbox().overlaps(playerHitbox.getHitbox())) {
-                    System.out.println("enemyBullet hit");
+                    handleBulletCollision(enemyBullets.get(i));
                 }
             }
         }
+    }
+
+    private void handleBulletCollision(Entity bullet) {
+        BulletComponent bulletComponent = bulletM.get(bullet);
+        bulletComponent.setHit(true);
     }
 
     @Override

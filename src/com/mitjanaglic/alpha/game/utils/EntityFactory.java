@@ -33,6 +33,7 @@ public class EntityFactory {
         e.addComponent(new InputComponent());
         e.addComponent(new GunComponent(positionComponent.getPosition(),
                 "laserGreen",
+                "laserGreenShot",
                 hitboxComponent.getHitbox().getWidth() / 2,
                 hitboxComponent.getHitbox().getHeight(),
                 0,
@@ -56,6 +57,7 @@ public class EntityFactory {
         e.addComponent(hitboxComponent);
         e.addComponent(new GunComponent(positionComponent.getPosition(),
                 "laserRed",
+                "laserRedShot",
                 hitboxComponent.getHitbox().getWidth() / 2,
                 hitboxComponent.getHitbox().getHeight() / 2,
                 0,
@@ -80,12 +82,14 @@ public class EntityFactory {
         WeaponsArrayComponent weaponsArrayComponent = new WeaponsArrayComponent();
         weaponsArrayComponent.getWeaponsArray().add(new GunComponent(positionComponent.getPosition(),
                 "laserRed",
+                "laserRedShot",
                 hitboxComponent.getHitbox().getWidth() / 4,
                 0,
                 180,
                 ids.SCARAB));
         weaponsArrayComponent.getWeaponsArray().add(new GunComponent(positionComponent.getPosition(),
                 "laserRed",
+                "laserRedShot",
                 hitboxComponent.getHitbox().getWidth() / 1.50f,
                 0,
                 180,
@@ -106,6 +110,7 @@ public class EntityFactory {
         bullet.addComponent(new SpeedComponent(gunComponent.getBulletSpeed(), 0));
         bullet.addComponent(new StateComponent(StateComponent.State.MOVING));
         bullet.addComponent(new BulletComponent(bullet.getComponent(PositionComponent.class).getPosition(),
+                gunComponent.getImpactTextureId(),
                 gunComponent.getRange(),
                 gunComponent.getBulletSpeed(),
                 gunComponent.getGunDamage()

@@ -14,5 +14,6 @@ public class ids {
     public static final String SCARAB = "scarab";
     public static final String PLAYER_BULLETS = "playerBullets";
     public static final String ENEMY_BULLETS = "enemyBullets";
+    public static final String HITMARK = "hitmark";
 
 }

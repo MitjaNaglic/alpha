@@ -39,7 +39,7 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
     private TextureAtlas textureAtlas;
     private OrthographicCamera camera;
     private ShapeRenderer shapeRenderer;
-    private boolean debugRendering = true;
+    private boolean debugRendering = false;
 
     public SpriteRenderingSystem(AssetManager assetManager, CameraComponent cameraComponent) {
         super(Aspect.getAspectForAll(RenderableComponent.class));
@@ -99,10 +99,12 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
 
     private void renderHitboxes(Entity entity) {
         HitboxComponent hitboxComponent = hitboxM.get(entity);
-        shapeRenderer.rect(hitboxComponent.getHitbox().getX(),
-                hitboxComponent.getHitbox().getY(),
-                hitboxComponent.getHitbox().getWidth(),
-                hitboxComponent.getHitbox().getHeight());
+        if (hitboxComponent != null) {
+            shapeRenderer.rect(hitboxComponent.getHitbox().getX(),
+                    hitboxComponent.getHitbox().getY(),
+                    hitboxComponent.getHitbox().getWidth(),
+                    hitboxComponent.getHitbox().getHeight());
+        }
     }
 
     @Override

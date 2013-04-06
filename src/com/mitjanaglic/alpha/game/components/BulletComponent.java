@@ -15,12 +15,31 @@ public class BulletComponent extends Component {
     private float bulletSpeed;
     private float damage;
     private Vector2 shotOrigin;
+    private boolean hit = false;
+    private String impactTextureId;
 
-    public BulletComponent(Vector2 shotOrigin, float range, float bulletSpeed, float damage) {
+    public BulletComponent(Vector2 shotOrigin, String impactTextureId, float range, float bulletSpeed, float damage) {
         this.shotOrigin = shotOrigin.cpy();
+        this.impactTextureId = impactTextureId;
         this.range = range;
         this.bulletSpeed = bulletSpeed;
         this.damage = damage;
+    }
+
+    public String getImpactTextureId() {
+        return impactTextureId;
+    }
+
+    public void setImpactTextureId(String impactTextureId) {
+        this.impactTextureId = impactTextureId;
+    }
+
+    public boolean isHit() {
+        return hit;
+    }
+
+    public void setHit(boolean hit) {
+        this.hit = hit;
     }
 
     public Vector2 getShotOrigin() {
