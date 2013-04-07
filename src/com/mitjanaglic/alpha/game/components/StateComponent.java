@@ -14,17 +14,17 @@ public class StateComponent extends Component {
         IDLE, MOVING_LEFT, MOVING_RIGHT, MOVING
     }
 
-    public StateComponent(movementState movementState) {
-        this.movementState = movementState;
+    public StateComponent(movementState currentMovementState) {
+        this.currentMovementState = currentMovementState;
     }
 
-    public movementState getMovementState() {
-        return movementState;
+    public movementState getCurrentMovementState() {
+        return currentMovementState;
     }
 
-    public void setMovementState(movementState movementState) {
-        this.movementState = movementState;
+    public void setCurrentMovementState(movementState currentMovementState) {
+        this.currentMovementState = currentMovementState;
     }
 
-    private movementState movementState;
+    private movementState currentMovementState;
 }

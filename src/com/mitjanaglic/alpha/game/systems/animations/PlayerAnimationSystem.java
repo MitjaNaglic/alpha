@@ -39,7 +39,7 @@ public class PlayerAnimationSystem extends EntityProcessingSystem {
     }
 
     private void setTextureName() {
-        switch (stateComponent.getMovementState()) {
+        switch (stateComponent.getCurrentMovementState()) {
             case IDLE:
                 renderableComponent.setSpriteTextureName("player");
                 break;
