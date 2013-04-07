@@ -23,7 +23,7 @@ public class EntityFactory {
         Entity e = world.createEntity();
         PositionComponent positionComponent = new PositionComponent(x, y);
         e.addComponent(new PlayerShipComponent());
-        e.addComponent(new StateComponent(StateComponent.State.IDLE));
+        e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(positionComponent);
         e.addComponent(new VelocityComponent(0, 0));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
@@ -52,7 +52,7 @@ public class EntityFactory {
         PositionComponent positionComponent = new PositionComponent(x, y);
         e.addComponent(positionComponent);
         e.addComponent(new DiscComponent(250));
-        e.addComponent(new StateComponent(StateComponent.State.IDLE));
+        e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(new VelocityComponent(0, 0));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
         e.addComponent(new SpeedComponent(0, forwardInertia));
@@ -79,7 +79,7 @@ public class EntityFactory {
         Entity e = world.createEntity();
         PositionComponent positionComponent = new PositionComponent(x, y);
         e.addComponent(positionComponent);
-        e.addComponent(new StateComponent(StateComponent.State.IDLE));
+        e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(new VelocityComponent(0, 0));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
         e.addComponent(new SpeedComponent(0, forwardInertia));
@@ -120,7 +120,7 @@ public class EntityFactory {
         e.addComponent(new VelocityComponent(0, 0));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
         e.addComponent(new SpeedComponent(0, forwardInertia));
-        e.addComponent(new StateComponent(StateComponent.State.IDLE));
+        e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(new HitboxComponent(x, y, 136, 111));
         e.addComponent(new RenderableComponent("meteorBig", 1, 1, 0));
         e.addComponent(new LifeComponent(500));
@@ -134,7 +134,7 @@ public class EntityFactory {
         e.addComponent(new VelocityComponent(0, 0));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
         e.addComponent(new SpeedComponent(0, forwardInertia));
-        e.addComponent(new StateComponent(StateComponent.State.IDLE));
+        e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(new HitboxComponent(x, y, 44, 42));
         e.addComponent(new RenderableComponent("meteorSmall", 1, 1, 0));
         e.addComponent(new LifeComponent(200));
@@ -146,7 +146,7 @@ public class EntityFactory {
         Entity e = world.createEntity();
         PositionComponent positionComponent = new PositionComponent(x, y);
         e.addComponent(positionComponent);
-        e.addComponent(new StateComponent(StateComponent.State.IDLE));
+        e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(new VelocityComponent(0, 0));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
         e.addComponent(new SpeedComponent(0, forwardInertia));
@@ -176,7 +176,7 @@ public class EntityFactory {
         velocityComponent.getVelocity().rotate(gunComponent.getAimAngle());
         bullet.addComponent(velocityComponent);
         bullet.addComponent(new SpeedComponent(gunComponent.getBulletSpeed(), 0));
-        bullet.addComponent(new StateComponent(StateComponent.State.MOVING));
+        bullet.addComponent(new StateComponent(StateComponent.movementState.MOVING));
         bullet.addComponent(new BulletComponent(bullet.getComponent(PositionComponent.class).getPosition(),
                 gunComponent.getImpactTextureId(),
                 gunComponent.getRange(),

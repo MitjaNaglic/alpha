@@ -14,12 +14,48 @@ public class RenderableComponent extends Component {
     private float scaleX;
     private float scaleY;
     private float rotationAngle;
+    private float r = 1;
+    private float g = 1;
+    private float b = 1;
+    private float a = 1;
 
     public RenderableComponent(String textureName, float scaleX, float scaleY, float rotationAngle) {
         this.spriteTextureName = textureName;
         this.scaleX = scaleX;
         this.scaleY = scaleY;
         this.rotationAngle = rotationAngle;
+    }
+
+    public float getR() {
+        return r;
+    }
+
+    public void setR(float r) {
+        this.r = r;
+    }
+
+    public float getG() {
+        return g;
+    }
+
+    public void setG(float g) {
+        this.g = g;
+    }
+
+    public float getB() {
+        return b;
+    }
+
+    public void setB(float b) {
+        this.b = b;
+    }
+
+    public float getA() {
+        return a;
+    }
+
+    public void setA(float a) {
+        this.a = a;
     }
 
     public String getSpriteTextureName() {

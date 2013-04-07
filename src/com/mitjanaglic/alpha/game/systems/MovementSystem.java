@@ -57,9 +57,11 @@ public class MovementSystem extends EntityProcessingSystem {
 
     private void setState() {
         //sets state depending upon moving direction
-        if (velocityComponent.getVelocity().x < 0) stateComponent.setState(StateComponent.State.MOVING_LEFT);
-        else if (velocityComponent.getVelocity().x > 0) stateComponent.setState(StateComponent.State.MOVING_RIGHT);
-        else stateComponent.setState(StateComponent.State.IDLE);
+        if (velocityComponent.getVelocity().x < 0)
+            stateComponent.setMovementState(StateComponent.movementState.MOVING_LEFT);
+        else if (velocityComponent.getVelocity().x > 0)
+            stateComponent.setMovementState(StateComponent.movementState.MOVING_RIGHT);
+        else stateComponent.setMovementState(StateComponent.movementState.IDLE);
     }
 
 }

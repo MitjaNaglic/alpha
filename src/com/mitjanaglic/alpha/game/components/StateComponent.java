@@ -10,21 +10,21 @@ import com.artemis.Component;
  * Mitja Naglič  mitja.n1@gmail.com
  */
 public class StateComponent extends Component {
-    public enum State {
-        IDLE, DYING, MOVING_LEFT, MOVING_RIGHT, MOVING, DESPAWNING
+    public enum movementState {
+        IDLE, MOVING_LEFT, MOVING_RIGHT, MOVING
     }
 
-    public StateComponent(State state) {
-        this.state = state;
+    public StateComponent(movementState movementState) {
+        this.movementState = movementState;
     }
 
-    public State getState() {
-        return state;
+    public movementState getMovementState() {
+        return movementState;
     }
 
-    public void setState(State state) {
-        this.state = state;
+    public void setMovementState(movementState movementState) {
+        this.movementState = movementState;
     }
 
-    private State state;
+    private movementState movementState;
 }

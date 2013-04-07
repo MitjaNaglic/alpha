@@ -16,6 +16,7 @@ import com.mitjanaglic.alpha.game.systems.*;
 import com.mitjanaglic.alpha.game.systems.ai.DiscAiSystem;
 import com.mitjanaglic.alpha.game.systems.ai.ScarabAiSystem;
 import com.mitjanaglic.alpha.game.systems.animations.DiscAnimationSystem;
+import com.mitjanaglic.alpha.game.systems.animations.PlayerAnimationSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.BackgroundRenderingSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.SpriteRenderingSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.UiRenderingSystem;

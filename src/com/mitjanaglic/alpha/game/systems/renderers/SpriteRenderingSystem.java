@@ -84,6 +84,7 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
         positionComponent = positionM.get(entity);
         renderableComponent = renderableM.get(entity);
         TextureAtlas.AtlasRegion atlasRegion = textureAtlas.findRegion(renderableComponent.getSpriteTextureName());
+        batch.setColor(renderableComponent.getR(), renderableComponent.getG(), renderableComponent.getB(), renderableComponent.getA());
         batch.draw(atlasRegion,
                 positionComponent.getPosition().x,
                 positionComponent.getPosition().y,

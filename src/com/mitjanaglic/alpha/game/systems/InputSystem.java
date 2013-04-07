@@ -54,12 +54,12 @@ public class InputSystem extends EntityProcessingSystem {
     private void processInput() {
         if (inputComponent.getKeys().get(Keys.LEFT)) {
             velocityComponent.getVelocity().x = -speedComponent.getSpeed();
-            stateComponent.setState(StateComponent.State.MOVING_LEFT);
+            stateComponent.setMovementState(StateComponent.movementState.MOVING_LEFT);
 
         }
         if (inputComponent.getKeys().get(Keys.RIGHT)) {
             velocityComponent.getVelocity().x = speedComponent.getSpeed();
-            stateComponent.setState(StateComponent.State.MOVING_RIGHT);
+            stateComponent.setMovementState(StateComponent.movementState.MOVING_RIGHT);
 
         }
         if (inputComponent.getKeys().get(Keys.UP)) {
@@ -79,7 +79,7 @@ public class InputSystem extends EntityProcessingSystem {
         // need to check if both or none direction are pressed, then is idle
         if ((inputComponent.getKeys().get(Keys.LEFT) && inputComponent.getKeys().get(Keys.RIGHT)) ||
                 (!inputComponent.getKeys().get(Keys.LEFT) && !(inputComponent.getKeys().get(Keys.RIGHT)))) {
-            stateComponent.setState(StateComponent.State.IDLE);
+            stateComponent.setMovementState(StateComponent.movementState.IDLE);
 
             // horizontal speed is 0
             velocityComponent.getVelocity().x = 0;
