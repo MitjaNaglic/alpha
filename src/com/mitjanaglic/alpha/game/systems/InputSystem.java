@@ -72,6 +72,8 @@ public class InputSystem extends EntityProcessingSystem {
         }
         if (inputComponent.getKeys().get(Keys.FIRE)) {
             gunComponent.setShootRequest(true);
+        } else {
+            gunComponent.setShootRequest(false);
         }
 
         // need to check if both or none direction are pressed, then is idle

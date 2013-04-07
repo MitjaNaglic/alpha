@@ -37,6 +37,7 @@ public class EntityFactory {
                 hitboxComponent.getHitbox().getWidth() / 2,
                 hitboxComponent.getHitbox().getHeight(),
                 0,
+                1100,
                 ids.PLAYER));
         e.addComponent(new LivesComponent(10));
         e.addComponent(new RenderableComponent("player", 1, 1, 0));
@@ -61,6 +62,7 @@ public class EntityFactory {
                 hitboxComponent.getHitbox().getWidth() / 2,
                 hitboxComponent.getHitbox().getHeight() / 2,
                 0,
+                800,
                 ids.DISC
         ));
         e.addComponent(new RenderableComponent("Disc", 1, 1, 0));
@@ -86,6 +88,7 @@ public class EntityFactory {
                 hitboxComponent.getHitbox().getWidth() / 4,
                 0,
                 180,
+                900,
                 ids.SCARAB));
         weaponsArrayComponent.getWeaponsArray().add(new GunComponent(positionComponent.getPosition(),
                 "laserRed",
@@ -93,6 +96,7 @@ public class EntityFactory {
                 hitboxComponent.getHitbox().getWidth() / 1.50f,
                 0,
                 180,
+                900,
                 ids.SCARAB));
         e.addComponent(weaponsArrayComponent);
         e.addComponent(new RenderableComponent("Scarab", 1, 1, 0));
@@ -123,6 +127,31 @@ public class EntityFactory {
         e.addComponent(new StateComponent(StateComponent.State.IDLE));
         e.addComponent(new HitboxComponent(x, y, 44, 42));
         e.addComponent(new RenderableComponent("meteorSmall", 1, 1, 0));
+        world.addEntity(e);
+        world.getManager(GroupManager.class).add(e, ids.ENEMY);
+    }
+
+    public static void createMinos(World world, float x, float y) {
+        Entity e = world.createEntity();
+        PositionComponent positionComponent = new PositionComponent(x, y);
+        e.addComponent(positionComponent);
+        e.addComponent(new StateComponent(StateComponent.State.IDLE));
+        e.addComponent(new VelocityComponent(0, 0));
+        float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
+        e.addComponent(new SpeedComponent(0, forwardInertia));
+        HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 102, 122);
+        e.addComponent(hitboxComponent);
+        e.addComponent(new GunComponent(positionComponent.getPosition(),
+                "ballBlue",
+                "blueShot",
+                hitboxComponent.getHitbox().getWidth() / 2,
+                hitboxComponent.getHitbox().getHeight() / 2,
+                0,
+                600,
+                ids.MINOS
+        ));
+        e.addComponent(new RenderableComponent("Minos", 1, 1, 0));
+        e.addComponent(new DiscAiComponent());
         world.addEntity(e);
         world.getManager(GroupManager.class).add(e, ids.ENEMY);
     }

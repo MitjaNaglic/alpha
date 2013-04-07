@@ -14,7 +14,7 @@ public class GunComponent extends Component {
     private float range = 1000;
     private float bulletSpeed = 1500;
     private float gunDamage = 10;
-    private float timeBetweenShots = 0.1f;
+    private float timeBetweenShots;
     private float shootCooldown = 0;
     private Vector2 gunPosition;
     private float offsetX;
@@ -26,7 +26,8 @@ public class GunComponent extends Component {
     private String impactTextureId;
     private String ownerId;
 
-    public GunComponent(Vector2 gunPosition, String bulletTextureName, String impactTextureId, float offsetX, float offsetY, float defaultAimAngle, String ownerId) {
+    public GunComponent(Vector2 gunPosition, String bulletTextureName, String impactTextureId,
+                        float offsetX, float offsetY, float defaultAimAngle, float fireRate, String ownerId) {
         this.gunPosition = gunPosition;
         this.bulletTextureName = bulletTextureName;
         this.impactTextureId = impactTextureId;
@@ -34,6 +35,7 @@ public class GunComponent extends Component {
         this.offsetY = offsetY;
         this.defaultAimAngle = defaultAimAngle;
         aimAngle = defaultAimAngle;
+        this.timeBetweenShots = 1 / (fireRate / 100);
         this.ownerId = ownerId;
 
         gunPosition.add(offsetX, offsetY);

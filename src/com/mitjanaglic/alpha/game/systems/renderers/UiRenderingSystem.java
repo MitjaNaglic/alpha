@@ -36,7 +36,7 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
 
     @Override
     protected void initialize() {
-        textureAtlas = assetManager.get("data/png/textures/textures.pack", TextureAtlas.class);
+        textureAtlas = assetManager.get("data/png/textures/textures.atlas", TextureAtlas.class);
         spriteBatch = new SpriteBatch();
         font = new BitmapFont();
         player = world.getManager(TagManager.class).getEntity("player");

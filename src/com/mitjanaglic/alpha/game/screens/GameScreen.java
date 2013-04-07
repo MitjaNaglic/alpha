@@ -71,6 +71,7 @@ public class GameScreen implements Screen, InputProcessor {
     private void initEnemy() {
         EntityFactory.createDisc(world, level.getLevelWidth() / 3, 400);
         EntityFactory.createScarab(world, level.getLevelWidth() / 6, 400);
+        EntityFactory.createMinos(world, level.getLevelWidth() / -300, 400);
     }
 
     private void initCamera() {

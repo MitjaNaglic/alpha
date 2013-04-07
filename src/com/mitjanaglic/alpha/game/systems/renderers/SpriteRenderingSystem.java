@@ -50,7 +50,7 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
 
     @Override
     protected void initialize() {
-        textureAtlas = assetManager.get("data/png/textures/textures.pack", TextureAtlas.class);
+        textureAtlas = assetManager.get("data/png/textures/textures.atlas", TextureAtlas.class);
         batch = new SpriteBatch();
         shapeRenderer = new ShapeRenderer();
     }

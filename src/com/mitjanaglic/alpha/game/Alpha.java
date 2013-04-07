@@ -34,7 +34,6 @@ public class Alpha extends Game {
         enqueueAssets();
         assetManager.finishLoading();
         mainMenu = new MenuScreen(this);
-        gameScreen = new GameScreen(this);
         pauseScreen = new PauseScreen(this);
         setScreen(mainMenu);
         backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("data\\music\\Magellan  - Orbyss.mp3"));
@@ -44,7 +43,7 @@ public class Alpha extends Game {
     }
 
     private void enqueueAssets() {
-        getAssetManager().load("data/png/textures/textures.pack", TextureAtlas.class);
+        getAssetManager().load("data/png/textures/textures.atlas", TextureAtlas.class);
         getAssetManager().setLoader(TiledMap.class, new TmxMapLoader(new InternalFileHandleResolver()));
         TmxMapLoader.Parameters parameters = new TmxMapLoader.Parameters();
         parameters.generateMipMaps = true;

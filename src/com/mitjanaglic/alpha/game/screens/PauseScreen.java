@@ -75,7 +75,7 @@ public class PauseScreen implements Screen {
     }
 
     private void loadData() {
-        textureAtlas = new TextureAtlas(Gdx.files.internal("data\\png\\textures\\textures.pack"));
+        textureAtlas = new TextureAtlas(Gdx.files.internal("data\\png\\textures\\textures.atlas"));
     }
 
     @Override

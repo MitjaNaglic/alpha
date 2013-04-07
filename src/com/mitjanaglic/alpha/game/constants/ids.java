@@ -10,7 +10,8 @@ package com.mitjanaglic.alpha.game.constants;
 public class ids {
     public static final String PLAYER = "player";
     public static final String ENEMY = "enemy";
-    public static final String DISC = "discr";
+    public static final String DISC = "disc";
+    public static final String MINOS = "minos";
     public static final String SCARAB = "scarab";
     public static final String PLAYER_BULLETS = "playerBullets";
     public static final String ENEMY_BULLETS = "enemyBullets";
