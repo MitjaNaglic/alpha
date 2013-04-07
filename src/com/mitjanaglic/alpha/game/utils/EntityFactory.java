@@ -147,7 +147,7 @@ public class EntityFactory {
                 hitboxComponent.getHitbox().getWidth() / 2,
                 hitboxComponent.getHitbox().getHeight() / 2,
                 0,
-                600,
+                100,
                 ids.MINOS
         ));
         e.addComponent(new RenderableComponent("Minos", 1, 1, 0));

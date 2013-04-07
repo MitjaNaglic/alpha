@@ -3,7 +3,6 @@ package com.mitjanaglic.alpha.game.systems.renderers;
 import com.artemis.systems.VoidEntitySystem;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.utils.Disposable;
@@ -31,7 +30,6 @@ public class BackgroundRenderingSystem extends VoidEntitySystem implements Dispo
     @Override
     protected void initialize() {
         levelMap = level.getMap();
-        levelMap.getTileSets().getTile(1).getTextureRegion().getTexture().setFilter(Texture.TextureFilter.MipMapLinearNearest, Texture.TextureFilter.Nearest);
         mapRenderer = new OrthogonalTiledMapRenderer(levelMap, 1);
     }
 

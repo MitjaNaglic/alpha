@@ -35,7 +35,7 @@ public class GunComponent extends Component {
         this.offsetY = offsetY;
         this.defaultAimAngle = defaultAimAngle;
         aimAngle = defaultAimAngle;
-        this.timeBetweenShots = 1 / (fireRate / 100);
+        this.timeBetweenShots = 100 / (fireRate);
         this.ownerId = ownerId;
 
         gunPosition.add(offsetX, offsetY);

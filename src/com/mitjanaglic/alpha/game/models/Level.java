@@ -1,6 +1,7 @@
 package com.mitjanaglic.alpha.game.models;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 
 /**
@@ -24,6 +25,8 @@ public class Level {
 
     private void loadLevel() {
         this.map = assetManager.get("data/levels/Level1/Level1.tmx", TiledMap.class);
+        //TODO mipmap background
+        this.map.getTileSets().getTile(1).getTextureRegion().getTexture().setFilter(Texture.TextureFilter.MipMapLinearNearest, Texture.TextureFilter.Nearest);
 
         int width = Integer.parseInt(String.valueOf(map.getProperties().get("width")));
         int tilewidth = Integer.parseInt(String.valueOf(map.getProperties().get("tilewidth")));
