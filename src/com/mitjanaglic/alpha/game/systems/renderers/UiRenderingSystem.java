@@ -10,6 +10,7 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.game.components.CameraComponent;
 import com.mitjanaglic.alpha.game.components.LifeComponent;
@@ -86,6 +87,20 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
                 y
         );
         font.draw(spriteBatch, String.valueOf(currentLife) + " / " + maxLife, x + 50, y + 20);
+        TextureRegion textureRegion = textureAtlas.findRegion("lifeBarBit");
+        spriteBatch.draw(textureRegion,
+                x + 200,
+                y,
+                0,
+                0,
+                playerLife.getCurrentLife() / playerLife.getMaxLife() * 300,
+                textureRegion.getRegionHeight()
+                , 1
+                , 1
+                , 0
+        );
+
+
     }
 
     private void renderFps() {
