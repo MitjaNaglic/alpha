@@ -6,11 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/BackgroundRenderingSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/BackgroundRenderingSystem.java" />
+    <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment=".">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LifeSystem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CollisionSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CollisionSystem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/GunComponent.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/GunComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/LifeComponent.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/LifeComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Alpha.iws" />
@@ -20,11 +24,11 @@
     <file path="/MainActivity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362672791185" ignored="false" />
     <file path="/fragment.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363376696165" ignored="false" />
     <file path="/DesktopStarter.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364221069437" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365346414711" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365351199024" ignored="false" />
     <file path="/Player.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364257135690" ignored="false" />
     <file path="/Entity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364234628812" ignored="false" />
     <file path="/Space.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364258077559" ignored="false" />
-    <file path="/GameScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365340256776" ignored="false" />
+    <file path="/GameScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365358357710" ignored="false" />
     <file path="/Alpha.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364172997016" ignored="false" />
     <file path="/WorldRenderer.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364734609378" ignored="false" />
     <file path="/WorldController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362757853366" ignored="false" />
@@ -60,7 +64,7 @@
     <file path="/MatchCameraVelocityComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364232656485" ignored="false" />
     <file path="/Disc.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364235212960" ignored="false" />
     <file path="/File Header.txt.ft" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364239416931" ignored="false" />
-    <file path="/GunComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365347430106" ignored="false" />
+    <file path="/GunComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365353415351" ignored="false" />
     <file path="/InputComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364602136807" ignored="false" />
     <file path="/SpeedComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364913133256" ignored="false" />
     <file path="/StateComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364610564872" ignored="false" />
@@ -73,9 +77,9 @@
     <file path="/CameraComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364736127979" ignored="false" />
     <file path="/CameraSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364860963259" ignored="false" />
     <file path="/SpriteRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365230739481" ignored="false" />
-    <file path="/EntityFactory.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365340171693" ignored="false" />
+    <file path="/EntityFactory.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365358409564" ignored="false" />
     <file path="/BackgroundRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365347934200" ignored="false" />
-    <file path="/UiRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365059139757" ignored="false" />
+    <file path="/UiRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365356640482" ignored="false" />
     <file path="/LivesComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364906465438" ignored="false" />
     <file path="/BulletComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365226651365" ignored="false" />
     <file path="/BulletSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365229765098" ignored="false" />
@@ -86,15 +90,16 @@
     <file path="/DiscComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365009021986" ignored="false" />
     <file path="/DiscAnimationSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365009107658" ignored="false" />
     <file path="/DiscAiComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365031199366" ignored="false" />
-    <file path="/DiscAiSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365055712081" ignored="false" />
+    <file path="/DiscAiSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365356288578" ignored="false" />
     <file path="/ScarabAiComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365051454099" ignored="false" />
     <file path="/ScarabAiSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365061210574" ignored="false" />
     <file path="/WeaponsArrayComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365059370756" ignored="false" />
-    <file path="/CollisionSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365176487651" ignored="false" />
+    <file path="/CollisionSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365358767644" ignored="false" />
     <file path="/ids.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365340161105" ignored="false" />
     <file path="/HitmarkSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365229218856" ignored="false" />
     <file path="/HitmarkComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365228163409" ignored="false" />
-    <file path="/LifeComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365244547237" ignored="false" />
+    <file path="/LifeComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365357147974" ignored="false" />
+    <file path="/LifeSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365358337612" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,28 +160,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EntityFactory.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="EntityFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="149" column="17" selection-start="7622" selection-end="7622" vertical-scroll-proportion="0.6803419">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BulletSystem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/BulletSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="134" selection-start="1734" selection-end="1734" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CollisionSystem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CollisionSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="65" selection-start="3383" selection-end="3383" vertical-scroll-proportion="0.0">
+            <state line="104" column="17" selection-start="4960" selection-end="4960" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -185,7 +172,27 @@
       <file leaf-file-name="GameScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="8" selection-start="2167" selection-end="2167" vertical-scroll-proportion="0.0">
+            <state line="105" column="23" selection-start="4226" selection-end="4226" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LifeSystem.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LifeSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="37" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CollisionSystem.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CollisionSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="90" column="28" selection-start="3529" selection-end="3529" vertical-scroll-proportion="0.15726496">
               <folding />
             </state>
           </provider>
@@ -200,19 +207,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GunComponent.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/GunComponent.java">
+      <file leaf-file-name="LifeComponent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/LifeComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="35" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BulletComponent.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/BulletComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="50" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0">
+            <state line="20" column="28" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -241,22 +239,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/BulletSystem.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/LifeComponent.java" />
-        <option value="$PROJECT_DIR$/Android/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/constants/ids.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/SpriteRenderingSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/MenuScreen.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/PauseScreen.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/GunSystem.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/Alpha.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/GunComponent.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/BackgroundRenderingSystem.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/GunComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/LifeComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LifeSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CollisionSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" />
       </list>
     </option>
   </component>
@@ -1199,7 +1197,11 @@
       <created>1365346426776</created>
       <updated>1365346426776</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary=".">
+      <created>1365350972892</created>
+      <updated>1365350972892</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1299,7 +1301,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="rof calculation redoening, minos" />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1334,10 +1336,10 @@
     <MESSAGE value="entityfac refr" />
     <MESSAGE value="weaponsarray" />
     <MESSAGE value="collision detection&#10;" />
-    <MESSAGE value="." />
     <MESSAGE value="meteors" />
     <MESSAGE value="android icon" />
     <MESSAGE value="rof calculation redoening, minos" />
+    <MESSAGE value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1347,86 +1349,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/MenuScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="95" selection-start="2806" selection-end="2806" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="73" selection-start="1368" selection-end="1368" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/PauseScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="95" selection-start="2724" selection-end="2724" vertical-scroll-proportion="-0.45212767">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/SpriteRenderingSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="73" selection-start="2026" selection-end="2026" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/BulletSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="134" selection-start="1734" selection-end="1734" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CollisionSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="65" selection-start="3383" selection-end="3383" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/BulletComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="50" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/InputComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="263" selection-end="263" vertical-scroll-proportion="-0.120567374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="76" column="46" selection-start="2520" selection-end="2520" vertical-scroll-proportion="0.54787236">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/GunSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="79" selection-start="2082" selection-end="2082" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="8" selection-start="2167" selection-end="2167" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/GunComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="35" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1452,9 +1377,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/GunComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="30" selection-start="1379" selection-end="1379" vertical-scroll-proportion="0.8717949">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/BulletComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="50" selection-start="780" selection-end="780" vertical-scroll-proportion="0.6735043">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/BulletSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="134" selection-start="1734" selection-end="1734" vertical-scroll-proportion="0.44786325">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="9" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.84273505">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/GunSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="79" selection-start="2082" selection-end="2082" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="26" selection-start="2449" selection-end="2449" vertical-scroll-proportion="0.42051283">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/LifeComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="28" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LifeSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="37" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="23" selection-start="4226" selection-end="4226" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="17" selection-start="7622" selection-end="7622" vertical-scroll-proportion="0.6803419">
+        <state line="104" column="17" selection-start="4960" selection-end="4960" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/animations/DiscAnimationSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="13" selection-start="502" selection-end="502" vertical-scroll-proportion="0.31965813">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CollisionSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="28" selection-start="3529" selection-end="3529" vertical-scroll-proportion="0.15726496">
           <folding />
         </state>
       </provider>

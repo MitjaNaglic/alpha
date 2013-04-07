@@ -15,6 +15,11 @@ public class LifeComponent extends Component {
 
     public LifeComponent(float maxLife) {
         this.maxLife = maxLife;
+        currentLife = this.maxLife;
+    }
+
+    public void inflictDamage(float damage) {
+        currentLife -= damage;
     }
 
     public float getMaxLife() {

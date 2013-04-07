@@ -31,8 +31,11 @@ public class DiscAiSystem extends EntityProcessingSystem {
     @Override
     protected void process(Entity entity) {
         gunComponent = gunM.get(entity);
-        aim(world.getManager(TagManager.class).getEntity("player"));
-        gunComponent.setShootRequest(true);
+        Entity player = world.getManager(TagManager.class).getEntity("player");
+        if (player != null) {
+            aim(player);
+            gunComponent.setShootRequest(true);
+        }
     }
 
     private void aim(Entity target) {

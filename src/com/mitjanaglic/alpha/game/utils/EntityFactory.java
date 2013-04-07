@@ -38,8 +38,10 @@ public class EntityFactory {
                 hitboxComponent.getHitbox().getHeight(),
                 0,
                 1100,
-                ids.PLAYER));
-        e.addComponent(new LivesComponent(10));
+                ids.PLAYER,
+                10
+        ));
+        e.addComponent(new LifeComponent(1000));
         e.addComponent(new RenderableComponent("player", 1, 1, 0));
         world.addEntity(e);
         world.getManager(TagManager.class).register(ids.PLAYER, e);
@@ -63,10 +65,12 @@ public class EntityFactory {
                 hitboxComponent.getHitbox().getHeight() / 2,
                 0,
                 800,
-                ids.DISC
+                ids.DISC,
+                10
         ));
         e.addComponent(new RenderableComponent("Disc", 1, 1, 0));
         e.addComponent(new DiscAiComponent());
+        e.addComponent(new LifeComponent(200));
         world.addEntity(e);
         world.getManager(GroupManager.class).add(e, ids.ENEMY);
     }
@@ -88,19 +92,24 @@ public class EntityFactory {
                 hitboxComponent.getHitbox().getWidth() / 4,
                 0,
                 180,
-                900,
-                ids.SCARAB));
+                400,
+                ids.SCARAB,
+                10
+        ));
         weaponsArrayComponent.getWeaponsArray().add(new GunComponent(positionComponent.getPosition(),
                 "laserRed",
                 "laserRedShot",
                 hitboxComponent.getHitbox().getWidth() / 1.50f,
                 0,
                 180,
-                900,
-                ids.SCARAB));
+                400,
+                ids.SCARAB,
+                10
+        ));
         e.addComponent(weaponsArrayComponent);
         e.addComponent(new RenderableComponent("Scarab", 1, 1, 0));
         e.addComponent(new ScarabAiComponent());
+        e.addComponent(new LifeComponent(300));
         world.addEntity(e);
         world.getManager(GroupManager.class).add(e, ids.ENEMY);
     }
@@ -114,6 +123,7 @@ public class EntityFactory {
         e.addComponent(new StateComponent(StateComponent.State.IDLE));
         e.addComponent(new HitboxComponent(x, y, 136, 111));
         e.addComponent(new RenderableComponent("meteorBig", 1, 1, 0));
+        e.addComponent(new LifeComponent(500));
         world.addEntity(e);
         world.getManager(GroupManager.class).add(e, ids.ENEMY);
     }
@@ -127,6 +137,7 @@ public class EntityFactory {
         e.addComponent(new StateComponent(StateComponent.State.IDLE));
         e.addComponent(new HitboxComponent(x, y, 44, 42));
         e.addComponent(new RenderableComponent("meteorSmall", 1, 1, 0));
+        e.addComponent(new LifeComponent(200));
         world.addEntity(e);
         world.getManager(GroupManager.class).add(e, ids.ENEMY);
     }
@@ -148,10 +159,12 @@ public class EntityFactory {
                 hitboxComponent.getHitbox().getHeight() / 2,
                 0,
                 100,
-                ids.MINOS
+                ids.MINOS,
+                50
         ));
         e.addComponent(new RenderableComponent("Minos", 1, 1, 0));
         e.addComponent(new DiscAiComponent());
+        e.addComponent(new LifeComponent(200));
         world.addEntity(e);
         world.getManager(GroupManager.class).add(e, ids.ENEMY);
     }

@@ -10,6 +10,7 @@ import com.artemis.managers.TagManager;
 import com.artemis.utils.ImmutableBag;
 import com.mitjanaglic.alpha.game.components.BulletComponent;
 import com.mitjanaglic.alpha.game.components.HitboxComponent;
+import com.mitjanaglic.alpha.game.components.LifeComponent;
 import com.mitjanaglic.alpha.game.constants.ids;
 
 /**
@@ -24,6 +25,8 @@ public class CollisionSystem extends EntitySystem {
     private ComponentMapper<HitboxComponent> hitboxM;
     @Mapper
     private ComponentMapper<BulletComponent> bulletM;
+    @Mapper
+    private ComponentMapper<LifeComponent> lifeM;
 
     public CollisionSystem() {
         super(Aspect.getAspectForAll(HitboxComponent.class));
@@ -52,7 +55,8 @@ public class CollisionSystem extends EntitySystem {
             for (int i = 0; i < enemies.size(); i++) {
                 HitboxComponent enemyHitbox = hitboxM.get(enemies.get(i));
                 if (playerhitbox.getHitbox().overlaps(enemyHitbox.getHitbox())) {
-                    System.out.println("hit");
+                    handleHullCollision(player);
+                    handleHullCollision(enemies.get(i));
                 }
             }
         }
@@ -66,10 +70,18 @@ public class CollisionSystem extends EntitySystem {
                     HitboxComponent enemyHitbox = hitboxM.get(enemies.get(j));
 
                     if (playerBulletHitbox.getHitbox().overlaps(enemyHitbox.getHitbox())) {
+                        handleCollision(enemies.get(j), playerBullets.get(i));
                         handleBulletCollision(playerBullets.get(i));
                     }
                 }
             }
+        }
+    }
+
+    private void handleHullCollision(Entity entity) {
+        LifeComponent lifeComponent = lifeM.get(entity);
+        if (lifeComponent != null) {
+            lifeComponent.inflictDamage(100);
         }
     }
 
@@ -80,9 +92,18 @@ public class CollisionSystem extends EntitySystem {
                 HitboxComponent enemyBulletHitbox = hitboxM.get(enemyBullets.get(i));
 
                 if (enemyBulletHitbox.getHitbox().overlaps(playerHitbox.getHitbox())) {
+                    handleCollision(player, enemyBullets.get(i));
                     handleBulletCollision(enemyBullets.get(i));
                 }
             }
+        }
+    }
+
+    private void handleCollision(Entity entity, Entity bullet) {
+        LifeComponent lifeComponent = lifeM.get(entity);
+        BulletComponent bulletComponent = bulletM.get(bullet);
+        if (lifeComponent != null) {
+            lifeComponent.inflictDamage(bulletComponent.getDamage());
         }
     }
 

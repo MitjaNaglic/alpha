@@ -103,6 +103,7 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new DiscAiSystem());
         world.setSystem(new ScarabAiSystem());
         world.setSystem(new HitmarkSystem());
+        world.setSystem(new LifeSystem());
         collisionSystem = world.setSystem(new CollisionSystem(), true);
     }
 
