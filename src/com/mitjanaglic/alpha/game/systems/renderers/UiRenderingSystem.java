@@ -97,7 +97,9 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
         if (playerLife != null) {
             damagebarWidth = playerLife.getDamage() / maxLife * 300;
         }
-        renderBar(lifebarX + lifebarWidth, y, damagebarWidth, "damageBarBit");
+        if (currentLife > 0) {
+            renderBar(lifebarX + lifebarWidth, y, damagebarWidth, "damageBarBit");
+        }
 
     }
 
