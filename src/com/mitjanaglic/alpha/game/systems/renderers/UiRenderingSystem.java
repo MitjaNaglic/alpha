@@ -72,14 +72,14 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
     private void renderLives() {
         float x = 20;
         float y = 20;
-        String currentLife;
-        String maxLife;
+        float currentLife;
+        float maxLife;
         if (playerLife != null) {
-            currentLife = String.valueOf(playerLife.getCurrentLife());
-            maxLife = String.valueOf(playerLife.getMaxLife());
+            currentLife = playerLife.getCurrentLife();
+            maxLife = playerLife.getMaxLife();
         } else {
-            currentLife = "0";
-            maxLife = "-";
+            currentLife = 0;
+            maxLife = 0;
         }
 
         spriteBatch.draw(textureAtlas.findRegion("life"),
@@ -87,20 +87,33 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
                 y
         );
         font.draw(spriteBatch, String.valueOf(currentLife) + " / " + maxLife, x + 50, y + 20);
-        TextureRegion textureRegion = textureAtlas.findRegion("lifeBarBit");
+
+        float lifebarWidth = currentLife / maxLife * 300;
+        float lifebarX = x + 200;
+        if (lifebarWidth > 0) {
+            renderBar(x + 200, y, lifebarWidth, "lifeBarBit");
+        }
+        float damagebarWidth = 0;
+        if (playerLife != null) {
+            damagebarWidth = playerLife.getDamage() / maxLife * 300;
+        }
+        renderBar(lifebarX + lifebarWidth, y, damagebarWidth, "damageBarBit");
+
+    }
+
+    private void renderBar(float x, float y, float width, String textureName) {
+        TextureRegion textureRegion = textureAtlas.findRegion(textureName);
         spriteBatch.draw(textureRegion,
-                x + 200,
+                x,
                 y,
                 0,
                 0,
-                playerLife.getCurrentLife() / playerLife.getMaxLife() * 300,
+                width,
                 textureRegion.getRegionHeight()
                 , 1
                 , 1
                 , 0
         );
-
-
     }
 
     private void renderFps() {

@@ -12,13 +12,23 @@ import com.artemis.Component;
 public class LifeComponent extends Component {
     private float maxLife;
     private float currentLife;
+    private float damage = 0;
 
     public LifeComponent(float maxLife) {
         this.maxLife = maxLife;
         currentLife = this.maxLife;
     }
 
+    public float getDamage() {
+        return damage;
+    }
+
+    public void setDamage(float damage) {
+        this.damage = damage;
+    }
+
     public void inflictDamage(float damage) {
+        this.damage += damage;
         currentLife -= damage;
     }
 

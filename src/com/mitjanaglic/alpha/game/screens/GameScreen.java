@@ -161,18 +161,18 @@ public class GameScreen implements Screen, InputProcessor {
 
     public void checkTilt() {
         // points to the right (when in portrait orientation)
-        if (Gdx.input.getAccelerometerX() > 1) {
+        if (Gdx.input.getAccelerometerX() > 0.5) {
             inputComponent.downPressed();
-        } else if (Gdx.input.getAccelerometerX() < -1) {
+        } else if (Gdx.input.getAccelerometerX() < -0.5) {
             inputComponent.upPressed();
         } else {
             inputComponent.upReleased();
             inputComponent.downReleased();
         }
         // points upwards (when in portrait orientation)
-        if (Gdx.input.getAccelerometerY() > 1) {
+        if (Gdx.input.getAccelerometerY() > 0.5) {
             inputComponent.rightPressed();
-        } else if (Gdx.input.getAccelerometerY() < -1) {
+        } else if (Gdx.input.getAccelerometerY() < -0.5) {
             inputComponent.leftPressed();
         } else {
             inputComponent.leftReleased();

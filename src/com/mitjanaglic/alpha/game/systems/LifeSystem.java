@@ -26,8 +26,16 @@ public class LifeSystem extends EntityProcessingSystem {
     @Override
     protected void process(Entity entity) {
         lifeComponent = lifeM.get(entity);
+        damageDecay();
         if (lifeComponent.getCurrentLife() <= 0) {
+            lifeComponent.setCurrentLife(0);
             entity.deleteFromWorld();
+        }
+    }
+
+    private void damageDecay() {
+        if (lifeComponent.getDamage() > 0) {
+            lifeComponent.setDamage(lifeComponent.getDamage() - world.getDelta() * 150);
         }
     }
 }
