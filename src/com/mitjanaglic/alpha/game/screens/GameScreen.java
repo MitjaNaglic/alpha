@@ -41,6 +41,7 @@ public class GameScreen implements Screen, InputProcessor {
     private BackgroundRenderingSystem backgroundRenderingSystem;
     private UiRenderingSystem uiRenderingSystem;
     private CollisionSystem collisionSystem;
+    private LifeSystem lifeSystem;
 
     private World world;
 
@@ -104,7 +105,7 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new DiscAiSystem());
         world.setSystem(new ScarabAiSystem());
         world.setSystem(new HitmarkSystem());
-        world.setSystem(new LifeSystem());
+        lifeSystem = world.setSystem(new LifeSystem());
         collisionSystem = world.setSystem(new CollisionSystem(), true);
     }
 
@@ -114,6 +115,7 @@ public class GameScreen implements Screen, InputProcessor {
         world.setDelta(delta);
         world.process();
         collisionSystem.process();
+        lifeSystem.process();
 
         backgroundRenderingSystem.process();
         spriteRenderingSystem.process();

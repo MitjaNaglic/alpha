@@ -79,10 +79,7 @@ public class CollisionSystem extends EntitySystem {
     }
 
     private void handleHullCollision(Entity entity) {
-        LifeComponent lifeComponent = lifeM.get(entity);
-        if (lifeComponent != null) {
-            lifeComponent.inflictDamage(100);
-        }
+        world.getSystem(LifeSystem.class).inflictDamage(entity, 100);
     }
 
     private void enemyBulletCollsiions(Entity player, ImmutableBag<Entity> enemyBullets) {
@@ -100,11 +97,8 @@ public class CollisionSystem extends EntitySystem {
     }
 
     private void handleCollision(Entity entity, Entity bullet) {
-        LifeComponent lifeComponent = lifeM.get(entity);
         BulletComponent bulletComponent = bulletM.get(bullet);
-        if (lifeComponent != null) {
-            lifeComponent.inflictDamage(bulletComponent.getDamage());
-        }
+        world.getSystem(LifeSystem.class).inflictDamage(entity, bulletComponent.getDamage());
     }
 
     private void handleBulletCollision(Entity bullet) {
