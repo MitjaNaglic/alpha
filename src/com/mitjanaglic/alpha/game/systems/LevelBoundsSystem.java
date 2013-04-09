@@ -42,25 +42,28 @@ public class LevelBoundsSystem extends EntityProcessingSystem {
     }
 
     private void checkLevelBoundCollision() {
-        if (velocityComponent.getVelocity().x < 0) {
+        if (velocityComponent.getCurrentVelocity().x < 0 || velocityComponent.getTargetVelocity().x < 0) {
             if (positionComponent.getPosition().x <= 0) {
-                velocityComponent.getVelocity().x = 0;
+                velocityComponent.getTargetVelocity().x = 0;
+                velocityComponent.getCurrentVelocity().x = 0;
             }
         }
-        if (velocityComponent.getVelocity().x > 0) {
+        if (velocityComponent.getCurrentVelocity().x > 0 || velocityComponent.getTargetVelocity().x > 0) {
             if (positionComponent.getPosition().x + hitboxComponent.getHitbox().getWidth() >= cameraComponent.getCameraWidth()) {
-                velocityComponent.getVelocity().x = 0;
+                velocityComponent.getTargetVelocity().x = 0;
+                velocityComponent.getCurrentVelocity().x = 0;
             }
         }
-        if (velocityComponent.getVelocity().y < 0) {
+        if (velocityComponent.getCurrentVelocity().y <= 0 || velocityComponent.getTargetVelocity().y <= 0) {
             if (positionComponent.getPosition().y <= cameraComponent.getCameraPosition().y - cameraComponent.getCameraHeight() / 2) {
-                velocityComponent.getVelocity().y = 0;
+                velocityComponent.getTargetVelocity().y = 0;
             }
         }
-        if (velocityComponent.getVelocity().y > 0) {
+        if (velocityComponent.getCurrentVelocity().y > 0 || velocityComponent.getTargetVelocity().y > 0) {
             if (positionComponent.getPosition().y + hitboxComponent.getHitbox().getHeight() >= cameraComponent.getCameraPosition().y
                     + cameraComponent.getCameraHeight() / 2) {
-                velocityComponent.getVelocity().y = 0;
+                velocityComponent.getTargetVelocity().y = 0;
+                velocityComponent.getCurrentVelocity().y = 0;
             }
         }
     }

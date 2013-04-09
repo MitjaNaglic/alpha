@@ -43,23 +43,31 @@ public class MovementSystem extends EntityProcessingSystem {
         stateComponent = stateM.get(entity);
 
         calculateForwardMomentum();
-        positionComponent.getPosition().add(velocityComponent.getVelocity().cpy().scl(world.getDelta()));
+        updateVelocity();
+        updatePosition();
         setState();
+    }
 
+    private void updateVelocity() {
+        velocityComponent.getCurrentVelocity().lerp(velocityComponent.getTargetVelocity().cpy().scl(world.getDelta()), velocityComponent.getAcceleration());
+    }
+
+    private void updatePosition() {
+        positionComponent.getPosition().add(velocityComponent.getCurrentVelocity());
     }
 
     private void calculateForwardMomentum() {
         //prever y komponento velocity vectorja, če je dodana forwardInertia...zna povzročat probleme če je speed večji kot inertia?
-        if (Math.abs(velocityComponent.getVelocity().y) - Math.abs(speedComponent.getForwardInertia()) < 0) {
-            velocityComponent.getVelocity().y += speedComponent.getForwardInertia();
+        if (Math.abs(velocityComponent.getTargetVelocity().y) - Math.abs(speedComponent.getForwardInertia()) < 0) {
+            velocityComponent.getTargetVelocity().y += speedComponent.getForwardInertia();
         }
     }
 
     private void setState() {
         //sets state depending upon moving direction
-        if (velocityComponent.getVelocity().x < 0)
+        if (velocityComponent.getTargetVelocity().x < 0)
             stateComponent.setCurrentMovementState(StateComponent.movementState.MOVING_LEFT);
-        else if (velocityComponent.getVelocity().x > 0)
+        else if (velocityComponent.getTargetVelocity().x > 0)
             stateComponent.setCurrentMovementState(StateComponent.movementState.MOVING_RIGHT);
         else stateComponent.setCurrentMovementState(StateComponent.movementState.IDLE);
     }

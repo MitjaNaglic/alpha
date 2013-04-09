@@ -11,17 +11,37 @@ import com.badlogic.gdx.math.Vector2;
  * Mitja Naglič  mitja.n1@gmail.com
  */
 public class VelocityComponent extends Component {
-    private Vector2 velocity;
+    private Vector2 targetVelocity;
+    private Vector2 currentVelocity;
+    private float acceleration;
 
-    public VelocityComponent(float x, float y) {
-        this.velocity = new Vector2(x, y);
+    public VelocityComponent(float x, float y, float acceleration) {
+        this.targetVelocity = new Vector2(x, y);
+        this.currentVelocity = new Vector2();
+        this.acceleration = acceleration;
     }
 
-    public Vector2 getVelocity() {
-        return velocity;
+    public float getAcceleration() {
+        return acceleration;
     }
 
-    public void setVelocity(Vector2 velocity) {
-        this.velocity = velocity;
+    public void setAcceleration(float acceleration) {
+        this.acceleration = acceleration;
+    }
+
+    public Vector2 getCurrentVelocity() {
+        return currentVelocity;
+    }
+
+    public void setCurrentVelocity(Vector2 currentVelocity) {
+        this.currentVelocity = currentVelocity;
+    }
+
+    public Vector2 getTargetVelocity() {
+        return targetVelocity;
+    }
+
+    public void setTargetVelocity(Vector2 targetVelocity) {
+        this.targetVelocity = targetVelocity;
     }
 }

@@ -69,7 +69,7 @@ public class DiscAiSystem extends EntityProcessingSystem {
             } else {
                 Vector2 direction = new Vector2(discAiComponent.getWaypoint().cpy().sub(positionComponent.getPosition()));
                 direction.nor();
-                velocityComponent.setVelocity(direction.scl(speedComponent.getSpeed()));
+                velocityComponent.setTargetVelocity(direction.scl(speedComponent.getSpeed()));
             }
         } else {
             setWaypoint();

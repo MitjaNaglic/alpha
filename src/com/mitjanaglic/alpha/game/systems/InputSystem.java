@@ -53,21 +53,21 @@ public class InputSystem extends EntityProcessingSystem {
 
     private void processInput() {
         if (inputComponent.getKeys().get(Keys.LEFT)) {
-            velocityComponent.getVelocity().x = -speedComponent.getSpeed();
+            velocityComponent.getTargetVelocity().x = -speedComponent.getSpeed();
             stateComponent.setCurrentMovementState(StateComponent.movementState.MOVING_LEFT);
 
         }
         if (inputComponent.getKeys().get(Keys.RIGHT)) {
-            velocityComponent.getVelocity().x = speedComponent.getSpeed();
+            velocityComponent.getTargetVelocity().x = speedComponent.getSpeed();
             stateComponent.setCurrentMovementState(StateComponent.movementState.MOVING_RIGHT);
 
         }
         if (inputComponent.getKeys().get(Keys.UP)) {
-            velocityComponent.getVelocity().y = speedComponent.getSpeed();
+            velocityComponent.getTargetVelocity().y = speedComponent.getSpeed();
 
         }
         if (inputComponent.getKeys().get(Keys.DOWN)) {
-            velocityComponent.getVelocity().y = -speedComponent.getSpeed();
+            velocityComponent.getTargetVelocity().y = -speedComponent.getSpeed();
 
         }
         if (inputComponent.getKeys().get(Keys.FIRE)) {
@@ -82,13 +82,13 @@ public class InputSystem extends EntityProcessingSystem {
             stateComponent.setCurrentMovementState(StateComponent.movementState.IDLE);
 
             // horizontal speed is 0
-            velocityComponent.getVelocity().x = 0;
+            velocityComponent.getTargetVelocity().x = 0;
         }
         if ((inputComponent.getKeys().get(Keys.UP) && inputComponent.getKeys().get(Keys.DOWN)) ||
                 (!inputComponent.getKeys().get(Keys.UP) && !(inputComponent.getKeys().get(Keys.DOWN)))) {
 
             // horizontal speed is 0
-            velocityComponent.getVelocity().y = 0;
+            velocityComponent.getTargetVelocity().y = 0;
         }
 
 
