@@ -7,8 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/libs/gdx-backend-android-sources.jar" afterPath="$PROJECT_DIR$/Android/libs/gdx-backend-android-sources.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/libs/gdx-backend-android.jar" afterPath="$PROJECT_DIR$/Android/libs/gdx-backend-android.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/gdx.jar" afterPath="$PROJECT_DIR$/libs/gdx.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CameraSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CameraSystem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/ai/DiscAiComponent.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/ai/DiscAiComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Alpha.iws" />
@@ -18,7 +23,7 @@
     <file path="/MainActivity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362672791185" ignored="false" />
     <file path="/fragment.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363376696165" ignored="false" />
     <file path="/DesktopStarter.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365435326403" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365438822815" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365511281397" ignored="false" />
     <file path="/Player.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364257135690" ignored="false" />
     <file path="/Entity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364234628812" ignored="false" />
     <file path="/Space.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364258077559" ignored="false" />
@@ -34,7 +39,7 @@
     <file path="/Main.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364173659190" ignored="false" />
     <file path="/Level.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365438981644" ignored="false" />
     <file path="/PlayerController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364044093057" ignored="false" />
-    <file path="$PROJECT_DIR$/libs/gdx.jar!/com/badlogic/gdx/graphics/Camera.class" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363881871800" ignored="false" />
+    <file path="$PROJECT_DIR$/libs/gdx.jar!/com/badlogic/gdx/graphics/Camera.class" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365516054094" ignored="false" />
     <file path="/Bullet.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364236115639" ignored="false" />
     <file path="/EnemyDisc.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363958636517" ignored="false" />
     <file path="/SpaceController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364256070870" ignored="false" />
@@ -69,7 +74,7 @@
     <file path="/RenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364653403491" ignored="false" />
     <file path="/RenderableComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365359663191" ignored="false" />
     <file path="/CameraComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364736127979" ignored="false" />
-    <file path="/CameraSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364860963259" ignored="false" />
+    <file path="/CameraSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365516660890" ignored="false" />
     <file path="/SpriteRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365364832196" ignored="false" />
     <file path="/EntityFactory.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365358409564" ignored="false" />
     <file path="/BackgroundRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365347934200" ignored="false" />
@@ -83,8 +88,8 @@
     <file path="$PROJECT_DIR$/libs/gdx.jar!/com/badlogic/gdx.gwt.xml" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365435160235" ignored="false" />
     <file path="/DiscComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365009021986" ignored="false" />
     <file path="/DiscAnimationSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365009107658" ignored="false" />
-    <file path="/DiscAiComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365031199366" ignored="false" />
-    <file path="/DiscAiSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365356288578" ignored="false" />
+    <file path="/DiscAiComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365511613996" ignored="false" />
+    <file path="/DiscAiSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365517617241" ignored="false" />
     <file path="/ScarabAiComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365051454099" ignored="false" />
     <file path="/ScarabAiSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365061210574" ignored="false" />
     <file path="/WeaponsArrayComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365059370756" ignored="false" />
@@ -157,7 +162,7 @@
       <file leaf-file-name="EntityFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="45" selection-start="2714" selection-end="2714" vertical-scroll-proportion="0.0">
+            <state line="57" column="43" selection-start="2712" selection-end="2712" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -166,8 +171,46 @@
       <file leaf-file-name="DiscAiSystem.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="9" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.7675214">
+            <state line="92" column="54" selection-start="3182" selection-end="3182" vertical-scroll-proportion="0.82564104">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CameraSystem.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CameraSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="65" column="18" selection-start="2466" selection-end="2466" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InputSystem.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="13" selection-start="483" selection-end="483" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MovementSystem.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="13" selection-start="611" selection-end="611" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DiscAiComponent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/ai/DiscAiComponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="34" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,42 +228,6 @@
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="116" column="81" selection-start="4640" selection-end="4640" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CollisionSystem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CollisionSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="53" selection-start="3141" selection-end="3141" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LifeSystem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LifeSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="37" selection-start="1489" selection-end="1489" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LifeComponent.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/LifeComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="30" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpriteRenderingSystem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/SpriteRenderingSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="42" selection-start="1599" selection-end="1599" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -249,9 +256,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/BackgroundRenderingSystem.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/GunComponent.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/RenderableComponent.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/PlayerAnimationSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/animations/PlayerAnimationSystem.java" />
@@ -264,7 +268,10 @@
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LifeSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/ai/DiscAiComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CameraSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" />
       </list>
     </option>
   </component>
@@ -1293,7 +1300,11 @@
       <created>1365438827412</created>
       <updated>1365438827412</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary=".">
+      <created>1365511287652</created>
+      <updated>1365511287652</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1442,23 +1453,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/ScarabAiSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="557" selection-end="557" vertical-scroll-proportion="0.31965813" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/animations/PlayerAnimationSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="4" selection-start="824" selection-end="824" vertical-scroll-proportion="0.39716312" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/GunSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="79" selection-start="2082" selection-end="2082" vertical-scroll-proportion="0.44786325">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/animations/DiscAnimationSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="13" selection-start="502" selection-end="502" vertical-scroll-proportion="0.13504274" />
@@ -1467,13 +1461,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/StateComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="34" selection-start="739" selection-end="739" vertical-scroll-proportion="0.7675214">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="483" selection-end="483" vertical-scroll-proportion="-0.30769232">
           <folding />
         </state>
       </provider>
@@ -1534,16 +1521,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="611" selection-end="611" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/ai/DiscAiComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="34" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="483" selection-end="483" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CameraSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="18" selection-start="2466" selection-end="2466" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="45" selection-start="2714" selection-end="2714" vertical-scroll-proportion="0.0">
+        <state line="57" column="43" selection-start="2712" selection-end="2712" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="9" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.7675214">
+        <state line="92" column="54" selection-start="3182" selection-end="3182" vertical-scroll-proportion="0.82564104">
           <folding />
         </state>
       </provider>

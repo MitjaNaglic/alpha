@@ -57,4 +57,16 @@ public class CameraSystem extends EntityProcessingSystem {
         cameraComponent.setViewport(new Rectangle(crop.x, crop.y, w, h));
 
     }
+
+    public float getWidth() {
+        return cameraComponent.getCameraWidth();
+    }
+
+    public float getHeight() {
+        return cameraComponent.getCameraHeight();
+    }
+
+    public Vector2 getPosition() {
+        return cameraComponent.getCameraPosition();
+    }
 }
