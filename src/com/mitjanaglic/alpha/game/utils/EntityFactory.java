@@ -25,9 +25,8 @@ public class EntityFactory {
         e.addComponent(new PlayerShipComponent());
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(positionComponent);
-        e.addComponent(new VelocityComponent(0, 0, 0.2f));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
-        e.addComponent(new SpeedComponent(500, forwardInertia));
+        e.addComponent(new VelocityComponent(0, 0, 0.2f, 500, forwardInertia));
         HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 91, 75);
         e.addComponent(hitboxComponent);
         e.addComponent(new InputComponent());
@@ -53,9 +52,8 @@ public class EntityFactory {
         e.addComponent(positionComponent);
         e.addComponent(new DiscComponent(250));
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
-        e.addComponent(new VelocityComponent(0, 0, 0.2f));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
-        e.addComponent(new SpeedComponent(300, forwardInertia));
+        e.addComponent(new VelocityComponent(0, 0, 0.2f, 300, forwardInertia));
         HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 91, 91);
         e.addComponent(hitboxComponent);
         e.addComponent(new GunComponent(positionComponent.getPosition(),
@@ -80,9 +78,8 @@ public class EntityFactory {
         PositionComponent positionComponent = new PositionComponent(x, y);
         e.addComponent(positionComponent);
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
-        e.addComponent(new VelocityComponent(0, 0, 0.2f));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
-        e.addComponent(new SpeedComponent(80, forwardInertia - 40));
+        e.addComponent(new VelocityComponent(0, 0, 0.2f, 80, forwardInertia - 40));
         HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 98, 50);
         e.addComponent(hitboxComponent);
         WeaponsArrayComponent weaponsArrayComponent = new WeaponsArrayComponent();
@@ -117,8 +114,7 @@ public class EntityFactory {
     public static void createBigMeteor(World world, float x, float y) {
         Entity e = world.createEntity();
         e.addComponent(new PositionComponent(x, y));
-        e.addComponent(new VelocityComponent(0, 0, 0.2f));
-        e.addComponent(new SpeedComponent(0, 0));
+        e.addComponent(new VelocityComponent(0, 0, 0.2f, 0, 0));
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(new HitboxComponent(x, y, 136, 111));
         e.addComponent(new RenderableComponent("meteorBig", 1, 1, 0));
@@ -130,8 +126,7 @@ public class EntityFactory {
     public static void createSmallMeteor(World world, float x, float y) {
         Entity e = world.createEntity();
         e.addComponent(new PositionComponent(x, y));
-        e.addComponent(new VelocityComponent(0, 0, 0.2f));
-        e.addComponent(new SpeedComponent(0, 0));
+        e.addComponent(new VelocityComponent(0, 0, 0.2f, 0, 0));
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(new HitboxComponent(x, y, 44, 42));
         e.addComponent(new RenderableComponent("meteorSmall", 1, 1, 0));
@@ -145,9 +140,8 @@ public class EntityFactory {
         PositionComponent positionComponent = new PositionComponent(x, y);
         e.addComponent(positionComponent);
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
-        e.addComponent(new VelocityComponent(0, 0, 0.05f));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
-        e.addComponent(new SpeedComponent(100, forwardInertia - 60));
+        e.addComponent(new VelocityComponent(0, 0, 0.05f, 100, forwardInertia - 60));
         HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 102, 122);
         e.addComponent(hitboxComponent);
         e.addComponent(new GunComponent(positionComponent.getPosition(),
@@ -170,10 +164,9 @@ public class EntityFactory {
     public static void createBullet(World world, GunComponent gunComponent) {
         Entity bullet = world.createEntity();
         bullet.addComponent(new PositionComponent(gunComponent.getGunPosition()));
-        VelocityComponent velocityComponent = new VelocityComponent(0, gunComponent.getBulletSpeed(), 1f);
+        VelocityComponent velocityComponent = new VelocityComponent(0, gunComponent.getBulletSpeed(), 1f, gunComponent.getBulletSpeed(), 0);
         velocityComponent.getTargetVelocity().rotate(gunComponent.getAimAngle());
         bullet.addComponent(velocityComponent);
-        bullet.addComponent(new SpeedComponent(gunComponent.getBulletSpeed(), 0));
         bullet.addComponent(new StateComponent(StateComponent.movementState.MOVING));
         bullet.addComponent(new BulletComponent(bullet.getComponent(PositionComponent.class).getPosition(),
                 gunComponent.getImpactTextureId(),

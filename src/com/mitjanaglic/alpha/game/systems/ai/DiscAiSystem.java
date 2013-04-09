@@ -36,9 +36,6 @@ public class DiscAiSystem extends EntityProcessingSystem {
     @Mapper
     private ComponentMapper<VelocityComponent> velocityM;
     private VelocityComponent velocityComponent;
-    @Mapper
-    private ComponentMapper<SpeedComponent> speedM;
-    private SpeedComponent speedComponent;
     private Entity player;
 
 
@@ -52,7 +49,6 @@ public class DiscAiSystem extends EntityProcessingSystem {
         positionComponent = positionM.get(entity);
         discAiComponent = discAiM.get(entity);
         velocityComponent = velocityM.get(entity);
-        speedComponent = speedM.get(entity);
         hitboxComponent = hitboxM.get(entity);
         player = world.getManager(TagManager.class).getEntity("player");
         if (player != null) {
@@ -69,7 +65,7 @@ public class DiscAiSystem extends EntityProcessingSystem {
             } else {
                 Vector2 direction = new Vector2(discAiComponent.getWaypoint().cpy().sub(positionComponent.getPosition()));
                 direction.nor();
-                velocityComponent.setTargetVelocity(direction.scl(speedComponent.getSpeed()));
+                velocityComponent.setTargetVelocity(direction.scl(velocityComponent.getSpeed()));
             }
         } else {
             setWaypoint();

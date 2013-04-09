@@ -24,20 +24,16 @@ public class InputSystem extends EntityProcessingSystem {
     @Mapper
     private ComponentMapper<StateComponent> stateM;
     @Mapper
-    private ComponentMapper<SpeedComponent> speedM;
-    @Mapper
     private ComponentMapper<GunComponent> gunM;
     private InputComponent inputComponent;
     private VelocityComponent velocityComponent;
     private StateComponent stateComponent;
-    private SpeedComponent speedComponent;
     private GunComponent gunComponent;
 
     public InputSystem() {
         super(Aspect.getAspectForAll(InputComponent.class,
                 VelocityComponent.class,
-                StateComponent.class,
-                SpeedComponent.class
+                StateComponent.class
         ));
     }
 
@@ -46,28 +42,27 @@ public class InputSystem extends EntityProcessingSystem {
         inputComponent = inputM.get(entity);
         velocityComponent = velocityM.get(entity);
         stateComponent = stateM.get(entity);
-        speedComponent = speedM.get(entity);
         gunComponent = gunM.get(entity);
         processInput();
     }
 
     private void processInput() {
         if (inputComponent.getKeys().get(Keys.LEFT)) {
-            velocityComponent.getTargetVelocity().x = -speedComponent.getSpeed();
+            velocityComponent.getTargetVelocity().x = -velocityComponent.getSpeed();
             stateComponent.setCurrentMovementState(StateComponent.movementState.MOVING_LEFT);
 
         }
         if (inputComponent.getKeys().get(Keys.RIGHT)) {
-            velocityComponent.getTargetVelocity().x = speedComponent.getSpeed();
+            velocityComponent.getTargetVelocity().x = velocityComponent.getSpeed();
             stateComponent.setCurrentMovementState(StateComponent.movementState.MOVING_RIGHT);
 
         }
         if (inputComponent.getKeys().get(Keys.UP)) {
-            velocityComponent.getTargetVelocity().y = speedComponent.getSpeed();
+            velocityComponent.getTargetVelocity().y = velocityComponent.getSpeed();
 
         }
         if (inputComponent.getKeys().get(Keys.DOWN)) {
-            velocityComponent.getTargetVelocity().y = -speedComponent.getSpeed();
+            velocityComponent.getTargetVelocity().y = -velocityComponent.getSpeed();
 
         }
         if (inputComponent.getKeys().get(Keys.FIRE)) {

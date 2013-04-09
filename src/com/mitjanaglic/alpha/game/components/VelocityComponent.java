@@ -14,11 +14,15 @@ public class VelocityComponent extends Component {
     private Vector2 targetVelocity;
     private Vector2 currentVelocity;
     private float acceleration;
+    private float speed;
+    private float forwardInertia;
 
-    public VelocityComponent(float x, float y, float acceleration) {
+    public VelocityComponent(float x, float y, float acceleration, float speed, float forwardInertia) {
         this.targetVelocity = new Vector2(x, y);
         this.currentVelocity = new Vector2();
         this.acceleration = acceleration;
+        this.speed = speed;
+        this.forwardInertia = forwardInertia;
     }
 
     public float getAcceleration() {
@@ -43,5 +47,21 @@ public class VelocityComponent extends Component {
 
     public void setTargetVelocity(Vector2 targetVelocity) {
         this.targetVelocity = targetVelocity;
+    }
+
+    public float getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(float speed) {
+        this.speed = speed;
+    }
+
+    public float getForwardInertia() {
+        return forwardInertia;
+    }
+
+    public void setForwardInertia(float forwardInertia) {
+        this.forwardInertia = forwardInertia;
     }
 }

@@ -6,7 +6,6 @@ import com.artemis.Entity;
 import com.artemis.annotations.Mapper;
 import com.artemis.systems.EntityProcessingSystem;
 import com.mitjanaglic.alpha.game.components.PositionComponent;
-import com.mitjanaglic.alpha.game.components.SpeedComponent;
 import com.mitjanaglic.alpha.game.components.StateComponent;
 import com.mitjanaglic.alpha.game.components.VelocityComponent;
 
@@ -23,23 +22,19 @@ public class MovementSystem extends EntityProcessingSystem {
     @Mapper
     private ComponentMapper<VelocityComponent> velocityM;
     @Mapper
-    private ComponentMapper<SpeedComponent> speedM;
-    @Mapper
     private ComponentMapper<StateComponent> stateM;
     private PositionComponent positionComponent;
     private VelocityComponent velocityComponent;
-    private SpeedComponent speedComponent;
     private StateComponent stateComponent;
 
     public MovementSystem() {
-        super(Aspect.getAspectForAll(PositionComponent.class, VelocityComponent.class, SpeedComponent.class));
+        super(Aspect.getAspectForAll(PositionComponent.class, VelocityComponent.class));
     }
 
     @Override
     protected void process(Entity entity) {
         positionComponent = positionM.get(entity);
         velocityComponent = velocityM.get(entity);
-        speedComponent = speedM.get(entity);
         stateComponent = stateM.get(entity);
 
         calculateForwardMomentum();
@@ -58,8 +53,8 @@ public class MovementSystem extends EntityProcessingSystem {
 
     private void calculateForwardMomentum() {
         //prever y komponento velocity vectorja, če je dodana forwardInertia...zna povzročat probleme če je speed večji kot inertia?
-        if (Math.abs(velocityComponent.getTargetVelocity().y) - Math.abs(speedComponent.getForwardInertia()) < 0) {
-            velocityComponent.getTargetVelocity().y += speedComponent.getForwardInertia();
+        if (Math.abs(velocityComponent.getTargetVelocity().y) - Math.abs(velocityComponent.getForwardInertia()) < 0) {
+            velocityComponent.getTargetVelocity().y += velocityComponent.getForwardInertia();
         }
     }
 
