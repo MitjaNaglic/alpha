@@ -26,6 +26,7 @@ public class DiscAiSystem extends EntityProcessingSystem {
     private GunComponent gunComponent;
     @Mapper
     private ComponentMapper<HitboxComponent> hitboxM;
+    private HitboxComponent hitboxComponent;
     @Mapper
     private ComponentMapper<PositionComponent> positionM;
     private PositionComponent positionComponent;
@@ -52,6 +53,7 @@ public class DiscAiSystem extends EntityProcessingSystem {
         discAiComponent = discAiM.get(entity);
         velocityComponent = velocityM.get(entity);
         speedComponent = speedM.get(entity);
+        hitboxComponent = hitboxM.get(entity);
         player = world.getManager(TagManager.class).getEntity("player");
         if (player != null) {
             move();
@@ -75,15 +77,14 @@ public class DiscAiSystem extends EntityProcessingSystem {
     }
 
     private void setWaypoint() {
-        Vector2 playerPos = hitboxM.get(player).getCenter();
-        float range = gunComponent.getRange() - 500;
         CameraSystem cameraSystem = world.getSystem(CameraSystem.class);
+
         Random rng = new Random();
         float screenwidth = cameraSystem.getWidth();
         float screenHeight = cameraSystem.getHeight();
-        float maxX = screenwidth;
+        float maxX = screenwidth - hitboxComponent.getHitbox().getWidth();
         float minX = 0;
-        float maxY = cameraSystem.getPosition().y + screenHeight;
+        float maxY = cameraSystem.getPosition().y + screenHeight - hitboxComponent.getHitbox().getHeight();
         float minY = cameraSystem.getPosition().y;
         float x = rng.nextInt((int) ((maxX - minX + 1))) + minX;
         float y = rng.nextInt((int) ((maxY - minY + 1))) + minY;
