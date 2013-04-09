@@ -121,9 +121,9 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
     private void renderFps() {
         if (debugRendering) {
             font.draw(spriteBatch, "FPS: " + Gdx.graphics.getFramesPerSecond(), 0,
-                    cameraComponent.getVIRTUAL_HEIGHT());
+                    cameraComponent.getCameraHeight());
             font.draw(spriteBatch, "Current entities: " + world.getEntityManager().getActiveEntityCount(), 0,
-                    cameraComponent.getVIRTUAL_HEIGHT() - 20);
+                    cameraComponent.getCameraHeight() - 20);
         }
     }
 

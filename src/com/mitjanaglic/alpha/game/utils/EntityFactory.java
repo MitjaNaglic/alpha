@@ -55,7 +55,7 @@ public class EntityFactory {
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(new VelocityComponent(0, 0));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
-        e.addComponent(new SpeedComponent(0, forwardInertia));
+        e.addComponent(new SpeedComponent(100, forwardInertia));
         HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 91, 91);
         e.addComponent(hitboxComponent);
         e.addComponent(new GunComponent(positionComponent.getPosition(),
@@ -82,7 +82,7 @@ public class EntityFactory {
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(new VelocityComponent(0, 0));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
-        e.addComponent(new SpeedComponent(0, forwardInertia));
+        e.addComponent(new SpeedComponent(80, forwardInertia - 40));
         HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 98, 50);
         e.addComponent(hitboxComponent);
         WeaponsArrayComponent weaponsArrayComponent = new WeaponsArrayComponent();
@@ -109,7 +109,7 @@ public class EntityFactory {
         e.addComponent(weaponsArrayComponent);
         e.addComponent(new RenderableComponent("Scarab", 1, 1, 0));
         e.addComponent(new ScarabAiComponent());
-        e.addComponent(new LifeComponent(300));
+        e.addComponent(new LifeComponent(100));
         world.addEntity(e);
         world.getManager(GroupManager.class).add(e, ids.ENEMY);
     }
@@ -118,12 +118,11 @@ public class EntityFactory {
         Entity e = world.createEntity();
         e.addComponent(new PositionComponent(x, y));
         e.addComponent(new VelocityComponent(0, 0));
-        float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
-        e.addComponent(new SpeedComponent(0, forwardInertia));
+        e.addComponent(new SpeedComponent(0, 0));
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(new HitboxComponent(x, y, 136, 111));
         e.addComponent(new RenderableComponent("meteorBig", 1, 1, 0));
-        e.addComponent(new LifeComponent(500));
+        e.addComponent(new LifeComponent(200));
         world.addEntity(e);
         world.getManager(GroupManager.class).add(e, ids.ENEMY);
     }
@@ -132,12 +131,11 @@ public class EntityFactory {
         Entity e = world.createEntity();
         e.addComponent(new PositionComponent(x, y));
         e.addComponent(new VelocityComponent(0, 0));
-        float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
-        e.addComponent(new SpeedComponent(0, forwardInertia));
+        e.addComponent(new SpeedComponent(0, 0));
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(new HitboxComponent(x, y, 44, 42));
         e.addComponent(new RenderableComponent("meteorSmall", 1, 1, 0));
-        e.addComponent(new LifeComponent(200));
+        e.addComponent(new LifeComponent(100));
         world.addEntity(e);
         world.getManager(GroupManager.class).add(e, ids.ENEMY);
     }
@@ -149,7 +147,7 @@ public class EntityFactory {
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(new VelocityComponent(0, 0));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
-        e.addComponent(new SpeedComponent(0, forwardInertia));
+        e.addComponent(new SpeedComponent(100, forwardInertia - 60));
         HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 102, 122);
         e.addComponent(hitboxComponent);
         e.addComponent(new GunComponent(positionComponent.getPosition(),
