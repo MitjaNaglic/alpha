@@ -7,12 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="">
-      <change type="DELETED" beforePath="G:\development\Alpha\src\com\mitjanaglic\alpha\game\components\SpeedComponent.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/VelocityComponent.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/VelocityComponent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Alpha.iws" />
@@ -22,7 +17,7 @@
     <file path="/MainActivity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362672791185" ignored="false" />
     <file path="/fragment.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363376696165" ignored="false" />
     <file path="/DesktopStarter.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365435326403" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365531146528" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365531505527" ignored="false" />
     <file path="/Player.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364257135690" ignored="false" />
     <file path="/Entity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364234628812" ignored="false" />
     <file path="/Space.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364258077559" ignored="false" />
@@ -88,7 +83,7 @@
     <file path="/DiscComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365009021986" ignored="false" />
     <file path="/DiscAnimationSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365009107658" ignored="false" />
     <file path="/DiscAiComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365511613996" ignored="false" />
-    <file path="/DiscAiSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365518992013" ignored="false" />
+    <file path="/DiscAiSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365531707027" ignored="false" />
     <file path="/ScarabAiComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365051454099" ignored="false" />
     <file path="/ScarabAiSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365061210574" ignored="false" />
     <file path="/WeaponsArrayComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365059370756" ignored="false" />
@@ -158,10 +153,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EntityFactory.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="EntityFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="47" selection-start="8233" selection-end="8233" vertical-scroll-proportion="1.8717948">
+            <state line="168" column="47" selection-start="8240" selection-end="8240" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -197,25 +192,16 @@
       <file leaf-file-name="VelocityComponent.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/VelocityComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="5" selection-start="1662" selection-end="1662" vertical-scroll-proportion="0.0">
+            <state line="65" column="5" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputSystem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="44" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DiscAiSystem.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DiscAiSystem.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="50" selection-start="1634" selection-end="1634" vertical-scroll-proportion="0.0">
+            <state line="66" column="83" selection-start="2310" selection-end="2310" vertical-scroll-proportion="0.31965813">
               <folding />
             </state>
           </provider>
@@ -258,8 +244,8 @@
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/VelocityComponent.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" />
       </list>
     </option>
   </component>
@@ -1304,7 +1290,11 @@
       <created>1365531155702</created>
       <updated>1365531155702</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="speed component removed">
+      <created>1365531513920</created>
+      <updated>1365531513920</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1405,7 +1395,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="lerp" />
+    <option name="LAST_COMMIT_MESSAGE" value="speed component removed" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1419,7 +1409,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="mipmaps" />
     <MESSAGE value="ui scaling fix" />
     <MESSAGE value="entity system overhaul half done" />
     <MESSAGE value="renderers" />
@@ -1444,6 +1433,7 @@
     <MESSAGE value="disc ai waypoints&#10;" />
     <MESSAGE value="." />
     <MESSAGE value="lerp" />
+    <MESSAGE value="speed component removed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1515,13 +1505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/VelocityComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="5" selection-start="1662" selection-end="1662" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="50" selection-start="1229" selection-end="1229" vertical-scroll-proportion="0.0">
@@ -1529,23 +1512,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="168" column="47" selection-start="8240" selection-end="8240" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="44" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.0">
+        <state line="43" column="44" selection-start="1342" selection-end="1342" vertical-scroll-proportion="-0.05811966">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/VelocityComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="5" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="50" selection-start="1634" selection-end="1634" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="47" selection-start="8233" selection-end="8233" vertical-scroll-proportion="1.8717948">
+        <state line="66" column="83" selection-start="2310" selection-end="2310" vertical-scroll-proportion="0.31965813">
           <folding />
         </state>
       </provider>

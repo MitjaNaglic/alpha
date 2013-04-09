@@ -37,6 +37,7 @@ public class DiscAiSystem extends EntityProcessingSystem {
     private ComponentMapper<VelocityComponent> velocityM;
     private VelocityComponent velocityComponent;
     private Entity player;
+    private CameraSystem cameraSystem;
 
 
     public DiscAiSystem() {
@@ -50,6 +51,7 @@ public class DiscAiSystem extends EntityProcessingSystem {
         discAiComponent = discAiM.get(entity);
         velocityComponent = velocityM.get(entity);
         hitboxComponent = hitboxM.get(entity);
+        cameraSystem = world.getSystem(CameraSystem.class);
         player = world.getManager(TagManager.class).getEntity("player");
         if (player != null) {
             move();
@@ -60,7 +62,9 @@ public class DiscAiSystem extends EntityProcessingSystem {
 
     private void move() {
         if (discAiComponent.getWaypoint() != null) {
-            if (positionComponent.getPosition().dst(discAiComponent.getWaypoint()) < 1) {
+            //new waypoint if old is reached Or went out of bounds
+            if (positionComponent.getPosition().dst(discAiComponent.getWaypoint()) < 1
+                    || discAiComponent.getWaypoint().y < cameraSystem.getPosition().y) {
                 setWaypoint();
             } else {
                 Vector2 direction = new Vector2(discAiComponent.getWaypoint().cpy().sub(positionComponent.getPosition()));
@@ -73,8 +77,6 @@ public class DiscAiSystem extends EntityProcessingSystem {
     }
 
     private void setWaypoint() {
-        CameraSystem cameraSystem = world.getSystem(CameraSystem.class);
-
         Random rng = new Random();
         float screenwidth = cameraSystem.getWidth();
         float screenHeight = cameraSystem.getHeight();
