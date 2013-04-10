@@ -86,12 +86,11 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
                 x,
                 y
         );
-        font.draw(spriteBatch, String.valueOf(currentLife) + " / " + maxLife, x + 50, y + 20);
 
         float lifebarWidth = currentLife / maxLife * 300;
-        float lifebarX = x + 200;
+        float lifebarX = x + 50;
         if (lifebarWidth > 0) {
-            renderBar(x + 200, y, lifebarWidth, "lifeBarBit");
+            renderBar(lifebarX, y, lifebarWidth, "lifeBarBit");
         }
         float damagebarWidth = 0;
         if (playerLife != null) {
@@ -101,6 +100,7 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
             renderBar(lifebarX + lifebarWidth, y, damagebarWidth, "damageBarBit");
         }
 
+        //font.draw(spriteBatch, String.valueOf(currentLife) + " / " + maxLife, x + 50, y + 20);
     }
 
     private void renderBar(float x, float y, float width, String textureName) {
