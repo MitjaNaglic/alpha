@@ -61,8 +61,6 @@ public class GameScreen implements Screen, InputProcessor {
         initEnemy();
         initMeteors();
         world.initialize();
-
-
     }
 
     private void initMeteors() {
@@ -71,9 +69,9 @@ public class GameScreen implements Screen, InputProcessor {
     }
 
     private void initEnemy() {
-        EntityFactory.createDisc(world, level.getLevelWidth() / 3, 400);
+//        EntityFactory.createDisc(world, level.getLevelWidth() / 3, 400);
         EntityFactory.createScarab(world, level.getLevelWidth() / 6, 400);
-        EntityFactory.createMinos(world, level.getLevelWidth() / -300, 400);
+//        EntityFactory.createMinos(world, level.getLevelWidth() / -300, 400);
     }
 
     private void initCamera() {
@@ -105,6 +103,7 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new DiscAiSystem());
         world.setSystem(new ScarabAiSystem());
         world.setSystem(new HitmarkSystem());
+        world.setSystem(new SpawnDespawnSystem());
         lifeSystem = world.setSystem(new LifeSystem());
         collisionSystem = world.setSystem(new CollisionSystem(), true);
     }
