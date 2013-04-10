@@ -54,8 +54,8 @@ public class LevelBoundsSystem extends EntityProcessingSystem {
                 velocityComponent.getCurrentVelocity().x = 0;
             }
         }
-        if (velocityComponent.getCurrentVelocity().y <= 0 || velocityComponent.getTargetVelocity().y <= 0) {
-            if (positionComponent.getPosition().y <= cameraComponent.getCameraPosition().y - cameraComponent.getCameraHeight() / 2) {
+        if (velocityComponent.getTargetVelocity().y <= 0) {
+            if (positionComponent.getPosition().y <= cameraComponent.getCameraPosition().y - cameraComponent.getCameraHeight() / 2 + 50) {
                 velocityComponent.getTargetVelocity().y = 0;
             }
         }

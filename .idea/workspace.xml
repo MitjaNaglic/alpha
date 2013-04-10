@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LevelBoundsSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LevelBoundsSystem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Alpha.iws" />
@@ -17,7 +18,7 @@
     <file path="/MainActivity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362672791185" ignored="false" />
     <file path="/fragment.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363376696165" ignored="false" />
     <file path="/DesktopStarter.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365435326403" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365531505527" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365531857405" ignored="false" />
     <file path="/Player.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364257135690" ignored="false" />
     <file path="/Entity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364234628812" ignored="false" />
     <file path="/Space.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364258077559" ignored="false" />
@@ -61,7 +62,7 @@
     <file path="/InputComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364602136807" ignored="false" />
     <file path="/SpeedComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364913133256" ignored="false" />
     <file path="/StateComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365361320785" ignored="false" />
-    <file path="/MovementSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365531242622" ignored="false" />
+    <file path="/MovementSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365590755475" ignored="false" />
     <file path="/HitboxSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364601680169" ignored="false" />
     <file path="/InputSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365531284274" ignored="false" />
     <file path="/GunSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365344478767" ignored="false" />
@@ -162,10 +163,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameScreen.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GameScreen.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="10" selection-start="2280" selection-end="2301" vertical-scroll-proportion="0.0">
+            <state line="61" column="10" selection-start="2280" selection-end="2301" vertical-scroll-proportion="0.2905983">
               <folding />
             </state>
           </provider>
@@ -174,7 +175,7 @@
       <file leaf-file-name="MovementSystem.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="50" selection-start="1229" selection-end="1229" vertical-scroll-proportion="0.0">
+            <state line="50" column="156" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -183,7 +184,7 @@
       <file leaf-file-name="LevelBoundsSystem.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LevelBoundsSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="60" selection-start="2471" selection-end="2471" vertical-scroll-proportion="0.0">
+            <state line="56" column="12" selection-start="2180" selection-end="2180" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -198,10 +199,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DiscAiSystem.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DiscAiSystem.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="83" selection-start="2310" selection-end="2310" vertical-scroll-proportion="0.31965813">
+            <state line="74" column="82" selection-start="2679" selection-end="2679" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -238,14 +239,14 @@
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/ai/DiscAiComponent.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CameraSystem.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LevelBoundsSystem.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/SpeedComponent.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/VelocityComponent.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LevelBoundsSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" />
       </list>
     </option>
   </component>
@@ -1294,7 +1295,11 @@
       <created>1365531513920</created>
       <updated>1365531513920</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="waypoint out of bounds fix">
+      <created>1365531862329</created>
+      <updated>1365531862329</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1395,7 +1400,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="speed component removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="waypoint out of bounds fix" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1409,7 +1414,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="ui scaling fix" />
     <MESSAGE value="entity system overhaul half done" />
     <MESSAGE value="renderers" />
     <MESSAGE value="bullet system" />
@@ -1434,6 +1438,7 @@
     <MESSAGE value="." />
     <MESSAGE value="lerp" />
     <MESSAGE value="speed component removed" />
+    <MESSAGE value="waypoint out of bounds fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1491,23 +1496,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LevelBoundsSystem.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="60" selection-start="2471" selection-end="2471" vertical-scroll-proportion="0.0">
+        <state line="43" column="44" selection-start="1342" selection-end="1342" vertical-scroll-proportion="-0.05811966">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="10" selection-start="2280" selection-end="2301" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="50" selection-start="1229" selection-end="1229" vertical-scroll-proportion="0.0">
+        <state line="74" column="82" selection-start="2679" selection-end="2679" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1519,13 +1517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/InputSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="44" selection-start="1342" selection-end="1342" vertical-scroll-proportion="-0.05811966">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/VelocityComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="65" column="5" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.0">
@@ -1533,9 +1524,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LevelBoundsSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="83" selection-start="2310" selection-end="2310" vertical-scroll-proportion="0.31965813">
+        <state line="56" column="12" selection-start="2180" selection-end="2180" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="156" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="10" selection-start="2280" selection-end="2301" vertical-scroll-proportion="0.2905983">
           <folding />
         </state>
       </provider>

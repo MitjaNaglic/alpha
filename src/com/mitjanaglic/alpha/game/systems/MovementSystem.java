@@ -37,20 +37,27 @@ public class MovementSystem extends EntityProcessingSystem {
         velocityComponent = velocityM.get(entity);
         stateComponent = stateM.get(entity);
 
-        calculateForwardMomentum();
+
         updateVelocity();
         updatePosition();
         setState();
     }
 
     private void updateVelocity() {
+        //diagonal movement too fast fix
+        velocityComponent.getTargetVelocity().nor();
+        velocityComponent.getTargetVelocity().scl(velocityComponent.getSpeed());
+        //linear interpolation
         velocityComponent.getCurrentVelocity().lerp(velocityComponent.getTargetVelocity().cpy().scl(world.getDelta()), velocityComponent.getAcceleration());
     }
 
     private void updatePosition() {
         positionComponent.getPosition().add(velocityComponent.getCurrentVelocity());
+        //forward inertia
+        positionComponent.getPosition().add(0, velocityComponent.getForwardInertia() * world.getDelta());
     }
 
+    //not used anymore, poziciji se vsako iteracijo doda forwardInertia kot scalar
     private void calculateForwardMomentum() {
         //prever y komponento velocity vectorja, če je dodana forwardInertia...zna povzročat probleme če je speed večji kot inertia?
         if (Math.abs(velocityComponent.getTargetVelocity().y) - Math.abs(velocityComponent.getForwardInertia()) < 0) {
