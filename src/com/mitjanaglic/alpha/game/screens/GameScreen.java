@@ -10,7 +10,8 @@ import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
 import com.mitjanaglic.alpha.game.Alpha;
-import com.mitjanaglic.alpha.game.components.*;
+import com.mitjanaglic.alpha.game.components.CameraComponent;
+import com.mitjanaglic.alpha.game.components.InputComponent;
 import com.mitjanaglic.alpha.game.models.Level;
 import com.mitjanaglic.alpha.game.systems.*;
 import com.mitjanaglic.alpha.game.systems.ai.DiscAiSystem;
@@ -42,6 +43,7 @@ public class GameScreen implements Screen, InputProcessor {
     private UiRenderingSystem uiRenderingSystem;
     private CollisionSystem collisionSystem;
     private LifeSystem lifeSystem;
+    private SpawnDespawnSystem spawnDespawnSystem;
 
     private World world;
 
@@ -57,9 +59,10 @@ public class GameScreen implements Screen, InputProcessor {
 
         initCamera();
         setSystems();
-        initPlayer();
-        initEnemy();
-        initMeteors();
+        spawnDespawnSystem.setLevelMap(level.getMap());
+//        initPlayer();
+//        initEnemy();
+//        initMeteors();
         world.initialize();
     }
 
@@ -103,7 +106,7 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new DiscAiSystem());
         world.setSystem(new ScarabAiSystem());
         world.setSystem(new HitmarkSystem());
-        world.setSystem(new SpawnDespawnSystem());
+        spawnDespawnSystem = world.setSystem(new SpawnDespawnSystem());
         lifeSystem = world.setSystem(new LifeSystem());
         collisionSystem = world.setSystem(new CollisionSystem(), true);
     }
@@ -119,6 +122,23 @@ public class GameScreen implements Screen, InputProcessor {
         backgroundRenderingSystem.process();
         spriteRenderingSystem.process();
         uiRenderingSystem.process();
+        setInputComponent();
+
+    }
+
+    //zagotavla da input processor dobi inputComponent
+    private void setInputComponent() {
+        if (inputComponent == null) {
+            Gdx.input.setInputProcessor(null);
+            TagManager manager = world.getManager(TagManager.class);
+            Entity player = manager.getEntity("player");
+            InputComponent newInputComponent;
+            if (player != null) {
+                newInputComponent = player.getComponent(InputComponent.class);
+                inputComponent = newInputComponent;
+                Gdx.input.setInputProcessor(this);
+            }
+        }
     }
 
     @Override

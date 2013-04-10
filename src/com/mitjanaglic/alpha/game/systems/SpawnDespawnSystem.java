@@ -7,8 +7,12 @@ import com.artemis.managers.GroupManager;
 import com.artemis.managers.TagManager;
 import com.artemis.systems.VoidEntitySystem;
 import com.artemis.utils.ImmutableBag;
+import com.badlogic.gdx.maps.MapObject;
+import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.mitjanaglic.alpha.game.components.PositionComponent;
 import com.mitjanaglic.alpha.game.constants.ids;
+import com.mitjanaglic.alpha.game.utils.EntityFactory;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,21 +24,38 @@ import com.mitjanaglic.alpha.game.constants.ids;
 public class SpawnDespawnSystem extends VoidEntitySystem {
     @Mapper
     private ComponentMapper<PositionComponent> positionM;
+    private TiledMap levelMap;
 
     public SpawnDespawnSystem() {
     }
 
     @Override
     protected void processSystem() {
+        checkSpawns();
         Entity player = world.getManager(TagManager.class).getEntity(ids.PLAYER);
         if (player != null) {
-            checkSpawns(player);
             checkDespawns(player);
         }
     }
 
-    private void checkSpawns(Entity entity) {
+    private void spawnPlayer() {
+        MapObject playerSpawn = levelMap.getLayers().get("spawns").getObjects().get("player");
+        Integer x = (Integer) playerSpawn.getProperties().get("x");
+        Integer y = (Integer) playerSpawn.getProperties().get("y");
+        EntityFactory.createPlayer(world, x, y);
+    }
 
+    private void checkSpawns() {
+        if (levelMap != null) {
+            MapObjects spawns = levelMap.getLayers().get("spawns").getObjects();
+            for (MapObject spawn : spawns) {
+                Integer x = (Integer) spawn.getProperties().get("x");
+                Integer y = (Integer) spawn.getProperties().get("y");
+                Integer entityType = Integer.valueOf((String) spawn.getProperties().get("entityType"));
+                EntityFactory.spawnEntity(world, x, y, entityType);
+                spawns.remove(spawn);
+            }
+        }
     }
 
     private void checkDespawns(Entity entity) {
@@ -47,5 +68,13 @@ public class SpawnDespawnSystem extends VoidEntitySystem {
                 enemy.deleteFromWorld();
             }
         }
+    }
+
+    public TiledMap getLevelMap() {
+        return levelMap;
+    }
+
+    public void setLevelMap(TiledMap levelMap) {
+        this.levelMap = levelMap;
     }
 }

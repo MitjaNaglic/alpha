@@ -183,4 +183,12 @@ public class EntityFactory {
         else id = ids.ENEMY_BULLETS;
         world.getManager(GroupManager.class).add(bullet, id);
     }
+
+    public static void spawnEntity(World world, Integer x, Integer y, Integer entityType) {
+        switch (entityType) {
+            case 0:
+                createPlayer(world, x, y);
+                break;
+        }
+    }
 }

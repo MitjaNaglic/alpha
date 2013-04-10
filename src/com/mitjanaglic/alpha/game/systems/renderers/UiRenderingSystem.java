@@ -45,10 +45,6 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
         textureAtlas = assetManager.get("data/png/textures/textures.atlas", TextureAtlas.class);
         spriteBatch = new SpriteBatch();
         font = new BitmapFont();
-        player = world.getManager(TagManager.class).getEntity(ids.PLAYER);
-        if (player != null) {
-            playerLife = lifeM.get(player);
-        }
     }
 
     @Override
@@ -63,6 +59,10 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
 
     @Override
     protected void processSystem() {
+        player = world.getManager(TagManager.class).getEntity(ids.PLAYER);
+        if (player != null) {
+            playerLife = lifeM.get(player);
+        }
         renderLives();
         if (debugRendering) {
             renderFps();
