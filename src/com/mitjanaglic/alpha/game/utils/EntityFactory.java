@@ -10,6 +10,7 @@ import com.mitjanaglic.alpha.game.components.ai.ScarabAiComponent;
 import com.mitjanaglic.alpha.game.components.ids.DiscComponent;
 import com.mitjanaglic.alpha.game.components.ids.PlayerShipComponent;
 import com.mitjanaglic.alpha.game.constants.ids;
+import com.mitjanaglic.alpha.game.models.SpawnPoint;
 
 /**
  * Created with IntelliJ IDEA.
@@ -184,11 +185,10 @@ public class EntityFactory {
         world.getManager(GroupManager.class).add(bullet, id);
     }
 
-    public static void spawnEntity(World world, Integer x, Integer y, Integer entityType) {
-        switch (entityType) {
-            case 0:
-                createPlayer(world, x, y);
-                break;
-        }
+    public static void spawnEntity(World world, SpawnPoint spawnPoint) {
+        if (spawnPoint.getEntityId().equals(ids.PLAYER)) createPlayer(world, spawnPoint.getX(), spawnPoint.getY());
+        else if (spawnPoint.getEntityId().equals(ids.DISC)) createDisc(world, spawnPoint.getX(), spawnPoint.getY());
+        else if (spawnPoint.getEntityId().equals(ids.METEOR))
+            createBigMeteor(world, spawnPoint.getX(), spawnPoint.getY());
     }
 }

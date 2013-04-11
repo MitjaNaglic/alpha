@@ -69,4 +69,8 @@ public class CameraSystem extends EntityProcessingSystem {
     public Vector2 getPosition() {
         return cameraComponent.getCameraPosition();
     }
+
+    public float getUpperBound() {
+        return cameraComponent.getCameraPosition().y + cameraComponent.getCameraHeight();
+    }
 }

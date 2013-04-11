@@ -59,7 +59,7 @@ public class GameScreen implements Screen, InputProcessor {
 
         initCamera();
         setSystems();
-        spawnDespawnSystem.setLevelMap(level.getMap());
+        spawnDespawnSystem.setSpawnPoints(level.getSpawnPoints());
 //        initPlayer();
 //        initEnemy();
 //        initMeteors();

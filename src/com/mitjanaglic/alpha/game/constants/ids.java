@@ -16,5 +16,6 @@ public class ids {
     public static final String PLAYER_BULLETS = "playerBullets";
     public static final String ENEMY_BULLETS = "enemyBullets";
     public static final String HITMARK = "hitmark";
-
+    public static final String METEOR = "meteor";
+    public static final String METEOR_SMALL = "meteorSmall";
 }
