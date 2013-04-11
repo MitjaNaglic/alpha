@@ -21,7 +21,6 @@ import com.mitjanaglic.alpha.game.systems.animations.PlayerAnimationSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.BackgroundRenderingSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.SpriteRenderingSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.UiRenderingSystem;
-import com.mitjanaglic.alpha.game.utils.EntityFactory;
 
 /**
  * Created with IntelliJ IDEA.
@@ -60,21 +59,7 @@ public class GameScreen implements Screen, InputProcessor {
         initCamera();
         setSystems();
         spawnDespawnSystem.setSpawnPoints(level.getSpawnPoints());
-//        initPlayer();
-//        initEnemy();
-//        initMeteors();
         world.initialize();
-    }
-
-    private void initMeteors() {
-        EntityFactory.createBigMeteor(world, level.getLevelWidth() / 4, 600);
-        EntityFactory.createSmallMeteor(world, level.getLevelWidth() - 200, 600);
-    }
-
-    private void initEnemy() {
-        EntityFactory.createDisc(world, level.getLevelWidth() / 3, 400);
-        EntityFactory.createScarab(world, level.getLevelWidth() / 6, 400);
-        EntityFactory.createMinos(world, level.getLevelWidth() / -300, 400);
     }
 
     private void initCamera() {
@@ -83,11 +68,6 @@ public class GameScreen implements Screen, InputProcessor {
         camera.addComponent(cameraComponent);
         world.addEntity(camera);
         world.getManager(TagManager.class).register("camera", camera);
-    }
-
-    private void initPlayer() {
-        EntityFactory.createPlayer(world, level.getLevelWidth() / 2, 400);
-        inputComponent = world.getManager(TagManager.class).getEntity("player").getComponent(InputComponent.class);
     }
 
     private void setSystems() {

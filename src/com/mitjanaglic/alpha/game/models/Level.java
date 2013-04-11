@@ -7,6 +7,9 @@ import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 
+import java.text.Collator;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 
 /**
@@ -56,6 +59,7 @@ public class Level {
 
             spawnPoints.add(new SpawnPoint(x, y, entityType));
         }
+        Collections.sort(spawnPoints);
     }
 
     public LinkedList<SpawnPoint> getSpawnPoints() {

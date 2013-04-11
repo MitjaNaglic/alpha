@@ -53,10 +53,13 @@ public class DiscAiSystem extends EntityProcessingSystem {
         hitboxComponent = hitboxM.get(entity);
         cameraSystem = world.getSystem(CameraSystem.class);
         player = world.getManager(TagManager.class).getEntity("player");
-        if (player != null && positionComponent.getPosition().y < cameraSystem.getUpperBound() + hitboxComponent.getHitbox().getHeight()) {
+        if (player != null) {
             move();
-            aim(player);
-            gunComponent.setShootRequest(true);
+            float bounds = cameraSystem.getUpperBound() - hitboxComponent.getHitbox().getHeight();
+            if (positionComponent.getPosition().y < bounds) {
+                aim(player);
+                gunComponent.setShootRequest(true);
+            }
         }
     }
 

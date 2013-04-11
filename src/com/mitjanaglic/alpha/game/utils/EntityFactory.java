@@ -190,5 +190,11 @@ public class EntityFactory {
         else if (spawnPoint.getEntityId().equals(ids.DISC)) createDisc(world, spawnPoint.getX(), spawnPoint.getY());
         else if (spawnPoint.getEntityId().equals(ids.METEOR))
             createBigMeteor(world, spawnPoint.getX(), spawnPoint.getY());
+        else if (spawnPoint.getEntityId().equals(ids.METEOR_SMALL))
+            createSmallMeteor(world, spawnPoint.getX(), spawnPoint.getY());
+        else if (spawnPoint.getEntityId().equals(ids.MINOS))
+            createMinos(world, spawnPoint.getX(), spawnPoint.getY());
+        else if (spawnPoint.getEntityId().equals(ids.SCARAB))
+            createScarab(world, spawnPoint.getX(), spawnPoint.getY());
     }
 }

@@ -7,7 +7,7 @@ package com.mitjanaglic.alpha.game.models;
  * Time: 17:46
  * Mitja Naglič  mitja.n1@gmail.com
  */
-public class SpawnPoint {
+public class SpawnPoint implements Comparable<SpawnPoint> {
     private int x;
     private int y;
     private String entityId;
@@ -40,5 +40,14 @@ public class SpawnPoint {
 
     public void setEntityId(String entityId) {
         this.entityId = entityId;
+    }
+
+    @Override
+    public int compareTo(SpawnPoint spawnPoint) {
+        int returnValue;
+        if (this.getY() == spawnPoint.getY()) returnValue = 0;
+        else if (this.getY() > spawnPoint.getY()) returnValue = 1;
+        else returnValue = -1;
+        return returnValue;
     }
 }
