@@ -157,7 +157,7 @@ public class EntityFactory {
         ));
         e.addComponent(new RenderableComponent("Minos", 1, 1, 0));
         e.addComponent(new DiscAiComponent());
-        e.addComponent(new LifeComponent(200));
+        e.addComponent(new LifeComponent(300));
         world.addEntity(e);
         world.getManager(GroupManager.class).add(e, ids.ENEMY);
     }

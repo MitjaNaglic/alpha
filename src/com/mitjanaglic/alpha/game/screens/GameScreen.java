@@ -93,7 +93,6 @@ public class GameScreen implements Screen, InputProcessor {
 
     @Override
     public void render(float delta) {
-        if (isAccelometerAvailable) checkTilt();
         world.setDelta(delta);
         world.process();
         collisionSystem.process();
@@ -103,6 +102,7 @@ public class GameScreen implements Screen, InputProcessor {
         spriteRenderingSystem.process();
         uiRenderingSystem.process();
         setInputComponent();
+        if (isAccelometerAvailable) checkTilt();
 
     }
 
