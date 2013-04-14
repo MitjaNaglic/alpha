@@ -15,7 +15,7 @@ public class DesktopStarter {
     public static void main(String[] args) {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
         config.useGL20 = true;
-        config.vSyncEnabled = false;
+        config.vSyncEnabled = true;
         config.title = "Alpha";
         config.width = 1280;
         config.height = 720;

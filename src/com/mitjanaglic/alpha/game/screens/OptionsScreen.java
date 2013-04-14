@@ -1,5 +1,6 @@
 package com.mitjanaglic.alpha.game.screens;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
@@ -9,31 +10,33 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.CheckBox;
+import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.mitjanaglic.alpha.game.Alpha;
 
+
 /**
  * Created with IntelliJ IDEA.
  * User: mito
- * Date: 22.3.2013
- * Time: 14:50
- * To change this template use File | Settings | File Templates.
+ * Date: 14.4.2013
+ * Time: 18:34
+ * Mitja Naglič  mitja.n1@gmail.com
  */
-public class MenuScreen implements Screen {
+public class OptionsScreen implements Screen {
     private Stage stage;
     private TextureAtlas textureAtlas;
     private BitmapFont font;
     private Alpha alpha;
 
-    public MenuScreen(Alpha alpha) {
+    public OptionsScreen(Alpha alpha) {
         this.alpha = alpha;
-        stage = new Stage();
-        loadData();
+        this.stage = new Stage();
+        this.textureAtlas = alpha.getAssetManager().get("data/png/textures/textures.atlas", TextureAtlas.class);
         createLayout();
-
     }
 
     private void createLayout() {
@@ -52,32 +55,60 @@ public class MenuScreen implements Screen {
         textButtonStyle.font = font;
         textButtonStyle.fontColor = new Color(0f, 0f, 0f, 1);
 
+        CheckBox.CheckBoxStyle checkBoxStyle = new CheckBox.CheckBoxStyle();
+        checkBoxStyle.font = font;
+        checkBoxStyle.checkboxOn = new TextureRegionDrawable(upRegion);
+        checkBoxStyle.checkboxOff = new TextureRegionDrawable(downRegion);
 
-        TextButton button1 = new TextButton("New Game", textButtonStyle);
-        button1.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent changeEvent, Actor actor) {
-                alpha.setToGameScreen();
-            }
-        });
+        if (Gdx.app.getType() == Application.ApplicationType.Desktop) {
+            CheckBox checkBox1 = new CheckBox("Enable Vsync", checkBoxStyle);
+            checkBox1.setChecked(true);
+            checkBox1.addListener(new ChangeListener() {
+                @Override
+                public void changed(ChangeEvent changeEvent, Actor actor) {
+                    if (((CheckBox) actor).isChecked()) {
+                        Gdx.graphics.setVSync(true);
+                    } else {
+                        Gdx.graphics.setVSync(false);
+                    }
+                }
+            });
+            table.row().padBottom(20);
+            table.add(checkBox1);
+
+            CheckBox checkBox2 = new CheckBox("Fullscreen", checkBoxStyle);
+            checkBox2.setChecked(false);
+            checkBox2.addListener(new ChangeListener() {
+                @Override
+                public void changed(ChangeEvent changeEvent, Actor actor) {
+                    if (((CheckBox) actor).isChecked()) {
+                        Gdx.graphics.setDisplayMode(Gdx.graphics.getDesktopDisplayMode());
+                    } else {
+                        Gdx.graphics.setDisplayMode(1280, 720, false);
+                    }
+                }
+            });
+            table.row().padBottom(20);
+            table.add(checkBox2);
+        }
+        Slider.SliderStyle sliderStyle = new Slider.SliderStyle();
+        sliderStyle.background = new TextureRegionDrawable(upRegion);
+        sliderStyle.knob = new TextureRegionDrawable(upRegion);
+        sliderStyle.knobAfter = new TextureRegionDrawable(upRegion);
+        sliderStyle.knobBefore = new TextureRegionDrawable(upRegion);
+        Slider slider = new Slider(0f, 1f, 0.1f, false, sliderStyle);
+        slider.setHeight(20);
+        slider.setWidth(200);
+        slider.setValue(0);
+        slider.setName("Sound volume");
         table.row().padBottom(20);
-        table.add(button1);
+        table.add(slider);
 
-        TextButton button2 = new TextButton("Options", textButtonStyle);
-        button2.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent changeEvent, Actor actor) {
-                alpha.setToOptionsScreen();
-            }
-        });
-        table.row().padBottom(20);
-        table.add(button2);
-
-        TextButton button3 = new TextButton("Exit", textButtonStyle);
+        TextButton button3 = new TextButton("back", textButtonStyle);
         button3.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent changeEvent, Actor actor) {
-                Gdx.app.exit();
+                alpha.setToMainMenuScreen();
             }
         });
         table.row().padBottom(20);
@@ -85,19 +116,15 @@ public class MenuScreen implements Screen {
     }
 
     private void loadData() {
-        this.textureAtlas = alpha.getAssetManager().get("data/png/textures/textures.atlas", TextureAtlas.class);
+        textureAtlas = new TextureAtlas(Gdx.files.internal("data\\png\\textures\\textures.atlas"));
     }
 
-
-    //-------------------------------------------SCREEN-----------------------------
     @Override
     public void render(float v) {
         Gdx.gl.glClearColor(0.369f, 0.247f, 0.42f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
-
-        //Table.drawDebug(stage); // This is optional, but enables debug lines for tables.
     }
 
     @Override
@@ -128,8 +155,7 @@ public class MenuScreen implements Screen {
     @Override
     public void dispose() {
         Gdx.input.setInputProcessor(null);
-        stage.dispose();
-        textureAtlas.dispose();
         font.dispose();
+        stage.dispose();
     }
 }

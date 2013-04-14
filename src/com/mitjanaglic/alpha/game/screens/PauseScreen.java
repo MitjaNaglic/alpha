@@ -75,7 +75,7 @@ public class PauseScreen implements Screen {
     }
 
     private void loadData() {
-        textureAtlas = new TextureAtlas(Gdx.files.internal("data\\png\\textures\\textures.atlas"));
+        this.textureAtlas = alpha.getAssetManager().get("data/png/textures/textures.atlas", TextureAtlas.class);
     }
 
     @Override
@@ -85,7 +85,7 @@ public class PauseScreen implements Screen {
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
 
-        Table.drawDebug(stage); // This is optional, but enables debug lines for tables.
+        //Table.drawDebug(stage); // This is optional, but enables debug lines for tables.
     }
 
     @Override

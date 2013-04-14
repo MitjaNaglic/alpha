@@ -10,6 +10,7 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.mitjanaglic.alpha.game.screens.GameScreen;
 import com.mitjanaglic.alpha.game.screens.MenuScreen;
+import com.mitjanaglic.alpha.game.screens.OptionsScreen;
 import com.mitjanaglic.alpha.game.screens.PauseScreen;
 
 /**
@@ -26,6 +27,7 @@ public class Alpha extends Game {
     private GameScreen gameScreen;
     private MenuScreen mainMenu;
     private PauseScreen pauseScreen;
+    private OptionsScreen optionsScreen;
     private AssetManager assetManager;
 
     @Override
@@ -35,6 +37,7 @@ public class Alpha extends Game {
         assetManager.finishLoading();
         mainMenu = new MenuScreen(this);
         pauseScreen = new PauseScreen(this);
+        optionsScreen = new OptionsScreen(this);
         setScreen(mainMenu);
         backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("data\\music\\Magellan  - Orbyss.mp3"));
         backgroundMusic.setLooping(true);
@@ -56,9 +59,15 @@ public class Alpha extends Game {
     }
 
     public void setToMainMenuScreen() {
-        gameScreen.dispose();
-        gameScreen = null;
+        if (gameScreen != null) {
+            gameScreen.dispose();
+            gameScreen = null;
+        }
         setScreen(mainMenu);
+    }
+
+    public void setToOptionsScreen() {
+        setScreen(optionsScreen);
     }
 
     public void setToPauseScreen() {
@@ -70,6 +79,7 @@ public class Alpha extends Game {
         if (gameScreen != null) gameScreen.dispose();
         pauseScreen.dispose();
         mainMenu.dispose();
+        optionsScreen.dispose();
         getAssetManager().dispose();
 
         backgroundMusic.dispose();
