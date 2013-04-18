@@ -10,10 +10,8 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.CheckBox;
-import com.badlogic.gdx.scenes.scene2d.ui.Slider;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.mitjanaglic.alpha.game.Alpha;
@@ -57,8 +55,10 @@ public class OptionsScreen implements Screen {
 
         CheckBox.CheckBoxStyle checkBoxStyle = new CheckBox.CheckBoxStyle();
         checkBoxStyle.font = font;
-        checkBoxStyle.checkboxOn = new TextureRegionDrawable(upRegion);
-        checkBoxStyle.checkboxOff = new TextureRegionDrawable(downRegion);
+        TextureRegion checkboxCheckedRegion = textureAtlas.findRegion("ui/checkBoxChecked");
+        TextureRegion checkboxUncheckedRegion = textureAtlas.findRegion("ui/checkBoxUnchecked");
+        checkBoxStyle.checkboxOn = new TextureRegionDrawable(checkboxCheckedRegion);
+        checkBoxStyle.checkboxOff = new TextureRegionDrawable(checkboxUncheckedRegion);
 
         if (Gdx.app.getType() == Application.ApplicationType.Desktop) {
             CheckBox checkBox1 = new CheckBox("Enable Vsync", checkBoxStyle);
@@ -73,7 +73,7 @@ public class OptionsScreen implements Screen {
                     }
                 }
             });
-            table.row().padBottom(20);
+            table.row().align(Align.left).padBottom(40);
             table.add(checkBox1);
 
             CheckBox checkBox2 = new CheckBox("Fullscreen", checkBoxStyle);
@@ -88,23 +88,39 @@ public class OptionsScreen implements Screen {
                     }
                 }
             });
-            table.row().padBottom(20);
+            table.row().align(Align.left).padBottom(100);
             table.add(checkBox2);
         }
+
+        Label.LabelStyle labelStyle = new Label.LabelStyle(font, Color.WHITE);
+        Label volumeLabel = new Label("Volume", labelStyle);
+        table.row().padBottom(20);
+        table.add(volumeLabel);
+
         Slider.SliderStyle sliderStyle = new Slider.SliderStyle();
-        sliderStyle.background = new TextureRegionDrawable(upRegion);
-        sliderStyle.knob = new TextureRegionDrawable(upRegion);
-        sliderStyle.knobAfter = new TextureRegionDrawable(upRegion);
-        sliderStyle.knobBefore = new TextureRegionDrawable(upRegion);
-        Slider slider = new Slider(0f, 1f, 0.1f, false, sliderStyle);
+        TextureRegion sliderBackgroundRegion = textureAtlas.findRegion("ui/sliderBackground");
+        TextureRegion sliderKnobRegion = textureAtlas.findRegion("ui/sliderKnob");
+        sliderStyle.background = new TextureRegionDrawable(sliderBackgroundRegion);
+        sliderStyle.knob = new TextureRegionDrawable(sliderKnobRegion);
+//        sliderStyle.knobAfter = new TextureRegionDrawable(upRegion);
+//        sliderStyle.knobBefore = new TextureRegionDrawable(upRegion);
+        Slider slider = new Slider(0f, 1f, 0.01f, false, sliderStyle);
+        slider.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent changeEvent, Actor actor) {
+                alpha.setSoundVolume(((Slider) actor).getValue());
+            }
+        });
         slider.setHeight(20);
         slider.setWidth(200);
         slider.setValue(0);
         slider.setName("Sound volume");
-        table.row().padBottom(20);
-        table.add(slider);
+        table.row().minWidth(200).padBottom(100);
 
-        TextButton button3 = new TextButton("back", textButtonStyle);
+        table.add(slider);
+        slider.setValue(alpha.getSoundVolume());
+
+        TextButton button3 = new TextButton("Back", textButtonStyle);
         button3.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent changeEvent, Actor actor) {

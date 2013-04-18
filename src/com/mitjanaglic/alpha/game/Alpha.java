@@ -35,14 +35,22 @@ public class Alpha extends Game {
         assetManager = new AssetManager();
         enqueueAssets();
         assetManager.finishLoading();
+        backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("data\\music\\Magellan  - Orbyss.mp3"));
+        backgroundMusic.setLooping(true);
+        backgroundMusic.setVolume(0.8f);
+        backgroundMusic.play();
         mainMenu = new MenuScreen(this);
         pauseScreen = new PauseScreen(this);
         optionsScreen = new OptionsScreen(this);
         setScreen(mainMenu);
-        backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("data\\music\\Magellan  - Orbyss.mp3"));
-        backgroundMusic.setLooping(true);
-        backgroundMusic.setVolume(0.5f);
-        backgroundMusic.play();
+    }
+
+    public void setSoundVolume(float volume) {
+        backgroundMusic.setVolume(volume);
+    }
+
+    public float getSoundVolume() {
+        return backgroundMusic.getVolume();
     }
 
     private void enqueueAssets() {
