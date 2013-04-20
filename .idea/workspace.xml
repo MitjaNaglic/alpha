@@ -10,36 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/effects/Bloom.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/Blur.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/CameraBlur.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/effects/CameraMotion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/Combine.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/Convolve1D.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/Convolve2D.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/Copy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/effects/CrtMonitor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/CrtScreen.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/effects/Curvature.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/Filter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/utils/FullscreenQuad.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/utils/Hash.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/utils/ItemsManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/MultipassFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/utils/PingPongBuffer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/PipelineState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/PostProcessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/PostProcessorEffect.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/PostProcessorListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/RadialBlur.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/RadialDistortion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/utils/ShaderLoader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/Threshold.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/effects/Vignette.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/Vignetting.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/Zoom.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/effects/Zoomer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Alpha.iws" />
@@ -49,7 +21,7 @@
     <file path="/MainActivity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362672791185" ignored="false" />
     <file path="/fragment.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365703779713" ignored="false" />
     <file path="/DesktopStarter.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366460965836" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366460981381" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366462553263" ignored="false" />
     <file path="/Player.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364257135690" ignored="false" />
     <file path="/Entity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364234628812" ignored="false" />
     <file path="/Space.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364258077559" ignored="false" />
@@ -104,7 +76,7 @@
     <file path="/SpriteRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365364832196" ignored="false" />
     <file path="/EntityFactory.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365697601448" ignored="false" />
     <file path="/BackgroundRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365347934200" ignored="false" />
-    <file path="/UiRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365592970092" ignored="false" />
+    <file path="/UiRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366463155839" ignored="false" />
     <file path="/LivesComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364906465438" ignored="false" />
     <file path="/BulletComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365226651365" ignored="false" />
     <file path="/BulletSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365229765098" ignored="false" />
@@ -198,10 +170,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameScreen.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GameScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="33" selection-start="3030" selection-end="3030" vertical-scroll-proportion="0.69624573">
+            <state line="73" column="33" selection-start="2957" selection-end="2957" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UiRenderingSystem.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="98" column="45" selection-start="3008" selection-end="3008" vertical-scroll-proportion="0.70989764">
               <folding />
             </state>
           </provider>
@@ -276,7 +257,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/constants/ids.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CameraSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/SpawnDespawnSystem.java" />
@@ -291,6 +271,7 @@
         <option value="$PROJECT_DIR$/Desktop/src/com/mitjanaglic/alpha/DesktopStarter.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/Alpha.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
       </list>
     </option>
   </component>
@@ -451,6 +432,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="systems" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="renderers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="screens" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -500,6 +515,66 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bitfire" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bitfire" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="postprocessing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bitfire" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="postprocessing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="filters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1126,7 +1201,11 @@
       <created>1366460987591</created>
       <updated>1366460987591</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="bloom!">
+      <created>1366462587716</created>
+      <updated>1366462587716</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1227,7 +1306,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="bloom!" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1241,7 +1320,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="disc ai-&gt;aim" />
     <MESSAGE value="bullettexturenames" />
     <MESSAGE value="entityfac refr" />
     <MESSAGE value="weaponsarray" />
@@ -1266,6 +1344,7 @@
     <MESSAGE value="options menu" />
     <MESSAGE value="options" />
     <MESSAGE value="." />
+    <MESSAGE value="bloom!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1275,20 +1354,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="42" selection-start="7711" selection-end="7711" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="22" selection-start="3635" selection-end="3635" vertical-scroll-proportion="2.4442477">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="77" column="76" selection-start="2862" selection-end="2862" vertical-scroll-proportion="0.0">
@@ -1376,9 +1441,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bitfire/postprocessing/filters/Blur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="56" selection-start="956" selection-end="956" vertical-scroll-proportion="-6.426621">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="33" selection-start="3030" selection-end="3030" vertical-scroll-proportion="0.69624573">
+        <state line="73" column="33" selection-start="2957" selection-end="2957" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="45" selection-start="3008" selection-end="3008" vertical-scroll-proportion="0.70989764">
           <folding />
         </state>
       </provider>

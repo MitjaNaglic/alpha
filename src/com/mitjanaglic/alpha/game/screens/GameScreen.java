@@ -71,7 +71,7 @@ public class GameScreen implements Screen, InputProcessor {
         postProcessor = new PostProcessor(false, false, isDesktop);
         Bloom bloom = new Bloom((int) (Gdx.graphics.getWidth() * 0.25f), (int) (Gdx.graphics.getHeight() * 0.25f));
         bloom.setBlurAmount(0.1f);
-        bloom.setBaseIntesity(1f);
+        bloom.setBaseIntesity(0.9f);
         bloom.setBaseSaturation(1f);
         bloom.setThreshold(0.7f);
         postProcessor.addEffect(bloom);
