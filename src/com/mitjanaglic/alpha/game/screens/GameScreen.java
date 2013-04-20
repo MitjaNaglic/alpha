@@ -4,11 +4,11 @@ import com.artemis.Entity;
 import com.artemis.World;
 import com.artemis.managers.GroupManager;
 import com.artemis.managers.TagManager;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
-import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.*;
 import com.badlogic.gdx.assets.AssetManager;
+import com.bitfire.postprocessing.PostProcessor;
+import com.bitfire.postprocessing.effects.Bloom;
+import com.bitfire.utils.ShaderLoader;
 import com.mitjanaglic.alpha.game.Alpha;
 import com.mitjanaglic.alpha.game.components.CameraComponent;
 import com.mitjanaglic.alpha.game.components.InputComponent;
@@ -43,6 +43,8 @@ public class GameScreen implements Screen, InputProcessor {
     private CollisionSystem collisionSystem;
     private LifeSystem lifeSystem;
     private SpawnDespawnSystem spawnDespawnSystem;
+    private PostProcessor postProcessor;
+    private static final boolean isDesktop = (Gdx.app.getType() == Application.ApplicationType.Desktop);
 
     private World world;
 
@@ -60,6 +62,19 @@ public class GameScreen implements Screen, InputProcessor {
         setSystems();
         spawnDespawnSystem.setSpawnPoints(level.getSpawnPoints());
         world.initialize();
+
+        initShaders();
+    }
+
+    private void initShaders() {
+        ShaderLoader.BasePath = "data/shaders/";
+        postProcessor = new PostProcessor(false, false, isDesktop);
+        Bloom bloom = new Bloom((int) (Gdx.graphics.getWidth() * 0.25f), (int) (Gdx.graphics.getHeight() * 0.25f));
+        bloom.setBlurAmount(0.1f);
+        bloom.setBaseIntesity(1f);
+        bloom.setBaseSaturation(1f);
+        bloom.setThreshold(0.7f);
+        postProcessor.addEffect(bloom);
     }
 
     private void initCamera() {
@@ -98,9 +113,12 @@ public class GameScreen implements Screen, InputProcessor {
         collisionSystem.process();
         lifeSystem.process();
 
+        postProcessor.capture();
         backgroundRenderingSystem.process();
         spriteRenderingSystem.process();
+        postProcessor.render();
         uiRenderingSystem.process();
+
         setInputComponent();
         if (isAccelometerAvailable) checkTilt();
 
@@ -147,7 +165,7 @@ public class GameScreen implements Screen, InputProcessor {
 
     @Override
     public void resume() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        postProcessor.rebind();
     }
 
     @Override
@@ -156,6 +174,7 @@ public class GameScreen implements Screen, InputProcessor {
         backgroundRenderingSystem.dispose();
         uiRenderingSystem.dispose();
         Gdx.input.setInputProcessor(null);
+        postProcessor.dispose();
     }
 
     /*-------------------------------------INPUT PROCESSOR --------------------------*/
