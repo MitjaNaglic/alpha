@@ -63,7 +63,9 @@ public class GameScreen implements Screen, InputProcessor {
         spawnDespawnSystem.setSpawnPoints(level.getSpawnPoints());
         world.initialize();
 
-        initShaders();
+        if (isDesktop) {
+            initShaders();
+        }
     }
 
     private void initShaders() {
@@ -71,7 +73,7 @@ public class GameScreen implements Screen, InputProcessor {
         postProcessor = new PostProcessor(false, false, isDesktop);
         Bloom bloom = new Bloom((int) (Gdx.graphics.getWidth() * 0.25f), (int) (Gdx.graphics.getHeight() * 0.25f));
         bloom.setBlurAmount(0.1f);
-        bloom.setBaseIntesity(0.9f);
+        bloom.setBaseIntesity(0.95f);
         bloom.setBaseSaturation(1f);
         bloom.setThreshold(0.7f);
         postProcessor.addEffect(bloom);
@@ -108,6 +110,14 @@ public class GameScreen implements Screen, InputProcessor {
 
     @Override
     public void render(float delta) {
+        if (isDesktop) {
+            desktopRender(delta);
+        } else {
+            androidRender(delta);
+        }
+    }
+
+    private void desktopRender(float delta) {
         world.setDelta(delta);
         world.process();
         collisionSystem.process();
@@ -120,8 +130,20 @@ public class GameScreen implements Screen, InputProcessor {
         uiRenderingSystem.process();
 
         setInputComponent();
-        if (isAccelometerAvailable) checkTilt();
+    }
 
+    private void androidRender(float delta) {
+        world.setDelta(delta);
+        world.process();
+        collisionSystem.process();
+        lifeSystem.process();
+
+        backgroundRenderingSystem.process();
+        spriteRenderingSystem.process();
+        uiRenderingSystem.process();
+
+        setInputComponent();
+        if (isAccelometerAvailable) checkTilt();
     }
 
     //zagotavla da input processor dobi inputComponent
@@ -174,7 +196,9 @@ public class GameScreen implements Screen, InputProcessor {
         backgroundRenderingSystem.dispose();
         uiRenderingSystem.dispose();
         Gdx.input.setInputProcessor(null);
-        postProcessor.dispose();
+        if (postProcessor != null) {
+            postProcessor.dispose();
+        }
     }
 
     /*-------------------------------------INPUT PROCESSOR --------------------------*/
