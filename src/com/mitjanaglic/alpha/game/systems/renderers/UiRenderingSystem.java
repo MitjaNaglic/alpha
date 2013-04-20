@@ -14,6 +14,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.game.components.CameraComponent;
 import com.mitjanaglic.alpha.game.components.LifeComponent;
+import com.mitjanaglic.alpha.game.components.ShieldComponent;
 import com.mitjanaglic.alpha.game.constants.ids;
 
 /**
@@ -32,6 +33,9 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
     @Mapper
     private ComponentMapper<LifeComponent> lifeM;
     private LifeComponent playerLife;
+    @Mapper
+    private ComponentMapper<ShieldComponent> shieldM;
+    private ShieldComponent shieldComponent;
     private BitmapFont font;
     private boolean debugRendering = true;
 
@@ -62,6 +66,7 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
         player = world.getManager(TagManager.class).getEntity(ids.PLAYER);
         if (player != null) {
             playerLife = lifeM.get(player);
+            shieldComponent = shieldM.get(player);
         }
         renderLives();
         if (debugRendering) {
@@ -74,12 +79,18 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
         float y = 20;
         float currentLife;
         float maxLife;
+        float currentShields;
+        float maxShields;
         if (playerLife != null) {
             currentLife = playerLife.getCurrentLife();
             maxLife = playerLife.getMaxLife();
+            currentShields = shieldComponent.getCurrentShields();
+            maxShields = shieldComponent.getMaxShields();
         } else {
             currentLife = 0;
             maxLife = 0;
+            currentShields = 0;
+            maxShields = 0;
         }
 
         spriteBatch.draw(textureAtlas.findRegion("life"),
@@ -89,10 +100,17 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
 
         float lifebarWidth = currentLife / maxLife * 300;
         float lifebarX = x + 50;
+        float shieldbarWidth = currentShields / maxShields * 200;
+        float shieldbarX = lifebarX;
+        float shieldbarY = y + 40;
         if (lifebarWidth > 0) {
             renderBar(lifebarX, y, lifebarWidth, "lifeBarBit");
         }
+        if (shieldbarWidth > 0) {
+            renderBar(shieldbarX, shieldbarY, shieldbarWidth, "shieldBarBit");
+        }
         float damagebarWidth = 0;
+        float shieldDamageBarWidth = 0;
         if (playerLife != null) {
             damagebarWidth = playerLife.getDamage() / maxLife * 300;
         }

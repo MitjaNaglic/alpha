@@ -28,6 +28,7 @@ public class CollisionSystem extends EntitySystem {
     @Mapper
     private ComponentMapper<LifeComponent> lifeM;
 
+
     public CollisionSystem() {
         super(Aspect.getAspectForAll(HitboxComponent.class));
     }
@@ -55,8 +56,8 @@ public class CollisionSystem extends EntitySystem {
             for (int i = 0; i < enemies.size(); i++) {
                 HitboxComponent enemyHitbox = hitboxM.get(enemies.get(i));
                 if (playerhitbox.getHitbox().overlaps(enemyHitbox.getHitbox())) {
-                    handleHullCollision(player);
-                    handleHullCollision(enemies.get(i));
+                    damageDistribution(player, enemies.get(i), 100);
+                    damageDistribution(enemies.get(i), player, 100);
                 }
             }
         }
@@ -78,10 +79,6 @@ public class CollisionSystem extends EntitySystem {
         }
     }
 
-    private void handleHullCollision(Entity entity) {
-        world.getSystem(LifeSystem.class).inflictDamage(entity, 100);
-    }
-
     private void enemyBulletCollsiions(Entity player, ImmutableBag<Entity> enemyBullets) {
         if (player != null && enemyBullets != null) {
             HitboxComponent playerHitbox = hitboxM.get(player);
@@ -98,13 +95,22 @@ public class CollisionSystem extends EntitySystem {
 
     private void handleCollision(Entity entity, Entity bullet) {
         BulletComponent bulletComponent = bulletM.get(bullet);
-        world.getSystem(LifeSystem.class).inflictDamage(entity, bulletComponent.getDamage());
+        damageDistribution(entity, bullet, bulletComponent.getDamage());
     }
 
     private void handleBulletCollision(Entity bullet) {
         BulletComponent bulletComponent = bulletM.get(bullet);
         bulletComponent.setHit(true);
     }
+
+    private void damageDistribution(Entity victim, Entity culprit, float damage) {
+        HitboxComponent victimHitbox = hitboxM.get(victim);
+        HitboxComponent culpritHitbox = hitboxM.get(culprit);
+        float angle = culpritHitbox.getCenter().sub(victimHitbox.getCenter()).angle() - 90;
+        float leftoverDamage = world.getSystem(ShieldSystem.class).hitShields(victim, damage, angle);
+        world.getSystem(LifeSystem.class).inflictDamage(victim, leftoverDamage);
+    }
+
 
     @Override
     protected boolean checkProcessing() {

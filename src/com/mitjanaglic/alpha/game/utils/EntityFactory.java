@@ -43,6 +43,7 @@ public class EntityFactory {
         ));
         e.addComponent(new LifeComponent(1000));
         e.addComponent(new RenderableComponent("player", 1, 1, 0));
+        e.addComponent(new ShieldComponent(200));
         world.addEntity(e);
         world.getManager(TagManager.class).register(ids.PLAYER, e);
     }

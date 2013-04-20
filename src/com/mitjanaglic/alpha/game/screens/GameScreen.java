@@ -106,6 +106,8 @@ public class GameScreen implements Screen, InputProcessor {
         spawnDespawnSystem = world.setSystem(new SpawnDespawnSystem());
         lifeSystem = world.setSystem(new LifeSystem());
         collisionSystem = world.setSystem(new CollisionSystem(), true);
+        world.setSystem(new ShieldSystem());
+        world.setSystem(new ShieldFlareSystem());
     }
 
     @Override
