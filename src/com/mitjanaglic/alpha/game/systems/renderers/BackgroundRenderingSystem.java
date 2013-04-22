@@ -43,6 +43,7 @@ public class BackgroundRenderingSystem extends VoidEntitySystem implements Dispo
         Gdx.gl.glViewport((int) cameraComponent.getViewport().x, (int) cameraComponent.getViewport().y,
                 (int) cameraComponent.getViewport().width, (int) cameraComponent.getViewport().height);
         Gdx.gl.glClearColor(0.369f, 0.247f, 0.42f, 1);
+        Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         mapRenderer.setView(cameraComponent.getCamera());

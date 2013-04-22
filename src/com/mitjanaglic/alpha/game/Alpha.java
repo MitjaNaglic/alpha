@@ -35,7 +35,7 @@ public class Alpha extends Game {
         assetManager = new AssetManager();
         enqueueAssets();
         assetManager.finishLoading();
-        backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("data\\music\\Magellan  - Orbyss.mp3"));
+        backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("data\\music\\Magellan  - Orbyss.ogg"));
         backgroundMusic.setLooping(true);
         backgroundMusic.setVolume(0.8f);
         backgroundMusic.play();
@@ -58,6 +58,8 @@ public class Alpha extends Game {
         getAssetManager().setLoader(TiledMap.class, new TmxMapLoader(new InternalFileHandleResolver()));
         TmxMapLoader.Parameters parameters = new TmxMapLoader.Parameters();
         parameters.generateMipMaps = true;
+//        parameters.textureMinFilter= Texture.TextureFilter.MipMapLinearNearest;
+//        parameters.textureMagFilter= Texture.TextureFilter.Linear;
         getAssetManager().load("data/levels/Level1/Level1.tmx", TiledMap.class, parameters);
     }
 

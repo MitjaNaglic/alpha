@@ -7,9 +7,7 @@ import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 
-import java.text.Collator;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.LinkedList;
 
 /**
@@ -34,7 +32,6 @@ public class Level {
 
     private void loadLevel() {
         this.map = assetManager.get("data/levels/Level1/Level1.tmx", TiledMap.class);
-        //TODO mipmap background
         TiledMapTile tile = this.map.getTileSets().getTile(1);
         if (tile != null) {
             tile.getTextureRegion().getTexture().setFilter(Texture.TextureFilter.MipMapLinearNearest, Texture.TextureFilter.Nearest);
