@@ -5,6 +5,7 @@ import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.artemis.annotations.Mapper;
 import com.artemis.systems.EntityProcessingSystem;
+import com.badlogic.gdx.graphics.Color;
 import com.mitjanaglic.alpha.game.components.RenderableComponent;
 import com.mitjanaglic.alpha.game.components.ShieldFlareComponent;
 
@@ -44,9 +45,9 @@ public class ShieldFlareSystem extends EntityProcessingSystem {
         }
     }
 
+    Color targetColor = new Color(1, 1, 1, 0);
+
     private void animate() {
-        if (renderableComponent.getA() - world.getDelta() > 0) {
-            renderableComponent.setA(renderableComponent.getA() - world.getDelta());
-        }
+        renderableComponent.getColor().lerp(targetColor, world.getDelta() * flareComponent.getFlareDuration());
     }
 }

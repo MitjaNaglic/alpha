@@ -57,10 +57,9 @@ public class ShieldSystem extends EntityProcessingSystem {
             Entity shieldFlare = world.createEntity();
             shieldFlare.addComponent(new ShieldFlareComponent());
             shieldFlare.addComponent(positionComponent);
-            shieldFlare.addComponent(new RenderableComponent("shield", 1, 1, shieldComponent.getAngle()));
+            shieldFlare.addComponent(new RenderableComponent("shield", 0.90f, 0.90f, shieldComponent.getAngle(), -26, -25));
             shieldFlare.addToWorld();
             shieldComponent.setRequestFlare(false);
-            shieldComponent.setFlaring(true);
         }
     }
 

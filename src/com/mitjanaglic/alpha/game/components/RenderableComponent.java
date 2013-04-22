@@ -1,6 +1,7 @@
 package com.mitjanaglic.alpha.game.components;
 
 import com.artemis.Component;
+import com.badlogic.gdx.graphics.Color;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,48 +15,50 @@ public class RenderableComponent extends Component {
     private float scaleX;
     private float scaleY;
     private float rotationAngle;
-    private float r = 1;
-    private float g = 1;
-    private float b = 1;
-    private float a = 1;
+    private Color color;
+    private float offsetX = 0;
+    private float offsetY = 0;
 
     public RenderableComponent(String textureName, float scaleX, float scaleY, float rotationAngle) {
         this.spriteTextureName = textureName;
         this.scaleX = scaleX;
         this.scaleY = scaleY;
         this.rotationAngle = rotationAngle;
+        color = new Color(1, 1, 1, 1);
     }
 
-    public float getR() {
-        return r;
+    public RenderableComponent(String spriteTextureName, float scaleX, float scaleY, float rotationAngle, float offsetX, float offsetY) {
+        this.spriteTextureName = spriteTextureName;
+        this.scaleX = scaleX;
+        this.scaleY = scaleY;
+        this.rotationAngle = rotationAngle;
+        this.offsetX = offsetX;
+        this.offsetY = offsetY;
+        color = new Color(1, 1, 1, 1);
     }
 
-    public void setR(float r) {
-        this.r = r;
+    public float getOffsetX() {
+        return offsetX;
     }
 
-    public float getG() {
-        return g;
+    public void setOffsetX(float offsetX) {
+        this.offsetX = offsetX;
     }
 
-    public void setG(float g) {
-        this.g = g;
+    public float getOffsetY() {
+        return offsetY;
     }
 
-    public float getB() {
-        return b;
+    public void setOffsetY(float offsetY) {
+        this.offsetY = offsetY;
     }
 
-    public void setB(float b) {
-        this.b = b;
+    public Color getColor() {
+        return color;
     }
 
-    public float getA() {
-        return a;
-    }
-
-    public void setA(float a) {
-        this.a = a;
+    public void setColor(Color color) {
+        this.color = color;
     }
 
     public String getSpriteTextureName() {

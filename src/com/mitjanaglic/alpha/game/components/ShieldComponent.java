@@ -12,7 +12,6 @@ import com.artemis.Component;
 public class ShieldComponent extends Component {
     private float maxShields;
     private float currentShields;
-    private boolean isFlaring = false;
     private boolean requestFlare = false;
     private float angle = 0;
     private final float timeBeforeRegen = 1.5f;
@@ -65,13 +64,5 @@ public class ShieldComponent extends Component {
 
     public void setCurrentShields(float currentShields) {
         this.currentShields = currentShields;
-    }
-
-    public boolean isFlaring() {
-        return isFlaring;
-    }
-
-    public void setFlaring(boolean flaring) {
-        isFlaring = flaring;
     }
 }
