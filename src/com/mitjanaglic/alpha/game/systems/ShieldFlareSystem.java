@@ -42,6 +42,7 @@ public class ShieldFlareSystem extends EntityProcessingSystem {
             flareComponent.setCurrentFlareDuration(flareComponent.getCurrentFlareDuration() + world.getDelta());
         } else {
             entity.deleteFromWorld();
+            world.changedEntity(entity);
         }
     }
 

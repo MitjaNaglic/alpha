@@ -49,6 +49,7 @@ public class BulletSystem extends EntityProcessingSystem {
             hitmark.addToWorld();
             world.getManager(GroupManager.class).add(hitmark, ids.HITMARK);
             entity.deleteFromWorld();
+            world.changedEntity(entity);
         }
     }
 
