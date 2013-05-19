@@ -148,6 +148,7 @@ public class GameScreen implements Screen, InputProcessor {
 
 
         backgroundRenderingSystem.process();
+        particleRenderingSystem.process();
         spriteRenderingSystem.process();
         uiRenderingSystem.process();
 
