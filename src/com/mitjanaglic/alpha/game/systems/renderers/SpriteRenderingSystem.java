@@ -41,25 +41,22 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
     private ShapeRenderer shapeRenderer;
     private boolean debugRendering = false;
 
-    public SpriteRenderingSystem(AssetManager assetManager, CameraComponent cameraComponent) {
+    public SpriteRenderingSystem(AssetManager assetManager, CameraComponent cameraComponent, SpriteBatch batch) {
         super(Aspect.getAspectForAll(RenderableComponent.class));
         this.assetManager = assetManager;
         this.cameraComponent = cameraComponent;
+        this.batch = batch;
         camera = cameraComponent.getCamera();
     }
 
     @Override
     protected void initialize() {
         textureAtlas = assetManager.get("data/png/textures/textures.atlas", TextureAtlas.class);
-        batch = new SpriteBatch();
         shapeRenderer = new ShapeRenderer();
     }
 
     @Override
     protected void begin() {
-        batch.setProjectionMatrix(camera.combined);
-        shapeRenderer.setProjectionMatrix(camera.combined);
-
         batch.begin();
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
     }
@@ -72,6 +69,8 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
 
     @Override
     protected void processEntities(ImmutableBag<Entity> entityImmutableBag) {
+        batch.setProjectionMatrix(camera.combined);
+        shapeRenderer.setProjectionMatrix(camera.combined);
         for (int i = 0; i < entityImmutableBag.size(); i++) {
             process(entityImmutableBag.get(i));
             if (debugRendering) {
@@ -115,7 +114,6 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
 
     @Override
     public void dispose() {
-        batch.dispose();
         shapeRenderer.dispose();
     }
 }

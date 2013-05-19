@@ -6,6 +6,7 @@ import com.artemis.managers.GroupManager;
 import com.artemis.managers.TagManager;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.bitfire.postprocessing.PostProcessor;
 import com.bitfire.postprocessing.effects.Bloom;
 import com.bitfire.utils.ShaderLoader;
@@ -46,6 +47,7 @@ public class GameScreen implements Screen, InputProcessor {
     private SpawnDespawnSystem spawnDespawnSystem;
     private PostProcessor postProcessor;
     private ParticleRenderingSystem particleRenderingSystem;
+    private SpriteBatch batch = new SpriteBatch();
     private static final boolean isDesktop = (Gdx.app.getType() == Application.ApplicationType.Desktop);
 
     private World world;
@@ -95,10 +97,10 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new PlayerAnimationSystem());
         world.setSystem(new LevelBoundsSystem(cameraComponent));
         world.setSystem(new MovementSystem());
-        spriteRenderingSystem = world.setSystem(new SpriteRenderingSystem(assetManager, cameraComponent), true);
-        particleRenderingSystem = world.setSystem(new ParticleRenderingSystem(cameraComponent), true);
+        spriteRenderingSystem = world.setSystem(new SpriteRenderingSystem(assetManager, cameraComponent, batch), true);
+        particleRenderingSystem = world.setSystem(new ParticleRenderingSystem(cameraComponent, batch), true);
         backgroundRenderingSystem = world.setSystem(new BackgroundRenderingSystem(cameraComponent, level), true);
-        uiRenderingSystem = world.setSystem(new UiRenderingSystem(assetManager, cameraComponent), true);
+        uiRenderingSystem = world.setSystem(new UiRenderingSystem(assetManager, cameraComponent, batch), true);
         world.setSystem(new HitboxSystem());
         world.setSystem(new GunSystem());
         world.setSystem(new BulletSystem());
@@ -200,8 +202,8 @@ public class GameScreen implements Screen, InputProcessor {
     @Override
     public void dispose() {
         world.getSystem(SpriteRenderingSystem.class).dispose();
-        particleRenderingSystem.dispose();
         backgroundRenderingSystem.dispose();
+        batch.dispose();
         uiRenderingSystem.dispose();
         Gdx.input.setInputProcessor(null);
         if (postProcessor != null) {

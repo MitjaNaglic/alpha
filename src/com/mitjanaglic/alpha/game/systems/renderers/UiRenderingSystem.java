@@ -39,15 +39,15 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
     private BitmapFont font;
     private boolean debugRendering = true;
 
-    public UiRenderingSystem(AssetManager assetManager, CameraComponent cameraComponent) {
+    public UiRenderingSystem(AssetManager assetManager, CameraComponent cameraComponent, SpriteBatch batch) {
         this.assetManager = assetManager;
         this.cameraComponent = cameraComponent;
+        spriteBatch = batch;
     }
 
     @Override
     protected void initialize() {
         textureAtlas = assetManager.get("data/png/textures/textures.atlas", TextureAtlas.class);
-        spriteBatch = new SpriteBatch();
         font = new BitmapFont();
     }
 
@@ -63,6 +63,7 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
 
     @Override
     protected void processSystem() {
+        spriteBatch.setProjectionMatrix(cameraComponent.getCamera().projection);
         player = world.getManager(TagManager.class).getEntity(ids.PLAYER);
         if (player != null) {
             playerLife = lifeM.get(player);
@@ -75,8 +76,8 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
     }
 
     private void renderLives() {
-        float x = 20;
-        float y = 20;
+        float x = 20 - cameraComponent.getCameraWidth() / 2;
+        float y = 20 - cameraComponent.getCameraHeight() / 2;
         float currentLife;
         float maxLife;
         float currentShields;
@@ -138,16 +139,15 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
 
     private void renderFps() {
         if (debugRendering) {
-            font.draw(spriteBatch, "FPS: " + Gdx.graphics.getFramesPerSecond(), 0,
-                    cameraComponent.getCameraHeight());
-            font.draw(spriteBatch, "Current entities: " + world.getEntityManager().getActiveEntityCount(), 0,
-                    cameraComponent.getCameraHeight() - 20);
+            font.draw(spriteBatch, "FPS: " + Gdx.graphics.getFramesPerSecond(), 0 - cameraComponent.getCameraWidth() / 2,
+                    cameraComponent.getCameraHeight() / 2);
+            font.draw(spriteBatch, "Current entities: " + world.getEntityManager().getActiveEntityCount(), 0 - cameraComponent.getCameraWidth() / 2,
+                    cameraComponent.getCameraHeight() / 2 - 20);
         }
     }
 
     @Override
     public void dispose() {
-        spriteBatch.dispose();
         font.dispose();
     }
 }

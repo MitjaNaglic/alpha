@@ -8,7 +8,6 @@ import com.artemis.annotations.Mapper;
 import com.artemis.utils.ImmutableBag;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.game.components.CameraComponent;
 import com.mitjanaglic.alpha.game.components.ParticleEmmiterComponent;
 
@@ -19,22 +18,20 @@ import com.mitjanaglic.alpha.game.components.ParticleEmmiterComponent;
  * Time: 19:19
  * Mitja Naglič  mitja.n1@gmail.com
  */
-public class ParticleRenderingSystem extends EntitySystem implements Disposable {
+public class ParticleRenderingSystem extends EntitySystem {
     @Mapper
     private ComponentMapper<ParticleEmmiterComponent> emmiterM;
     private OrthographicCamera camera;
     private SpriteBatch batch;
 
-    public ParticleRenderingSystem(CameraComponent cameraComponent) {
+    public ParticleRenderingSystem(CameraComponent cameraComponent, SpriteBatch batch) {
         super(Aspect.getAspectForAll(ParticleEmmiterComponent.class));
         camera = cameraComponent.getCamera();
-        batch = new SpriteBatch();
+        this.batch = batch;
     }
 
     @Override
     protected void begin() {
-        batch.setProjectionMatrix(camera.combined);
-
         batch.begin();
     }
 
@@ -44,12 +41,8 @@ public class ParticleRenderingSystem extends EntitySystem implements Disposable 
     }
 
     @Override
-    public void dispose() {
-        batch.dispose();
-    }
-
-    @Override
     protected void processEntities(ImmutableBag<Entity> entityImmutableBag) {
+        batch.setProjectionMatrix(camera.combined);
         for (int i = 0; i < entityImmutableBag.size(); i++) {
             ParticleEmmiterComponent particleEmmiterComponent = emmiterM.get(entityImmutableBag.get(i));
             particleEmmiterComponent.getEffect().draw(batch, world.getDelta());

@@ -16,7 +16,7 @@ public class ParticleEmmiterComponent extends Component {
 
     public ParticleEmmiterComponent(String effectName, float x, float y) {
         this.effect = new ParticleEffect();
-        effect.load(Gdx.files.internal("data/particles/" + effectName), Gdx.files.internal("data/png/"));
+        effect.load(Gdx.files.internal("data/particles/" + effectName + ".p"), Gdx.files.internal("data/png/"));
         effect.setPosition(x, y);
         effect.start();
     }
