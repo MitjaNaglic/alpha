@@ -7,6 +7,8 @@ import com.artemis.EntitySystem;
 import com.artemis.annotations.Mapper;
 import com.artemis.utils.ImmutableBag;
 import com.mitjanaglic.alpha.game.components.LifeComponent;
+import com.mitjanaglic.alpha.game.components.ParticleEmmiterComponent;
+import com.mitjanaglic.alpha.game.components.PositionComponent;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,9 +21,12 @@ public class LifeSystem extends EntitySystem {
     @Mapper
     private ComponentMapper<LifeComponent> lifeM;
     private LifeComponent lifeComponent;
+    @Mapper
+    private ComponentMapper<PositionComponent> positionM;
+    private PositionComponent positionComponent;
 
     public LifeSystem() {
-        super(Aspect.getAspectForAll(LifeComponent.class));
+        super(Aspect.getAspectForAll(LifeComponent.class, PositionComponent.class));
     }
 
     public void inflictDamage(Entity entity, float damage) {
@@ -45,12 +50,20 @@ public class LifeSystem extends EntitySystem {
     protected void processEntities(ImmutableBag<Entity> entityImmutableBag) {
         for (int i = 0; i < entityImmutableBag.size(); i++) {
             lifeComponent = lifeM.get(entityImmutableBag.get(i));
+            positionComponent = positionM.get(entityImmutableBag.get(i));
             damageDecay();
             if (lifeComponent.getCurrentLife() <= 0) {
                 lifeComponent.setCurrentLife(0);
+                spawnExplosion();
                 entityImmutableBag.get(i).deleteFromWorld();
             }
         }
+    }
+
+    private void spawnExplosion() {
+        Entity e = world.createEntity();
+        e.addComponent(new ParticleEmmiterComponent("explosion", positionComponent.getPosition().x, positionComponent.getPosition().y));
+        e.addToWorld();
     }
 
     @Override

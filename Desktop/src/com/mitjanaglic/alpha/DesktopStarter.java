@@ -22,6 +22,7 @@ public class DesktopStarter {
         config.height = 720;
         config.fullscreen = false;
         config.resizable = false;
+        config.foregroundFPS = 0;
         config.addIcon("data/png/icon/ic_launcher.png", Files.FileType.Internal);
         new LwjglApplication(new Alpha(), config);
     }

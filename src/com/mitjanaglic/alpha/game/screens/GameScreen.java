@@ -19,6 +19,7 @@ import com.mitjanaglic.alpha.game.systems.ai.ScarabAiSystem;
 import com.mitjanaglic.alpha.game.systems.animations.DiscAnimationSystem;
 import com.mitjanaglic.alpha.game.systems.animations.PlayerAnimationSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.BackgroundRenderingSystem;
+import com.mitjanaglic.alpha.game.systems.renderers.ParticleRenderingSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.SpriteRenderingSystem;
 import com.mitjanaglic.alpha.game.systems.renderers.UiRenderingSystem;
 
@@ -44,6 +45,7 @@ public class GameScreen implements Screen, InputProcessor {
     private LifeSystem lifeSystem;
     private SpawnDespawnSystem spawnDespawnSystem;
     private PostProcessor postProcessor;
+    private ParticleRenderingSystem particleRenderingSystem;
     private static final boolean isDesktop = (Gdx.app.getType() == Application.ApplicationType.Desktop);
 
     private World world;
@@ -94,6 +96,7 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new LevelBoundsSystem(cameraComponent));
         world.setSystem(new MovementSystem());
         spriteRenderingSystem = world.setSystem(new SpriteRenderingSystem(assetManager, cameraComponent), true);
+        particleRenderingSystem = world.setSystem(new ParticleRenderingSystem(cameraComponent), true);
         backgroundRenderingSystem = world.setSystem(new BackgroundRenderingSystem(cameraComponent, level), true);
         uiRenderingSystem = world.setSystem(new UiRenderingSystem(assetManager, cameraComponent), true);
         world.setSystem(new HitboxSystem());
@@ -127,6 +130,7 @@ public class GameScreen implements Screen, InputProcessor {
 
         postProcessor.capture();
         backgroundRenderingSystem.process();
+        particleRenderingSystem.process();
         spriteRenderingSystem.process();
         postProcessor.render();
         uiRenderingSystem.process();
@@ -196,6 +200,7 @@ public class GameScreen implements Screen, InputProcessor {
     @Override
     public void dispose() {
         world.getSystem(SpriteRenderingSystem.class).dispose();
+        particleRenderingSystem.dispose();
         backgroundRenderingSystem.dispose();
         uiRenderingSystem.dispose();
         Gdx.input.setInputProcessor(null);

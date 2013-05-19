@@ -5,6 +5,7 @@ import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.artemis.annotations.Mapper;
 import com.artemis.systems.EntityProcessingSystem;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.mitjanaglic.alpha.game.components.CameraComponent;
@@ -72,5 +73,9 @@ public class CameraSystem extends EntityProcessingSystem {
 
     public float getUpperBound() {
         return cameraComponent.getCameraPosition().y + cameraComponent.getCameraHeight() / 2;
+    }
+
+    public OrthographicCamera getCamera() {
+        return cameraComponent.getCamera();
     }
 }
