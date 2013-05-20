@@ -65,6 +65,7 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
     @Override
     protected void processSystem() {
         spriteBatch.setProjectionMatrix(cameraComponent.getCamera().projection);
+        spriteBatch.setColor(1, 1, 1, 1);
         player = world.getManager(TagManager.class).getEntity(ids.PLAYER);
         if (player != null) {
             playerLife = lifeM.get(player);
