@@ -43,7 +43,7 @@ public class BulletSystem extends EntityProcessingSystem {
     private void handleHits(Entity entity) {
         if (bulletComponent.isHit()) {
             Entity hitmark = world.createEntity();
-            hitmark.addComponent(new PositionComponent(positionComponent.getPosition().cpy()));
+            hitmark.addComponent(new PositionComponent(positionComponent.getPosition().cpy(), 0, 0, false));
             hitmark.addComponent(new HitmarkComponent());
             hitmark.addComponent(new RenderableComponent(bulletComponent.getImpactTextureId(), 0.5f, 0.5f, (float) Math.random() * 360));
             hitmark.addToWorld();

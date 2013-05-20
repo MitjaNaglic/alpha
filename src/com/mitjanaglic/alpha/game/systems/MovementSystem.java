@@ -40,6 +40,7 @@ public class MovementSystem extends EntityProcessingSystem {
 
         updateVelocity();
         updatePosition();
+        updateHitbox();
         setState();
     }
 
@@ -55,6 +56,11 @@ public class MovementSystem extends EntityProcessingSystem {
         positionComponent.getPosition().add(velocityComponent.getCurrentVelocity());
         //forward inertia
         positionComponent.getPosition().add(0, velocityComponent.getForwardInertia() * world.getDelta());
+    }
+
+    private void updateHitbox() {
+        positionComponent.getHitbox().setX(positionComponent.getPosition().x);
+        positionComponent.getHitbox().setY(positionComponent.getPosition().y);
     }
 
     //not used anymore, poziciji se vsako iteracijo doda forwardInertia kot scalar

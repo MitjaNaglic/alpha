@@ -1,6 +1,7 @@
 package com.mitjanaglic.alpha.game.components;
 
 import com.artemis.Component;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 /**
@@ -12,22 +13,41 @@ import com.badlogic.gdx.math.Vector2;
  */
 public class PositionComponent extends Component {
     private Vector2 position;
+    private boolean isCollidable;
 
-    public PositionComponent(Vector2 position) {
+    public PositionComponent(Vector2 position, float width, float height, boolean isCollidable) {
         this.position = position;
-    }
-
-    public PositionComponent(float x, float y) {
-        this.position = new Vector2(x, y);
+        this.hitbox = new Rectangle(position.x, position.y, width, height);
+        this.isCollidable = isCollidable;
     }
 
     public Vector2 getPosition() {
         return position;
     }
 
-    public void setPosition(Vector2 position) {
-        this.position = position;
+    private Rectangle hitbox;
+
+    public PositionComponent(float x, float y, float width, float height, boolean isCollidable) {
+        this.position = new Vector2(x, y);
+        this.hitbox = new Rectangle(x, y, width, height);
+        this.isCollidable = isCollidable;
     }
 
+    public boolean isCollidable() {
+        return isCollidable;
+    }
+
+    public Rectangle getHitbox() {
+        return hitbox;
+    }
+
+    /**
+     * @return sredina hitboxa
+     */
+    public Vector2 getCenter() {
+        float x = getHitbox().x + getHitbox().getWidth() / 2;
+        float y = getHitbox().y + getHitbox().getHeight() / 2;
+        return new Vector2(x, y);
+    }
 
 }

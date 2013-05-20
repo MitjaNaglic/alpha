@@ -25,9 +25,6 @@ public class DiscAiSystem extends EntityProcessingSystem {
     private ComponentMapper<GunComponent> gunM;
     private GunComponent gunComponent;
     @Mapper
-    private ComponentMapper<HitboxComponent> hitboxM;
-    private HitboxComponent hitboxComponent;
-    @Mapper
     private ComponentMapper<PositionComponent> positionM;
     private PositionComponent positionComponent;
     @Mapper
@@ -50,12 +47,11 @@ public class DiscAiSystem extends EntityProcessingSystem {
         positionComponent = positionM.get(entity);
         discAiComponent = discAiM.get(entity);
         velocityComponent = velocityM.get(entity);
-        hitboxComponent = hitboxM.get(entity);
         cameraSystem = world.getSystem(CameraSystem.class);
         player = world.getManager(TagManager.class).getEntity("player");
         if (player != null) {
             move();
-            float bounds = cameraSystem.getUpperBound() - hitboxComponent.getHitbox().getHeight();
+            float bounds = cameraSystem.getUpperBound() - positionComponent.getHitbox().getHeight();
             if (positionComponent.getPosition().y < bounds) {
                 aim(player);
                 gunComponent.setShootRequest(true);
@@ -83,9 +79,9 @@ public class DiscAiSystem extends EntityProcessingSystem {
         Random rng = new Random();
         float screenwidth = cameraSystem.getWidth();
         float screenHeight = cameraSystem.getHeight();
-        float maxX = screenwidth - hitboxComponent.getHitbox().getWidth();
+        float maxX = screenwidth - positionComponent.getHitbox().getWidth();
         float minX = 0;
-        float maxY = cameraSystem.getPosition().y + screenHeight - hitboxComponent.getHitbox().getHeight();
+        float maxY = cameraSystem.getPosition().y + screenHeight - positionComponent.getHitbox().getHeight();
         float minY = cameraSystem.getPosition().y;
         float x = rng.nextInt((int) ((maxX - minX + 1))) + minX;
         float y = rng.nextInt((int) ((maxY - minY + 1))) + minY;
@@ -94,7 +90,7 @@ public class DiscAiSystem extends EntityProcessingSystem {
     }
 
     private void aim(Entity target) {
-        HitboxComponent targetHitboxComponent = hitboxM.get(target);
-        gunComponent.setAimAngle(targetHitboxComponent.getCenter().sub(gunComponent.getGunPosition()).angle() - 90);
+        PositionComponent targetPositionComponent = positionM.get(target);
+        gunComponent.setAimAngle(targetPositionComponent.getCenter().sub(gunComponent.getGunPosition()).angle() - 90);
     }
 }

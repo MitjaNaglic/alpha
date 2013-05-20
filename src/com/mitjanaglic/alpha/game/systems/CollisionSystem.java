@@ -9,8 +9,8 @@ import com.artemis.managers.GroupManager;
 import com.artemis.managers.TagManager;
 import com.artemis.utils.ImmutableBag;
 import com.mitjanaglic.alpha.game.components.BulletComponent;
-import com.mitjanaglic.alpha.game.components.HitboxComponent;
 import com.mitjanaglic.alpha.game.components.LifeComponent;
+import com.mitjanaglic.alpha.game.components.PositionComponent;
 import com.mitjanaglic.alpha.game.constants.ids;
 
 /**
@@ -22,15 +22,15 @@ import com.mitjanaglic.alpha.game.constants.ids;
  */
 public class CollisionSystem extends EntitySystem {
     @Mapper
-    private ComponentMapper<HitboxComponent> hitboxM;
-    @Mapper
     private ComponentMapper<BulletComponent> bulletM;
     @Mapper
     private ComponentMapper<LifeComponent> lifeM;
+    @Mapper
+    private ComponentMapper<PositionComponent> positionM;
 
 
     public CollisionSystem() {
-        super(Aspect.getAspectForAll(HitboxComponent.class));
+        super(Aspect.getAspectForAll(PositionComponent.class));
     }
 
     @Override
@@ -52,10 +52,10 @@ public class CollisionSystem extends EntitySystem {
 
     private void playerObjectColissions(Entity player, ImmutableBag<Entity> enemies) {
         if (player != null && enemies != null) {
-            HitboxComponent playerhitbox = hitboxM.get(player);
+            PositionComponent playerPosition = positionM.get(player);
             for (int i = 0; i < enemies.size(); i++) {
-                HitboxComponent enemyHitbox = hitboxM.get(enemies.get(i));
-                if (playerhitbox.getHitbox().overlaps(enemyHitbox.getHitbox())) {
+                PositionComponent enemyPosition = positionM.get(enemies.get(i));
+                if (playerPosition.getHitbox().overlaps(enemyPosition.getHitbox())) {
                     damageDistribution(player, enemies.get(i), 100);
                     damageDistribution(enemies.get(i), player, 100);
                 }
@@ -67,10 +67,10 @@ public class CollisionSystem extends EntitySystem {
         if (playerBullets != null && enemies != null) {
             for (int i = 0; i < playerBullets.size(); i++) {
                 for (int j = 0; j < enemies.size(); j++) {
-                    HitboxComponent playerBulletHitbox = hitboxM.get(playerBullets.get(i));
-                    HitboxComponent enemyHitbox = hitboxM.get(enemies.get(j));
+                    PositionComponent playerBulletPosition = positionM.get(playerBullets.get(i));
+                    PositionComponent enemyPosition = positionM.get(enemies.get(j));
 
-                    if (playerBulletHitbox.getHitbox().overlaps(enemyHitbox.getHitbox())) {
+                    if (playerBulletPosition.getHitbox().overlaps(enemyPosition.getHitbox())) {
                         handleCollision(enemies.get(j), playerBullets.get(i));
                         handleBulletCollision(playerBullets.get(i));
                     }
@@ -81,11 +81,11 @@ public class CollisionSystem extends EntitySystem {
 
     private void enemyBulletCollsiions(Entity player, ImmutableBag<Entity> enemyBullets) {
         if (player != null && enemyBullets != null) {
-            HitboxComponent playerHitbox = hitboxM.get(player);
+            PositionComponent playerPosition = positionM.get(player);
             for (int i = 0; i < enemyBullets.size(); i++) {
-                HitboxComponent enemyBulletHitbox = hitboxM.get(enemyBullets.get(i));
+                PositionComponent enemyBulletPosition = positionM.get(enemyBullets.get(i));
 
-                if (enemyBulletHitbox.getHitbox().overlaps(playerHitbox.getHitbox())) {
+                if (enemyBulletPosition.getHitbox().overlaps(playerPosition.getHitbox())) {
                     handleCollision(player, enemyBullets.get(i));
                     handleBulletCollision(enemyBullets.get(i));
                 }
@@ -104,9 +104,9 @@ public class CollisionSystem extends EntitySystem {
     }
 
     private void damageDistribution(Entity victim, Entity culprit, float damage) {
-        HitboxComponent victimHitbox = hitboxM.get(victim);
-        HitboxComponent culpritHitbox = hitboxM.get(culprit);
-        float angle = culpritHitbox.getCenter().sub(victimHitbox.getCenter()).angle() - 90;
+        PositionComponent victimPosition = positionM.get(victim);
+        PositionComponent culpritPosition = positionM.get(culprit);
+        float angle = culpritPosition.getCenter().sub(victimPosition.getCenter()).angle() - 90;
         float leftoverDamage = world.getSystem(ShieldSystem.class).hitShields(victim, damage, angle);
         world.getSystem(LifeSystem.class).inflictDamage(victim, leftoverDamage);
     }

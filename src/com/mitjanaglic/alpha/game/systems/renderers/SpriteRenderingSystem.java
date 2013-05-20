@@ -13,7 +13,6 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.game.components.CameraComponent;
-import com.mitjanaglic.alpha.game.components.HitboxComponent;
 import com.mitjanaglic.alpha.game.components.PositionComponent;
 import com.mitjanaglic.alpha.game.components.RenderableComponent;
 import com.mitjanaglic.alpha.game.constants.Assets;
@@ -30,8 +29,6 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
     private ComponentMapper<RenderableComponent> renderableM;
     @Mapper
     private ComponentMapper<PositionComponent> positionM;
-    @Mapper
-    private ComponentMapper<HitboxComponent> hitboxM;
     private RenderableComponent renderableComponent;
     private SpriteBatch batch;
     private CameraComponent cameraComponent;
@@ -99,13 +96,14 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
     }
 
     private void renderHitboxes(Entity entity) {
-        HitboxComponent hitboxComponent = hitboxM.get(entity);
-        if (hitboxComponent != null) {
-            shapeRenderer.rect(hitboxComponent.getHitbox().getX(),
-                    hitboxComponent.getHitbox().getY(),
-                    hitboxComponent.getHitbox().getWidth(),
-                    hitboxComponent.getHitbox().getHeight());
+        positionComponent = positionM.get(entity);
+        if (positionComponent.isCollidable()) {
+            shapeRenderer.rect(positionComponent.getHitbox().getX(),
+                    positionComponent.getHitbox().getY(),
+                    positionComponent.getHitbox().getWidth(),
+                    positionComponent.getHitbox().getHeight());
         }
+
     }
 
     @Override

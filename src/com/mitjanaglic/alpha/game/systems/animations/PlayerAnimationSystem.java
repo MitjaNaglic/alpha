@@ -5,7 +5,6 @@ import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.artemis.annotations.Mapper;
 import com.artemis.systems.EntityProcessingSystem;
-import com.mitjanaglic.alpha.game.components.HitboxComponent;
 import com.mitjanaglic.alpha.game.components.ids.PlayerShipComponent;
 import com.mitjanaglic.alpha.game.components.RenderableComponent;
 import com.mitjanaglic.alpha.game.components.StateComponent;
@@ -27,7 +26,7 @@ public class PlayerAnimationSystem extends EntityProcessingSystem {
     private StateComponent stateComponent;
 
     public PlayerAnimationSystem() {
-        super(Aspect.getAspectForAll(PlayerShipComponent.class, RenderableComponent.class, StateComponent.class, HitboxComponent.class));
+        super(Aspect.getAspectForAll(PlayerShipComponent.class, RenderableComponent.class, StateComponent.class));
     }
 
     @Override

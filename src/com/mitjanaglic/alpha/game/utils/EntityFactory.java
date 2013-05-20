@@ -22,20 +22,18 @@ import com.mitjanaglic.alpha.game.models.SpawnPoint;
 public class EntityFactory {
     public static void createPlayer(World world, float x, float y) {
         Entity e = world.createEntity();
-        PositionComponent positionComponent = new PositionComponent(x, y);
+        PositionComponent positionComponent = new PositionComponent(x, y, 91, 75, true);
         e.addComponent(new PlayerShipComponent());
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         e.addComponent(positionComponent);
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
         e.addComponent(new VelocityComponent(0, 0, 0.2f, 500, forwardInertia));
-        HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 91, 75);
-        e.addComponent(hitboxComponent);
         e.addComponent(new InputComponent());
         e.addComponent(new GunComponent(positionComponent.getPosition(),
                 "laserGreen",
                 "laserGreenShot",
-                hitboxComponent.getHitbox().getWidth() / 2,
-                hitboxComponent.getHitbox().getHeight(),
+                positionComponent.getHitbox().getWidth() / 2,
+                positionComponent.getHitbox().getHeight(),
                 0,
                 1100,
                 ids.PLAYER,
@@ -50,19 +48,17 @@ public class EntityFactory {
 
     public static void createDisc(World world, float x, float y) {
         Entity e = world.createEntity();
-        PositionComponent positionComponent = new PositionComponent(x, y);
+        PositionComponent positionComponent = new PositionComponent(x, y, 91, 91, true);
         e.addComponent(positionComponent);
         e.addComponent(new DiscComponent(250));
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
         e.addComponent(new VelocityComponent(0, 0, 0.2f, 300, forwardInertia));
-        HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 91, 91);
-        e.addComponent(hitboxComponent);
         e.addComponent(new GunComponent(positionComponent.getPosition(),
                 "laserRed",
                 "laserRedShot",
-                hitboxComponent.getHitbox().getWidth() / 2,
-                hitboxComponent.getHitbox().getHeight() / 2,
+                positionComponent.getHitbox().getWidth() / 2,
+                positionComponent.getHitbox().getHeight() / 2,
                 0,
                 800,
                 ids.DISC,
@@ -77,18 +73,16 @@ public class EntityFactory {
 
     public static void createScarab(World world, float x, float y) {
         Entity e = world.createEntity();
-        PositionComponent positionComponent = new PositionComponent(x, y);
+        PositionComponent positionComponent = new PositionComponent(x, y, 98, 50, true);
         e.addComponent(positionComponent);
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
         e.addComponent(new VelocityComponent(0, 0, 0.2f, 80, forwardInertia - 40));
-        HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 98, 50);
-        e.addComponent(hitboxComponent);
         WeaponsArrayComponent weaponsArrayComponent = new WeaponsArrayComponent();
         weaponsArrayComponent.getWeaponsArray().add(new GunComponent(positionComponent.getPosition(),
                 "laserRed",
                 "laserRedShot",
-                hitboxComponent.getHitbox().getWidth() / 4,
+                positionComponent.getHitbox().getWidth() / 4,
                 0,
                 180,
                 400,
@@ -98,7 +92,7 @@ public class EntityFactory {
         weaponsArrayComponent.getWeaponsArray().add(new GunComponent(positionComponent.getPosition(),
                 "laserRed",
                 "laserRedShot",
-                hitboxComponent.getHitbox().getWidth() / 1.50f,
+                positionComponent.getHitbox().getWidth() / 1.50f,
                 0,
                 180,
                 400,
@@ -115,10 +109,9 @@ public class EntityFactory {
 
     public static void createBigMeteor(World world, float x, float y) {
         Entity e = world.createEntity();
-        e.addComponent(new PositionComponent(x, y));
+        e.addComponent(new PositionComponent(x, y, 136, 111, true));
         e.addComponent(new VelocityComponent(0, 0, 0.2f, 0, 0));
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
-        e.addComponent(new HitboxComponent(x, y, 136, 111));
         e.addComponent(new RenderableComponent("meteorBig", 1, 1, 0));
         e.addComponent(new LifeComponent(200));
         world.addEntity(e);
@@ -127,10 +120,9 @@ public class EntityFactory {
 
     public static void createSmallMeteor(World world, float x, float y) {
         Entity e = world.createEntity();
-        e.addComponent(new PositionComponent(x, y));
+        e.addComponent(new PositionComponent(x, y, 44, 42, true));
         e.addComponent(new VelocityComponent(0, 0, 0.2f, 0, 0));
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
-        e.addComponent(new HitboxComponent(x, y, 44, 42));
         e.addComponent(new RenderableComponent("meteorSmall", 1, 1, 0));
         e.addComponent(new LifeComponent(100));
         world.addEntity(e);
@@ -139,18 +131,16 @@ public class EntityFactory {
 
     public static void createMinos(World world, float x, float y) {
         Entity e = world.createEntity();
-        PositionComponent positionComponent = new PositionComponent(x, y);
+        PositionComponent positionComponent = new PositionComponent(x, y, 102, 122, true);
         e.addComponent(positionComponent);
         e.addComponent(new StateComponent(StateComponent.movementState.IDLE));
         float forwardInertia = world.getManager(TagManager.class).getEntity("camera").getComponent(CameraComponent.class).getCameraScrollSpeed();
         e.addComponent(new VelocityComponent(0, 0, 0.05f, 100, forwardInertia - 60));
-        HitboxComponent hitboxComponent = new HitboxComponent(positionComponent.getPosition().x, positionComponent.getPosition().y, 102, 122);
-        e.addComponent(hitboxComponent);
         e.addComponent(new GunComponent(positionComponent.getPosition(),
                 "ballBlue",
                 "blueShot",
-                hitboxComponent.getHitbox().getWidth() / 2,
-                hitboxComponent.getHitbox().getHeight() / 2,
+                positionComponent.getHitbox().getWidth() / 2,
+                positionComponent.getHitbox().getHeight() / 2,
                 0,
                 100,
                 ids.MINOS,
@@ -165,7 +155,7 @@ public class EntityFactory {
 
     public static void createBullet(World world, GunComponent gunComponent) {
         Entity bullet = world.createEntity();
-        bullet.addComponent(new PositionComponent(gunComponent.getGunPosition()));
+        bullet.addComponent(new PositionComponent(gunComponent.getGunPosition(), 9, 9, true));
         VelocityComponent velocityComponent = new VelocityComponent(0, gunComponent.getBulletSpeed(), 1f, gunComponent.getBulletSpeed(), 0);
         velocityComponent.getTargetVelocity().rotate(gunComponent.getAimAngle());
         bullet.addComponent(velocityComponent);
@@ -176,7 +166,6 @@ public class EntityFactory {
                 gunComponent.getBulletSpeed(),
                 gunComponent.getGunDamage()
         ));
-        bullet.addComponent(new HitboxComponent(gunComponent.getOffsetX(), gunComponent.getOffsetY(), 9, 9));
         bullet.addComponent(new RenderableComponent(gunComponent.getBulletTextureName(), 1, 1, gunComponent.getAimAngle()));
         world.addEntity(bullet);
         //ugotovi se taprav id na podlagi guncomponent ownerja
