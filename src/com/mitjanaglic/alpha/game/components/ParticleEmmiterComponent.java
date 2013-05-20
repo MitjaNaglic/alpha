@@ -1,8 +1,9 @@
 package com.mitjanaglic.alpha.game.components;
 
 import com.artemis.Component;
-import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
+import com.mitjanaglic.alpha.game.constants.Assets;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,10 +14,11 @@ import com.badlogic.gdx.graphics.g2d.ParticleEffect;
  */
 public class ParticleEmmiterComponent extends Component {
     private ParticleEffect effect;
+    private AssetManager assetManager;
 
     public ParticleEmmiterComponent(String effectName, float x, float y) {
-        this.effect = new ParticleEffect();
-        effect.load(Gdx.files.internal("data/particles/" + effectName + ".p"), Gdx.files.internal("data/png/"));
+        assetManager = Assets.getAssetManager();
+        this.effect = assetManager.get("data/particles/" + effectName + ".p");
         effect.setPosition(x, y);
         effect.start();
     }

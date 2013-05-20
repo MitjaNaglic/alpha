@@ -5,13 +5,16 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.mitjanaglic.alpha.game.constants.Assets;
 import com.mitjanaglic.alpha.game.screens.GameScreen;
 import com.mitjanaglic.alpha.game.screens.MenuScreen;
 import com.mitjanaglic.alpha.game.screens.OptionsScreen;
 import com.mitjanaglic.alpha.game.screens.PauseScreen;
+import com.mitjanaglic.alpha.game.utils.ParticleEffectLoader;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,7 +35,7 @@ public class Alpha extends Game {
 
     @Override
     public void create() {
-        assetManager = new AssetManager();
+        assetManager = Assets.getAssetManager();
         enqueueAssets();
         assetManager.finishLoading();
         backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("data\\music\\Magellan  - Orbyss.ogg"));
@@ -54,13 +57,16 @@ public class Alpha extends Game {
     }
 
     private void enqueueAssets() {
-        getAssetManager().load("data/png/textures/textures.atlas", TextureAtlas.class);
-        getAssetManager().setLoader(TiledMap.class, new TmxMapLoader(new InternalFileHandleResolver()));
+        assetManager.load("data/png/textures/textures.atlas", TextureAtlas.class);
+        assetManager.setLoader(TiledMap.class, new TmxMapLoader(new InternalFileHandleResolver()));
         TmxMapLoader.Parameters parameters = new TmxMapLoader.Parameters();
         parameters.generateMipMaps = true;
 //        parameters.textureMinFilter= Texture.TextureFilter.MipMapLinearNearest;
 //        parameters.textureMagFilter= Texture.TextureFilter.Linear;
-        getAssetManager().load("data/levels/Level1/Level1.tmx", TiledMap.class, parameters);
+        assetManager.load("data/levels/Level1/Level1.tmx", TiledMap.class, parameters);
+        //custom loader
+        assetManager.setLoader(ParticleEffect.class, new ParticleEffectLoader(new InternalFileHandleResolver()));
+        assetManager.load("data/particles/explosion.p", ParticleEffect.class);
     }
 
     public void setToGameScreen() {
@@ -90,12 +96,8 @@ public class Alpha extends Game {
         pauseScreen.dispose();
         mainMenu.dispose();
         optionsScreen.dispose();
-        getAssetManager().dispose();
+        assetManager.dispose();
 
         backgroundMusic.dispose();
-    }
-
-    public AssetManager getAssetManager() {
-        return assetManager;
     }
 }

@@ -10,7 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/constants/Assets.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/ParticleEffectLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/Alpha.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/Alpha.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/MenuScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/MenuScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/OptionsScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/OptionsScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/ParticleEmmiterComponent.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/ParticleEmmiterComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/ParticleRenderingSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/ParticleRenderingSystem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/PauseScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/PauseScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/SpriteRenderingSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/SpriteRenderingSystem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Alpha.iws" />
@@ -20,12 +31,12 @@
     <file path="/MainActivity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362672791185" ignored="false" />
     <file path="/fragment.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1368990892055" ignored="false" />
     <file path="/DesktopStarter.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1368922236537" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1368993863514" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1368994923712" ignored="false" />
     <file path="/Player.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364257135690" ignored="false" />
     <file path="/Entity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364234628812" ignored="false" />
     <file path="/Space.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364258077559" ignored="false" />
-    <file path="/GameScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1368992148688" ignored="false" />
-    <file path="/Alpha.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1368983916634" ignored="false" />
+    <file path="/GameScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369056698775" ignored="false" />
+    <file path="/Alpha.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369056363925" ignored="false" />
     <file path="/WorldRenderer.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364734609378" ignored="false" />
     <file path="/WorldController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362757853366" ignored="false" />
     <file path="/Alpha.gwt.xml" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363890839433" ignored="false" />
@@ -34,7 +45,7 @@
     <file path="/alpha.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362680029356" ignored="false" />
     <file path="/strings.xml" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362750855385" ignored="false" />
     <file path="/Main.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364173659190" ignored="false" />
-    <file path="/Level.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365699843025" ignored="false" />
+    <file path="/Level.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369056535132" ignored="false" />
     <file path="/PlayerController.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364044093057" ignored="false" />
     <file path="$PROJECT_DIR$/libs/gdx.jar!/com/badlogic/gdx/graphics/Camera.class" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365516054094" ignored="false" />
     <file path="/Bullet.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364236115639" ignored="false" />
@@ -48,8 +59,8 @@
     <file path="/web.xml" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363888648554" ignored="false" />
     <file path="/HitMark.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364239983158" ignored="false" />
     <file path="/Ship.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363959667176" ignored="false" />
-    <file path="/MenuScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365969831434" ignored="false" />
-    <file path="/PauseScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364047004030" ignored="false" />
+    <file path="/MenuScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369056718025" ignored="false" />
+    <file path="/PauseScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369056740401" ignored="false" />
     <file path="/IComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364222250389" ignored="false" />
     <file path="/BoundsComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364222457101" ignored="false" />
     <file path="/HitboxComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364601070207" ignored="false" />
@@ -72,10 +83,10 @@
     <file path="/RenderableComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366627098869" ignored="false" />
     <file path="/CameraComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366971836540" ignored="false" />
     <file path="/CameraSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1368984405141" ignored="false" />
-    <file path="/SpriteRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1368992401616" ignored="false" />
+    <file path="/SpriteRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369056580173" ignored="false" />
     <file path="/EntityFactory.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366473240563" ignored="false" />
     <file path="/BackgroundRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1368991692519" ignored="false" />
-    <file path="/UiRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1368993344730" ignored="false" />
+    <file path="/UiRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369056634381" ignored="false" />
     <file path="/LivesComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364906465438" ignored="false" />
     <file path="/BulletComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365226651365" ignored="false" />
     <file path="/BulletSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366627676408" ignored="false" />
@@ -98,15 +109,17 @@
     <file path="/LifeSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1368986183831" ignored="false" />
     <file path="/SpawnDespawnSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365698438470" ignored="false" />
     <file path="/SpawnPoint.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1365699822827" ignored="false" />
-    <file path="/OptionsScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366324277900" ignored="false" />
+    <file path="/OptionsScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369056406022" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/android/lib/android.jar!/org/jetbrains/android/android.xsd" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366384596380" ignored="false" />
     <file path="/ShieldComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366478591137" ignored="false" />
     <file path="/ShieldSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366627017126" ignored="false" />
     <file path="/ShieldFlareComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366475509987" ignored="false" />
     <file path="/ShieldFlareSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366627763310" ignored="false" />
     <file path="/ParallaxCamera.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1366972409193" ignored="false" />
-    <file path="/ParticleRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1368993909150" ignored="false" />
-    <file path="/ParticleEmmiterComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1368986719554" ignored="false" />
+    <file path="/ParticleRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369055220327" ignored="false" />
+    <file path="/ParticleEmmiterComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369056293273" ignored="false" />
+    <file path="/ParticleEffectLoader.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369055478825" ignored="false" />
+    <file path="/Assets.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369056070306" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,19 +189,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Alpha.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Alpha.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/Alpha.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="92" selection-start="2342" selection-end="2342" vertical-scroll-proportion="0.0">
+            <state line="59" column="20" selection-start="1980" selection-end="1980" vertical-scroll-proportion="0.15870307">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParticleRenderingSystem.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ParticleRenderingSystem.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/ParticleRenderingSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="79" selection-start="1596" selection-end="1596" vertical-scroll-proportion="0.5648464">
+            <state line="49" column="51" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -199,10 +212,17 @@
       <file leaf-file-name="ParticleEmmiterComponent.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/ParticleEmmiterComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="20" column="77" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Assets.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/constants/Assets.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="18" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -210,7 +230,7 @@
       <file leaf-file-name="LifeSystem.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LifeSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="47" selection-start="2317" selection-end="2317" vertical-scroll-proportion="0.0">
+            <state line="67" column="0" selection-start="2317" selection-end="2317" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -219,7 +239,7 @@
       <file leaf-file-name="GameScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="42" selection-start="5925" selection-end="5925" vertical-scroll-proportion="0.0">
+            <state line="48" column="24" selection-start="2207" selection-end="2207" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -248,22 +268,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ShieldFlareSystem.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ShieldSystem.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/CameraComponent.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/ParallaxCamera.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/mitjanaglic/alpha/DesktopStarter.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/GunSystem.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/Alpha.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CameraSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LifeSystem.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/ParticleEmmiterComponent.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/BackgroundRenderingSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/ParticleRenderingSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/PArticleEffectLoader.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/ParticleEffectLoader.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/constants/Assets.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/ParticleEmmiterComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/Alpha.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/OptionsScreen.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/SpriteRenderingSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/ParticleRenderingSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/MenuScreen.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/PauseScreen.java" />
       </list>
     </option>
   </component>
@@ -301,7 +321,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -365,6 +384,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -586,6 +635,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="constants" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -608,78 +687,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Alpha" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Alpha" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Desktop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Alpha" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Alpha" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Desktop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Alpha" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Alpha" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Desktop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="alpha" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="OverrideImplement.combined" value="false" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeWidth1" value="200" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
+    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeWidth1" value="200" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeWidth2" value="206" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
     <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeWidth0" value="211" />
     <property name="GWT.GenerateCompileReport.Module" value="com.mitjanaglic.alpha.Alpha" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="alpha" />
@@ -691,8 +717,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeWidth3" value="885" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="myAVD" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeOrder3" value="3" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -703,17 +729,17 @@
     <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_flatWidth0" value="207" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_flatOrder0" value="0" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="HT043PL09022" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_flatOrder3" value="3" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="HT043PL09022" />
     <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_flatOrder2" value="2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -757,6 +783,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -785,19 +824,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -811,6 +837,10 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GWT.ConfigurationType" factoryName="GWT Configuration">
+      <module name="" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -832,10 +862,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="GWT.ConfigurationType" factoryName="GWT Configuration">
-      <module name="" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1321,7 +1347,11 @@
       <created>1368993242899</created>
       <updated>1368993242899</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="android render fix">
+      <created>1368994929202</created>
+      <updated>1368994929202</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1359,7 +1389,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31848553" sideWeight="0.2075718" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31737193" sideWeight="0.2075718" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1422,7 +1452,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="one spritebatch to rule them all" />
+    <option name="LAST_COMMIT_MESSAGE" value="android render fix" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1436,7 +1466,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="damage" />
     <MESSAGE value="rgba anim" />
     <MESSAGE value="lifebar" />
     <MESSAGE value="damagebar" />
@@ -1461,6 +1490,7 @@
     <MESSAGE value="." />
     <MESSAGE value="particles!" />
     <MESSAGE value="one spritebatch to rule them all" />
+    <MESSAGE value="android render fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1470,69 +1500,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/ShieldFlareSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="38" selection-start="1541" selection-end="1541" vertical-scroll-proportion="0.53583616">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/CameraComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="20" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/GunSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="56" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.39078498">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/Alpha.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="92" selection-start="2342" selection-end="2342" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/LivesComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="214" selection-end="214" vertical-scroll-proportion="0.33097345">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/CameraSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="43" selection-start="2822" selection-end="2822" vertical-scroll-proportion="0.8495575">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/SpawnDespawnSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="13" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/artemis.jar!/com/artemis/EntitySystem.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="22" selection-start="716" selection-end="716" vertical-scroll-proportion="0.34814814">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/mitjanaglic/alpha/DesktopStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="31" selection-start="800" selection-end="800" vertical-scroll-proportion="0.6318584">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/BackgroundRenderingSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="27" selection-start="963" selection-end="963" vertical-scroll-proportion="0.03448276">
@@ -1540,49 +1507,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/SpriteRenderingSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="59" selection-start="2583" selection-end="2583" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="16" selection-start="4826" selection-end="4826" vertical-scroll-proportion="1.1382252">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/LifeSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="47" selection-start="2317" selection-end="2317" vertical-scroll-proportion="0.0">
+        <state line="67" column="0" selection-start="2317" selection-end="2317" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/ParticleEmmiterComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="42" selection-start="5925" selection-end="5925" vertical-scroll-proportion="0.0">
+        <state line="45" column="44" selection-start="2073" selection-end="2073" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/ParticleRenderingSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="79" selection-start="1596" selection-end="1596" vertical-scroll-proportion="0.5648464">
+        <state line="49" column="51" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/ParticleEffectLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="74" selection-start="881" selection-end="881" vertical-scroll-proportion="0.30375427">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/constants/ids.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="182" selection-end="182" vertical-scroll-proportion="0.26109216">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/constants/Assets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="18" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/components/ParticleEmmiterComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="77" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/OptionsScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="16" selection-start="1132" selection-end="1132" vertical-scroll-proportion="-0.028960818">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="52" selection-start="835" selection-end="835" vertical-scroll-proportion="0.37649062">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/SpriteRenderingSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="11" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.33215547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="52" selection-start="1654" selection-end="1654" vertical-scroll-proportion="-2.3884156">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/PauseScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="68" selection-start="2649" selection-end="2649" vertical-scroll-proportion="0.54946995">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/MenuScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="16" selection-start="1123" selection-end="1123" vertical-scroll-proportion="-1.4770017">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="24" selection-start="2207" selection-end="2207" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/Alpha.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="20" selection-start="1980" selection-end="1980" vertical-scroll-proportion="0.15870307">
+          <folding />
         </state>
       </provider>
     </entry>

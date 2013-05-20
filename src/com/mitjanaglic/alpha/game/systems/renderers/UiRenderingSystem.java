@@ -15,6 +15,7 @@ import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.game.components.CameraComponent;
 import com.mitjanaglic.alpha.game.components.LifeComponent;
 import com.mitjanaglic.alpha.game.components.ShieldComponent;
+import com.mitjanaglic.alpha.game.constants.Assets;
 import com.mitjanaglic.alpha.game.constants.ids;
 
 /**
@@ -39,8 +40,8 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
     private BitmapFont font;
     private boolean debugRendering = true;
 
-    public UiRenderingSystem(AssetManager assetManager, CameraComponent cameraComponent, SpriteBatch batch) {
-        this.assetManager = assetManager;
+    public UiRenderingSystem(CameraComponent cameraComponent, SpriteBatch batch) {
+        this.assetManager = Assets.getAssetManager();
         this.cameraComponent = cameraComponent;
         spriteBatch = batch;
     }

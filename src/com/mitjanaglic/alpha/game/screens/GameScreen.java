@@ -5,7 +5,6 @@ import com.artemis.World;
 import com.artemis.managers.GroupManager;
 import com.artemis.managers.TagManager;
 import com.badlogic.gdx.*;
-import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.bitfire.postprocessing.PostProcessor;
 import com.bitfire.postprocessing.effects.Bloom;
@@ -32,10 +31,8 @@ import com.mitjanaglic.alpha.game.systems.renderers.UiRenderingSystem;
  * To change this template use File | Settings | File Templates.
  */
 public class GameScreen implements Screen, InputProcessor {
-    private Alpha alpha;
     private int height, width;
     private boolean isAccelometerAvailable;
-    private AssetManager assetManager;
     private InputComponent inputComponent;
     private CameraComponent cameraComponent;
     private Level level;
@@ -49,18 +46,16 @@ public class GameScreen implements Screen, InputProcessor {
     private ParticleRenderingSystem particleRenderingSystem;
     private SpriteBatch batch = new SpriteBatch();
     private static final boolean isDesktop = (Gdx.app.getType() == Application.ApplicationType.Desktop);
-
+    private Alpha alpha;
     private World world;
 
     public GameScreen(Alpha alpha) {
-        this.alpha = alpha;
-        assetManager = alpha.getAssetManager();
         isAccelometerAvailable = Gdx.input.isPeripheralAvailable(Input.Peripheral.Accelerometer);
-
+        this.alpha = alpha;
         world = new World();
         world.setManager(new GroupManager());
         world.setManager(new TagManager());
-        level = new Level(assetManager);
+        level = new Level();
 
         initCamera();
         setSystems();
@@ -97,10 +92,10 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new PlayerAnimationSystem());
         world.setSystem(new LevelBoundsSystem(cameraComponent));
         world.setSystem(new MovementSystem());
-        spriteRenderingSystem = world.setSystem(new SpriteRenderingSystem(assetManager, cameraComponent, batch), true);
+        spriteRenderingSystem = world.setSystem(new SpriteRenderingSystem(cameraComponent, batch), true);
         particleRenderingSystem = world.setSystem(new ParticleRenderingSystem(cameraComponent, batch), true);
         backgroundRenderingSystem = world.setSystem(new BackgroundRenderingSystem(cameraComponent, level), true);
-        uiRenderingSystem = world.setSystem(new UiRenderingSystem(assetManager, cameraComponent, batch), true);
+        uiRenderingSystem = world.setSystem(new UiRenderingSystem(cameraComponent, batch), true);
         world.setSystem(new HitboxSystem());
         world.setSystem(new GunSystem());
         world.setSystem(new BulletSystem());

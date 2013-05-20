@@ -16,6 +16,7 @@ import com.mitjanaglic.alpha.game.components.CameraComponent;
 import com.mitjanaglic.alpha.game.components.HitboxComponent;
 import com.mitjanaglic.alpha.game.components.PositionComponent;
 import com.mitjanaglic.alpha.game.components.RenderableComponent;
+import com.mitjanaglic.alpha.game.constants.Assets;
 
 /**
  * Created with IntelliJ IDEA.
@@ -41,9 +42,9 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
     private ShapeRenderer shapeRenderer;
     private boolean debugRendering = false;
 
-    public SpriteRenderingSystem(AssetManager assetManager, CameraComponent cameraComponent, SpriteBatch batch) {
+    public SpriteRenderingSystem(CameraComponent cameraComponent, SpriteBatch batch) {
         super(Aspect.getAspectForAll(RenderableComponent.class));
-        this.assetManager = assetManager;
+        this.assetManager = Assets.getAssetManager();
         this.cameraComponent = cameraComponent;
         this.batch = batch;
         camera = cameraComponent.getCamera();

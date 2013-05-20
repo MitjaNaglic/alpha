@@ -44,9 +44,17 @@ public class ParticleRenderingSystem extends EntitySystem {
     protected void processEntities(ImmutableBag<Entity> entityImmutableBag) {
         batch.setProjectionMatrix(camera.combined);
         for (int i = 0; i < entityImmutableBag.size(); i++) {
-            ParticleEmmiterComponent particleEmmiterComponent = emmiterM.get(entityImmutableBag.get(i));
+            Entity e = entityImmutableBag.get(i);
+            ParticleEmmiterComponent particleEmmiterComponent = emmiterM.get(e);
             particleEmmiterComponent.getEffect().draw(batch, world.getDelta());
+            if (particleEmmiterComponent.getEffect().isComplete()) {
+                particleCleanup(e);
+            }
         }
+    }
+
+    private void particleCleanup(Entity e) {
+        e.deleteFromWorld();
     }
 
     @Override

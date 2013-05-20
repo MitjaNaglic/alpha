@@ -15,6 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.mitjanaglic.alpha.game.Alpha;
+import com.mitjanaglic.alpha.game.constants.Assets;
 
 
 /**
@@ -33,7 +34,7 @@ public class OptionsScreen implements Screen {
     public OptionsScreen(Alpha alpha) {
         this.alpha = alpha;
         this.stage = new Stage();
-        this.textureAtlas = alpha.getAssetManager().get("data/png/textures/textures.atlas", TextureAtlas.class);
+        this.textureAtlas = Assets.getAssetManager().get("data/png/textures/textures.atlas", TextureAtlas.class);
         createLayout();
     }
 
