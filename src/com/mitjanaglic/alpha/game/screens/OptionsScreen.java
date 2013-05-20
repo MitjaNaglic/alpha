@@ -80,7 +80,7 @@ public class OptionsScreen implements Screen, IReturnToSender {
             table.add(checkBox1);
 
             CheckBox checkBox2 = new CheckBox("Fullscreen", checkBoxStyle);
-            checkBox2.setChecked(false);
+            checkBox2.setChecked(Gdx.graphics.isFullscreen());
             checkBox2.addListener(new ChangeListener() {
                 @Override
                 public void changed(ChangeEvent changeEvent, Actor actor) {
