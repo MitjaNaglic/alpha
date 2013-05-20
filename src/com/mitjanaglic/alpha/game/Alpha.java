@@ -24,6 +24,7 @@ public class Alpha extends Game {
     private PauseScreen pauseScreen;
     private OptionsScreen optionsScreen;
     private LevelOverScreen levelOverScreen;
+    private GameOverScreen gameOverScreen;
     private AssetManager assetManager;
 
     @Override
@@ -39,6 +40,7 @@ public class Alpha extends Game {
         pauseScreen = new PauseScreen(this);
         optionsScreen = new OptionsScreen(this);
         levelOverScreen = new LevelOverScreen(this);
+        gameOverScreen = new GameOverScreen(this);
         setScreen(mainMenu);
     }
 
@@ -80,6 +82,10 @@ public class Alpha extends Game {
         setScreen(levelOverScreen);
     }
 
+    public void setToGameOverScreen() {
+        setScreen(gameOverScreen);
+    }
+
     @Override
     public void dispose() {
         if (gameScreen != null) gameScreen.dispose();
@@ -87,6 +93,7 @@ public class Alpha extends Game {
         mainMenu.dispose();
         optionsScreen.dispose();
         levelOverScreen.dispose();
+        gameOverScreen.dispose();
         assetManager.dispose();
 
         backgroundMusic.dispose();

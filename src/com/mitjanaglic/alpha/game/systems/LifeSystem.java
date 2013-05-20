@@ -5,10 +5,13 @@ import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.artemis.EntitySystem;
 import com.artemis.annotations.Mapper;
+import com.artemis.managers.TagManager;
 import com.artemis.utils.ImmutableBag;
+import com.mitjanaglic.alpha.game.Alpha;
 import com.mitjanaglic.alpha.game.components.LifeComponent;
 import com.mitjanaglic.alpha.game.components.ParticleEmmiterComponent;
 import com.mitjanaglic.alpha.game.components.PositionComponent;
+import com.mitjanaglic.alpha.game.constants.ids;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,9 +27,16 @@ public class LifeSystem extends EntitySystem {
     @Mapper
     private ComponentMapper<PositionComponent> positionM;
     private PositionComponent positionComponent;
+    private Entity player;
+    private LifeComponent playerLife;
+    private float timeToGameOverScreen = 3f;
+    private float timeToGameOverScreenPassed = 0;
+    private boolean timeToGameOverScreenCountdown = false;
+    private Alpha alpha;
 
-    public LifeSystem() {
+    public LifeSystem(Alpha alpha) {
         super(Aspect.getAspectForAll(LifeComponent.class, PositionComponent.class));
+        this.alpha = alpha;
     }
 
     public void inflictDamage(Entity entity, float damage) {
@@ -57,6 +67,27 @@ public class LifeSystem extends EntitySystem {
                 spawnExplosion();
                 entityImmutableBag.get(i).deleteFromWorld();
             }
+        }
+        checkPlayerHealth();
+        if (timeToGameOverScreenCountdown) gameOverScreenCountdown();
+    }
+
+    private void checkPlayerHealth() {
+        player = world.getManager(TagManager.class).getEntity(ids.PLAYER);
+        if (player != null) {
+            playerLife = lifeM.get(player);
+            if (playerLife.getCurrentLife() <= 0) {
+                timeToGameOverScreenCountdown = true;
+            }
+        }
+    }
+
+    private void gameOverScreenCountdown() {
+        timeToGameOverScreenPassed += world.getDelta();
+        if (timeToGameOverScreenPassed >= timeToGameOverScreen) {
+            alpha.setToGameOverScreen();
+            timeToGameOverScreenPassed = 0;
+            timeToGameOverScreenCountdown = false;
         }
     }
 

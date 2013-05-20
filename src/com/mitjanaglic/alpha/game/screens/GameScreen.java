@@ -104,7 +104,7 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new ScarabAiSystem());
         world.setSystem(new HitmarkSystem());
         spawnDespawnSystem = world.setSystem(new SpawnDespawnSystem(alpha));
-        lifeSystem = world.setSystem(new LifeSystem());
+        lifeSystem = world.setSystem(new LifeSystem(alpha));
         collisionSystem = world.setSystem(new CollisionSystem(), true);
         world.setSystem(new ShieldSystem());
         world.setSystem(new ShieldFlareSystem());
