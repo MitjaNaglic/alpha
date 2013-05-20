@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
@@ -19,23 +20,22 @@ import com.mitjanaglic.alpha.game.constants.Assets;
 /**
  * Created with IntelliJ IDEA.
  * User: mito
- * Date: 22.3.2013
- * Time: 14:50
- * To change this template use File | Settings | File Templates.
+ * Date: 20.5.2013
+ * Time: 19:48
+ * Mitja Naglič  mitja.n1@gmail.com
  */
-public class MenuScreen implements Screen {
+public class LevelOverScreen implements Screen {
     private Stage stage;
     private TextureAtlas textureAtlas;
     private BitmapFont font;
     private Alpha alpha;
     private Screen self = this;
 
-    public MenuScreen(Alpha alpha) {
+    public LevelOverScreen(Alpha alpha) {
         this.alpha = alpha;
         stage = new Stage();
         loadData();
         createLayout();
-
     }
 
     private void createLayout() {
@@ -52,34 +52,20 @@ public class MenuScreen implements Screen {
         textButtonStyle.up = new TextureRegionDrawable(upRegion);
         textButtonStyle.down = new TextureRegionDrawable(downRegion);
         textButtonStyle.font = font;
-        textButtonStyle.fontColor = new Color(0f, 0f, 0f, 1);
+        textButtonStyle.fontColor = new Color(0, 0, 0, 1);
 
+        Label.LabelStyle labelStyle = new Label.LabelStyle();
+        labelStyle.font = font;
 
-        TextButton button1 = new TextButton("New Game", textButtonStyle);
-        button1.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent changeEvent, Actor actor) {
-                alpha.setToGameScreen(self);
-            }
-        });
-        table.row().padBottom(20);
-        table.add(button1);
+        Label levelDoneLabel = new Label("Level completed.", labelStyle);
+        table.row().padBottom(200);
+        table.add(levelDoneLabel);
 
-        TextButton button2 = new TextButton("Options", textButtonStyle);
-        button2.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent changeEvent, Actor actor) {
-                alpha.setToOptionsScreen(self);
-            }
-        });
-        table.row().padBottom(20);
-        table.add(button2);
-
-        TextButton button3 = new TextButton("Exit", textButtonStyle);
+        TextButton button3 = new TextButton("Return to main menu", textButtonStyle);
         button3.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent changeEvent, Actor actor) {
-                Gdx.app.exit();
+                alpha.setToMainMenuScreen(self);
             }
         });
         table.row().padBottom(20);
@@ -90,16 +76,12 @@ public class MenuScreen implements Screen {
         this.textureAtlas = Assets.getAssetManager().get("data/png/textures/textures.atlas", TextureAtlas.class);
     }
 
-
-    //-------------------------------------------SCREEN-----------------------------
     @Override
     public void render(float v) {
         Gdx.gl.glClearColor(0.369f, 0.247f, 0.42f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
-
-        //Table.drawDebug(stage); // This is optional, but enables debug lines for tables.
     }
 
     @Override

@@ -24,6 +24,7 @@ public class Level {
     private TiledMap map;
     private AssetManager assetManager;
     private LinkedList<SpawnPoint> spawnPoints;
+    private int levelEnd;
 
     public Level() {
         this.assetManager = Assets.getAssetManager();
@@ -46,6 +47,12 @@ public class Level {
         this.levelHeight = height * tileheight;
 
         processSpawnPoints();
+        processLevelEnd();
+    }
+
+    private void processLevelEnd() {
+        MapObjects miscObjects = map.getLayers().get("misc").getObjects();
+        this.levelEnd = (Integer) miscObjects.get("levelEnd").getProperties().get("y");
     }
 
     private void processSpawnPoints() {
@@ -74,5 +81,9 @@ public class Level {
 
     public int getLevelHeight() {
         return levelHeight;
+    }
+
+    public int getLevelEnd() {
+        return levelEnd;
     }
 }

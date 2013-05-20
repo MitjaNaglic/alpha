@@ -129,7 +129,7 @@ public class PauseScreen implements Screen {
     @Override
     public void dispose() {
         stage.dispose();
-        textureAtlas.dispose();
+        font.dispose();
         Gdx.input.setInputProcessor(null);
     }
 }

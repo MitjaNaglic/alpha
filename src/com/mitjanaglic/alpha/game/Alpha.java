@@ -6,10 +6,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.mitjanaglic.alpha.game.constants.Assets;
-import com.mitjanaglic.alpha.game.screens.GameScreen;
-import com.mitjanaglic.alpha.game.screens.MenuScreen;
-import com.mitjanaglic.alpha.game.screens.OptionsScreen;
-import com.mitjanaglic.alpha.game.screens.PauseScreen;
+import com.mitjanaglic.alpha.game.screens.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,6 +23,7 @@ public class Alpha extends Game {
     private MenuScreen mainMenu;
     private PauseScreen pauseScreen;
     private OptionsScreen optionsScreen;
+    private LevelOverScreen levelOverScreen;
     private AssetManager assetManager;
 
     @Override
@@ -40,6 +38,7 @@ public class Alpha extends Game {
         mainMenu = new MenuScreen(this);
         pauseScreen = new PauseScreen(this);
         optionsScreen = new OptionsScreen(this);
+        levelOverScreen = new LevelOverScreen(this);
         setScreen(mainMenu);
     }
 
@@ -77,12 +76,17 @@ public class Alpha extends Game {
         setScreen(screen);
     }
 
+    public void setToLevelOverScreen() {
+        setScreen(levelOverScreen);
+    }
+
     @Override
     public void dispose() {
         if (gameScreen != null) gameScreen.dispose();
         pauseScreen.dispose();
         mainMenu.dispose();
         optionsScreen.dispose();
+        levelOverScreen.dispose();
         assetManager.dispose();
 
         backgroundMusic.dispose();

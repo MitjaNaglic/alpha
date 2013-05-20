@@ -60,6 +60,7 @@ public class GameScreen implements Screen, InputProcessor {
         initCamera();
         setSystems();
         spawnDespawnSystem.setSpawnPoints(level.getSpawnPoints());
+        spawnDespawnSystem.setLevelEnd(level.getLevelEnd());
         world.initialize();
 
         if (isDesktop) {
@@ -102,7 +103,7 @@ public class GameScreen implements Screen, InputProcessor {
         world.setSystem(new DiscAiSystem());
         world.setSystem(new ScarabAiSystem());
         world.setSystem(new HitmarkSystem());
-        spawnDespawnSystem = world.setSystem(new SpawnDespawnSystem());
+        spawnDespawnSystem = world.setSystem(new SpawnDespawnSystem(alpha));
         lifeSystem = world.setSystem(new LifeSystem());
         collisionSystem = world.setSystem(new CollisionSystem(), true);
         world.setSystem(new ShieldSystem());

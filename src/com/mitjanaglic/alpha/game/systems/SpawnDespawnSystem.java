@@ -7,6 +7,7 @@ import com.artemis.managers.GroupManager;
 import com.artemis.managers.TagManager;
 import com.artemis.systems.VoidEntitySystem;
 import com.artemis.utils.ImmutableBag;
+import com.mitjanaglic.alpha.game.Alpha;
 import com.mitjanaglic.alpha.game.components.PositionComponent;
 import com.mitjanaglic.alpha.game.constants.ids;
 import com.mitjanaglic.alpha.game.models.SpawnPoint;
@@ -26,8 +27,13 @@ public class SpawnDespawnSystem extends VoidEntitySystem {
     private ComponentMapper<PositionComponent> positionM;
     private LinkedList<SpawnPoint> spawnPoints;
     private CameraSystem cameraSystem;
+    private int levelEnd;
+    private Entity player;
+    private Alpha alpha;
+    private PositionComponent playerPosition;
 
-    public SpawnDespawnSystem() {
+    public SpawnDespawnSystem(Alpha alpha) {
+        this.alpha = alpha;
     }
 
     @Override
@@ -39,9 +45,11 @@ public class SpawnDespawnSystem extends VoidEntitySystem {
     @Override
     protected void processSystem() {
         checkSpawns();
-        Entity player = world.getManager(TagManager.class).getEntity(ids.PLAYER);
+        player = world.getManager(TagManager.class).getEntity(ids.PLAYER);
         if (player != null) {
-            checkDespawns(player);
+            playerPosition = positionM.get(player);
+            checkLevelEnd();
+            checkDespawns();
         }
     }
 
@@ -58,8 +66,7 @@ public class SpawnDespawnSystem extends VoidEntitySystem {
         }
     }
 
-    private void checkDespawns(Entity entity) {
-        PositionComponent playerPosition = positionM.get(entity);
+    private void checkDespawns() {
         ImmutableBag<Entity> entities = world.getManager(GroupManager.class).getEntities(ids.ENEMY);
         for (int i = 0; i < entities.size(); i++) {
             Entity enemy = entities.get(i);
@@ -70,11 +77,25 @@ public class SpawnDespawnSystem extends VoidEntitySystem {
         }
     }
 
+    private void checkLevelEnd() {
+        if (playerPosition.getPosition().y >= levelEnd) {
+            alpha.setToLevelOverScreen();
+        }
+    }
+
     public LinkedList<SpawnPoint> getSpawnPoints() {
         return spawnPoints;
     }
 
     public void setSpawnPoints(LinkedList<SpawnPoint> spawnPoints) {
         this.spawnPoints = spawnPoints;
+    }
+
+    public int getLevelEnd() {
+        return levelEnd;
+    }
+
+    public void setLevelEnd(int levelEnd) {
+        this.levelEnd = levelEnd;
     }
 }
