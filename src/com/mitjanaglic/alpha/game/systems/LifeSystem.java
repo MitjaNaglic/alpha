@@ -62,7 +62,7 @@ public class LifeSystem extends EntitySystem {
 
     private void spawnExplosion() {
         Entity e = world.createEntity();
-        e.addComponent(new ParticleEmmiterComponent("explosion", positionComponent.getPosition().x, positionComponent.getPosition().y));
+        e.addComponent(new ParticleEmmiterComponent("explosion", positionComponent.getCenter().x, positionComponent.getCenter().y));
         e.addToWorld();
     }
 
