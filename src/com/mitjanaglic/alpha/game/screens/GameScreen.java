@@ -187,7 +187,7 @@ public class GameScreen implements Screen, InputProcessor {
 
     @Override
     public void pause() {
-        alpha.setToPauseScreen();
+        alpha.setToPauseScreen(this);
     }
 
     @Override

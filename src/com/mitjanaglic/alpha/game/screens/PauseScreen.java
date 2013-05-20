@@ -28,6 +28,8 @@ public class PauseScreen implements Screen {
     private TextureAtlas textureAtlas;
     private BitmapFont font;
     private Alpha alpha;
+    private Screen sender;
+    private Screen self = this;
 
     public PauseScreen(Alpha alpha) {
         this.alpha = alpha;
@@ -58,17 +60,27 @@ public class PauseScreen implements Screen {
         button1.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent changeEvent, Actor actor) {
-                alpha.setToGameScreen();
+                alpha.setToGameScreen(self);
             }
         });
         table.row().padBottom(20);
         table.add(button1);
 
+        TextButton button2 = new TextButton("Options", textButtonStyle);
+        button2.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent changeEvent, Actor actor) {
+                alpha.setToOptionsScreen(self);
+            }
+        });
+        table.row().padBottom(20);
+        table.add(button2);
+
         TextButton button3 = new TextButton("Exit to main menu", textButtonStyle);
         button3.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent changeEvent, Actor actor) {
-                alpha.setToMainMenuScreen();
+                alpha.setToMainMenuScreen(self);
             }
         });
         table.row().padBottom(20);

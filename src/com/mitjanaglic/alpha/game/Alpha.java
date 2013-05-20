@@ -2,19 +2,14 @@ package com.mitjanaglic.alpha.game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.graphics.g2d.ParticleEffect;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.mitjanaglic.alpha.game.constants.Assets;
 import com.mitjanaglic.alpha.game.screens.GameScreen;
 import com.mitjanaglic.alpha.game.screens.MenuScreen;
 import com.mitjanaglic.alpha.game.screens.OptionsScreen;
 import com.mitjanaglic.alpha.game.screens.PauseScreen;
-import com.mitjanaglic.alpha.game.utils.ParticleEffectLoader;
 
 /**
  * Created with IntelliJ IDEA.
@@ -36,7 +31,7 @@ public class Alpha extends Game {
     @Override
     public void create() {
         assetManager = Assets.getAssetManager();
-        enqueueAssets();
+        Assets.Load();
         assetManager.finishLoading();
         backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("data\\music\\Magellan  - Orbyss.ogg"));
         backgroundMusic.setLooping(true);
@@ -56,25 +51,12 @@ public class Alpha extends Game {
         return backgroundMusic.getVolume();
     }
 
-    private void enqueueAssets() {
-        assetManager.load("data/png/textures/textures.atlas", TextureAtlas.class);
-        assetManager.setLoader(TiledMap.class, new TmxMapLoader(new InternalFileHandleResolver()));
-        TmxMapLoader.Parameters parameters = new TmxMapLoader.Parameters();
-        parameters.generateMipMaps = true;
-//        parameters.textureMinFilter= Texture.TextureFilter.MipMapLinearNearest;
-//        parameters.textureMagFilter= Texture.TextureFilter.Linear;
-        assetManager.load("data/levels/Level1/Level1.tmx", TiledMap.class, parameters);
-        //custom loader
-        assetManager.setLoader(ParticleEffect.class, new ParticleEffectLoader(new InternalFileHandleResolver()));
-        assetManager.load("data/particles/explosion.p", ParticleEffect.class);
-    }
-
-    public void setToGameScreen() {
+    public void setToGameScreen(Screen sender) {
         if (gameScreen == null) gameScreen = new GameScreen(this);
         setScreen(gameScreen);
     }
 
-    public void setToMainMenuScreen() {
+    public void setToMainMenuScreen(Screen sender) {
         if (gameScreen != null) {
             gameScreen.dispose();
             gameScreen = null;
@@ -82,12 +64,17 @@ public class Alpha extends Game {
         setScreen(mainMenu);
     }
 
-    public void setToOptionsScreen() {
+    public void setToOptionsScreen(Screen sender) {
+        optionsScreen.setSender(sender);
         setScreen(optionsScreen);
     }
 
-    public void setToPauseScreen() {
+    public void setToPauseScreen(Screen sender) {
         setScreen(pauseScreen);
+    }
+
+    public void setToScreen(Screen screen) {
+        setScreen(screen);
     }
 
     @Override

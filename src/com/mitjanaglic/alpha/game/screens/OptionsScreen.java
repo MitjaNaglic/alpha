@@ -16,6 +16,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.mitjanaglic.alpha.game.Alpha;
 import com.mitjanaglic.alpha.game.constants.Assets;
+import com.mitjanaglic.alpha.game.utils.IReturnToSender;
 
 
 /**
@@ -25,11 +26,12 @@ import com.mitjanaglic.alpha.game.constants.Assets;
  * Time: 18:34
  * Mitja Naglič  mitja.n1@gmail.com
  */
-public class OptionsScreen implements Screen {
+public class OptionsScreen implements Screen, IReturnToSender {
     private Stage stage;
     private TextureAtlas textureAtlas;
     private BitmapFont font;
     private Alpha alpha;
+    private Screen sender;
 
     public OptionsScreen(Alpha alpha) {
         this.alpha = alpha;
@@ -125,7 +127,7 @@ public class OptionsScreen implements Screen {
         button3.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent changeEvent, Actor actor) {
-                alpha.setToMainMenuScreen();
+                alpha.setToScreen(sender);
             }
         });
         table.row().padBottom(20);
@@ -174,5 +176,10 @@ public class OptionsScreen implements Screen {
         Gdx.input.setInputProcessor(null);
         font.dispose();
         stage.dispose();
+    }
+
+    @Override
+    public void setSender(Screen screen) {
+        sender = screen;
     }
 }

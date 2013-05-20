@@ -28,6 +28,7 @@ public class MenuScreen implements Screen {
     private TextureAtlas textureAtlas;
     private BitmapFont font;
     private Alpha alpha;
+    private Screen self = this;
 
     public MenuScreen(Alpha alpha) {
         this.alpha = alpha;
@@ -58,7 +59,7 @@ public class MenuScreen implements Screen {
         button1.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent changeEvent, Actor actor) {
-                alpha.setToGameScreen();
+                alpha.setToGameScreen(self);
             }
         });
         table.row().padBottom(20);
@@ -68,7 +69,7 @@ public class MenuScreen implements Screen {
         button2.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent changeEvent, Actor actor) {
-                alpha.setToOptionsScreen();
+                alpha.setToOptionsScreen(self);
             }
         });
         table.row().padBottom(20);
