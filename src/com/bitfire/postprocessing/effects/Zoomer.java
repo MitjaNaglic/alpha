@@ -16,7 +16,6 @@
 
 package com.bitfire.postprocessing.effects;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.glutils.FrameBuffer;
 import com.badlogic.gdx.math.Vector2;
 import com.bitfire.postprocessing.PostProcessorEffect;
@@ -36,18 +35,18 @@ public final class Zoomer extends PostProcessorEffect {
     /**
      * Creating a Zoomer specifying the radial blur quality will enable radial blur
      */
-    public Zoomer(RadialBlur.Quality quality) {
-        setup(new RadialBlur(quality));
+    public Zoomer(int viewportWidth, int viewportHeight, RadialBlur.Quality quality) {
+        setup(viewportWidth, viewportHeight, new RadialBlur(quality));
     }
 
     /**
      * Creating a Zoomer without any parameter will use plain simple zooming
      */
-    public Zoomer() {
-        setup(null);
+    public Zoomer(int viewportWidth, int viewportHeight) {
+        setup(viewportWidth, viewportHeight, null);
     }
 
-    private void setup(RadialBlur radialBlurFilter) {
+    private void setup(int viewportWidth, int viewportHeight, RadialBlur radialBlurFilter) {
         radialBlur = radialBlurFilter;
         if (radialBlur != null) {
             doRadial = true;
@@ -57,8 +56,8 @@ public final class Zoomer extends PostProcessorEffect {
             zoom = new Zoom();
         }
 
-        oneOnW = 1f / (float) Gdx.graphics.getWidth();
-        oneOnH = 1f / (float) Gdx.graphics.getHeight();
+        oneOnW = 1f / (float) viewportWidth;
+        oneOnH = 1f / (float) viewportHeight;
     }
 
     /**
@@ -140,6 +139,7 @@ public final class Zoomer extends PostProcessorEffect {
 
     @Override
     public void render(FrameBuffer src, FrameBuffer dest) {
+        restoreViewport(dest);
         if (doRadial) {
             radialBlur.setInput(src).setOutput(dest).render();
         } else {
