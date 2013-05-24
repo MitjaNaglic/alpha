@@ -94,7 +94,7 @@ public class Alpha extends Game {
         optionsScreen.dispose();
         levelOverScreen.dispose();
         gameOverScreen.dispose();
-        assetManager.dispose();
+        Assets.dispose();
 
         backgroundMusic.dispose();
     }

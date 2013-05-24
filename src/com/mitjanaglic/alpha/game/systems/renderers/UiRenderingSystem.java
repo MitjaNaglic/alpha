@@ -49,7 +49,7 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
     @Override
     protected void initialize() {
         textureAtlas = assetManager.get("data/png/textures/textures.atlas", TextureAtlas.class);
-        font = new BitmapFont();
+        font = Assets.getDebugFont();
     }
 
     @Override

@@ -34,7 +34,7 @@ public class PauseScreen implements Screen {
     public PauseScreen(Alpha alpha) {
         this.alpha = alpha;
         stage = new Stage();
-        font = new BitmapFont();
+        font = Assets.getMenuFont();
         loadData();
         createLayout();
     }
@@ -47,7 +47,6 @@ public class PauseScreen implements Screen {
 
         TextureRegion upRegion = textureAtlas.findRegion("ui/buttonDefault");
         TextureRegion downRegion = textureAtlas.findRegion("ui/buttonSelected");
-        font = new BitmapFont();
 
         TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
         textButtonStyle.up = new TextureRegionDrawable(upRegion);
@@ -129,7 +128,6 @@ public class PauseScreen implements Screen {
     @Override
     public void dispose() {
         stage.dispose();
-        font.dispose();
         Gdx.input.setInputProcessor(null);
     }
 }

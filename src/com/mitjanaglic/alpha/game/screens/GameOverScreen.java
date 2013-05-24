@@ -46,7 +46,7 @@ public class GameOverScreen implements Screen {
 
         TextureRegion upRegion = textureAtlas.findRegion("ui/buttonDefault");
         TextureRegion downRegion = textureAtlas.findRegion("ui/buttonSelected");
-        font = new BitmapFont();
+        font = Assets.getMenuFont();
 
         TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
         textButtonStyle.up = new TextureRegionDrawable(upRegion);
@@ -113,6 +113,5 @@ public class GameOverScreen implements Screen {
     public void dispose() {
         Gdx.input.setInputProcessor(null);
         stage.dispose();
-        font.dispose();
     }
 }
