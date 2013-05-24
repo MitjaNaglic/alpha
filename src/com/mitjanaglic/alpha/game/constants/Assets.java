@@ -46,8 +46,8 @@ public class Assets {
     private static void loadFonts() {
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("data/font/NEUROPOL.ttf"));
         menuFont = generator.generateFont(Gdx.graphics.getHeight() / 25);
-        titleFont = generator.generateFont(Gdx.graphics.getHeight() / 15);
-        debugFont = generator.generateFont(Gdx.graphics.getHeight() / 40);
+        titleFont = generator.generateFont(Gdx.graphics.getHeight() / 10);
+        debugFont = generator.generateFont(Gdx.graphics.getHeight() / 30);
         generator.dispose();
     }
 

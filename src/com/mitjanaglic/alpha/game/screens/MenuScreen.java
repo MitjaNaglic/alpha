@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
@@ -47,6 +48,14 @@ public class MenuScreen implements Screen {
         TextureRegion upRegion = textureAtlas.findRegion("ui/buttonDefault");
         TextureRegion downRegion = textureAtlas.findRegion("ui/buttonSelected");
         font = Assets.getMenuFont();
+
+        Label.LabelStyle labelStyle = new Label.LabelStyle();
+        labelStyle.font = Assets.getTitleFont();
+
+        Label titleLabel = new Label("A L P H A", labelStyle);
+        titleLabel.setColor(1, 0.8f, 0, 1);
+        table.row().padBottom(150);
+        table.add(titleLabel);
 
         TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
         textButtonStyle.up = new TextureRegionDrawable(upRegion);

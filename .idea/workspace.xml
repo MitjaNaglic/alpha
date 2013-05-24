@@ -10,20 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/libs/gdx-backend-android-sources.jar" afterPath="$PROJECT_DIR$/Android/libs/gdx-backend-android-sources.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/libs/gdx-backend-android.jar" afterPath="$PROJECT_DIR$/Android/libs/gdx-backend-android.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/libs/gdx-backend-lwjgl.jar" afterPath="$PROJECT_DIR$/Desktop/libs/gdx-backend-lwjgl.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/libs/gdx-natives.jar" afterPath="$PROJECT_DIR$/Desktop/libs/gdx-natives.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/gdx.jar" afterPath="$PROJECT_DIR$/libs/gdx.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/Alpha.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/Alpha.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/constants/Assets.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/constants/Assets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Desktop_libs.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Desktop_libs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameOverScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameOverScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/LevelOverScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/LevelOverScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/MenuScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/MenuScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/OptionsScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/OptionsScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/PauseScreen.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/PauseScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Alpha.iws" />
@@ -33,7 +21,7 @@
     <file path="/MainActivity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1362672791185" ignored="false" />
     <file path="/fragment.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1368990892055" ignored="false" />
     <file path="/DesktopStarter.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369059324388" ignored="false" />
-    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369147852348" ignored="false" />
+    <file path="/Dummy.txt" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369408297861" ignored="false" />
     <file path="/Player.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364257135690" ignored="false" />
     <file path="/Entity.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364234628812" ignored="false" />
     <file path="/Space.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364258077559" ignored="false" />
@@ -60,7 +48,7 @@
     <file path="/web.xml" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363888648554" ignored="false" />
     <file path="/HitMark.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364239983158" ignored="false" />
     <file path="/Ship.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1363959667176" ignored="false" />
-    <file path="/MenuScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369407124203" ignored="false" />
+    <file path="/MenuScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369414245076" ignored="false" />
     <file path="/PauseScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369407501015" ignored="false" />
     <file path="/IComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364222250389" ignored="false" />
     <file path="/BoundsComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1364222457101" ignored="false" />
@@ -119,7 +107,7 @@
     <file path="/ParticleRenderingSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369055220327" ignored="false" />
     <file path="/ParticleEmmiterComponent.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369056293273" ignored="false" />
     <file path="/ParticleEffectLoader.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369055478825" ignored="false" />
-    <file path="/Assets.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369408058977" ignored="false" />
+    <file path="/Assets.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369413892137" ignored="false" />
     <file path="/IReturnToSender.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369058294576" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/HitboxSystem.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369060595431" ignored="false" />
     <file path="/LevelOverScreen.java" changelist="0f366c3d-74d9-4810-a86b-9c02f9342bf4" time="1369407534854" ignored="false" />
@@ -204,6 +192,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="MenuScreen.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/MenuScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="46" selection-start="1822" selection-end="1822" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="GameScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameScreen.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -234,7 +231,7 @@
       <file leaf-file-name="Assets.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/constants/Assets.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="70" selection-start="2185" selection-end="2185" vertical-scroll-proportion="0.30375427">
+            <state line="49" column="72" selection-start="2192" selection-end="2192" vertical-scroll-proportion="0.30375427">
               <folding />
             </state>
           </provider>
@@ -244,6 +241,15 @@
         <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="51" column="36" selection-start="1921" selection-end="1921" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LevelOverScreen.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/LevelOverScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="61" column="59" selection-start="1972" selection-end="2203" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -284,9 +290,9 @@
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/GameOverScreen.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/LevelOverScreen.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/OptionsScreen.java" />
-        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/MenuScreen.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/PauseScreen.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" />
+        <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/MenuScreen.java" />
         <option value="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/constants/Assets.java" />
       </list>
     </option>
@@ -842,7 +848,7 @@
       <recent name="G:\development\Alpha" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Application.Android">
+  <component name="RunManager" selected="Application.Alpha">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -1479,7 +1485,11 @@
       <created>1369147877736</created>
       <updated>1369147877736</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="font">
+      <created>1369408308810</created>
+      <updated>1369408308810</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1580,7 +1590,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="font" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1594,7 +1604,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="velocity vector normalization, lower bounds fix" />
     <MESSAGE value="despawns" />
     <MESSAGE value="lifebar tweak" />
     <MESSAGE value="spawning semidone&#10;" />
@@ -1619,6 +1628,7 @@
     <MESSAGE value="end level screen" />
     <MESSAGE value="game over screen" />
     <MESSAGE value="." />
+    <MESSAGE value="font" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1691,23 +1701,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/MenuScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="24" selection-start="4266" selection-end="4266" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/PauseScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="80" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.030088495">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/LevelOverScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="24" selection-start="3676" selection-end="3676" vertical-scroll-proportion="0.7389079">
           <folding />
         </state>
       </provider>
@@ -1733,9 +1729,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/LevelOverScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="59" selection-start="1972" selection-end="2203" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/screens/MenuScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="46" selection-start="1822" selection-end="1822" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/constants/Assets.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="70" selection-start="2185" selection-end="2185" vertical-scroll-proportion="0.30375427">
+        <state line="49" column="72" selection-start="2192" selection-end="2192" vertical-scroll-proportion="0.30375427">
           <folding />
         </state>
       </provider>
