@@ -145,6 +145,8 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
                     cameraComponent.getCameraHeight() / 2);
             font.draw(spriteBatch, "Current entities: " + world.getEntityManager().getActiveEntityCount(), 0 - cameraComponent.getCameraWidth() / 2,
                     cameraComponent.getCameraHeight() / 2 - 20);
+            font.draw(spriteBatch, "Java heap: " + Gdx.app.getJavaHeap() / 1048576, 0 - cameraComponent.getCameraWidth() / 2,
+                    cameraComponent.getCameraHeight() / 2 - 40);
         }
     }
 
