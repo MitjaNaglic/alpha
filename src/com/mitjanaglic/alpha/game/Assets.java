@@ -1,8 +1,9 @@
-package com.mitjanaglic.alpha.game.constants;
+package com.mitjanaglic.alpha.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -33,14 +34,30 @@ public class Assets {
         assetManager.setLoader(TiledMap.class, new TmxMapLoader(new InternalFileHandleResolver()));
         TmxMapLoader.Parameters parameters = new TmxMapLoader.Parameters();
         parameters.generateMipMaps = true;
-//        parameters.textureMinFilter= Texture.TextureFilter.MipMapLinearNearest;
-//        parameters.textureMagFilter= Texture.TextureFilter.Linear;
+        parameters.textureMinFilter = Texture.TextureFilter.MipMapLinearNearest;
+        parameters.textureMagFilter = Texture.TextureFilter.Linear;
         assetManager.load("data/levels/Level1/Level1.tmx", TiledMap.class, parameters);
         //custom loader
         assetManager.setLoader(ParticleEffect.class, new ParticleEffectLoader(new InternalFileHandleResolver()));
         assetManager.load("data/particles/explosion.p", ParticleEffect.class);
 
         loadFonts();
+        assetManager.finishLoading();
+
+//        TiledMap levelMap=assetManager.get("data/levels/Level1/Level1.tmx");
+//        //TiledMap levelMap=new TmxMapLoader().load("data/levels/Level1/Level1.tmx");
+//        TiledMapTileLayer l= (TiledMapTileLayer) levelMap.getLayers().get(0);
+//        System.out.println(l.getName());
+//        if (l.getCell(2,2)==null) System.out.println("null cell");
+//        System.out.println(l.getCell(0, 0).toString());
+//        System.out.println(l.getCell(0, 0).getTile().getId());
+//        System.out.println(l.getCell(0, 0).getTile().toString());
+//
+//        TiledMapTileLayer l1= (TiledMapTileLayer) levelMap.getLayers().get(1);
+//        System.out.println(l1.getName());
+//        if (l1.getCell(2,2)==null) System.out.println("null cell");
+//        System.out.println(l1.getCell(2,2).toString());
+//        System.out.println(l1.getCell(2, 2).getTile().getId());
     }
 
     private static void loadFonts() {

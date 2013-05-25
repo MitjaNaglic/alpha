@@ -15,7 +15,7 @@ import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.game.components.CameraComponent;
 import com.mitjanaglic.alpha.game.components.LifeComponent;
 import com.mitjanaglic.alpha.game.components.ShieldComponent;
-import com.mitjanaglic.alpha.game.constants.Assets;
+import com.mitjanaglic.alpha.game.Assets;
 import com.mitjanaglic.alpha.game.constants.ids;
 
 /**
@@ -150,6 +150,5 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
 
     @Override
     public void dispose() {
-        font.dispose();
     }
 }

@@ -15,7 +15,7 @@ import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.game.components.CameraComponent;
 import com.mitjanaglic.alpha.game.components.PositionComponent;
 import com.mitjanaglic.alpha.game.components.RenderableComponent;
-import com.mitjanaglic.alpha.game.constants.Assets;
+import com.mitjanaglic.alpha.game.Assets;
 
 /**
  * Created with IntelliJ IDEA.

@@ -3,7 +3,7 @@ package com.mitjanaglic.alpha.game.components;
 import com.artemis.Component;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
-import com.mitjanaglic.alpha.game.constants.Assets;
+import com.mitjanaglic.alpha.game.Assets;
 
 /**
  * Created with IntelliJ IDEA.

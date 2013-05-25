@@ -6,7 +6,7 @@ import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
-import com.mitjanaglic.alpha.game.constants.Assets;
+import com.mitjanaglic.alpha.game.Assets;
 
 import java.util.Collections;
 import java.util.LinkedList;

@@ -14,7 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.mitjanaglic.alpha.game.Alpha;
-import com.mitjanaglic.alpha.game.constants.Assets;
+import com.mitjanaglic.alpha.game.Assets;
 
 /**
  * Created with IntelliJ IDEA.

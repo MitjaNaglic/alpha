@@ -21,6 +21,7 @@ public class BackgroundRenderingSystem extends VoidEntitySystem implements Dispo
     private TiledMap levelMap;
     private OrthogonalTiledMapRenderer mapRenderer;
     private Level level;
+    private int[] backgroundLayers = {0, 1};
 
     public BackgroundRenderingSystem(CameraComponent cameraComponent, Level level) {
         this.cameraComponent = cameraComponent;
