@@ -31,20 +31,24 @@ public class Assets {
 
     public static void Load() {
         assetManager.load("data/png/textures/textures.atlas", TextureAtlas.class);
-        assetManager.setLoader(TiledMap.class, new TmxMapLoader(new InternalFileHandleResolver()));
-        TmxMapLoader.Parameters parameters = new TmxMapLoader.Parameters();
-        parameters.generateMipMaps = true;
-        parameters.textureMinFilter = Texture.TextureFilter.MipMapLinearNearest;
-        parameters.textureMagFilter = Texture.TextureFilter.Linear;
-        assetManager.load("data/levels/Level1/Level1.tmx", TiledMap.class, parameters);
+
         //custom loader
         assetManager.setLoader(ParticleEffect.class, new ParticleEffectLoader(new InternalFileHandleResolver()));
         assetManager.load("data/particles/explosion.p", ParticleEffect.class);
 
         loadFonts();
         assetManager.finishLoading();
+    }
 
-//        TiledMap levelMap=assetManager.get("data/levels/Level1/Level1.tmx");
+    public static void loadLevel(int level) {
+        assetManager.setLoader(TiledMap.class, new TmxMapLoader(new InternalFileHandleResolver()));
+        TmxMapLoader.Parameters parameters = new TmxMapLoader.Parameters();
+        parameters.generateMipMaps = true;
+        parameters.textureMinFilter = Texture.TextureFilter.MipMapLinearNearest;
+        parameters.textureMagFilter = Texture.TextureFilter.Linear;
+        assetManager.load("data/levels/Level" + level + "/Level" + level + ".tmx", TiledMap.class, parameters);
+
+        //        TiledMap levelMap=assetManager.get("data/levels/Level1/Level1.tmx");
 //        //TiledMap levelMap=new TmxMapLoader().load("data/levels/Level1/Level1.tmx");
 //        TiledMapTileLayer l= (TiledMapTileLayer) levelMap.getLayers().get(0);
 //        System.out.println(l.getName());

@@ -25,15 +25,20 @@ public class Level {
     private AssetManager assetManager;
     private LinkedList<SpawnPoint> spawnPoints;
     private int levelEnd;
+    private int currentLevelNum;
 
     public Level() {
         this.assetManager = Assets.getAssetManager();
         this.spawnPoints = new LinkedList<SpawnPoint>();
-        loadLevel();
     }
 
-    private void loadLevel() {
-        this.map = assetManager.get("data/levels/Level1/Level1.tmx", TiledMap.class);
+    public void loadLevel(int level) {
+        if (map != null)
+            assetManager.unload("data/levels/Level" + currentLevelNum + "/Level" + currentLevelNum + ".tmx");
+        currentLevelNum = level;
+        Assets.loadLevel(level);
+        assetManager.finishLoading();
+        this.map = assetManager.get("data/levels/Level" + level + "/Level" + level + ".tmx", TiledMap.class);
         TiledMapTile tile = this.map.getTileSets().getTile(1);
         if (tile != null) {
             tile.getTextureRegion().getTexture().setFilter(Texture.TextureFilter.MipMapLinearNearest, Texture.TextureFilter.Nearest);

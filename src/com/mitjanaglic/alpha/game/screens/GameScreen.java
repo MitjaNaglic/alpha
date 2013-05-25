@@ -56,6 +56,7 @@ public class GameScreen implements Screen, InputProcessor {
         world.setManager(new GroupManager());
         world.setManager(new TagManager());
         level = new Level();
+        level.loadLevel(1);
 
         initCamera();
         setSystems();
@@ -177,7 +178,6 @@ public class GameScreen implements Screen, InputProcessor {
     public void show() {
         Gdx.input.setInputProcessor(this);
         Gdx.input.setCatchBackKey(true);
-
     }
 
     @Override
