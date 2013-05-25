@@ -18,4 +18,8 @@ public class ids {
     public static final String HITMARK = "hitmark";
     public static final String METEOR = "meteor";
     public static final String METEOR_SMALL = "meteorSmall";
+
+    public static String createLevelId(int levelNum) {
+        return "data/levels/Level" + levelNum + "/Level" + levelNum + ".tmx";
+    }
 }

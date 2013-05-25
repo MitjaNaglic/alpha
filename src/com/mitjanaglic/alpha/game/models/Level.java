@@ -7,6 +7,7 @@ import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.mitjanaglic.alpha.game.Assets;
+import com.mitjanaglic.alpha.game.constants.ids;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -34,11 +35,11 @@ public class Level {
 
     public void loadLevel(int level) {
         if (map != null)
-            assetManager.unload("data/levels/Level" + currentLevelNum + "/Level" + currentLevelNum + ".tmx");
+            assetManager.unload(ids.createLevelId(currentLevelNum));
         currentLevelNum = level;
         Assets.loadLevel(level);
         assetManager.finishLoading();
-        this.map = assetManager.get("data/levels/Level" + level + "/Level" + level + ".tmx", TiledMap.class);
+        this.map = assetManager.get(ids.createLevelId(level), TiledMap.class);
         TiledMapTile tile = this.map.getTileSets().getTile(1);
         if (tile != null) {
             tile.getTextureRegion().getTexture().setFilter(Texture.TextureFilter.MipMapLinearNearest, Texture.TextureFilter.Nearest);

@@ -10,6 +10,7 @@ import com.bitfire.postprocessing.PostProcessor;
 import com.bitfire.postprocessing.effects.Bloom;
 import com.bitfire.utils.ShaderLoader;
 import com.mitjanaglic.alpha.game.Alpha;
+import com.mitjanaglic.alpha.game.Assets;
 import com.mitjanaglic.alpha.game.components.CameraComponent;
 import com.mitjanaglic.alpha.game.components.InputComponent;
 import com.mitjanaglic.alpha.game.models.Level;
@@ -192,6 +193,7 @@ public class GameScreen implements Screen, InputProcessor {
 
     @Override
     public void resume() {
+        Assets.getAssetManager().update();
         postProcessor.rebind();
     }
 

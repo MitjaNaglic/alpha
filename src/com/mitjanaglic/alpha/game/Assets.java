@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.mitjanaglic.alpha.game.constants.ids;
 import com.mitjanaglic.alpha.game.utils.ParticleEffectLoader;
 
 /**
@@ -46,7 +47,7 @@ public class Assets {
         parameters.generateMipMaps = true;
         parameters.textureMinFilter = Texture.TextureFilter.MipMapLinearNearest;
         parameters.textureMagFilter = Texture.TextureFilter.Linear;
-        assetManager.load("data/levels/Level" + level + "/Level" + level + ".tmx", TiledMap.class, parameters);
+        assetManager.load(ids.createLevelId(level), TiledMap.class, parameters);
 
         //        TiledMap levelMap=assetManager.get("data/levels/Level1/Level1.tmx");
 //        //TiledMap levelMap=new TmxMapLoader().load("data/levels/Level1/Level1.tmx");
