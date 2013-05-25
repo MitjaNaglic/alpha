@@ -49,17 +49,18 @@ public class Assets {
         parameters.textureMagFilter = Texture.TextureFilter.Linear;
         assetManager.load(ids.createLevelId(level), TiledMap.class, parameters);
 
-        //        TiledMap levelMap=assetManager.get("data/levels/Level1/Level1.tmx");
-//        //TiledMap levelMap=new TmxMapLoader().load("data/levels/Level1/Level1.tmx");
+        //debuggery
+//        assetManager.finishLoading();
+//        TiledMap levelMap=assetManager.get(ids.createLevelId(level));
 //        TiledMapTileLayer l= (TiledMapTileLayer) levelMap.getLayers().get(0);
-//        System.out.println(l.getName());
-//        if (l.getCell(2,2)==null) System.out.println("null cell");
+//        System.out.println("layer: "+l.getName());
+//        if (l.getCell(0,0)==null) System.out.println("null cell");
 //        System.out.println(l.getCell(0, 0).toString());
 //        System.out.println(l.getCell(0, 0).getTile().getId());
 //        System.out.println(l.getCell(0, 0).getTile().toString());
 //
 //        TiledMapTileLayer l1= (TiledMapTileLayer) levelMap.getLayers().get(1);
-//        System.out.println(l1.getName());
+//        System.out.println("layer: "+l1.getName());
 //        if (l1.getCell(2,2)==null) System.out.println("null cell");
 //        System.out.println(l1.getCell(2,2).toString());
 //        System.out.println(l1.getCell(2, 2).getTile().getId());
