@@ -1,6 +1,5 @@
 package com.mitjanaglic.alpha.game.models;
 
-import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
@@ -23,23 +22,21 @@ public class Level {
     private int levelWidth;
     private int levelHeight;
     private TiledMap map;
-    private AssetManager assetManager;
     private LinkedList<SpawnPoint> spawnPoints;
     private int levelEnd;
     private int currentLevelNum;
 
     public Level() {
-        this.assetManager = Assets.getAssetManager();
         this.spawnPoints = new LinkedList<SpawnPoint>();
     }
 
     public void loadLevel(int level) {
         if (map != null)
-            assetManager.unload(ids.createLevelId(currentLevelNum));
+            Assets.getAssetManager().unload(ids.createLevelId(currentLevelNum));
         currentLevelNum = level;
         Assets.loadLevel(level);
-        assetManager.finishLoading();
-        this.map = assetManager.get(ids.createLevelId(level), TiledMap.class);
+        Assets.getAssetManager().finishLoading();
+        this.map = Assets.getAssetManager().get(ids.createLevelId(level), TiledMap.class);
         TiledMapTile tile = this.map.getTileSets().getTile(1);
         if (tile != null) {
             tile.getTextureRegion().getTexture().setFilter(Texture.TextureFilter.MipMapLinearNearest, Texture.TextureFilter.Nearest);

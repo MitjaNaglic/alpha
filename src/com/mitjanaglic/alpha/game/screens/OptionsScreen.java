@@ -5,7 +5,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -16,6 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.mitjanaglic.alpha.game.Alpha;
 import com.mitjanaglic.alpha.game.Assets;
+import com.mitjanaglic.alpha.game.utils.Fonts;
 import com.mitjanaglic.alpha.game.utils.IReturnToSender;
 
 
@@ -29,7 +29,7 @@ import com.mitjanaglic.alpha.game.utils.IReturnToSender;
 public class OptionsScreen implements Screen, IReturnToSender {
     private Stage stage;
     private TextureAtlas textureAtlas;
-    private BitmapFont font;
+    private Fonts fonts;
     private Alpha alpha;
     private Screen sender;
 
@@ -48,16 +48,16 @@ public class OptionsScreen implements Screen, IReturnToSender {
 
         TextureRegion upRegion = textureAtlas.findRegion("ui/buttonDefault");
         TextureRegion downRegion = textureAtlas.findRegion("ui/buttonSelected");
-        font = Assets.getMenuFont();
+        fonts = Assets.getAssetManager().get("data/font/NEUROPOL.ttf");
 
         TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
         textButtonStyle.up = new TextureRegionDrawable(upRegion);
         textButtonStyle.down = new TextureRegionDrawable(downRegion);
-        textButtonStyle.font = font;
+        textButtonStyle.font = fonts.getMenuFont();
         textButtonStyle.fontColor = new Color(0f, 0f, 0f, 1);
 
         CheckBox.CheckBoxStyle checkBoxStyle = new CheckBox.CheckBoxStyle();
-        checkBoxStyle.font = font;
+        checkBoxStyle.font = fonts.getMenuFont();
         TextureRegion checkboxCheckedRegion = textureAtlas.findRegion("ui/checkBoxChecked");
         TextureRegion checkboxUncheckedRegion = textureAtlas.findRegion("ui/checkBoxUnchecked");
         checkBoxStyle.checkboxOn = new TextureRegionDrawable(checkboxCheckedRegion);
@@ -95,7 +95,7 @@ public class OptionsScreen implements Screen, IReturnToSender {
             table.add(checkBox2);
         }
 
-        Label.LabelStyle labelStyle = new Label.LabelStyle(font, Color.WHITE);
+        Label.LabelStyle labelStyle = new Label.LabelStyle(fonts.getMenuFont(), Color.WHITE);
         Label volumeLabel = new Label("Volume", labelStyle);
         table.row().padBottom(20);
         table.add(volumeLabel);
@@ -134,9 +134,6 @@ public class OptionsScreen implements Screen, IReturnToSender {
         table.add(button3);
     }
 
-    private void loadData() {
-        textureAtlas = new TextureAtlas(Gdx.files.internal("data\\png\\textures\\textures.atlas"));
-    }
 
     @Override
     public void render(float v) {

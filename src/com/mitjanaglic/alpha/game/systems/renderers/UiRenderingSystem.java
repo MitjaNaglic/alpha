@@ -6,17 +6,16 @@ import com.artemis.annotations.Mapper;
 import com.artemis.managers.TagManager;
 import com.artemis.systems.VoidEntitySystem;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Disposable;
+import com.mitjanaglic.alpha.game.Assets;
 import com.mitjanaglic.alpha.game.components.CameraComponent;
 import com.mitjanaglic.alpha.game.components.LifeComponent;
 import com.mitjanaglic.alpha.game.components.ShieldComponent;
-import com.mitjanaglic.alpha.game.Assets;
 import com.mitjanaglic.alpha.game.constants.ids;
+import com.mitjanaglic.alpha.game.utils.Fonts;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,7 +25,6 @@ import com.mitjanaglic.alpha.game.constants.ids;
  * Mitja Naglič  mitja.n1@gmail.com
  */
 public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
-    private AssetManager assetManager;
     private CameraComponent cameraComponent;
     private TextureAtlas textureAtlas;
     private SpriteBatch spriteBatch;
@@ -37,19 +35,18 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
     @Mapper
     private ComponentMapper<ShieldComponent> shieldM;
     private ShieldComponent shieldComponent;
-    private BitmapFont font;
+    private Fonts fonts;
     private boolean debugRendering = true;
 
     public UiRenderingSystem(CameraComponent cameraComponent, SpriteBatch batch) {
-        this.assetManager = Assets.getAssetManager();
         this.cameraComponent = cameraComponent;
         spriteBatch = batch;
     }
 
     @Override
     protected void initialize() {
-        textureAtlas = assetManager.get("data/png/textures/textures.atlas", TextureAtlas.class);
-        font = Assets.getDebugFont();
+        textureAtlas = Assets.getAssetManager().get("data/png/textures/textures.atlas", TextureAtlas.class);
+        fonts = Assets.getAssetManager().get("data/font/NEUROPOL.ttf");
     }
 
     @Override
@@ -141,11 +138,11 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
 
     private void renderFps() {
         if (debugRendering) {
-            font.draw(spriteBatch, "FPS: " + Gdx.graphics.getFramesPerSecond(), 0 - cameraComponent.getCameraWidth() / 2,
+            fonts.getDebugFont().draw(spriteBatch, "FPS: " + Gdx.graphics.getFramesPerSecond(), 0 - cameraComponent.getCameraWidth() / 2,
                     cameraComponent.getCameraHeight() / 2);
-            font.draw(spriteBatch, "Current entities: " + world.getEntityManager().getActiveEntityCount(), 0 - cameraComponent.getCameraWidth() / 2,
+            fonts.getDebugFont().draw(spriteBatch, "Current entities: " + world.getEntityManager().getActiveEntityCount(), 0 - cameraComponent.getCameraWidth() / 2,
                     cameraComponent.getCameraHeight() / 2 - 20);
-            font.draw(spriteBatch, "Java heap: " + Gdx.app.getJavaHeap() / 1048576, 0 - cameraComponent.getCameraWidth() / 2,
+            fonts.getDebugFont().draw(spriteBatch, "Java heap: " + Gdx.app.getJavaHeap() / 1048576, 0 - cameraComponent.getCameraWidth() / 2,
                     cameraComponent.getCameraHeight() / 2 - 40);
         }
     }

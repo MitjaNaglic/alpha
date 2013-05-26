@@ -6,16 +6,15 @@ import com.artemis.Entity;
 import com.artemis.EntitySystem;
 import com.artemis.annotations.Mapper;
 import com.artemis.utils.ImmutableBag;
-import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.Disposable;
+import com.mitjanaglic.alpha.game.Assets;
 import com.mitjanaglic.alpha.game.components.CameraComponent;
 import com.mitjanaglic.alpha.game.components.PositionComponent;
 import com.mitjanaglic.alpha.game.components.RenderableComponent;
-import com.mitjanaglic.alpha.game.Assets;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,7 +31,6 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
     private RenderableComponent renderableComponent;
     private SpriteBatch batch;
     private CameraComponent cameraComponent;
-    private AssetManager assetManager;
     private PositionComponent positionComponent;
     private TextureAtlas textureAtlas;
     private OrthographicCamera camera;
@@ -41,7 +39,6 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
 
     public SpriteRenderingSystem(CameraComponent cameraComponent, SpriteBatch batch) {
         super(Aspect.getAspectForAll(RenderableComponent.class));
-        this.assetManager = Assets.getAssetManager();
         this.cameraComponent = cameraComponent;
         this.batch = batch;
         camera = cameraComponent.getCamera();
@@ -49,7 +46,7 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
 
     @Override
     protected void initialize() {
-        textureAtlas = assetManager.get("data/png/textures/textures.atlas", TextureAtlas.class);
+        textureAtlas = Assets.getAssetManager().get("data/png/textures/textures.atlas", TextureAtlas.class);
         shapeRenderer = new ShapeRenderer();
     }
 

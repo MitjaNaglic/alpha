@@ -3,7 +3,6 @@ package com.mitjanaglic.alpha.game;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.mitjanaglic.alpha.game.screens.*;
 
@@ -24,11 +23,9 @@ public class Alpha extends Game {
     private OptionsScreen optionsScreen;
     private LevelOverScreen levelOverScreen;
     private GameOverScreen gameOverScreen;
-    private AssetManager assetManager;
 
     @Override
     public void create() {
-        assetManager = Assets.getAssetManager();
         Assets.Load();
         backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("data\\music\\Magellan  - Orbyss.ogg"));
         backgroundMusic.setLooping(true);
@@ -93,6 +90,7 @@ public class Alpha extends Game {
         levelOverScreen.dispose();
         gameOverScreen.dispose();
         Assets.dispose();
+        backgroundMusic.stop();
         backgroundMusic.dispose();
     }
 }

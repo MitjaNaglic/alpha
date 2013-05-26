@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -15,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.mitjanaglic.alpha.game.Alpha;
 import com.mitjanaglic.alpha.game.Assets;
+import com.mitjanaglic.alpha.game.utils.Fonts;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,7 +26,7 @@ import com.mitjanaglic.alpha.game.Assets;
 public class PauseScreen implements Screen {
     private Stage stage;
     private TextureAtlas textureAtlas;
-    private BitmapFont font;
+    private Fonts fonts;
     private Alpha alpha;
     private Screen sender;
     private Screen self = this;
@@ -34,7 +34,7 @@ public class PauseScreen implements Screen {
     public PauseScreen(Alpha alpha) {
         this.alpha = alpha;
         stage = new Stage();
-        font = Assets.getMenuFont();
+        fonts = Assets.getAssetManager().get("data/font/NEUROPOL.ttf");
         loadData();
         createLayout();
     }
@@ -51,7 +51,7 @@ public class PauseScreen implements Screen {
         TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
         textButtonStyle.up = new TextureRegionDrawable(upRegion);
         textButtonStyle.down = new TextureRegionDrawable(downRegion);
-        textButtonStyle.font = font;
+        textButtonStyle.font = fonts.getMenuFont();
         textButtonStyle.fontColor = new Color(0, 0, 0, 1);
 
 

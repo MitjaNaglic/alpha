@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -16,6 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.mitjanaglic.alpha.game.Alpha;
 import com.mitjanaglic.alpha.game.Assets;
+import com.mitjanaglic.alpha.game.utils.Fonts;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,7 +27,7 @@ import com.mitjanaglic.alpha.game.Assets;
 public class LevelOverScreen implements Screen {
     private Stage stage;
     private TextureAtlas textureAtlas;
-    private BitmapFont font;
+    private Fonts fonts;
     private Alpha alpha;
     private Screen self = this;
 
@@ -46,16 +46,16 @@ public class LevelOverScreen implements Screen {
 
         TextureRegion upRegion = textureAtlas.findRegion("ui/buttonDefault");
         TextureRegion downRegion = textureAtlas.findRegion("ui/buttonSelected");
-        font = Assets.getMenuFont();
+        fonts = Assets.getAssetManager().get("data/font/NEUROPOL.ttf");
 
         TextButton.TextButtonStyle textButtonStyle = new TextButton.TextButtonStyle();
         textButtonStyle.up = new TextureRegionDrawable(upRegion);
         textButtonStyle.down = new TextureRegionDrawable(downRegion);
-        textButtonStyle.font = font;
+        textButtonStyle.font = fonts.getMenuFont();
         textButtonStyle.fontColor = new Color(0, 0, 0, 1);
 
         Label.LabelStyle labelStyle = new Label.LabelStyle();
-        labelStyle.font = font;
+        labelStyle.font = fonts.getMenuFont();
 
         Label levelDoneLabel = new Label("Level completed.", labelStyle);
         table.row().padBottom(200);
