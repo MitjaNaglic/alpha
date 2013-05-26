@@ -2,6 +2,7 @@ package com.mitjanaglic.alpha.game;
 
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -37,6 +38,7 @@ public class Assets {
         assetManager.setLoader(Fonts.class, new GameFontLoader(new InternalFileHandleResolver()));
         GameFontLoader.GameFontParameters gameFontParameters = new GameFontLoader.GameFontParameters();
         assetManager.load("data/font/NEUROPOL.ttf", Fonts.class, gameFontParameters);
+        assetManager.load("data/music/Magellan  - Orbyss.ogg", Music.class);
 
 
         assetManager.finishLoading();

@@ -1,7 +1,6 @@
 package com.mitjanaglic.alpha.game;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.mitjanaglic.alpha.game.screens.*;
@@ -27,7 +26,7 @@ public class Alpha extends Game {
     @Override
     public void create() {
         Assets.Load();
-        backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("data\\music\\Magellan  - Orbyss.ogg"));
+        backgroundMusic = Assets.getAssetManager().get("data/music/Magellan  - Orbyss.ogg");
         backgroundMusic.setLooping(true);
         backgroundMusic.setVolume(0.8f);
         backgroundMusic.play();
@@ -91,6 +90,5 @@ public class Alpha extends Game {
         gameOverScreen.dispose();
         Assets.dispose();
         backgroundMusic.stop();
-        backgroundMusic.dispose();
     }
 }
