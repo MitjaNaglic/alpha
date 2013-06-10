@@ -37,6 +37,7 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
     private ShieldComponent shieldComponent;
     private Fonts fonts;
     private boolean debugRendering = true;
+    private StringBuilder stringBuilder = new StringBuilder();
 
     public UiRenderingSystem(CameraComponent cameraComponent, SpriteBatch batch) {
         this.cameraComponent = cameraComponent;
@@ -61,6 +62,7 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
 
     @Override
     protected void processSystem() {
+        stringBuilder.setLength(0);
         spriteBatch.setProjectionMatrix(cameraComponent.getCamera().projection);
         spriteBatch.setColor(1, 1, 1, 1);
         player = world.getManager(TagManager.class).getEntity(ids.PLAYER);
@@ -138,12 +140,12 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
 
     private void renderFps() {
         if (debugRendering) {
-            fonts.getDebugFont().draw(spriteBatch, "FPS: " + Gdx.graphics.getFramesPerSecond(), 0 - cameraComponent.getCameraWidth() / 2,
+
+            stringBuilder.append("FPS: ").append(Gdx.graphics.getFramesPerSecond()).append("\n")
+                    .append("Current entities: ").append(world.getEntityManager().getActiveEntityCount()).append("\n")
+                    .append("Java heap: ").append(Gdx.app.getJavaHeap() / 1048576).append(" MB");
+            fonts.getDebugFont().drawMultiLine(spriteBatch, stringBuilder.toString(), 0 - cameraComponent.getCameraWidth() / 2,
                     cameraComponent.getCameraHeight() / 2);
-            fonts.getDebugFont().draw(spriteBatch, "Current entities: " + world.getEntityManager().getActiveEntityCount(), 0 - cameraComponent.getCameraWidth() / 2,
-                    cameraComponent.getCameraHeight() / 2 - 20);
-            fonts.getDebugFont().draw(spriteBatch, "Java heap: " + Gdx.app.getJavaHeap() / 1048576, 0 - cameraComponent.getCameraWidth() / 2,
-                    cameraComponent.getCameraHeight() / 2 - 40);
         }
     }
 
