@@ -80,7 +80,8 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
     private void process(Entity entity) {
         positionComponent = positionM.get(entity);
         renderableComponent = renderableM.get(entity);
-        batch.setShader(renderableComponent.getShader());//TODO optimize?
+        handleShaders(renderableComponent.getShader());
+
         TextureAtlas.AtlasRegion atlasRegion = textureAtlas.findRegion(renderableComponent.getSpriteTextureName());
         batch.setColor(renderableComponent.getColor().r, renderableComponent.getColor().g, renderableComponent.getColor().b, renderableComponent.getColor().a);
 
@@ -95,6 +96,20 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
                 renderableComponent.getScaleY(),
                 renderableComponent.getRotationAngle()
         );
+    }
+
+    private ShaderProgram prevShader = null;
+
+    /**
+     * prevents too many shader binds
+     *
+     * @param shader currentShader
+     */
+    private void handleShaders(ShaderProgram shader) {
+        if (prevShader != shader) {
+            batch.setShader(shader);
+        }
+        prevShader = shader;
     }
 
     private void renderHitboxes(Entity entity) {

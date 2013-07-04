@@ -4,8 +4,6 @@ import com.artemis.Entity;
 import com.artemis.World;
 import com.artemis.managers.GroupManager;
 import com.artemis.managers.TagManager;
-import com.badlogic.gdx.graphics.glutils.ShaderProgram;
-import com.mitjanaglic.alpha.game.Assets;
 import com.mitjanaglic.alpha.game.components.*;
 import com.mitjanaglic.alpha.game.components.ai.DiscAiComponent;
 import com.mitjanaglic.alpha.game.components.ai.ScarabAiComponent;
@@ -42,9 +40,7 @@ public class EntityFactory {
                 10
         ));
         e.addComponent(new LifeComponent(1000));
-        RenderableComponent r = new RenderableComponent("player", 1, 1, 0);
-        r.setShader(Assets.getAssetManager().get("test", ShaderProgram.class));
-        e.addComponent(r);
+        e.addComponent(new RenderableComponent("player", 1, 1, 0));
         e.addComponent(new ShieldComponent(200));
         world.addEntity(e);
         world.getManager(TagManager.class).register(ids.PLAYER, e);

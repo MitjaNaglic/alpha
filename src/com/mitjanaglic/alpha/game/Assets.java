@@ -43,6 +43,7 @@ public class Assets {
         assetManager.load("data/music/Magellan  - Orbyss.ogg", Music.class);
         assetManager.setLoader(ShaderProgram.class, new ShaderLoader(new InternalFileHandleResolver()));
         assetManager.load("test", ShaderProgram.class);
+        assetManager.load("shield", ShaderProgram.class);
 
 
         assetManager.finishLoading();
