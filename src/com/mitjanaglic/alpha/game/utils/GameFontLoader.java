@@ -36,12 +36,8 @@ public class GameFontLoader extends SynchronousAssetLoader<Fonts, GameFontLoader
     }
 
     public static class GameFontParameters extends AssetLoaderParameters<Fonts> {
-        public int menuFontSize = calcFontPxSize(30);
-        public int debugFontSize = calcFontPxSize(25);
-        public int titleFontSize = calcFontPxSize(80);
-
-        private int calcFontPxSize(int size) {
-            return (Gdx.graphics.getHeight() * size) / 1000;
-        }
+        public int menuFontSize = Gdx.graphics.getHeight() / 25;
+        public int debugFontSize = Gdx.graphics.getHeight() / 30;
+        public int titleFontSize = Gdx.graphics.getHeight() / 10;
     }
 }
