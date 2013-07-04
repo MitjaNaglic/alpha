@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="5" height="200" tilewidth="256" tileheight="256" backgroundcolor="#5e3f6b">
+ <tileset firstgid="1" name="background" tilewidth="256" tileheight="256">
+  <image source="background.tga" trans="ff00ff" width="768" height="256"/>
+ </tileset>
+ <layer name="newStars" width="5" height="200">
+  <data encoding="base64" compression="zlib">
+   eJztw0ENAAAMA6Grf9OTsQ8krJqqqqr6+gCdsgPp
+  </data>
+ </layer>
+ <layer name="newNebs" width="5" height="200">
+  <data encoding="base64" compression="zlib">
+   eJzNVtEOACEIauv///ne264UBemprQBNTdfqX1uAcdRQ2HTDIFwIzsFmVG8a46rxwnXFKcPj4IdjHkXuTsQritk/+ywXals1r7rfhOUHO3ZVrQruxXfysvrMzYZJXsUfoYj5ZF45zDmq3l/ljZw71YWqrzO52fXL+EMyedCln5k3UB1Wr/0AxdkBCQ==
+  </data>
+ </layer>
+ <objectgroup name="spawns" width="5" height="200">
+  <object name="player" type="spawnPoint" x="491" y="50993" width="35" height="29">
+   <properties>
+    <property name="entityType" value="player"/>
+   </properties>
+  </object>
+  <object name="meteor" type="spawnPoint" x="860" y="50615" width="33" height="28"/>
+  <object name="meteor" type="spawnPoint" x="208" y="50692" width="33" height="28"/>
+  <object name="meteorSmall" type="spawnPoint" x="561" y="50398" width="33" height="28"/>
+  <object name="scarab" type="spawnPoint" x="826" y="49954" width="33" height="28"/>
+  <object name="scarab" type="spawnPoint" x="297" y="49952" width="33" height="28"/>
+  <object name="disc" type="spawnPoint" x="568" y="48948" width="33" height="28"/>
+  <object name="scarab" type="spawnPoint" x="293" y="47745" width="33" height="28"/>
+  <object name="scarab" type="spawnPoint" x="822" y="47747" width="33" height="28"/>
+  <object name="disc" type="spawnPoint" x="267" y="46705" width="33" height="28"/>
+  <object name="disc" type="spawnPoint" x="934" y="46709" width="33" height="28"/>
+  <object name="minos" type="spawnPoint" x="551" y="44296" width="33" height="28"/>
+  <object name="minos" type="spawnPoint" x="199" y="42680" width="33" height="28"/>
+  <object name="meteor" type="spawnPoint" x="929" y="42004" width="33" height="28"/>
+  <object name="meteor" type="spawnPoint" x="277" y="42081" width="33" height="28"/>
+  <object name="meteorSmall" type="spawnPoint" x="630" y="41787" width="33" height="28"/>
+  <object name="meteor" type="spawnPoint" x="455" y="41593" width="33" height="28"/>
+  <object name="meteorSmall" type="spawnPoint" x="808" y="41299" width="33" height="28"/>
+  <object name="meteor" type="spawnPoint" x="160" y="40945" width="33" height="28"/>
+  <object name="disc" type="spawnPoint" x="895" y="40297" width="33" height="28"/>
+  <object name="meteor" type="spawnPoint" x="610" y="40356" width="33" height="28"/>
+  <object name="meteor" type="spawnPoint" x="315" y="39708" width="33" height="28"/>
+  <object name="meteorSmall" type="spawnPoint" x="963" y="40062" width="33" height="28"/>
+  <object name="scarab" type="spawnPoint" x="260" y="38963" width="33" height="28"/>
+  <object name="scarab" type="spawnPoint" x="789" y="38965" width="33" height="28"/>
+  <object name="scarab" type="spawnPoint" x="549" y="37926" width="33" height="28"/>
+  <object name="scarab" type="spawnPoint" x="1078" y="37928" width="33" height="28"/>
+  <object name="scarab" type="spawnPoint" x="103" y="36458" width="33" height="28"/>
+  <object name="scarab" type="spawnPoint" x="632" y="36460" width="33" height="28"/>
+ </objectgroup>
+ <objectgroup name="misc" width="5" height="200">
+  <object name="levelEnd" type="trigger" x="471" y="34525" width="103" height="53"/>
+ </objectgroup>
+</map>
