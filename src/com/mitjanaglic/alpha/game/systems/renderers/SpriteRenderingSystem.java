@@ -9,6 +9,7 @@ import com.artemis.utils.ImmutableBag;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.Disposable;
 import com.mitjanaglic.alpha.game.Assets;
@@ -42,12 +43,14 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
         this.cameraComponent = cameraComponent;
         this.batch = batch;
         camera = cameraComponent.getCamera();
+        ShaderProgram.pedantic = false;
     }
 
     @Override
     protected void initialize() {
         textureAtlas = Assets.getAssetManager().get("data/png/textures/textures.atlas", TextureAtlas.class);
         shapeRenderer = new ShapeRenderer();
+
     }
 
     @Override
@@ -77,8 +80,10 @@ public class SpriteRenderingSystem extends EntitySystem implements Disposable {
     private void process(Entity entity) {
         positionComponent = positionM.get(entity);
         renderableComponent = renderableM.get(entity);
+        batch.setShader(renderableComponent.getShader());//TODO optimize?
         TextureAtlas.AtlasRegion atlasRegion = textureAtlas.findRegion(renderableComponent.getSpriteTextureName());
         batch.setColor(renderableComponent.getColor().r, renderableComponent.getColor().g, renderableComponent.getColor().b, renderableComponent.getColor().a);
+
         batch.draw(atlasRegion,
                 positionComponent.getPosition().x + renderableComponent.getOffsetX(),
                 positionComponent.getPosition().y + renderableComponent.getOffsetY(),

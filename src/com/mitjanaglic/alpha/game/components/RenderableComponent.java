@@ -2,6 +2,7 @@ package com.mitjanaglic.alpha.game.components;
 
 import com.artemis.Component;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,6 +19,7 @@ public class RenderableComponent extends Component {
     private Color color;
     private float offsetX = 0;
     private float offsetY = 0;
+    private ShaderProgram shader = null;
 
     public RenderableComponent(String textureName, float scaleX, float scaleY, float rotationAngle) {
         this.spriteTextureName = textureName;
@@ -35,6 +37,14 @@ public class RenderableComponent extends Component {
         this.offsetX = offsetX;
         this.offsetY = offsetY;
         color = new Color(1, 1, 1, 1);
+    }
+
+    public ShaderProgram getShader() {
+        return shader;
+    }
+
+    public void setShader(ShaderProgram shader) {
+        this.shader = shader;
     }
 
     public float getOffsetX() {

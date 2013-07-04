@@ -6,12 +6,14 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.mitjanaglic.alpha.game.constants.ids;
 import com.mitjanaglic.alpha.game.utils.Fonts;
 import com.mitjanaglic.alpha.game.utils.GameFontLoader;
 import com.mitjanaglic.alpha.game.utils.ParticleEffectLoader;
+import com.mitjanaglic.alpha.game.utils.ShaderLoader;
 
 /**
  * Created with IntelliJ IDEA.
@@ -39,10 +41,13 @@ public class Assets {
         GameFontLoader.GameFontParameters gameFontParameters = new GameFontLoader.GameFontParameters();
         assetManager.load("data/font/NEUROPOL.ttf", Fonts.class, gameFontParameters);
         assetManager.load("data/music/Magellan  - Orbyss.ogg", Music.class);
+        assetManager.setLoader(ShaderProgram.class, new ShaderLoader(new InternalFileHandleResolver()));
+        assetManager.load("test", ShaderProgram.class);
 
 
         assetManager.finishLoading();
     }
+
 
     public static void loadLevel(int level) {
         if (assetManager == null) assetManager = new AssetManager();
