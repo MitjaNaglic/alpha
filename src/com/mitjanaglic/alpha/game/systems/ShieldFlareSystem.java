@@ -38,9 +38,7 @@ public class ShieldFlareSystem extends EntityProcessingSystem {
     }
 
     private void handleFlareDuration(Entity entity) {
-        if (flareComponent.getCurrentFlareDuration() < flareComponent.getFlareDuration()) {
-            flareComponent.setCurrentFlareDuration(flareComponent.getCurrentFlareDuration() + world.getDelta());
-        } else {
+        if (renderableComponent.getColor().a <= 0.01) {
             entity.deleteFromWorld();
             world.changedEntity(entity);
         }

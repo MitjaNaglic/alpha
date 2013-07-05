@@ -39,9 +39,9 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
     private boolean debugRendering = true;
     private StringBuilder stringBuilder = new StringBuilder();
 
-    public UiRenderingSystem(CameraComponent cameraComponent, SpriteBatch batch) {
+    public UiRenderingSystem(CameraComponent cameraComponent) {
         this.cameraComponent = cameraComponent;
-        spriteBatch = batch;
+        spriteBatch = new SpriteBatch();
     }
 
     @Override
@@ -151,5 +151,6 @@ public class UiRenderingSystem extends VoidEntitySystem implements Disposable {
 
     @Override
     public void dispose() {
+        spriteBatch.dispose();
     }
 }

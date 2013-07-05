@@ -10,18 +10,9 @@ import com.artemis.Component;
  * Mitja Naglič  mitja.n1@gmail.com
  */
 public class ShieldFlareComponent extends Component {
-    private float flareDuration = 1.3f;
-    private float currentFlareDuration = 0f;
+    private float flareDuration = 1.9f;
 
     public float getFlareDuration() {
         return flareDuration;
-    }
-
-    public float getCurrentFlareDuration() {
-        return currentFlareDuration;
-    }
-
-    public void setCurrentFlareDuration(float currentFlareDuration) {
-        this.currentFlareDuration = currentFlareDuration;
     }
 }

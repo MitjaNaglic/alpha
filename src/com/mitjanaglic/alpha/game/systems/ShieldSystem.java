@@ -57,14 +57,15 @@ public class ShieldSystem extends EntityProcessingSystem {
             Entity shieldFlare = world.createEntity();
             shieldFlare.addComponent(new ShieldFlareComponent());
             shieldFlare.addComponent(positionComponent);
-            shieldFlare.addComponent(new RenderableComponent("shield", 0.90f, 0.90f, shieldComponent.getAngle(), -26, -30));
+            RenderableComponent r = new RenderableComponent("shield", 1f, 1f, shieldComponent.getAngle(), -26, -35);
+            shieldFlare.addComponent(r);
             shieldFlare.addToWorld();
             shieldComponent.setRequestFlare(false);
         }
     }
 
     /**
-     * Vrne damag, ki ga shield ni ubranil
+     * Returns damage, left over after shield breaking
      */
     public float hitShields(Entity victim, float damage, float angle) {
         ShieldComponent victimShield = shieldM.get(victim);

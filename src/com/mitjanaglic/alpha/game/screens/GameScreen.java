@@ -98,7 +98,7 @@ public class GameScreen implements Screen, InputProcessor {
         spriteRenderingSystem = world.setSystem(new SpriteRenderingSystem(cameraComponent, batch), true);
         particleRenderingSystem = world.setSystem(new ParticleRenderingSystem(cameraComponent, batch), true);
         backgroundRenderingSystem = world.setSystem(new BackgroundRenderingSystem(cameraComponent, level), true);
-        uiRenderingSystem = world.setSystem(new UiRenderingSystem(cameraComponent, batch), true);
+        uiRenderingSystem = world.setSystem(new UiRenderingSystem(cameraComponent), true);
         world.setSystem(new GunSystem());
         world.setSystem(new BulletSystem());
         world.setSystem(new DiscAnimationSystem());
