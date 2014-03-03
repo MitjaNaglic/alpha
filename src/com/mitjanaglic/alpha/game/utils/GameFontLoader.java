@@ -6,6 +6,7 @@ import com.badlogic.gdx.assets.AssetLoaderParameters;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.FileHandleResolver;
 import com.badlogic.gdx.assets.loaders.SynchronousAssetLoader;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.utils.Array;
 
@@ -22,7 +23,7 @@ public class GameFontLoader extends SynchronousAssetLoader<Fonts, GameFontLoader
     }
 
     @Override
-    public Fonts load(AssetManager assetManager, String fileName, GameFontLoader.GameFontParameters gameFontParameters) {
+    public Fonts load(AssetManager assetManager, String fileName, FileHandle fileHandle, GameFontLoader.GameFontParameters gameFontParameters) {
         FreeTypeFontGenerator freeTypeFontGenerator = new FreeTypeFontGenerator(resolve(fileName));
         Fonts fonts = new Fonts(freeTypeFontGenerator.generateFont(gameFontParameters.menuFontSize),
                 freeTypeFontGenerator.generateFont(gameFontParameters.titleFontSize),
@@ -31,7 +32,7 @@ public class GameFontLoader extends SynchronousAssetLoader<Fonts, GameFontLoader
     }
 
     @Override
-    public Array<AssetDescriptor> getDependencies(String s, GameFontLoader.GameFontParameters gameFontParameters) {
+    public Array<AssetDescriptor> getDependencies(String s, FileHandle fileHandle, GameFontLoader.GameFontParameters gameFontParameters) {
         return null;
     }
 

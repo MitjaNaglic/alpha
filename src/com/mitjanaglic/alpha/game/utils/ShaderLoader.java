@@ -5,6 +5,7 @@ import com.badlogic.gdx.assets.AssetLoaderParameters;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.FileHandleResolver;
 import com.badlogic.gdx.assets.loaders.SynchronousAssetLoader;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.GdxRuntimeException;
@@ -22,7 +23,7 @@ public class ShaderLoader extends SynchronousAssetLoader<ShaderProgram, ShaderLo
     }
 
     @Override
-    public ShaderProgram load(AssetManager assetManager, String name, ShaderLoader.ShaderProgramParameter shaderProgramParameter) {
+    public ShaderProgram load(AssetManager assetManager, String name, FileHandle fileHandle, ShaderLoader.ShaderProgramParameter shaderProgramParameter) {
         //read the files into strings
         final String VERTEX = resolve("data/shaders/" + name + ".vert").readString();
         final String FRAGMENT = resolve("data/shaders/" + name + ".frag").readString();
@@ -36,7 +37,7 @@ public class ShaderLoader extends SynchronousAssetLoader<ShaderProgram, ShaderLo
     }
 
     @Override
-    public Array<AssetDescriptor> getDependencies(String s, ShaderLoader.ShaderProgramParameter shaderProgramParameter) {
+    public Array<AssetDescriptor> getDependencies(String s, FileHandle fileHandle, ShaderLoader.ShaderProgramParameter shaderProgramParameter) {
         return null;
     }
 

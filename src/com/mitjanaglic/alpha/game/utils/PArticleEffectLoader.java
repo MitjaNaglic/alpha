@@ -23,7 +23,7 @@ public class ParticleEffectLoader extends SynchronousAssetLoader<ParticleEffect,
     }
 
     @Override
-    public ParticleEffect load(AssetManager assetManager, String fileName,
+    public ParticleEffect load(AssetManager assetManager, String fileName, FileHandle fileHandle,
                                ParticleEffectParameter parameter) {
         ParticleEffect effect = new ParticleEffect();
         FileHandle effectFile = resolve(fileName);
@@ -33,7 +33,7 @@ public class ParticleEffectLoader extends SynchronousAssetLoader<ParticleEffect,
     }
 
     @Override
-    public Array<AssetDescriptor> getDependencies(String fileName,
+    public Array<AssetDescriptor> getDependencies(String fileName, FileHandle fileHandle,
                                                   ParticleEffectParameter parameter) {
         return null;
     }

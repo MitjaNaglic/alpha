@@ -19,11 +19,11 @@ import java.util.LinkedList;
  * To change this template use File | Settings | File Templates.
  */
 public class Level {
-    private int levelWidth;
-    private int levelHeight;
+    private float levelWidth;
+    private float levelHeight;
     private TiledMap map;
     private LinkedList<SpawnPoint> spawnPoints;
-    private int levelEnd;
+    private float levelEnd;
     private int currentLevelNum;
 
     public Level() {
@@ -55,14 +55,14 @@ public class Level {
 
     private void processLevelEnd() {
         MapObjects miscObjects = map.getLayers().get("misc").getObjects();
-        this.levelEnd = (Integer) miscObjects.get("levelEnd").getProperties().get("y");
+        this.levelEnd = (Float) miscObjects.get("levelEnd").getProperties().get("y");
     }
 
     private void processSpawnPoints() {
         MapObjects mapObjects = map.getLayers().get("spawns").getObjects();
         for (MapObject mapObject : mapObjects) {
-            Integer x = (Integer) mapObject.getProperties().get("x");
-            Integer y = (Integer) mapObject.getProperties().get("y");
+            float x = (Float) mapObject.getProperties().get("x");
+            float y = (Float) mapObject.getProperties().get("y");
             String entityType = mapObject.getName();
 
             spawnPoints.add(new SpawnPoint(x, y, entityType));
@@ -74,7 +74,7 @@ public class Level {
         return spawnPoints;
     }
 
-    public int getLevelWidth() {
+    public float getLevelWidth() {
         return levelWidth;
     }
 
@@ -82,11 +82,11 @@ public class Level {
         return map;
     }
 
-    public int getLevelHeight() {
+    public float getLevelHeight() {
         return levelHeight;
     }
 
-    public int getLevelEnd() {
+    public float getLevelEnd() {
         return levelEnd;
     }
 }

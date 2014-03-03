@@ -27,7 +27,7 @@ public class SpawnDespawnSystem extends VoidEntitySystem {
     private ComponentMapper<PositionComponent> positionM;
     private LinkedList<SpawnPoint> spawnPoints;
     private CameraSystem cameraSystem;
-    private int levelEnd;
+    private float levelEnd;
     private Entity player;
     private Alpha alpha;
     private PositionComponent playerPosition;
@@ -91,11 +91,11 @@ public class SpawnDespawnSystem extends VoidEntitySystem {
         this.spawnPoints = spawnPoints;
     }
 
-    public int getLevelEnd() {
+    public float getLevelEnd() {
         return levelEnd;
     }
 
-    public void setLevelEnd(int levelEnd) {
+    public void setLevelEnd(float levelEnd) {
         this.levelEnd = levelEnd;
     }
 }

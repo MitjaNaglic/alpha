@@ -9,6 +9,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Desktop-libs" level="project" />
     <orderEntry type="module" module-name="Alpha" />
+    <orderEntry type="library" name="Alpha-libs" level="project" />
   </component>
 </module>
 

@@ -8,17 +8,17 @@ package com.mitjanaglic.alpha.game.models;
  * Mitja Naglič  mitja.n1@gmail.com
  */
 public class SpawnPoint implements Comparable<SpawnPoint> {
-    private int x;
-    private int y;
+    private float x;
+    private float y;
     private String entityId;
 
-    public SpawnPoint(int x, int y, String entityId) {
+    public SpawnPoint(float x, float y, String entityId) {
         this.x = x;
         this.y = y;
         this.entityId = entityId;
     }
 
-    public int getX() {
+    public float getX() {
         return x;
     }
 
@@ -26,7 +26,7 @@ public class SpawnPoint implements Comparable<SpawnPoint> {
         this.x = x;
     }
 
-    public int getY() {
+    public float getY() {
         return y;
     }
 
