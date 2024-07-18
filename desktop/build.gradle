@@ -1,0 +1,13 @@
+apply plugin: 'application'
+
+apply plugin: 'java'
+
+sourceCompatibility = JavaVersion.VERSION_22
+targetCompatibility = JavaVersion.VERSION_22
+
+mainClassName = 'com.mitjanaglic.alpha.DesktopStarter' // Adjust the main class name as needed
+
+dependencies {
+    implementation project(':alpha')
+    // Add other Desktop-specific dependencies here
+}

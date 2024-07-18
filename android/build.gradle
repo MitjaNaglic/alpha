@@ -1,0 +1,79 @@
+// The first line in this file indicates
+// the Android plugin is applied for Gradle to
+// this build
+
+//plugins {
+//    id("com.android.application") version '8.2.0'
+//}
+//
+//android
+//{
+//    namespace = "com.mitjanaglic.alpha"
+//    compileSdk = 35
+//    defaultConfig
+//    {
+//        applicationId = "com.mitjanaglic.alpha"
+//        minSdk = 15
+//        targetSdk = 35
+//        versionCode = 1
+//        versionName = "1.0"
+//    }
+//    buildTypes
+//    {
+//        release
+//        {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_17
+//        targetCompatibility JavaVersion.VERSION_17
+//    }
+//    buildToolsVersion '35.0.0'
+//}
+//
+//dependencies
+//{
+//    api project(':Alpha')
+//}
+
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.5.1'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android
+        {
+            namespace = "com.mitjanaglic.alpha"
+            compileSdk = 35
+            defaultConfig
+                    {
+                        applicationId = "com.mitjanaglic.alpha"
+                        minSdk = 15
+                        targetSdk = 35
+                        versionCode = 1
+                        versionName = "1.0"
+                    }
+            buildTypes
+                    {
+                        release
+                                {
+                                    minifyEnabled false
+                                    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+                                }
+                    }
+        }
+
+dependencies
+        {
+            implementation project(':alpha')
+        }

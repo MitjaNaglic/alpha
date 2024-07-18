@@ -1,0 +1,17 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.5.1'
+    }
+}
+apply plugin: 'java-library'
+sourceCompatibility = JavaVersion.VERSION_22
+targetCompatibility = JavaVersion.VERSION_22
+
+dependencies {
+    implementation files('libs/gdx.jar')
+    implementation files('libs/artemis.jar')
+}

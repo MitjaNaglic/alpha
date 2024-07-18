@@ -21,65 +21,31 @@
       </filter>
     </filters>
   </component>
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Desktop:jar" />
+      <artifact name="Desktop:jar2" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="">
-      <change type="DELETED" beforePath="G:\development\Alpha\.idea\artifacts\web.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uncompiledTextures/Thumbs.db" afterPath="$PROJECT_DIR$/uncompiledTextures/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uncompiledTextures/ui/Thumbs.db" afterPath="$PROJECT_DIR$/uncompiledTextures/ui/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/libs/gdx-backend-android-sources.jar" afterPath="$PROJECT_DIR$/Android/libs/gdx-backend-android-sources.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/libs/gdx-backend-android.jar" afterPath="$PROJECT_DIR$/Android/libs/gdx-backend-android.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/libs/gdx-backend-lwjgl-natives.jar" afterPath="$PROJECT_DIR$/Desktop/libs/gdx-backend-lwjgl-natives.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/libs/gdx-backend-lwjgl.jar" afterPath="$PROJECT_DIR$/Desktop/libs/gdx-backend-lwjgl.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/libs/gdx-freetype-natives.jar" afterPath="$PROJECT_DIR$/Desktop/libs/gdx-freetype-natives.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/libs/gdx-freetype.jar" afterPath="$PROJECT_DIR$/Android/libs/gdx-freetype.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/libs/gdx-freetype.jar" afterPath="$PROJECT_DIR$/Desktop/libs/gdx-freetype.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/libs/gdx-natives.jar" afterPath="$PROJECT_DIR$/Desktop/libs/gdx-natives.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Util/libs/gdx-tools.jar" afterPath="$PROJECT_DIR$/Util/libs/gdx-tools.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/gdx.jar" afterPath="$PROJECT_DIR$/libs/gdx.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/libs/armeabi/libgdx.so" afterPath="$PROJECT_DIR$/Android/libs/armeabi/libgdx.so" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/libs/armeabi-v7a/libgdx.so" afterPath="$PROJECT_DIR$/Android/libs/armeabi-v7a/libgdx.so" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uncompiledTextures/shield.png" afterPath="$PROJECT_DIR$/uncompiledTextures/shield.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Alpha.iml" afterPath="$PROJECT_DIR$/Alpha.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/Android.iml" afterPath="$PROJECT_DIR$/Android/Android.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Android.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Android.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/gen/com/mitjanaglic/Alpha/BuildConfig.java" afterPath="$PROJECT_DIR$/Android/gen/com/mitjanaglic/Alpha/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bitfire/postprocessing/effects/CrtMonitor.java" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/effects/CrtMonitor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/Desktop.iml" afterPath="$PROJECT_DIR$/Desktop/Desktop.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/mitjanaglic/alpha/DesktopStarter.java" afterPath="$PROJECT_DIR$/Desktop/src/com/mitjanaglic/alpha/DesktopStarter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/GameFontLoader.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/GameFontLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/src/com/mySampleApplication/client/GwtLauncher.java" afterPath="$PROJECT_DIR$/Web/src/com/mySampleApplication/client/GwtLauncher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/Level.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Android/src/com/mitjanaglic/alpha/MainActivity.java" afterPath="$PROJECT_DIR$/Android/src/com/mitjanaglic/alpha/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/ParticleEffectLoader.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/ParticleEffectLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bitfire/postprocessing/PostProcessor.java" afterPath="$PROJECT_DIR$/src/com/bitfire/postprocessing/PostProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/ShaderLoader.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/utils/ShaderLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/SpawnDespawnSystem.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/systems/SpawnDespawnSystem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/SpawnPoint.java" afterPath="$PROJECT_DIR$/src/com/mitjanaglic/alpha/game/models/SpawnPoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
-    <ignored path="Alpha.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <option name="TRACKING_ENABLED" value="true" />
+    <list default="true" id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="new shield" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DaemonCodeAnalyzer">
-    <disable_hints />
-  </component>
   <component name="DebuggerManager">
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -115,13 +81,40 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <breakpoint_rules />
-    <ui_properties />
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
-  <component name="FavoritesManager">
-    <favorites_list name="Alpha" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/Alpha">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/Android">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="alpha" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileEditorManager">
     <leaf>
@@ -227,9 +220,10 @@
     </FindUsagesManager>
   </component>
   <component name="GenerateSignedApkSettings">
-    <option name="KEY_STORE_PATH" value="C:\Users\mito\Documents\droidReleaseKey.keystore" />
+    <option name="KEY_STORE_PATH" value="C:\Users\mitja\Documents\droidReleaseKey.keystore" />
     <option name="KEY_ALIAS" value="alpha" />
     <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
   <component name="GwtCompilerConfiguration">
     <show-output>
@@ -273,24 +267,17 @@
       </list>
     </option>
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <OptionsSetting value="true" id="Undo Check Out" />
-    <OptionsSetting value="true" id="Get Latest Version" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
-  </component>
+  <component name="ProjectId" id="2jIHanqtCZ2rcyqMLDqGqsNgqem" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -747,124 +734,86 @@
       <pane id="Scope" />
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="ExportedApkPath" value="G:\development\Alpha\Android\Android.apk" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="ExportedModule" value="Android" />
-    <property name="GWT.GenerateCompileReport.Module" value="com.mitjanaglic.alpha.Alpha" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeOrder2" value="2" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="myAVD" />
-    <property name="FullScreen" value="false" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeOrder3" value="3" />
-    <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_flatWidth3" value="881" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_flatWidth2" value="207" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_flatWidth1" value="207" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_flatWidth0" value="207" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
-    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="AndroidRunProguardForReleaseBuild" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="OverrideImplement.combined" value="false" />
-    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeWidth1" value="200" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeWidth2" value="206" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/droidReleaseKey.keystore" />
-    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeWidth0" value="211" />
-    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="alpha" />
-    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_treeWidth3" value="885" />
-    <property name="MemberChooser.showClasses" value="true" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_flatOrder3" value="3" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="HT043PL09022" />
-    <property name="FileHistory.org.zmlx.hg4idea.provider.HgHistoryProvider_flatOrder2" value="2" />
-    <property name="restartRequiresConfirmation" value="true" />
-    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="OverrideImplement.overriding.sorted" value="false" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.Alpha.executor": "Run",
+    "AndroidRunProguardForReleaseBuild": "false",
+    "ApkExportedModule": "Android",
+    "Application.Alpha.executor": "Run",
+    "ExportedApkPathForAndroid": "C:\\dev\\alpha\\Android\\Android.apk",
+    "Gradle.Load Gradle Dependencies.executor": "Run",
+    "Gradle.Upgrade Gradle wrapper.executor": "Run",
+    "Gradle.alpha [buildDependents].executor": "Run",
+    "Gradle.alpha [init].executor": "Run",
+    "Gradle.alpha [wrapper].executor": "Run",
+    "JAR Application.AlphaDesktopJar.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/dev/alpha/alpha/libs",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15625",
+    "project.structure.side.proportion": "0.2807971",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  }
+}]]></component>
+  <component name="PsdUISettings">
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\alpha" />
+      <recent name="C:\dev\alpha\Android" />
       <recent name="G:\development\Alpha\src\com\mitjanaglic\alpha\game\models\entities\components" />
       <recent name="G:\development\Alpha\src\com\mitjanaglic\alpha\game\models\entities" />
       <recent name="G:\development\Alpha\src\com\mitjanaglic\alpha" />
-      <recent name="G:\development\Alpha\src" />
-      <recent name="G:\development\Alpha" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.mitjanaglic.alpha.game" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Alpha">
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails" singleton="true">
+  <component name="RunManager" selected="Android App.alpha.android">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="depsClasspath" value="false" />
-      <setting name="passParentEnv" value="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <setting name="launchBrowser" value="false" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -880,25 +829,23 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
+      <module name="" />
       <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
@@ -936,26 +883,6 @@
       <option name="usbDebugPort" value="7936" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
       <option name="BCName" value="" />
       <option name="launcherParameters">
@@ -970,62 +897,108 @@
       <option name="trusted" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="GWT.ConfigurationType" factoryName="GWT Configuration">
       <module name="" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails" singleton="true">
       <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
       <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration name="Alpha" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="Android" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Android" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="alpha.android.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
     </configuration>
     <configuration default="false" name="Android" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="Android" />
@@ -1048,19 +1021,47 @@
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Alpha" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration name="alpha.android" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="alpha.android.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Alpha" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.mitjanaglic.alpha.DesktopStarter" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
       <module name="Desktop" />
-      <envs />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
@@ -1069,7 +1070,15 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="false" name="MySampleApplication" type="GWT.ConfigurationType" factoryName="GWT Configuration">
       <module name="Web" />
@@ -1079,17 +1088,119 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Android Application.Android" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Alpha" />
-      <item index="2" class="java.lang.String" itemvalue="GWT Configuration.MySampleApplication" />
-    </list>
-    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
-      <Host>localhost</Host>
-      <Port>5050</Port>
+    <configuration name="alpha [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildDependents" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
     </configuration>
+    <configuration name="alpha [init]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="init" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="alpha [wrapper]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="wrapper" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AlphaDesktopJar" type="JarApplication">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Desktop_jar2/Desktop.jar" />
+      <option name="WORKING_DIRECTORY" value="C:\dev\alpha" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Android App.alpha.android" />
+      <item itemvalue="Android App.Android" />
+      <item itemvalue="Android App.Alpha" />
+      <item itemvalue="Application.Alpha" />
+      <item itemvalue="Gradle.alpha [buildDependents]" />
+      <item itemvalue="Gradle.alpha [init]" />
+      <item itemvalue="Gradle.alpha [wrapper]" />
+      <item itemvalue="JAR Application.AlphaDesktopJar" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.alpha [init]" />
+        <item itemvalue="Gradle.alpha [buildDependents]" />
+        <item itemvalue="Gradle.alpha [wrapper]" />
+      </list>
+    </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -1111,6 +1222,8 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="0f366c3d-74d9-4810-a86b-9c02f9342bf4" name="Default" comment="" />
       <created>1361454235156</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1361454235156</updated>
       <workItem from="1386764096685" duration="199000" />
       <workItem from="1393861234017" duration="496000" />
@@ -1119,490 +1232,856 @@
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1361459935729</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
       <updated>1361459935729</updated>
     </task>
     <task id="LOCAL-00002" summary="screwing around">
       <created>1361474469226</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
       <updated>1361474469226</updated>
     </task>
     <task id="LOCAL-00003" summary="screwing around">
       <created>1362573832139</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
       <updated>1362573832139</updated>
     </task>
     <task id="LOCAL-00004" summary="worldrenderer, space, gamescreen">
       <created>1362596354361</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
       <updated>1362596354361</updated>
     </task>
     <task id="LOCAL-00005" summary="we have movement">
       <created>1362618733589</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
       <updated>1362618733589</updated>
     </task>
     <task id="LOCAL-00006" summary="android ver running">
       <created>1362670813637</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
       <updated>1362670813637</updated>
     </task>
     <task id="LOCAL-00007" summary="background semi works">
       <created>1362696328855</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
       <updated>1362696328855</updated>
     </task>
     <task id="LOCAL-00008" summary="texture atlas">
       <created>1362756872909</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
       <updated>1362756872909</updated>
     </task>
     <task id="LOCAL-00009" summary="player animation">
       <created>1362758296172</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
       <updated>1362758296172</updated>
     </task>
     <task id="LOCAL-00010" summary="collision semiworks">
       <created>1362776493623</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
       <updated>1362776493623</updated>
     </task>
     <task id="LOCAL-00011" summary="camera collision works">
       <created>1363189362673</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
       <updated>1363189362673</updated>
     </task>
     <task id="LOCAL-00012" summary=".">
       <created>1363198588698</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
       <updated>1363198588698</updated>
     </task>
     <task id="LOCAL-00013" summary="shooting implemented">
       <created>1363213615482</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
       <updated>1363213615482</updated>
     </task>
     <task id="LOCAL-00014" summary="texturemap refractor">
       <created>1363272499508</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
       <updated>1363272499509</updated>
     </task>
     <task id="LOCAL-00015" summary="width, height refractor">
       <created>1363273949676</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
       <updated>1363273949676</updated>
     </task>
     <task id="LOCAL-00016" summary="disc rotation">
       <created>1363275401740</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
       <updated>1363275401740</updated>
     </task>
     <task id="LOCAL-00017" summary="aspect ratio se ohranjuje">
       <created>1363289644818</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
       <updated>1363289644818</updated>
     </task>
     <task id="LOCAL-00018" summary="uiBatch">
       <created>1363290934486</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
       <updated>1363290934486</updated>
     </task>
     <task id="LOCAL-00019" summary="lives implemented">
       <created>1363297809549</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
       <updated>1363297809549</updated>
     </task>
     <task id="LOCAL-00020" summary="bullet collisions, dying enemies">
       <created>1363360317063</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
       <updated>1363360317063</updated>
     </task>
     <task id="LOCAL-00021" summary="enemy shooting semiworks">
       <created>1363379189309</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
       <updated>1363379189309</updated>
     </task>
     <task id="LOCAL-00022" summary="bullet range fixed">
       <created>1363380645481</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
       <updated>1363380645481</updated>
     </task>
     <task id="LOCAL-00023" summary="shooting angle fixed">
       <created>1363393723209</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
       <updated>1363393723209</updated>
     </task>
     <task id="LOCAL-00024" summary="tilt control, gun targeting">
       <created>1363442534981</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
       <updated>1363442534981</updated>
     </task>
     <task id="LOCAL-00025" summary="hitbox fixes">
       <created>1363462203940</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
       <updated>1363462203940</updated>
     </task>
     <task id="LOCAL-00026" summary=".">
       <created>1363549315576</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
       <updated>1363549315576</updated>
     </task>
     <task id="LOCAL-00027" summary="web">
       <created>1363900484572</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
       <updated>1363900484572</updated>
     </task>
     <task id="LOCAL-00028" summary="ship base class, hitmarks">
       <created>1363958961219</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
       <updated>1363958961219</updated>
     </task>
     <task id="LOCAL-00029" summary="hitmarks centered">
       <created>1363959323873</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
       <updated>1363959323873</updated>
     </task>
     <task id="LOCAL-00030" summary="ship refract">
       <created>1363959780551</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
       <updated>1363959780551</updated>
     </task>
     <task id="LOCAL-00031" summary="menuscreen">
       <created>1364043713651</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
       <updated>1364043713651</updated>
     </task>
     <task id="LOCAL-00032" summary="pause menu">
       <created>1364047182859</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
       <updated>1364047182859</updated>
     </task>
     <task id="LOCAL-00033" summary="android back button">
       <created>1364047459608</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
       <updated>1364047459608</updated>
     </task>
     <task id="LOCAL-00034" summary="android back button">
       <created>1364047598369</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
       <updated>1364047598369</updated>
     </task>
     <task id="LOCAL-00035" summary="asset manager, levels!">
       <created>1364071213775</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
       <updated>1364071213775</updated>
     </task>
     <task id="LOCAL-00036" summary=".">
       <created>1364136337125</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
       <updated>1364136337125</updated>
     </task>
     <task id="LOCAL-00037" summary="level load refr">
       <created>1364138757052</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
       <updated>1364138757052</updated>
     </task>
     <task id="LOCAL-00038" summary=".">
       <created>1364139150463</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
       <updated>1364139150463</updated>
     </task>
     <task id="LOCAL-00039" summary="mipmaps">
       <created>1364173113491</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
       <updated>1364173113491</updated>
     </task>
     <task id="LOCAL-00040" summary="ui scaling fix">
       <created>1364177032645</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
       <updated>1364177032645</updated>
     </task>
     <task id="LOCAL-00041" summary=".">
       <created>1364221813078</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
       <updated>1364221813078</updated>
     </task>
     <task id="LOCAL-00042" summary="entity system overhaul half done">
       <created>1364862270566</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
       <updated>1364862270566</updated>
     </task>
     <task id="LOCAL-00043" summary="renderers">
       <created>1364907938089</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
       <updated>1364907938089</updated>
     </task>
     <task id="LOCAL-00044" summary="bullet system">
       <created>1364923034104</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
       <updated>1364923034104</updated>
     </task>
     <task id="LOCAL-00045" summary="gun positioning">
       <created>1364927308269</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
       <updated>1364927308269</updated>
     </task>
     <task id="LOCAL-00046" summary="player animation">
       <created>1364929501579</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
       <updated>1364929501579</updated>
     </task>
     <task id="LOCAL-00047" summary="levelbounds">
       <created>1364930735577</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
       <updated>1364930735577</updated>
     </task>
     <task id="LOCAL-00048" summary="forwardmomentum fix">
       <created>1364999319315</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
       <updated>1364999319315</updated>
     </task>
     <task id="LOCAL-00049" summary=".">
       <created>1365005571145</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
       <updated>1365005571145</updated>
     </task>
     <task id="LOCAL-00050" summary=".">
       <created>1365008308074</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
       <updated>1365008308075</updated>
     </task>
     <task id="LOCAL-00051" summary="rotation animation">
       <created>1365009424041</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
       <updated>1365009424041</updated>
     </task>
     <task id="LOCAL-00052" summary="disc ai-&gt;aim">
       <created>1365034568108</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
       <updated>1365034568108</updated>
     </task>
     <task id="LOCAL-00053" summary="bullettexturenames">
       <created>1365035195968</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
       <updated>1365035195968</updated>
     </task>
     <task id="LOCAL-00054" summary="entityfac refr">
       <created>1365054725879</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
       <updated>1365054725879</updated>
     </task>
     <task id="LOCAL-00055" summary=".">
       <created>1365059177773</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
       <updated>1365059177773</updated>
     </task>
     <task id="LOCAL-00056" summary="weaponsarray">
       <created>1365061876196</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
       <updated>1365061876196</updated>
     </task>
     <task id="LOCAL-00057" summary="collision detection&#10;">
       <created>1365176556305</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
       <updated>1365176556305</updated>
     </task>
     <task id="LOCAL-00058" summary="collision detection&#10;">
       <created>1365229945048</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
       <updated>1365229945048</updated>
     </task>
     <task id="LOCAL-00059" summary=".">
       <created>1365230487770</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
       <updated>1365230487770</updated>
     </task>
     <task id="LOCAL-00060" summary="meteors">
       <created>1365231692609</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
       <updated>1365231692609</updated>
     </task>
     <task id="LOCAL-00061" summary="android icon">
       <created>1365250763480</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
       <updated>1365250763480</updated>
     </task>
     <task id="LOCAL-00062" summary="rof calculation redoening, minos">
       <created>1365346426776</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
       <updated>1365346426776</updated>
     </task>
     <task id="LOCAL-00063" summary=".">
       <created>1365350972892</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
       <updated>1365350972892</updated>
     </task>
     <task id="LOCAL-00064" summary="damage">
       <created>1365359027939</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
       <updated>1365359027939</updated>
     </task>
     <task id="LOCAL-00065" summary="rgba anim">
       <created>1365360801705</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
       <updated>1365360801705</updated>
     </task>
     <task id="LOCAL-00066" summary=".">
       <created>1365361396944</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
       <updated>1365361396944</updated>
     </task>
     <task id="LOCAL-00067" summary="lifebar">
       <created>1365363865772</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
       <updated>1365363865772</updated>
     </task>
     <task id="LOCAL-00068" summary="damagebar">
       <created>1365437679053</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
       <updated>1365437679053</updated>
     </task>
     <task id="LOCAL-00069" summary=".">
       <created>1365438587866</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
       <updated>1365438587866</updated>
     </task>
     <task id="LOCAL-00070" summary=".">
       <created>1365438827412</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
       <updated>1365438827412</updated>
     </task>
     <task id="LOCAL-00071" summary=".">
       <created>1365511287652</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
       <updated>1365511287652</updated>
     </task>
     <task id="LOCAL-00072" summary="disc ai waypoints&#10;">
       <created>1365517723912</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
       <updated>1365517723912</updated>
     </task>
     <task id="LOCAL-00073" summary=".">
       <created>1365526704339</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
       <updated>1365526704339</updated>
     </task>
     <task id="LOCAL-00074" summary="lerp">
       <created>1365531155702</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
       <updated>1365531155702</updated>
     </task>
     <task id="LOCAL-00075" summary="speed component removed">
       <created>1365531513920</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
       <updated>1365531513920</updated>
     </task>
     <task id="LOCAL-00076" summary="waypoint out of bounds fix">
       <created>1365531862329</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
       <updated>1365531862329</updated>
     </task>
     <task id="LOCAL-00077" summary="velocity vector normalization, lower bounds fix">
       <created>1365591201960</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
       <updated>1365591201960</updated>
     </task>
     <task id="LOCAL-00078" summary="despawns">
       <created>1365592583964</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
       <updated>1365592583965</updated>
     </task>
     <task id="LOCAL-00079" summary="lifebar tweak">
       <created>1365593071954</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
       <updated>1365593071954</updated>
     </task>
     <task id="LOCAL-00080" summary="spawning semidone&#10;">
       <created>1365614903673</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
       <updated>1365614903673</updated>
     </task>
     <task id="LOCAL-00081" summary="spawning done?">
       <created>1365697175420</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
       <updated>1365697175421</updated>
     </task>
     <task id="LOCAL-00082" summary="ai fixes, spawn fixes">
       <created>1365700165346</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
       <updated>1365700165346</updated>
     </task>
     <task id="LOCAL-00083" summary=".">
       <created>1365704322048</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
       <updated>1365704322048</updated>
     </task>
     <task id="LOCAL-00084" summary=".">
       <created>1365706083321</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
       <updated>1365706083321</updated>
     </task>
     <task id="LOCAL-00085" summary="options menu">
       <created>1365973479164</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
       <updated>1365973479164</updated>
     </task>
     <task id="LOCAL-00086" summary="options">
       <created>1366324486472</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
       <updated>1366324486472</updated>
     </task>
     <task id="LOCAL-00087" summary=".">
       <created>1366460987591</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
       <updated>1366460987591</updated>
     </task>
     <task id="LOCAL-00088" summary="bloom!">
       <created>1366462587716</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
       <updated>1366462587716</updated>
     </task>
     <task id="LOCAL-00089" summary="damagebar fix">
       <created>1366463206698</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
       <updated>1366463206699</updated>
     </task>
     <task id="LOCAL-00090" summary="droid no shader">
       <created>1366468783764</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
       <updated>1366468783764</updated>
     </task>
     <task id="LOCAL-00091" summary="shields up, captain!">
       <created>1366480023268</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
       <updated>1366480023268</updated>
     </task>
     <task id="LOCAL-00092" summary="shield fixes">
       <created>1366627536270</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
       <updated>1366627536270</updated>
     </task>
     <task id="LOCAL-00093" summary="bullet doublehit bugfix">
       <created>1366627877422</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
       <updated>1366627877422</updated>
     </task>
     <task id="LOCAL-00094" summary=".">
       <created>1366637307543</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
       <updated>1366637307543</updated>
     </task>
     <task id="LOCAL-00095" summary="particles!">
       <created>1368987168438</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
       <updated>1368987168439</updated>
     </task>
     <task id="LOCAL-00096" summary="one spritebatch to rule them all">
       <created>1368993242899</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
       <updated>1368993242899</updated>
     </task>
     <task id="LOCAL-00097" summary="android render fix">
       <created>1368994929202</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
       <updated>1368994929202</updated>
     </task>
     <task id="LOCAL-00098" summary="assetmanager refractoring">
       <created>1369056852919</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
       <updated>1369056852919</updated>
     </task>
     <task id="LOCAL-00099" summary="color fix">
       <created>1369057126178</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
       <updated>1369057126178</updated>
     </task>
     <task id="LOCAL-00100" summary="screens refractoring">
       <created>1369058975613</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
       <updated>1369058975613</updated>
     </task>
     <task id="LOCAL-00101" summary=".">
       <created>1369059862912</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
       <updated>1369059862912</updated>
     </task>
     <task id="LOCAL-00102" summary="hitbox refractor">
       <created>1369061842480</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
       <updated>1369061842481</updated>
     </task>
     <task id="LOCAL-00103" summary="explosion centered">
       <created>1369061937645</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
       <updated>1369061937645</updated>
     </task>
     <task id="LOCAL-00104" summary="end level screen">
       <created>1369073841325</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
       <updated>1369073841325</updated>
     </task>
     <task id="LOCAL-00105" summary="game over screen">
       <created>1369075290583</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
       <updated>1369075290583</updated>
     </task>
     <task id="LOCAL-00106" summary=".">
       <created>1369147877736</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
       <updated>1369147877736</updated>
     </task>
     <task id="LOCAL-00107" summary="font">
       <created>1369408308810</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
       <updated>1369408308810</updated>
     </task>
     <task id="LOCAL-00108" summary="oh u know, font stuff">
       <created>1369414913691</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
       <updated>1369414913691</updated>
     </task>
     <task id="LOCAL-00109" summary=".">
       <created>1369444190195</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
       <updated>1369444190195</updated>
     </task>
     <task id="LOCAL-00110" summary="loadLevel">
       <created>1369445366670</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
       <updated>1369445366670</updated>
     </task>
     <task id="LOCAL-00111" summary="loadLevel id">
       <created>1369446318008</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
       <updated>1369446318008</updated>
     </task>
     <task id="LOCAL-00112" summary="java heap">
       <created>1369452954624</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
       <updated>1369452954624</updated>
     </task>
     <task id="LOCAL-00113" summary="background texture load fail fixed?">
       <created>1369459776533</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
       <updated>1369459776533</updated>
     </task>
     <task id="LOCAL-00114" summary="fontloader">
       <created>1369585843040</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
       <updated>1369585843040</updated>
     </task>
     <task id="LOCAL-00115" summary="music owner changed">
       <created>1369586211494</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
       <updated>1369586211494</updated>
     </task>
     <task id="LOCAL-00116" summary="droid sd card install">
       <created>1369624062991</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
       <updated>1369624062991</updated>
     </task>
     <task id="LOCAL-00117" summary="stringbuilder in ui renderer">
       <created>1370872552712</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
       <updated>1370872552712</updated>
     </task>
     <task id="LOCAL-00118" summary="fonts refr">
       <created>1372946717319</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
       <updated>1372946717319</updated>
     </task>
     <task id="LOCAL-00119" summary="custom shaders!">
       <created>1372958640689</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
       <updated>1372958640689</updated>
     </task>
     <task id="LOCAL-00120" summary="fonts revert">
       <created>1372967963115</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
       <updated>1372967963115</updated>
     </task>
     <task id="LOCAL-00121" summary="optimized shaders">
       <created>1372969693218</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
       <updated>1372969693219</updated>
     </task>
     <task id="LOCAL-00122" summary="new shield">
       <created>1373019094917</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
       <updated>1373019094917</updated>
     </task>
     <option name="localTasksCounter" value="123" />
@@ -1677,13 +2156,7 @@
       <collection />
     </option>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
-    <option name="myTodoPanelSettings">
-      <TodoPanelSettings />
-    </option>
     <MESSAGE value="one spritebatch to rule them all" />
     <MESSAGE value="android render fix" />
     <MESSAGE value="assetmanager refractoring" />
@@ -1711,9 +2184,6 @@
     <MESSAGE value="new shield" />
     <option name="LAST_COMMIT_MESSAGE" value="new shield" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -2169,4 +2639,3 @@
     </states>
   </component>
 </project>
-

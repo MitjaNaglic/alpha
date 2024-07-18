@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Alpha-libs">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/libs" />
+      <root url="file://$PROJECT_DIR$/alpha/libs" />
     </CLASSES>
     <JAVADOC>
       <root url="http://libgdx.badlogicgames.com/nightlies/docs/api/" />
       <root url="http://gamadu.com/artemis/javadoc/" />
     </JAVADOC>
     <SOURCES />
-    <jarDirectory url="file://$PROJECT_DIR$/libs" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/alpha/libs" recursive="false" />
   </library>
 </component>
