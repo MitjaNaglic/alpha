@@ -23,7 +23,7 @@ public class DesktopStarter {
         config.fullscreen = false;
         config.resizable = false;
         config.foregroundFPS = 0;
-        config.addIcon("data/png/icon/ic_launcher.png", Files.FileType.Internal);
+        config.addIcon("data/png/icon/ic_launcher.png", Files.FileType.Local);
         new LwjglApplication(new Alpha(), config);
     }
 }

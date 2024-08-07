@@ -39,4 +39,4 @@
 
 
 rootProject.name = 'alpha'
-include('alpha', 'android', 'desktop')
+include('game', 'android', 'desktop')

@@ -2,26 +2,7 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="Alpha">
-        <State>
-          <runningDeviceTargetSelectedWithDropDown>
-            <Target>
-              <type value="RUNNING_DEVICE_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="SERIAL_NUMBER" />
-                  <value value="RZCX41MRZCE" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </runningDeviceTargetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-07-16T05:07:39.413897100Z" />
-        </State>
-      </entry>
-      <entry key="Android">
-        <State />
-      </entry>
-      <entry key="alpha.android">
+      <entry key="android">
         <State />
       </entry>
     </value>

@@ -45,7 +45,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.5.1'
+        classpath 'com.android.tools.build:gradle:8.2.0'
     }
 }
 
@@ -71,9 +71,17 @@ android
                                     proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
                                 }
                     }
+            sourceSets.main.java.srcDirs = ['src']
         }
 
 dependencies
         {
-            implementation project(':alpha')
+            implementation project(':game')
+            implementation files('libs/gdx-backend-android.jar',
+                    'libs/gdx-backend-android-sources.jar',
+                    'libs/armeabi/libandroidgl20.so',
+                    'libs/armeabi/libgdx.so',
+                    'libs/armeabi-v7a/libandroidgl20.so',
+                    'libs/armeabi-v7a/libgdx.so'
+            )
         }

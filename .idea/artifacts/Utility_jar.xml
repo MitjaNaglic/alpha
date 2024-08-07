@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="Utility:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Utility_jar</output-path>
-    <root id="archive" name="Utility.jar">
-      <element id="module-output" name="Utility" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/Utility/libs/gdx-tools.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>

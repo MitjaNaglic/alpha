@@ -1,0 +1,22 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.0'
+    }
+}
+apply plugin: 'java-library'
+sourceCompatibility = JavaVersion.VERSION_21
+targetCompatibility = JavaVersion.VERSION_21
+
+sourceSets.main.java.srcDirs = ['src']
+sourceSets.main.resources.srcDirs = [ "$rootDir/assets" ]
+
+dependencies {
+    api files('libs/gdx.jar',
+            'libs/gdx-freetype.jar',
+            'libs/gdx-freetype-natives.jar')
+    implementation files('libs/artemis.jar')
+}
