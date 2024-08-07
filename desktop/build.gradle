@@ -1,8 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-sourceCompatibility = JavaVersion.VERSION_21
-targetCompatibility = JavaVersion.VERSION_21
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 mainClassName = 'com.mitjanaglic.alpha.DesktopStarter' // Adjust the main class name as needed
 

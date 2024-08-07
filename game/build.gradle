@@ -3,13 +3,10 @@ buildscript {
         google()
         mavenCentral()
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.2.0'
-    }
 }
 apply plugin: 'java-library'
-sourceCompatibility = JavaVersion.VERSION_21
-targetCompatibility = JavaVersion.VERSION_21
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 sourceSets.main.java.srcDirs = ['src']
 sourceSets.main.resources.srcDirs = [ "$rootDir/assets" ]

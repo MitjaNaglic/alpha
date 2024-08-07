@@ -44,9 +44,6 @@ buildscript {
         google()
         mavenCentral()
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.2.0'
-    }
 }
 
 apply plugin: 'com.android.application'
@@ -58,7 +55,7 @@ android
             defaultConfig
                     {
                         applicationId = "com.mitjanaglic.alpha"
-                        minSdk = 15
+                        minSdk = 17
                         targetSdk = 35
                         versionCode = 1
                         versionName = "1.0"
@@ -78,10 +75,6 @@ dependencies
         {
             implementation project(':game')
             implementation files('libs/gdx-backend-android.jar',
-                    'libs/gdx-backend-android-sources.jar',
-                    'libs/armeabi/libandroidgl20.so',
-                    'libs/armeabi/libgdx.so',
-                    'libs/armeabi-v7a/libandroidgl20.so',
-                    'libs/armeabi-v7a/libgdx.so'
+                    'libs/gdx-backend-android-sources.jar'
             )
         }

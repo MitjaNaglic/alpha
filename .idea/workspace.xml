@@ -1,32 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+    <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c31e665-5cdd-4bb2-ba82-76e3aceb8c6e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.5/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.7/gc.properties" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/migrations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.9/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.9/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.9/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.9/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.9/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.9/fileHashes/fileHashes.bin" afterDir="false" />
@@ -34,170 +15,24 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.9/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.9/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ant.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Desktop_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Desktop_jar2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Utility_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Alpha_libs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Android_libs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Desktop_libs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/util_libs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Android/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Android/res/drawable/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Android/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Desktop/libs/gdx-freetype-natives.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Desktop/libs/gdx-freetype.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Desktop/src/com/mitjanaglic/alpha/DesktopStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/src/com/mitjanaglic/alpha/DesktopStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/libs/artemis.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/libs/gdx.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/PipelineState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/PostProcessor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/PostProcessorEffect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/PostProcessorListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/effects/Bloom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/effects/CameraMotion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/effects/CrtMonitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/effects/Curvature.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/effects/Vignette.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/effects/Zoomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/filters/Blur.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/filters/CameraBlur.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/filters/Combine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/filters/Convolve1D.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/filters/Convolve2D.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/filters/Copy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/filters/CrtScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/filters/Filter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/filters/MultipassFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/filters/RadialBlur.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/filters/RadialDistortion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/filters/Threshold.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/filters/Vignetting.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/filters/Zoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/utils/FullscreenQuad.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/postprocessing/utils/PingPongBuffer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/utils/Hash.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/utils/ItemsManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/bitfire/utils/ShaderLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/Alpha.gwt.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/Alpha.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/Assets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/BulletComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/CameraComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/GunComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/HitmarkComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/InputComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/LifeComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/LivesComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/ParticleEmmiterComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/PositionComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/RenderableComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/ShieldComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/ShieldFlareComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/StateComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/VelocityComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/WeaponsArrayComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/ai/DiscAiComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/ai/ScarabAiComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/ids/DiscComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/components/ids/PlayerShipComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/constants/ids.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/models/Level.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/models/SpawnPoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/screens/GameOverScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/screens/GameScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/screens/LevelOverScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/screens/MenuScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/screens/OptionsScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/screens/PauseScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/BulletSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/CameraSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/CollisionSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/GunSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/HitmarkSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/InputSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/LevelBoundsSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/LifeSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/MovementSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/ShieldFlareSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/ShieldSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/SpawnDespawnSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/ai/DiscAiSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/ai/ScarabAiSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/animations/DiscAnimationSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/animations/PlayerAnimationSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/renderers/BackgroundRenderingSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/renderers/ParticleRenderingSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/renderers/SpriteRenderingSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/systems/renderers/UiRenderingSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/utils/EntityFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/utils/Fonts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/utils/GameFontLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/utils/IReturnToSender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/utils/ParticleEffectLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/alpha/src/com/mitjanaglic/alpha/game/utils/ShaderLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android/src/com/mitjanaglic/alpha/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Android/src/com/mitjanaglic/alpha/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/res/drawable/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/font/NEUROPOL.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/levels/Level1/Level1.tmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/levels/Level1/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/levels/Level1/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/levels/Level1/background.tga" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/music/Magellan  - Orbyss.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/particles/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/particles/explosion.p" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/particles/fire.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/particles/shootingDebries.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/png/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/png/icon/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/png/icon/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/png/textures/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/png/textures/textures.atlas" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/png/textures/textures.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/png/textures/textures2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/blur.fragment" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/blur.vertex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/camerablur.fragment" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/combine.fragment" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/convolve-1d.fragment" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/copy.fragment" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/crt-screen.fragment" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/radial-blur.fragment" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/radial-blur.vertex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/radial-distortion.fragment" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/screenspace.vertex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/shield.frag" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/shield.vert" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/test.frag" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/test.vert" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/threshold.fragment" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/vignetting.fragment" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/zoom.fragment" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shaders/zoom.vertex" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/desktop/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/game/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\mitja\.android\avd\Pixel_Fold_API_35.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -212,6 +47,9 @@
         <task path="$PROJECT_DIR$/game">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/android">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -222,39 +60,43 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="alpha" type="f1a62948:ProjectNode" />
-                <item name="desktop" type="2d1252cf:ModuleNode" />
+                <item name="android" type="2d1252cf:ModuleNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="alpha" type="f1a62948:ProjectNode" />
-                <item name="desktop" type="2d1252cf:ModuleNode" />
+                <item name="android" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="alpha" type="f1a62948:ProjectNode" />
-                <item name="desktop" type="2d1252cf:ModuleNode" />
+                <item name="android" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="alpha" type="f1a62948:ProjectNode" />
+                <item name="android" type="2d1252cf:ModuleNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="alpha" type="f1a62948:ProjectNode" />
                 <item name="desktop" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="alpha" type="f1a62948:ProjectNode" />
                 <item name="desktop" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="distribution" type="c8890929:TasksNode$1" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="alpha" type="f1a62948:ProjectNode" />
-                <item name="game" type="2d1252cf:ModuleNode" />
+                <item name="desktop" type="2d1252cf:ModuleNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -275,22 +117,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Load Gradle Dependencies.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.alpha:desktop [assemble].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.alpha:desktop [distZip].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.alpha:desktop [jar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.alpha:desktop [run].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;component__system&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.android.executor": "Run",
+    "Gradle.Load Gradle Dependencies.executor": "Run",
+    "Gradle.alpha:android [buildDependents].executor": "Run",
+    "Gradle.alpha:android [build].executor": "Run",
+    "Gradle.alpha:android [clean].executor": "Run",
+    "Gradle.alpha:desktop [assemble].executor": "Run",
+    "Gradle.alpha:desktop [build].executor": "Run",
+    "Gradle.alpha:desktop [clean].executor": "Run",
+    "Gradle.alpha:desktop [distZip].executor": "Run",
+    "Gradle.alpha:desktop [jar].executor": "Run",
+    "Gradle.alpha:desktop [run].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/dev/alpha",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15625",
+    "project.structure.side.proportion": "0.2807971",
+    "settings.editor.selected.configurable": "experimental"
   }
-}</component>
+}]]></component>
+  <component name="PsdUISettings">
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
   <component name="RunManager" selected="Android App.android">
     <configuration name="android" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="alpha.android.main" />
@@ -307,13 +165,41 @@
       <option name="MODE" value="default_activity" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Java" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
       <Java>
         <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
         <option name="DEBUG_SANDBOX_SDK" value="false" />
       </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_PROFILING_ENABLED" value="false" />
@@ -330,10 +216,10 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="alpha:desktop [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="alpha:android [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/desktop" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/android" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -341,7 +227,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="assemble" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -352,10 +238,10 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="alpha:desktop [distZip]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="alpha:android [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/desktop" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/android" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -363,7 +249,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="distZip" />
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -374,7 +260,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="alpha:desktop [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="alpha:desktop [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/desktop" />
@@ -385,7 +271,29 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="jar" />
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="alpha:desktop [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/desktop" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -421,9 +329,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.alpha:desktop [run]" />
-        <item itemvalue="Gradle.alpha:desktop [jar]" />
-        <item itemvalue="Gradle.alpha:desktop [assemble]" />
-        <item itemvalue="Gradle.alpha:desktop [distZip]" />
+        <item itemvalue="Gradle.alpha:desktop [build]" />
+        <item itemvalue="Gradle.alpha:desktop [clean]" />
+        <item itemvalue="Gradle.alpha:android [build]" />
+        <item itemvalue="Gradle.alpha:android [clean]" />
       </list>
     </recent_temporary>
   </component>

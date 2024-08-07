@@ -4,6 +4,7 @@ import android.os.Bundle;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.mitjanaglic.alpha.game.Alpha;
+import android.util.Log;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,6 +17,7 @@ public class MainActivity extends AndroidApplication {
     private Alpha alpha;
 
     public void onCreate(Bundle savedInstanceState) {
+        Log.w("alpha", "TEST BLA");
         super.onCreate(savedInstanceState);
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         alpha = new Alpha();
