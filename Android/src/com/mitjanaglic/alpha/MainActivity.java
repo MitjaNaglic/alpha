@@ -13,10 +13,12 @@ import com.mitjanaglic.alpha.game.Alpha;
  * To change this template use File | Settings | File Templates.
  */
 public class MainActivity extends AndroidApplication {
+    private Alpha alpha;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
-        config.useGL20 = true;
-        initialize(new Alpha(), config);
+        alpha = new Alpha();
+        initialize(alpha, config);
     }
 }

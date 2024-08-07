@@ -23,4 +23,14 @@ public class GwtLauncher extends GwtApplication {
     public ApplicationListener getApplicationListener() {
         return new Alpha();
     }
+
+    @Override
+    public void log(String s, String s2, Throwable throwable) {
+
+    }
+
+    @Override
+    public int getLogLevel() {
+        return 0;
+    }
 }
