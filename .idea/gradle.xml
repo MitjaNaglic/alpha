@@ -10,8 +10,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/android" />
-            <option value="$PROJECT_DIR$/desktop" />
-            <option value="$PROJECT_DIR$/game" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/lwjgl3" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
