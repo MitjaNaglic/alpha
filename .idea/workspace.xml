@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="514b3c6b-ea88-492f-b754-c3e2380acae2" name="Changes" comment="" />
+    <list default="true" id="514b3c6b-ea88-492f-b754-c3e2380acae2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,12 +50,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="alpha" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="alpha" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="construo" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -111,6 +108,15 @@
       </state>
     </system>
   </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="C:\dev\alpha\keystore.jks" />
+    <option name="KEY_ALIAS" value="alphaKey" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -120,25 +126,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android App.android.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.alpha [packageWinX64].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.alpha:android [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.alpha:lwjgl3 [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.alpha:lwjgl3 [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.alpha:lwjgl3 [distZip].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.alpha:lwjgl3 [jar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.alpha:lwjgl3 [run].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;external.system.has.shared.sources&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.android.executor": "Run",
+    "ApkExportedModule": "alpha.android",
+    "ExportApk.ApkPathForalpha.android": "C:\\dev\\alpha\\android",
+    "Gradle.alpha [packageWinX64].executor": "Run",
+    "Gradle.alpha:android [build].executor": "Run",
+    "Gradle.alpha:lwjgl3 [build].executor": "Run",
+    "Gradle.alpha:lwjgl3 [clean].executor": "Run",
+    "Gradle.alpha:lwjgl3 [distZip].executor": "Run",
+    "Gradle.alpha:lwjgl3 [jar].executor": "Run",
+    "Gradle.alpha:lwjgl3 [run].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "external.system.has.shared.sources": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true"
+  },
+  "keyToStringList": {
+    "ExportApk.BuildVariants": [
+      "release"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Gradle.alpha:lwjgl3 [run]">
     <configuration name="android" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="alpha.android.main" />
